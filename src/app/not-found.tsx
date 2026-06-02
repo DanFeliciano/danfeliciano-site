@@ -1,6 +1,13 @@
+import type { Metadata } from "next";
 import { CtaButton } from "@/components/ui/cta-button";
 import { FinalCTA } from "@/components/ui/final-cta";
 import { PageHeader } from "@/components/ui/page-header";
+
+export const metadata: Metadata = {
+  title: "Page Not Found | Dan Feliciano",
+  description:
+    "The requested page could not be found. Return home or contact Dan Feliciano for advisory, training, speaking, or operational diagnostic support.",
+};
 
 export default function NotFound() {
   return (
