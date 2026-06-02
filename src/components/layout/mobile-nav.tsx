@@ -2,12 +2,30 @@
 
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { navItems } from "@/content/site";
 import { CtaButton } from "@/components/ui/cta-button";
 
+const mobileNavigationPanelId = "mobile-navigation-panel";
+
 export function MobileNav() {
   const [isOpen, setIsOpen] = useState(false);
+
+  useEffect(() => {
+    if (!isOpen) {
+      return;
+    }
+
+    function closeOnEscape(event: KeyboardEvent) {
+      if (event.key === "Escape") {
+        setIsOpen(false);
+      }
+    }
+
+    window.addEventListener("keydown", closeOnEscape);
+
+    return () => window.removeEventListener("keydown", closeOnEscape);
+  }, [isOpen]);
 
   function closeNavigation() {
     setIsOpen(false);
@@ -16,6 +34,7 @@ export function MobileNav() {
   return (
     <div className="relative lg:hidden">
       <button
+        aria-controls={mobileNavigationPanelId}
         aria-expanded={isOpen}
         aria-label={isOpen ? "Close navigation" : "Open navigation"}
         className="inline-flex size-11 items-center justify-center rounded-md border border-white/20 text-white transition hover:border-signal hover:text-signal"
@@ -30,7 +49,10 @@ export function MobileNav() {
       </button>
 
       {isOpen ? (
-        <div className="absolute right-0 top-14 z-50 w-[min(18rem,calc(100vw-2.5rem))] rounded-lg border border-white/15 bg-ink p-3 shadow-command">
+        <div
+          className="absolute right-0 top-14 z-50 w-[min(18rem,calc(100vw-2.5rem))] rounded-lg border border-white/15 bg-ink p-3 shadow-command"
+          id={mobileNavigationPanelId}
+        >
           <nav aria-label="Mobile navigation" className="grid gap-1">
             {navItems.map((item) => (
               <Link
