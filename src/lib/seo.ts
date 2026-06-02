@@ -1,13 +1,22 @@
 import type { Metadata } from "next";
 import { site } from "@/content/site";
+import { requiredRoutes, type SiteRoute } from "@/lib/routes";
 
 type SeoInput = {
   title: string;
   description: string;
-  path: string;
+  path: SiteRoute;
 };
 
-export function absoluteUrl(path: string) {
+function assertSiteRoute(path: SiteRoute) {
+  if (!(requiredRoutes as readonly string[]).includes(path)) {
+    throw new Error("Canonical URL path must be an internal site route.");
+  }
+}
+
+export function absoluteUrl(path: SiteRoute) {
+  assertSiteRoute(path);
+
   return new URL(path, site.url).toString();
 }
 

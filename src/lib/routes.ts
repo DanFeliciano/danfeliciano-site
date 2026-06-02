@@ -21,6 +21,11 @@ export const requiredRoutes = [
 
 export type SiteRoute = (typeof requiredRoutes)[number];
 
+export type LegacyRedirect = {
+  source: string;
+  destination: SiteRoute;
+};
+
 export const legacyRedirects = [
   { source: "/certifications", destination: "/academy" },
   {
@@ -40,4 +45,4 @@ export const legacyRedirects = [
   { source: "/phoenix", destination: "/services/phoenix-protocol" },
   { source: "/ai", destination: "/services/ai-automation-analytics" },
   { source: "/policy", destination: "/products/policy-forensics" },
-] as const;
+] as const satisfies readonly LegacyRedirect[];

@@ -2,7 +2,7 @@ import type { SiteRoute } from "@/lib/routes";
 
 export type LinkItem = {
   label: string;
-  href: SiteRoute | string;
+  href: SiteRoute;
 };
 
 export type Offer = {
@@ -15,9 +15,9 @@ export type Offer = {
     title: string;
     description: string;
   };
-  useCases?: string[];
-  deliverables?: string[];
-  steps?: Array<{ title: string; description: string }>;
+  useCases?: readonly string[];
+  deliverables?: readonly string[];
+  steps?: readonly { title: string; description: string }[];
   cta: string;
 };
 
@@ -30,8 +30,8 @@ export type Course = {
     title: string;
     description: string;
   };
-  objectives: string[];
-  audience: string[];
+  objectives: readonly string[];
+  audience: readonly string[];
   cta: string;
 };
 
@@ -68,7 +68,7 @@ export const homepage = {
   ],
 };
 
-export const services: Offer[] = [
+export const services = [
   {
     slug: "aesop-strategy-governance",
     title: "AESOP Strategy & Governance",
@@ -199,9 +199,9 @@ export const services: Offer[] = [
     ],
     cta: "Assess your AI automation opportunities",
   },
-];
+] as const satisfies readonly Offer[];
 
-export const products: Offer[] = [
+export const products = [
   {
     slug: "backlog-kill-kit",
     title: "Backlog Kill Kit",
@@ -273,9 +273,9 @@ export const products: Offer[] = [
     },
     cta: "Explore Academy",
   },
-];
+] as const satisfies readonly Offer[];
 
-export const courses: Course[] = [
+export const courses = [
   {
     title: "Lean Six Sigma + AI Yellow Belt",
     href: "/academy/lean-six-sigma-ai-yellow-belt",
@@ -370,7 +370,7 @@ export const courses: Course[] = [
     ],
     cta: "Ask about Black Belt training",
   },
-];
+] as const satisfies readonly Course[];
 
 export const caseStudies = [
   "Healthcare billing transformation",
