@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
 import nextConfig from "../../next.config";
+import { metadata as homepageMetadata } from "@/app/page";
 import robots from "@/app/robots";
 import sitemap from "@/app/sitemap";
 import { site } from "@/content/site";
@@ -24,10 +25,36 @@ describe("seo helpers", () => {
     expect(metadata.openGraph).toMatchObject({
       url: "https://danfeliciano.com/services",
     });
+    expect(metadata.twitter).toMatchObject({
+      card: "summary_large_image",
+      title: "Services | Dan Feliciano",
+      description: "Explore advisory services.",
+    });
+    expect(metadata.robots).toEqual({
+      index: true,
+      follow: true,
+    });
   });
 
   it("has at least all required sitemap routes", () => {
     expect(requiredRoutes.length).toBe(18);
+  });
+
+  it("exports full homepage metadata", () => {
+    expect(homepageMetadata.alternates).toEqual({
+      canonical: "https://danfeliciano.com/",
+    });
+    expect(homepageMetadata.openGraph).toMatchObject({
+      url: "https://danfeliciano.com/",
+      type: "website",
+    });
+    expect(homepageMetadata.twitter).toMatchObject({
+      card: "summary_large_image",
+    });
+    expect(homepageMetadata.robots).toEqual({
+      index: true,
+      follow: true,
+    });
   });
 });
 

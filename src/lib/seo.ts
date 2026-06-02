@@ -49,6 +49,10 @@ export function createMetadata({
       title,
       description,
     },
+    robots: {
+      index: true,
+      follow: true,
+    },
   };
 }
 

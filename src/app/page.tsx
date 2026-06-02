@@ -5,6 +5,14 @@ import { FinalCTA } from "@/components/ui/final-cta";
 import { OfferCard, type OfferCardData } from "@/components/ui/offer-card";
 import { ProofStrip } from "@/components/ui/proof-strip";
 import { caseStudies, homepage, products, services } from "@/content/site";
+import { createMetadata } from "@/lib/seo";
+
+export const metadata = createMetadata({
+  title: "Dan Feliciano | Operational Strategy, AI Automation & Lean Six Sigma",
+  description:
+    "Dan Feliciano helps executives and operators reduce backlog, redesign service delivery, deploy practical AI, and build operating systems that survive contact with reality.",
+  path: "/",
+});
 
 const pathCards: OfferCardData[] = [
   {

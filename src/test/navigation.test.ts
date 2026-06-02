@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { createElement } from "react";
 import { describe, expect, it } from "vitest";
@@ -58,6 +58,9 @@ describe("navigation", () => {
 
     expect(closeButton).toHaveAttribute("aria-expanded", "true");
     expect(screen.getByRole("navigation", { name: "Mobile navigation" })).toBeInTheDocument();
+    await waitFor(() =>
+      expect(screen.getByRole("link", { name: "Services" })).toHaveFocus(),
+    );
 
     for (const item of navItems) {
       expect(screen.getByRole("link", { name: item.label })).toBeInTheDocument();
@@ -80,6 +83,9 @@ describe("navigation", () => {
     expect(
       screen.getByRole("button", { name: "Open navigation" }),
     ).toHaveAttribute("aria-expanded", "false");
+    await waitFor(() =>
+      expect(screen.getByRole("button", { name: "Open navigation" })).toHaveFocus(),
+    );
     expect(
       screen.queryByRole("navigation", { name: "Mobile navigation" }),
     ).not.toBeInTheDocument();
@@ -90,5 +96,8 @@ describe("navigation", () => {
     expect(
       screen.getByRole("button", { name: "Open navigation" }),
     ).toHaveAttribute("aria-expanded", "false");
+    await waitFor(() =>
+      expect(screen.getByRole("button", { name: "Open navigation" })).toHaveFocus(),
+    );
   });
 });

@@ -2,7 +2,7 @@
 
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { navItems } from "@/content/site";
 import { CtaButton } from "@/components/ui/cta-button";
 
@@ -10,6 +10,9 @@ const mobileNavigationPanelId = "mobile-navigation-panel";
 
 export function MobileNav() {
   const [isOpen, setIsOpen] = useState(false);
+  const buttonRef = useRef<HTMLButtonElement>(null);
+  const panelRef = useRef<HTMLDivElement>(null);
+  const wasOpenRef = useRef(false);
 
   useEffect(() => {
     if (!isOpen) {
@@ -27,6 +30,18 @@ export function MobileNav() {
     return () => window.removeEventListener("keydown", closeOnEscape);
   }, [isOpen]);
 
+  useEffect(() => {
+    if (isOpen) {
+      panelRef.current
+        ?.querySelector<HTMLElement>("a, button")
+        ?.focus();
+    } else if (wasOpenRef.current) {
+      buttonRef.current?.focus();
+    }
+
+    wasOpenRef.current = isOpen;
+  }, [isOpen]);
+
   function closeNavigation() {
     setIsOpen(false);
   }
@@ -38,6 +53,7 @@ export function MobileNav() {
         aria-expanded={isOpen}
         aria-label={isOpen ? "Close navigation" : "Open navigation"}
         className="inline-flex size-11 items-center justify-center rounded-md border border-white/20 text-white transition hover:border-signal hover:text-signal"
+        ref={buttonRef}
         type="button"
         onClick={() => setIsOpen((current) => !current)}
       >
@@ -52,6 +68,7 @@ export function MobileNav() {
         <div
           className="absolute right-0 top-14 z-50 w-[min(18rem,calc(100vw-2.5rem))] rounded-lg border border-white/15 bg-ink p-3 shadow-command"
           id={mobileNavigationPanelId}
+          ref={panelRef}
         >
           <nav aria-label="Mobile navigation" className="grid gap-1">
             {navItems.map((item) => (
