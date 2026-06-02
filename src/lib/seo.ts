@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import type { Course } from "@/content/site";
 import { site } from "@/content/site";
 import { requiredRoutes, type SiteRoute } from "@/lib/routes";
 
@@ -6,6 +7,11 @@ type SeoInput = {
   title: string;
   description: string;
   path: SiteRoute;
+};
+
+export type BreadcrumbJsonLdItem = {
+  label: string;
+  href: SiteRoute;
 };
 
 function assertSiteRoute(path: SiteRoute) {
@@ -72,5 +78,48 @@ export function professionalServiceJsonLd() {
     url: site.url,
     description: site.description,
     founder: { "@type": "Person", name: site.name },
+  };
+}
+
+export function academyProviderJsonLd() {
+  return {
+    "@type": "Organization",
+    name: "Dan Feliciano Academy",
+    url: absoluteUrl("/academy"),
+    founder: { "@type": "Person", name: site.name, url: site.url },
+  };
+}
+
+export function academyCourseItemListJsonLd(
+  courseItems: readonly Pick<Course, "title" | "href" | "metadata">[],
+) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    itemListElement: courseItems.map((course, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      item: {
+        "@type": "Course",
+        name: course.title,
+        url: absoluteUrl(course.href),
+        description: course.metadata.description,
+      },
+    })),
+  };
+}
+
+export function breadcrumbListJsonLd(
+  items: readonly BreadcrumbJsonLdItem[],
+) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: items.map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: item.label,
+      item: absoluteUrl(item.href),
+    })),
   };
 }

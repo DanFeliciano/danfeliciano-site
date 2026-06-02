@@ -10,6 +10,14 @@ describe("supporting page content", () => {
     ]);
   });
 
+  it("defines ISO 8601 durations for Course structured data", () => {
+    expect(courses.map((course) => course.durationIso)).toEqual([
+      "PT8H",
+      "PT40H",
+      "PT80H",
+    ]);
+  });
+
   it("marks insight cards as coming soon when article pages are not built", () => {
     expect(insightCards.every((card) => card.status === "Coming soon")).toBe(
       true,

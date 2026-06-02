@@ -2,10 +2,11 @@ import { Section } from "@/components/layout/section";
 import { CtaButton } from "@/components/ui/cta-button";
 import { FinalCTA } from "@/components/ui/final-cta";
 import { FrameworkSteps } from "@/components/ui/framework-steps";
+import { JsonLd } from "@/components/ui/json-ld";
 import { OfferCard } from "@/components/ui/offer-card";
 import { PageHeader } from "@/components/ui/page-header";
 import { courses } from "@/content/site";
-import { createMetadata } from "@/lib/seo";
+import { academyCourseItemListJsonLd, createMetadata } from "@/lib/seo";
 
 export const metadata = createMetadata({
   title: "Academy | Lean Six Sigma + AI Training | Dan Feliciano",
@@ -122,6 +123,7 @@ export default function AcademyPage() {
         href="/contact"
         title="Ready to build improvement capability?"
       />
+      <JsonLd data={academyCourseItemListJsonLd(courses)} />
     </main>
   );
 }

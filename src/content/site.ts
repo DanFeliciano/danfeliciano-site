@@ -25,6 +25,7 @@ export type Course = {
   title: string;
   href: SiteRoute;
   duration: string;
+  durationIso: string;
   summary: string;
   metadata: {
     title: string;
@@ -280,6 +281,7 @@ export const courses = [
     title: "Lean Six Sigma + AI Yellow Belt",
     href: "/academy/lean-six-sigma-ai-yellow-belt",
     duration: "8 hours",
+    durationIso: "PT8H",
     summary:
       "Foundational Lean Six Sigma, DMAIC, waste, process thinking, and AI-assisted improvement basics.",
     metadata: {
@@ -310,6 +312,7 @@ export const courses = [
     title: "Lean Six Sigma + AI Green Belt",
     href: "/academy/lean-six-sigma-ai-green-belt",
     duration: "40 hours",
+    durationIso: "PT40H",
     summary:
       "Project leadership, data analysis, root cause, process improvement, stakeholder engagement, and AI-supported DMAIC execution.",
     metadata: {
@@ -342,6 +345,7 @@ export const courses = [
     title: "Lean Six Sigma + AI Black Belt",
     href: "/academy/lean-six-sigma-ai-black-belt",
     duration: "80 hours",
+    durationIso: "PT80H",
     summary:
       "Advanced improvement leadership, statistical thinking, complex project execution, mentoring, change leadership, and AI-enabled transformation.",
     metadata: {

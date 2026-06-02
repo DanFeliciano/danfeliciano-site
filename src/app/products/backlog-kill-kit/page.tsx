@@ -6,12 +6,15 @@ import { FrameworkSteps } from "@/components/ui/framework-steps";
 import { JsonLd } from "@/components/ui/json-ld";
 import { PageHeader } from "@/components/ui/page-header";
 import { products, site } from "@/content/site";
-import { absoluteUrl, createMetadata } from "@/lib/seo";
+import type { SiteRoute } from "@/lib/routes";
+import { absoluteUrl, breadcrumbListJsonLd, createMetadata } from "@/lib/seo";
 
 type BacklogKillKit = Extract<
   (typeof products)[number],
   { slug: "backlog-kill-kit" }
 >;
+
+type BreadcrumbLink = { label: string; href: SiteRoute };
 
 const product = products.find(
   (item): item is BacklogKillKit => item.slug === "backlog-kill-kit",
@@ -21,6 +24,11 @@ export const metadata = createMetadata({
   ...product.metadata,
   path: product.href,
 });
+
+const breadcrumbs = [
+  { label: "Products", href: "/products" },
+  { label: product.title, href: product.href },
+] as const satisfies readonly BreadcrumbLink[];
 
 const diagnosticSteps = [
   {
@@ -44,10 +52,7 @@ export default function BacklogKillKitPage() {
   return (
     <main id="main-content">
       <Breadcrumbs
-        items={[
-          { label: "Products", href: "/products" },
-          { label: product.title, href: product.href },
-        ]}
+        items={breadcrumbs}
       />
       <PageHeader subhead={product.summary} title={product.title}>
         <CtaButton href="/contact">{product.cta}</CtaButton>
@@ -122,15 +127,18 @@ export default function BacklogKillKitPage() {
         title="Ready to understand the backlog?"
       />
       <JsonLd
-        data={{
-          "@context": "https://schema.org",
-          "@type": "Product",
-          name: product.title,
-          description: product.metadata.description,
-          brand: { "@type": "Person", name: site.name, url: site.url },
-          category: "Productized advisory service",
-          url: absoluteUrl(product.href),
-        }}
+        data={[
+          {
+            "@context": "https://schema.org",
+            "@type": "Product",
+            name: product.title,
+            description: product.metadata.description,
+            brand: { "@type": "Person", name: site.name, url: site.url },
+            category: "Productized advisory service",
+            url: absoluteUrl(product.href),
+          },
+          breadcrumbListJsonLd(breadcrumbs),
+        ]}
       />
     </main>
   );

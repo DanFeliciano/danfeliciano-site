@@ -69,7 +69,7 @@ export default function SpeakingPage() {
               className="rounded-lg border border-slate-200 bg-white p-5 shadow-command"
               key={topic.title}
             >
-              <h2 className="text-lg font-black leading-6">{topic.title}</h2>
+              <h3 className="text-lg font-black leading-6">{topic.title}</h3>
               <p className="mt-3 text-sm leading-6 text-slate-600">
                 {topic.description}
               </p>

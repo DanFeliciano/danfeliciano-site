@@ -9,7 +9,7 @@ import { JsonLd } from "@/components/ui/json-ld";
 import { PageHeader } from "@/components/ui/page-header";
 import { services, site } from "@/content/site";
 import type { SiteRoute } from "@/lib/routes";
-import { absoluteUrl, createMetadata } from "@/lib/seo";
+import { absoluteUrl, breadcrumbListJsonLd, createMetadata } from "@/lib/seo";
 
 type PhoenixService = Extract<
   (typeof services)[number],
@@ -26,6 +26,11 @@ export const metadata = createMetadata({
   ...service.metadata,
   path: service.href,
 });
+
+const breadcrumbs = [
+  { label: "Services", href: "/services" },
+  { label: service.title, href: service.href },
+] as const satisfies readonly RelatedLink[];
 
 const recoverySteps = [
   {
@@ -55,10 +60,7 @@ export default function PhoenixProtocolPage() {
   return (
     <main id="main-content">
       <Breadcrumbs
-        items={[
-          { label: "Services", href: "/services" },
-          { label: service.title, href: service.href },
-        ]}
+        items={breadcrumbs}
       />
       <PageHeader subhead={service.description ?? service.summary} title={service.title}>
         <CtaButton href="/contact">{service.cta}</CtaButton>
@@ -149,14 +151,17 @@ export default function PhoenixProtocolPage() {
         title="Need to stabilize service performance?"
       />
       <JsonLd
-        data={{
-          "@context": "https://schema.org",
-          "@type": "Service",
-          name: service.title,
-          description: service.metadata.description,
-          provider: { "@type": "Person", name: site.name, url: site.url },
-          url: absoluteUrl(service.href),
-        }}
+        data={[
+          {
+            "@context": "https://schema.org",
+            "@type": "Service",
+            name: service.title,
+            description: service.metadata.description,
+            provider: { "@type": "Person", name: site.name, url: site.url },
+            url: absoluteUrl(service.href),
+          },
+          breadcrumbListJsonLd(breadcrumbs),
+        ]}
       />
     </main>
   );

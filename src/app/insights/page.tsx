@@ -52,9 +52,9 @@ export default function InsightsPage() {
               <p className="text-xs font-black uppercase tracking-[0.12em] text-slate-500">
                 {card.status}
               </p>
-              <h2 className="mt-3 text-lg font-black leading-6 text-charcoal">
+              <h3 className="mt-3 text-lg font-black leading-6 text-charcoal">
                 {card.title}
-              </h2>
+              </h3>
               <p className="mt-3 text-sm leading-6 text-slate-600">
                 {card.excerpt}
               </p>

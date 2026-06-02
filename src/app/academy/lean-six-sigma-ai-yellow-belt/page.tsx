@@ -6,9 +6,14 @@ import { CtaButton } from "@/components/ui/cta-button";
 import { FinalCTA } from "@/components/ui/final-cta";
 import { JsonLd } from "@/components/ui/json-ld";
 import { PageHeader } from "@/components/ui/page-header";
-import { courses, site } from "@/content/site";
+import { courses } from "@/content/site";
 import type { SiteRoute } from "@/lib/routes";
-import { absoluteUrl, createMetadata } from "@/lib/seo";
+import {
+  academyProviderJsonLd,
+  absoluteUrl,
+  breadcrumbListJsonLd,
+  createMetadata,
+} from "@/lib/seo";
 
 type YellowBeltCourse = Extract<
   (typeof courses)[number],
@@ -27,6 +32,11 @@ export const metadata = createMetadata({
   path: course.href,
 });
 
+const breadcrumbs = [
+  { label: "Academy", href: "/academy" },
+  { label: course.title, href: course.href },
+] as const satisfies readonly RelatedLink[];
+
 const relatedLinks = [
   { label: "Academy overview", href: "/academy" },
   { label: "Green Belt", href: "/academy/lean-six-sigma-ai-green-belt" },
@@ -37,10 +47,7 @@ export default function YellowBeltCoursePage() {
   return (
     <main id="main-content">
       <Breadcrumbs
-        items={[
-          { label: "Academy", href: "/academy" },
-          { label: course.title, href: course.href },
-        ]}
+        items={breadcrumbs}
       />
       <PageHeader subhead={course.summary} title={course.title}>
         <CtaButton href="/contact">{course.cta}</CtaButton>
@@ -122,15 +129,18 @@ export default function YellowBeltCoursePage() {
         title="Ready to build Yellow Belt capability?"
       />
       <JsonLd
-        data={{
-          "@context": "https://schema.org",
-          "@type": "Course",
-          name: course.title,
-          description: course.metadata.description,
-          provider: { "@type": "Person", name: site.name, url: site.url },
-          timeRequired: course.duration,
-          url: absoluteUrl(course.href),
-        }}
+        data={[
+          {
+            "@context": "https://schema.org",
+            "@type": "Course",
+            name: course.title,
+            description: course.metadata.description,
+            provider: academyProviderJsonLd(),
+            timeRequired: course.durationIso,
+            url: absoluteUrl(course.href),
+          },
+          breadcrumbListJsonLd(breadcrumbs),
+        ]}
       />
     </main>
   );

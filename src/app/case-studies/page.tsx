@@ -50,9 +50,9 @@ export default function CaseStudiesPage() {
               className="rounded-lg border border-slate-200 bg-white p-5 shadow-command"
               key={study.title}
             >
-              <h2 className="text-lg font-black leading-6 text-charcoal">
+              <h3 className="text-lg font-black leading-6 text-charcoal">
                 {study.title}
-              </h2>
+              </h3>
               <div className="mt-4 grid gap-4">
                 <div>
                   <p className="text-xs font-black uppercase tracking-[0.12em] text-slate-500">
