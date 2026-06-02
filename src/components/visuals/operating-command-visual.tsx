@@ -12,17 +12,19 @@ const commandRows = [
 
 export function OperatingCommandVisual() {
   return (
-    <div className="rounded-lg border border-white/15 bg-white/5 p-4 shadow-command">
-      <div className="mb-4 flex items-center justify-between gap-4 text-xs font-semibold text-slate-300">
+    <div className="min-w-0 overflow-hidden rounded-lg border border-white/15 bg-white/5 p-3 shadow-command sm:p-4">
+      <div className="mb-3 flex items-center justify-between gap-4 text-xs font-semibold text-slate-300 sm:mb-4">
         <span>Operating signal map</span>
-        <span className="text-right text-signal">Live diagnostic view</span>
+        <span className="hidden text-right text-signal sm:inline">
+          Live diagnostic view
+        </span>
       </div>
 
-      <div className="grid gap-3">
+      <div className="grid gap-2 sm:gap-3">
         {signals.map(([label, value, color]) => (
           <div
             key={label}
-            className="rounded-md border border-white/10 bg-ink/70 p-3"
+            className="rounded-md border border-white/10 bg-ink/70 p-2.5 sm:p-3"
           >
             <div className="mb-2 flex justify-between gap-4 text-xs text-slate-300">
               <span>{label}</span>
@@ -38,7 +40,7 @@ export function OperatingCommandVisual() {
         ))}
       </div>
 
-      <div className="mt-4 grid gap-3 sm:grid-cols-3">
+      <div className="mt-4 hidden gap-3 sm:grid sm:grid-cols-3">
         {commandRows.map(([item, detail]) => (
           <div
             key={item}
@@ -52,7 +54,7 @@ export function OperatingCommandVisual() {
         ))}
       </div>
 
-      <div className="mt-4 rounded-md border border-signal/30 bg-signal/10 p-3 text-xs font-semibold leading-5 text-slate-100">
+      <div className="mt-4 hidden rounded-md border border-signal/30 bg-signal/10 p-3 text-xs font-semibold leading-5 text-slate-100 sm:block">
         Command readout: stabilize the queue, remove rule friction, and automate
         only after the workflow is visible.
       </div>

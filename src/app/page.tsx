@@ -89,18 +89,18 @@ export default function HomePage() {
     <main id="main-content">
       <section className="bg-ink text-white">
         <Container>
-          <div className="grid gap-8 py-10 lg:grid-cols-[1.08fr_0.92fr] lg:items-center lg:py-12">
-            <div>
-              <h1 className="max-w-4xl text-balance text-4xl font-black leading-tight tracking-normal sm:text-5xl">
+          <div className="grid min-w-0 gap-5 py-6 sm:gap-8 sm:py-10 lg:grid-cols-[1.08fr_0.92fr] lg:items-center lg:py-12">
+            <div className="min-w-0">
+              <h1 className="max-w-4xl text-balance text-[1.95rem] font-black leading-[2.3rem] tracking-normal sm:text-5xl sm:leading-tight">
                 {homepage.title}
               </h1>
-              <p className="mt-5 max-w-3xl text-lg font-semibold leading-8 text-slate-200">
+              <p className="mt-4 max-w-3xl text-base font-semibold leading-7 text-slate-200 sm:mt-5 sm:text-lg sm:leading-8">
                 {homepage.subhead}
               </p>
-              <p className="mt-4 max-w-2xl text-base leading-7 text-slate-300">
+              <p className="mt-4 hidden max-w-2xl text-base leading-7 text-slate-300 sm:block">
                 {homepage.body}
               </p>
-              <div className="mt-7 flex flex-col gap-3 sm:flex-row">
+              <div className="mt-5 flex flex-col gap-3 sm:mt-7 sm:flex-row">
                 <CtaButton className="w-full sm:w-auto" href="/contact">
                   Book a Strategy Diagnostic
                 </CtaButton>
