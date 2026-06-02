@@ -8,12 +8,15 @@ import { FrameworkSteps } from "@/components/ui/framework-steps";
 import { JsonLd } from "@/components/ui/json-ld";
 import { PageHeader } from "@/components/ui/page-header";
 import { services, site } from "@/content/site";
+import type { SiteRoute } from "@/lib/routes";
 import { absoluteUrl, createMetadata } from "@/lib/seo";
 
 type AiAutomationService = Extract<
   (typeof services)[number],
   { slug: "ai-automation-analytics" }
 >;
+
+type RelatedLink = { label: string; href: SiteRoute };
 
 const service = services.find(
   (item): item is AiAutomationService =>
@@ -52,7 +55,7 @@ const relatedLinks = [
   { label: "Policy Forensics", href: "/products/policy-forensics" },
   { label: "AESOP Strategy & Governance", href: "/services/aesop-strategy-governance" },
   { label: "Academy", href: "/academy" },
-] as const;
+] as const satisfies readonly RelatedLink[];
 
 export default function AiAutomationAnalyticsPage() {
   return (

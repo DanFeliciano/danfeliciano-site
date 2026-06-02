@@ -8,12 +8,15 @@ import { FrameworkSteps } from "@/components/ui/framework-steps";
 import { JsonLd } from "@/components/ui/json-ld";
 import { PageHeader } from "@/components/ui/page-header";
 import { services, site } from "@/content/site";
+import type { SiteRoute } from "@/lib/routes";
 import { absoluteUrl, createMetadata } from "@/lib/seo";
 
 type AesopService = Extract<
   (typeof services)[number],
   { slug: "aesop-strategy-governance" }
 >;
+
+type RelatedLink = { label: string; href: SiteRoute };
 
 const service = services.find(
   (item): item is AesopService => item.slug === "aesop-strategy-governance",
@@ -28,7 +31,7 @@ const relatedLinks = [
   { label: "Phoenix Protocol", href: "/services/phoenix-protocol" },
   { label: "AI, Automation & Analytics", href: "/services/ai-automation-analytics" },
   { label: "Products", href: "/products" },
-] as const;
+] as const satisfies readonly RelatedLink[];
 
 export default function AesopStrategyGovernancePage() {
   return (

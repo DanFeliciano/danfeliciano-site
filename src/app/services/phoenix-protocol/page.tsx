@@ -8,12 +8,15 @@ import { FrameworkSteps } from "@/components/ui/framework-steps";
 import { JsonLd } from "@/components/ui/json-ld";
 import { PageHeader } from "@/components/ui/page-header";
 import { services, site } from "@/content/site";
+import type { SiteRoute } from "@/lib/routes";
 import { absoluteUrl, createMetadata } from "@/lib/seo";
 
 type PhoenixService = Extract<
   (typeof services)[number],
   { slug: "phoenix-protocol" }
 >;
+
+type RelatedLink = { label: string; href: SiteRoute };
 
 const service = services.find(
   (item): item is PhoenixService => item.slug === "phoenix-protocol",
@@ -46,7 +49,7 @@ const relatedLinks = [
   { label: "Backlog Kill Kit", href: "/products/backlog-kill-kit" },
   { label: "AESOP Strategy & Governance", href: "/services/aesop-strategy-governance" },
   { label: "AI, Automation & Analytics", href: "/services/ai-automation-analytics" },
-] as const;
+] as const satisfies readonly RelatedLink[];
 
 export default function PhoenixProtocolPage() {
   return (
