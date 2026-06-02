@@ -1,3 +1,3 @@
 export default function HomePage() {
-  return <main>Dan Feliciano site rebuild</main>;
+  return <main id="main-content">Dan Feliciano site rebuild</main>;
 }
