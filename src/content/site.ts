@@ -47,7 +47,7 @@ export const site = {
 
 export const navItems: LinkItem[] = [
   { label: "Home", href: "/" },
-  { label: "Strategic Forensics", href: "/services" },
+  { label: "Strategic Forensics", href: "/strategic-forensics" },
   { label: "AI + Operations", href: "/services/ai-automation-analytics" },
   { label: "Policy Impact", href: "/products/policy-forensics" },
   { label: "Backlog Kill", href: "/products/backlog-kill-kit" },

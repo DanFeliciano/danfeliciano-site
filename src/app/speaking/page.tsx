@@ -37,7 +37,7 @@ const formats = [
 ];
 
 const relatedLinks = [
-  { label: "Strategic Forensics", href: "/services" },
+  { label: "Strategic Forensics", href: "/strategic-forensics" },
   { label: "AI + Operations", href: "/services/ai-automation-analytics" },
   { label: "Policy Impact", href: "/products/policy-forensics" },
 ] as const satisfies readonly RelatedLink[];

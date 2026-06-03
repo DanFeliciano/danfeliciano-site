@@ -52,7 +52,7 @@ const recoverySteps = [
 
 const relatedLinks = [
   { label: "Backlog Kill Diagnostic", href: "/products/backlog-kill-kit" },
-  { label: "Strategic Forensics", href: "/services/aesop-strategy-governance" },
+  { label: "Strategic Forensics", href: "/strategic-forensics" },
   { label: "AI + Operations", href: "/services/ai-automation-analytics" },
 ] as const satisfies readonly RelatedLink[];
 

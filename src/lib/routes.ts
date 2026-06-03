@@ -1,5 +1,6 @@
 export const requiredRoutes = [
   "/",
+  "/strategic-forensics",
   "/services",
   "/services/aesop-strategy-governance",
   "/services/phoenix-protocol",

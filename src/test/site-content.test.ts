@@ -54,6 +54,7 @@ describe("site content", () => {
   it("includes every required route", () => {
     expect(requiredRoutes).toEqual([
       "/",
+      "/strategic-forensics",
       "/services",
       "/services/aesop-strategy-governance",
       "/services/phoenix-protocol",
@@ -130,6 +131,9 @@ describe("site content", () => {
     );
     expect(navItems.map((item) => item.label)).toContain("Strategic Forensics");
     expect(navItems.map((item) => item.label)).toContain("Policy Impact");
+    expect(
+      navItems.find((item) => item.label === "Strategic Forensics")?.href,
+    ).toBe("/strategic-forensics");
   });
 
   it("rejects external canonical URL inputs", () => {

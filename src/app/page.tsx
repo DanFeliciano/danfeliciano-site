@@ -32,7 +32,7 @@ const coreServices: OfferCardData[] = [
     title: "Strategic Forensics",
     summary:
       "Decision-grade analysis for leaders who need to understand the hidden risks, tradeoffs, and consequences inside complex choices.",
-    href: "/services",
+    href: "/strategic-forensics",
     cta: "Explore Strategic Forensics",
     meta: "Best for expensive decisions with unclear assumptions, weak data, or public consequences.",
   },

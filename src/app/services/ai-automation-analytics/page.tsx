@@ -58,7 +58,7 @@ const automationSteps = [
 
 const relatedLinks = [
   { label: "Policy Impact", href: "/products/policy-forensics" },
-  { label: "Strategic Forensics", href: "/services/aesop-strategy-governance" },
+  { label: "Strategic Forensics", href: "/strategic-forensics" },
   { label: "Academy", href: "/academy" },
 ] as const satisfies readonly RelatedLink[];
 
