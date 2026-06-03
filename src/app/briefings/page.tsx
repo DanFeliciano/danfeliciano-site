@@ -112,6 +112,29 @@ export default function BriefingsPage() {
         </div>
       </Section>
 
+      <Section className="bg-white text-charcoal">
+        <div className="grid gap-8 lg:grid-cols-2">
+          <div className="rounded-lg border border-slate-200 bg-paper p-6 shadow-command">
+            <h2 className="text-2xl font-black">Why usual briefings fail</h2>
+            <p className="mt-4 text-base leading-7 text-slate-600">
+              Topic presentations explain the issue. Strategic Forensics
+              Briefings pressure-test what the issue means in front of the
+              room: weak assumptions, financial exposure, operational
+              consequences, policy impact, AI misuse, and the next questions
+              leaders should ask.
+            </p>
+          </div>
+          <div className="rounded-lg border border-slate-200 bg-paper p-6 shadow-command">
+            <h2 className="text-2xl font-black">What Dan does</h2>
+            <p className="mt-4 text-base leading-7 text-slate-600">
+              Dan turns a complex issue into plain-English consequences,
+              tradeoffs, risks, and next actions so the audience leaves with a
+              sharper decision frame, not a motivational talk.
+            </p>
+          </div>
+        </div>
+      </Section>
+
       <Section className="bg-graphite text-white">
         <div className="grid gap-8 lg:grid-cols-[0.75fr_1.25fr]">
           <div>

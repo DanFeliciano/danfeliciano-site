@@ -76,6 +76,28 @@ export default function AesopStrategyGovernancePage() {
         </div>
       </Section>
 
+      <Section className="bg-white text-charcoal">
+        <div className="grid gap-8 lg:grid-cols-2">
+          <div className="rounded-lg border border-slate-200 bg-paper p-6 shadow-command">
+            <h2 className="text-2xl font-black">Why usual approaches fail</h2>
+            <p className="mt-4 text-base leading-7 text-slate-600">
+              Standard strategy work often accepts the official story too
+              quickly. The risk is usually in what the story leaves out:
+              budget gimmicks, weak data, operating constraints, incentives,
+              AI exposure, and execution gaps.
+            </p>
+          </div>
+          <div className="rounded-lg border border-slate-200 bg-paper p-6 shadow-command">
+            <h2 className="text-2xl font-black">What Dan does</h2>
+            <p className="mt-4 text-base leading-7 text-slate-600">
+              Dan examines the decision, money, workflow, policy context,
+              stakeholder consequences, and controls so leaders know what is
+              hiding before they commit resources or credibility.
+            </p>
+          </div>
+        </div>
+      </Section>
+
       <Section className="bg-graphite text-white">
         <div className="max-w-3xl">
           <h2 className="text-balance text-3xl font-black tracking-normal sm:text-4xl">

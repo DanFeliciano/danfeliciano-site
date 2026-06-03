@@ -41,7 +41,7 @@ const relatedLinks = [
   { label: "Academy overview", href: "/academy" },
   { label: "Yellow Belt", href: "/academy/lean-six-sigma-ai-yellow-belt" },
   { label: "Black Belt", href: "/academy/lean-six-sigma-ai-black-belt" },
-  { label: "Phoenix Protocol", href: "/services/phoenix-protocol" },
+  { label: "Backlog Kill", href: "/backlog-kill" },
 ] as const satisfies readonly RelatedLink[];
 
 export default function GreenBeltCoursePage() {
@@ -58,12 +58,13 @@ export default function GreenBeltCoursePage() {
         <div className="grid gap-8 lg:grid-cols-[0.75fr_1.25fr]">
           <div>
             <h2 className="text-balance text-3xl font-black tracking-normal sm:text-4xl">
-              Course snapshot
+              Project work with operating consequences
             </h2>
             <p className="mt-4 text-base leading-7 text-slate-600">
               Green Belt prepares project leaders to apply DMAIC to real
-              operating problems, use practical data analysis, engage
-              stakeholders, and use AI to accelerate improvement work.
+              operating problems, test the data, expose root causes, manage
+              stakeholder pressure, and use AI without letting the tool outrun
+              the workflow.
             </p>
           </div>
           <div className="rounded-lg border border-slate-200 bg-white p-5 shadow-command">
@@ -124,10 +125,10 @@ export default function GreenBeltCoursePage() {
       </Section>
 
       <FinalCTA
-        body="Equip project leaders with Lean Six Sigma + AI methods for measurable operating improvement."
+        body="Equip project leaders with Lean Six Sigma + AI methods for weak data, root causes, bottlenecks, and measurable operating consequences."
         cta={course.cta}
         href="/contact"
-        title="Ready to build Green Belt capability?"
+        title="Ready to build Green Belt diagnostic capability?"
       />
       <JsonLd
         data={[

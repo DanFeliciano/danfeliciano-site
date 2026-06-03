@@ -13,7 +13,7 @@ type RelatedLink = { label: string; href: SiteRoute };
 export const metadata = createMetadata({
   title: "Terms | Dan Feliciano",
   description:
-    "Plain-language terms for Dan Feliciano's website, informational content, advisory and training agreements, outcomes, intellectual property, and contact details.",
+    "Plain-language terms for Dan Feliciano's website, informational content, Strategic Forensics and training agreements, outcomes, intellectual property, and contact details.",
   path: "/terms",
 });
 
@@ -29,9 +29,9 @@ const termsItems = [
       "Operational results depend on context, data quality, leadership decisions, implementation discipline, and many conditions outside the website's control. No specific outcome is guaranteed by reading or using this site.",
   },
   {
-    title: "Advisory and training agreements",
+    title: "Strategic Forensics and training agreements",
     body:
-      "Consulting, advisory, training, speaking, productized diagnostics, and related work are subject to separate written agreement, scope, pricing, and terms.",
+      "Strategic Forensics, diagnostics, training, briefings, speaking, and related work are subject to separate written agreement, scope, pricing, and terms.",
   },
   {
     title: "Intellectual property",
@@ -54,11 +54,11 @@ export default function TermsPage() {
   return (
     <main id="main-content">
       <PageHeader
-        subhead="Plain-language terms for website content, advisory and training work, outcomes, intellectual property, and contact questions."
+        subhead="Plain-language terms for website content, Strategic Forensics work, diagnostics, training, outcomes, intellectual property, and contact questions."
         title="Terms"
       >
         <CtaButton href="/contact" variant="secondary">
-          Contact with questions
+          Send a Terms Question
         </CtaButton>
       </PageHeader>
 
@@ -103,7 +103,7 @@ export default function TermsPage() {
       </Section>
 
       <FinalCTA
-        body="For scope, terms, and fit for advisory, training, speaking, or productized work, start with a focused inquiry."
+        body="For scope, terms, and fit for Strategic Forensics, diagnostics, training, speaking, or productized work, start with a focused inquiry."
         cta="Start a Conversation"
         href="/contact"
         title="Need terms for a specific engagement?"

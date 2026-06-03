@@ -40,7 +40,7 @@ const breadcrumbs = [
 const relatedLinks = [
   { label: "Academy overview", href: "/academy" },
   { label: "Green Belt", href: "/academy/lean-six-sigma-ai-green-belt" },
-  { label: "AI, Automation & Analytics", href: "/services/ai-automation-analytics" },
+  { label: "AI Process Redesign", href: "/ai-process-redesign" },
 ] as const satisfies readonly RelatedLink[];
 
 export default function YellowBeltCoursePage() {
@@ -57,12 +57,12 @@ export default function YellowBeltCoursePage() {
         <div className="grid gap-8 lg:grid-cols-[0.75fr_1.25fr]">
           <div>
             <h2 className="text-balance text-3xl font-black tracking-normal sm:text-4xl">
-              Course snapshot
+              Operating-risk foundation
             </h2>
             <p className="mt-4 text-base leading-7 text-slate-600">
-              Yellow Belt introduces the improvement language, DMAIC structure,
-              waste identification, and practical AI support teams need before
-              joining or supporting improvement projects.
+              Yellow Belt gives teams a common language for seeing work,
+              spotting waste, questioning weak data, and using AI as support
+              instead of a shortcut around the real problem.
             </p>
           </div>
           <div className="rounded-lg border border-slate-200 bg-white p-5 shadow-command">
@@ -123,10 +123,10 @@ export default function YellowBeltCoursePage() {
       </Section>
 
       <FinalCTA
-        body="Start with foundational Lean Six Sigma + AI skills your team can apply immediately."
+        body="Start with foundational Lean Six Sigma + AI skills your team can apply to weak data, rework, bottlenecks, and operating risk."
         cta={course.cta}
         href="/contact"
-        title="Ready to build Yellow Belt capability?"
+        title="Ready to build Yellow Belt diagnostic capability?"
       />
       <JsonLd
         data={[

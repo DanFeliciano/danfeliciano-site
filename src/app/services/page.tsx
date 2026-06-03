@@ -131,7 +131,7 @@ export default function ServicesPage() {
       <Section className="bg-white text-charcoal">
         <div className="max-w-3xl">
           <h2 className="text-balance text-3xl font-black tracking-normal sm:text-4xl">
-            Advisory offers
+            Strategic Forensics paths
           </h2>
           <p className="mt-4 text-base leading-7 text-slate-600">
             Start with the decision, risk, or operating failure that needs a

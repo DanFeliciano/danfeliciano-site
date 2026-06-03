@@ -88,14 +88,43 @@ export default function AiAutomationAnalyticsPage() {
             </p>
           </div>
           <div className="rounded-lg border border-slate-200 bg-white p-5 shadow-command">
-            <h2 className="text-xl font-black">Use cases</h2>
-            <ul className="mt-4 grid gap-3 md:grid-cols-2">
+            <h2 className="text-xl font-black">Who this is for</h2>
+            <p className="mt-3 text-sm leading-6 text-slate-600">
+              For leaders who suspect AI could help, but first need to know
+              whether the workflow, data, controls, and decision points are
+              ready.
+            </p>
+            <p className="mt-4 text-xs font-black uppercase tracking-[0.12em] text-slate-500">
+              Operating problems reviewed
+            </p>
+            <ul className="mt-3 grid gap-3 md:grid-cols-2">
               {service.useCases?.map((useCase) => (
                 <li className="border-l-2 border-signal pl-4 text-sm leading-6 text-slate-700" key={useCase}>
                   {useCase}
                 </li>
               ))}
             </ul>
+          </div>
+        </div>
+      </Section>
+
+      <Section className="bg-white text-charcoal">
+        <div className="grid gap-8 lg:grid-cols-2">
+          <div className="rounded-lg border border-slate-200 bg-paper p-6 shadow-command">
+            <h2 className="text-2xl font-black">Why usual approaches fail</h2>
+            <p className="mt-4 text-base leading-7 text-slate-600">
+              AI roadmaps built around software selection miss the operating
+              question. If the workflow, data, risk controls, and decision
+              points are not mapped, the tool can automate confusion.
+            </p>
+          </div>
+          <div className="rounded-lg border border-slate-200 bg-paper p-6 shadow-command">
+            <h2 className="text-2xl font-black">What Dan does</h2>
+            <p className="mt-4 text-base leading-7 text-slate-600">
+              Dan identifies where AI can improve decisions, reduce rework,
+              shorten cycle time, improve quality, or strengthen accountability
+              without speeding up broken work.
+            </p>
           </div>
         </div>
       </Section>

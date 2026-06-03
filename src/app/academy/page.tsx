@@ -9,9 +9,9 @@ import { courses } from "@/content/site";
 import { academyCourseItemListJsonLd, createMetadata } from "@/lib/seo";
 
 export const metadata = createMetadata({
-  title: "Academy | Process Improvement and AI Operations Training | Dan Feliciano",
+  title: "Academy | Operational Risk and AI-Aware Training | Dan Feliciano",
   description:
-    "Explore Dan Feliciano Academy training in process improvement, AI-aware operations, decision discipline, and Lean Six Sigma methods.",
+    "Explore Dan Feliciano Academy training in operational risk, weak data, AI-aware work redesign, decision discipline, and Lean Six Sigma methods.",
   path: "/academy",
 });
 
@@ -19,17 +19,17 @@ const corporateTrainingSteps = [
   {
     title: "Align training to the work",
     description:
-      "Focus examples, exercises, and projects on the operating problems your teams need to solve.",
+      "Use the team's real workflows, weak data, handoffs, backlogs, and decision points as the training ground.",
   },
   {
-    title: "Build practical capability",
+    title: "Build diagnostic capability",
     description:
-      "Teach Lean Six Sigma, DMAIC, analytics, and AI assistance through usable templates and real scenarios.",
+      "Teach DMAIC, analytics, AI assistance, root-cause discipline, and risk framing through usable templates and real scenarios.",
   },
   {
     title: "Connect learning to execution",
     description:
-      "Tie training to projects, governance, coaching, and measurable improvement after the classroom.",
+      "Tie training to project choices, governance, ownership, controls, and measurable operating consequences after the classroom.",
   },
 ];
 
@@ -37,15 +37,15 @@ export default function AcademyPage() {
   return (
     <main id="main-content">
       <PageHeader
-        subhead="Training for professionals, managers, analysts, and organizations that need process improvement capability grounded in modern AI-aware operating reality."
+        subhead="Training for professionals, managers, analysts, and teams that need to spot weak data, process failure, AI misuse, and execution risk inside real work."
         title="Dan Feliciano Academy"
       >
         <div className="flex flex-col gap-3 sm:flex-row">
           <CtaButton className="w-full sm:w-auto" href="/contact">
-            Ask about corporate training
+            Ask about Academy training
           </CtaButton>
-          <CtaButton className="w-full sm:w-auto" href="/services" variant="secondary">
-            Explore Advisory Services
+          <CtaButton className="w-full sm:w-auto" href="/strategic-forensics" variant="secondary">
+            Explore Strategic Forensics
           </CtaButton>
         </div>
       </PageHeader>
@@ -54,13 +54,13 @@ export default function AcademyPage() {
         <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr]">
           <div>
             <h2 className="text-balance text-3xl font-black tracking-normal sm:text-4xl">
-              Improvement training for AI-aware operations
+              Training for people who have to fix real operating risk
             </h2>
             <p className="mt-4 text-base leading-7 text-slate-600">
-              The Academy connects practical process-improvement discipline
-              with AI-aware operations, helping teams see work clearly, improve
-              flow, analyze problems, document decisions, and lead projects
-              with confidence.
+              The Academy connects Lean Six Sigma discipline with Strategic
+              Forensics: see how work actually moves, test data before trusting
+              it, separate symptoms from root causes, and use AI without
+              automating broken work.
             </p>
           </div>
           <div className="grid gap-3">
@@ -83,7 +83,7 @@ export default function AcademyPage() {
           </h2>
           <p className="mt-4 text-base leading-7 text-slate-600">
             Choose a belt level based on role, project responsibility, and the
-            improvement capability your team needs to build.
+            operating-risk capability your team needs to build.
           </p>
         </div>
         <div className="mt-8 grid gap-4 md:grid-cols-3">
@@ -108,9 +108,9 @@ export default function AcademyPage() {
             Corporate training
           </h2>
           <p className="mt-4 text-base leading-7 text-slate-300">
-            Training can be delivered for intact teams, leadership cohorts, or
-            transformation groups that need a shared language for improvement,
-            analytics, AI assistance, risk, and execution.
+            Training can be delivered for intact teams, managers, analysts, or
+            operating groups that need a shared language for weak data,
+            bottlenecks, AI use, risk, accountability, and execution.
           </p>
         </div>
         <div className="mt-8">
@@ -119,10 +119,10 @@ export default function AcademyPage() {
       </Section>
 
       <FinalCTA
-        body="Build a training path that gives your people the methods, templates, and operating confidence to improve real work."
+        body="Build a training path that gives your people the methods, templates, and discipline to find weak data, broken flow, and execution risk in real work."
         cta="Ask about Academy training"
         href="/contact"
-        title="Ready to build improvement capability?"
+        title="Ready to build diagnostic operating capability?"
       />
       <JsonLd data={academyCourseItemListJsonLd(courses)} />
     </main>

@@ -139,6 +139,29 @@ export default function AiProcessRedesignPage() {
         </div>
       </Section>
 
+      <Section className="bg-paper text-charcoal">
+        <div className="grid gap-8 lg:grid-cols-2">
+          <div className="rounded-lg border border-slate-200 bg-white p-6 shadow-command">
+            <h2 className="text-2xl font-black">Why usual approaches fail</h2>
+            <p className="mt-4 text-base leading-7 text-slate-600">
+              Tool demos, prompt training, and isolated pilots can make AI look
+              active while the workflow remains broken. If the data is weak,
+              handoffs are unclear, or decision rights are unmanaged, AI
+              usually speeds up the confusion.
+            </p>
+          </div>
+          <div className="rounded-lg border border-slate-200 bg-white p-6 shadow-command">
+            <h2 className="text-2xl font-black">What Dan does</h2>
+            <p className="mt-4 text-base leading-7 text-slate-600">
+              Dan maps the work, decision points, data quality, risk controls,
+              automation candidates, and AI already happening inside the
+              organization so leaders can see what is ready, risky, or
+              misdiagnosed.
+            </p>
+          </div>
+        </div>
+      </Section>
+
       <Section className="bg-graphite text-white">
         <div className="grid gap-8 lg:grid-cols-[0.75fr_1.25fr]">
           <div>

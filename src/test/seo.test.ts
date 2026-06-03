@@ -15,7 +15,7 @@ describe("seo helpers", () => {
   it("creates metadata with canonical and open graph URL", () => {
     const metadata = createMetadata({
       title: "Services | Dan Feliciano",
-      description: "Explore advisory services.",
+      description: "Explore Strategic Forensics services.",
       path: "/services",
     });
 
@@ -28,7 +28,7 @@ describe("seo helpers", () => {
     expect(metadata.twitter).toMatchObject({
       card: "summary_large_image",
       title: "Services | Dan Feliciano",
-      description: "Explore advisory services.",
+      description: "Explore Strategic Forensics services.",
     });
     expect(metadata.robots).toEqual({
       index: true,

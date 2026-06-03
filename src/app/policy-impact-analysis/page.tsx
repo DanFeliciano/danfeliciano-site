@@ -127,6 +127,27 @@ export default function PolicyImpactAnalysisPage() {
         </div>
       </Section>
 
+      <Section className="bg-white text-charcoal">
+        <div className="grid gap-8 lg:grid-cols-2">
+          <div className="rounded-lg border border-slate-200 bg-paper p-6 shadow-command">
+            <h2 className="text-2xl font-black">Why usual approaches fail</h2>
+            <p className="mt-4 text-base leading-7 text-slate-600">
+              Talking points, fiscal notes, and partisan summaries usually
+              miss the work a policy creates: who administers it, who pays, who
+              absorbs compliance burden, and where accountability breaks.
+            </p>
+          </div>
+          <div className="rounded-lg border border-slate-200 bg-paper p-6 shadow-command">
+            <h2 className="text-2xl font-black">What Dan does</h2>
+            <p className="mt-4 text-base leading-7 text-slate-600">
+              Dan translates the bill, budget, regulation, or public decision
+              into operational consequences, financial exposure, compliance
+              pressure, weak assumptions, and taxpayer or stakeholder impact.
+            </p>
+          </div>
+        </div>
+      </Section>
+
       <Section className="bg-graphite text-white">
         <div className="grid gap-8 lg:grid-cols-[0.75fr_1.25fr]">
           <div>

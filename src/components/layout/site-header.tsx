@@ -35,7 +35,7 @@ export function SiteHeader() {
           </nav>
 
           <div className="hidden xl:block">
-            <CtaButton href="/contact">Book Briefing</CtaButton>
+            <CtaButton href="/contact">Book a Briefing</CtaButton>
           </div>
 
           <MobileNav />

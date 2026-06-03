@@ -26,7 +26,7 @@ const privacyItems = [
   {
     title: "How inquiry information is used",
     body:
-      "Inquiry information is used to understand your request, respond to you, prepare for a conversation, and manage potential advisory, training, speaking, or productized-service work.",
+      "Inquiry information is used to understand your request, respond to you, prepare for a conversation, and manage potential Strategic Forensics, diagnostic, training, briefing, or related work.",
   },
   {
     title: "No sale of personal information",
@@ -53,7 +53,7 @@ export default function PrivacyPage() {
         title="Privacy Policy"
       >
         <CtaButton href="/contact" variant="secondary">
-          Contact for privacy questions
+          Send a Privacy Question
         </CtaButton>
       </PageHeader>
 

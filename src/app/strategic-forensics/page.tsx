@@ -55,6 +55,15 @@ const deliverables = [
   "Recommended next actions",
 ] as const;
 
+const buyers = [
+  "Business owners and executives",
+  "Public-sector and municipal leaders",
+  "Boards and nonprofit leaders",
+  "Associations and chambers",
+  "Candidates and policymakers",
+  "Advocacy groups and civic organizations",
+] as const;
+
 function BulletGrid({ items }: { items: readonly string[] }) {
   return (
     <ul className="grid gap-3 sm:grid-cols-2">
@@ -91,7 +100,7 @@ export default function StrategicForensicsPage() {
         <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
           <div>
             <h2 className="text-balance text-3xl font-black tracking-normal sm:text-4xl">
-              Not generic consulting. A forensic read on the decision.
+              A forensic read on the decision.
             </h2>
             <p className="mt-4 text-base leading-7 text-slate-600">
               Strategic Forensics is Dan Feliciano&apos;s method for examining
@@ -108,6 +117,28 @@ export default function StrategicForensicsPage() {
               When the official story is incomplete, the data is weak, the
               decision is expensive, or the system is failing, Strategic
               Forensics looks underneath the surface.
+            </p>
+          </div>
+        </div>
+      </Section>
+
+      <Section className="bg-white text-charcoal">
+        <div className="grid gap-8 lg:grid-cols-2">
+          <div className="rounded-lg border border-slate-200 bg-paper p-6 shadow-command">
+            <h2 className="text-2xl font-black">Why usual approaches fail</h2>
+            <p className="mt-4 text-base leading-7 text-slate-600">
+              Ordinary strategy work often starts with the official problem
+              statement. Strategic Forensics starts where the risk hides: weak
+              assumptions, missing data, fiscal exposure, execution gaps, and
+              consequences no one owns yet.
+            </p>
+          </div>
+          <div className="rounded-lg border border-slate-200 bg-paper p-6 shadow-command">
+            <h2 className="text-2xl font-black">What Dan does</h2>
+            <p className="mt-4 text-base leading-7 text-slate-600">
+              Dan pressure-tests the claim, the data, the money, the workflow,
+              the incentives, the AI exposure, and the stakeholder impact so
+              leaders can see what the decision really requires.
             </p>
           </div>
         </div>
@@ -153,6 +184,22 @@ export default function StrategicForensicsPage() {
       </Section>
 
       <Section className="bg-paper text-charcoal">
+        <div className="grid gap-8 lg:grid-cols-[0.75fr_1.25fr]">
+          <div>
+            <h2 className="text-balance text-3xl font-black tracking-normal sm:text-4xl">
+              Who this is for
+            </h2>
+            <p className="mt-4 text-base leading-7 text-slate-600">
+              For leaders who need to understand risk, cost, operations,
+              policy, AI, and stakeholder consequences before the expensive
+              decision hardens.
+            </p>
+          </div>
+          <BulletGrid items={buyers} />
+        </div>
+      </Section>
+
+      <Section className="bg-white text-charcoal">
         <div className="grid gap-8 lg:grid-cols-[0.75fr_1.25fr]">
           <div>
             <h2 className="text-balance text-3xl font-black tracking-normal sm:text-4xl">

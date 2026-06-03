@@ -17,7 +17,7 @@ const credibilityPoints = [
   "GE-certified Master Black Belt.",
   "Dartmouth Lean Six Sigma instructor background.",
   "AI, automation, analytics, and process redesign experience.",
-  "Public and private sector advisory experience.",
+  "Public and private sector work involving policy, operations, budgets, and execution risk.",
   "Policy and fiscal analysis for decisions with taxpayer, customer, or stakeholder impact.",
   "Media experience used as proof of clear communication for public, executive, and civic audiences.",
 ] as const;

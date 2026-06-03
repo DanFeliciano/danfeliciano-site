@@ -206,4 +206,16 @@ describe("site content", () => {
 
     expect(output.trim()).toBe("");
   });
+
+  it("keeps generic consultant language out of deployed source", () => {
+    const forbidden =
+      "(?i)unlock potential|empower transformation|innovative solutions|trusted partner|cutting-edge|comprehensive solutions|tailored solutions|helping organizations thrive|drive success|transform your business|synergy|next-level|contact us|learn more|get started|discover solutions";
+    const output = rgNoMatches(forbidden, [
+      "src/app",
+      "src/components",
+      "src/content",
+    ]);
+
+    expect(output.trim()).toBe("");
+  });
 });

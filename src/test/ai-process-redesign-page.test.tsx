@@ -5,7 +5,7 @@ import AiProcessRedesignPage, {
 } from "@/app/ai-process-redesign/page";
 
 describe("AI Process Redesign Diagnostic page", () => {
-  it("frames AI as work redesign instead of software shopping", () => {
+  it("frames AI as work redesign instead of tool selection", () => {
     render(<AiProcessRedesignPage />);
 
     expect(

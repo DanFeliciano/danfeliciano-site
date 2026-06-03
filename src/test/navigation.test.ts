@@ -25,7 +25,7 @@ describe("navigation", () => {
     render(createElement(SiteHeader));
 
     const diagnosticLinks = screen.getAllByRole("link", {
-      name: "Book Briefing",
+      name: "Book a Briefing",
     });
 
     expect(diagnosticLinks.length).toBeGreaterThan(0);
@@ -69,7 +69,7 @@ describe("navigation", () => {
     }
 
     const diagnosticLink = screen.getByRole("link", {
-      name: "Book Briefing",
+      name: "Book a Briefing",
     });
 
     expect(

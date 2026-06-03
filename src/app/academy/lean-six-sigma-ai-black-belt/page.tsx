@@ -40,8 +40,8 @@ const breadcrumbs = [
 const relatedLinks = [
   { label: "Academy overview", href: "/academy" },
   { label: "Green Belt", href: "/academy/lean-six-sigma-ai-green-belt" },
-  { label: "AESOP Strategy & Governance", href: "/services/aesop-strategy-governance" },
-  { label: "AI, Automation & Analytics", href: "/services/ai-automation-analytics" },
+  { label: "Strategic Forensics", href: "/strategic-forensics" },
+  { label: "AI Process Redesign", href: "/ai-process-redesign" },
 ] as const satisfies readonly RelatedLink[];
 
 export default function BlackBeltCoursePage() {
@@ -58,12 +58,13 @@ export default function BlackBeltCoursePage() {
         <div className="grid gap-8 lg:grid-cols-[0.75fr_1.25fr]">
           <div>
             <h2 className="text-balance text-3xl font-black tracking-normal sm:text-4xl">
-              Course snapshot
+              Advanced execution-risk capability
             </h2>
             <p className="mt-4 text-base leading-7 text-slate-600">
-              Black Belt develops advanced improvement leaders who can manage
-              complex projects, mentor teams, connect Lean Six Sigma to AI and
-              analytics, and build transformation governance.
+              Black Belt develops advanced operators who can manage complex
+              projects, mentor teams, challenge weak data, connect Lean Six
+              Sigma to AI and analytics, and build governance that keeps risk
+              from drifting back underground.
             </p>
           </div>
           <div className="rounded-lg border border-slate-200 bg-white p-5 shadow-command">
@@ -124,10 +125,10 @@ export default function BlackBeltCoursePage() {
       </Section>
 
       <FinalCTA
-        body="Prepare advanced improvement leaders to guide complex transformation with Lean Six Sigma + AI."
+        body="Prepare advanced improvement leaders to expose weak data, process failure, execution risk, and AI misuse with Lean Six Sigma + AI."
         cta={course.cta}
         href="/contact"
-        title="Ready to build Black Belt capability?"
+        title="Ready to build Black Belt diagnostic capability?"
       />
       <JsonLd
         data={[

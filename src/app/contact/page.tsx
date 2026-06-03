@@ -14,7 +14,7 @@ type RelatedLink = { label: string; href: SiteRoute };
 export const metadata = createMetadata({
   title: "Contact | Start a Conversation | Dan Feliciano",
   description:
-    "Contact Dan Feliciano to request a Strategic Forensics Briefing, AI Process Redesign Diagnostic, Policy Impact Analysis, Backlog Kill review, or advisory support.",
+    "Contact Dan Feliciano to request a Strategic Forensics Briefing, AI Process Redesign Diagnostic, Policy Impact Analysis, Backlog Kill review, or decision-risk support.",
   path: "/contact",
 });
 
@@ -30,7 +30,7 @@ export default function ContactPage() {
   return (
     <main id="main-content">
       <PageHeader
-        subhead="Use this page to request a Strategic Forensics Briefing, discuss an AI Process Redesign Diagnostic, request Policy Impact Analysis, diagnose a backlog, or explore advisory support."
+        subhead="Use this page to request a Strategic Forensics Briefing, discuss an AI Process Redesign Diagnostic, request Policy Impact Analysis, diagnose a backlog, or examine a decision-risk issue."
         title="Start with the decision, system, policy, backlog, or AI challenge you need to understand."
       >
         <CtaButton href="/strategic-forensics" variant="secondary">

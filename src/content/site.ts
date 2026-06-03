@@ -270,13 +270,13 @@ export const products = [
     title: "Dan Feliciano Academy",
     href: "/academy",
     summary:
-      "Training in process improvement, AI-aware operations, and decision discipline for teams that need practical capability.",
+      "Training for teams that need to see weak data, broken flow, AI misuse, and execution risk inside real work.",
     metadata: {
-      title: "Dan Feliciano Academy | Process Improvement and AI Operations Training",
+      title: "Dan Feliciano Academy | Operational Risk and AI-Aware Training",
       description:
-        "Training in process improvement, AI-aware operations, and decision discipline through Dan Feliciano Academy.",
+        "Training in operational risk, weak data, AI-aware work redesign, decision discipline, and Lean Six Sigma methods through Dan Feliciano Academy.",
     },
-    cta: "Explore Academy",
+    cta: "Ask about Academy training",
   },
 ] as const satisfies readonly Offer[];
 
@@ -287,11 +287,11 @@ export const courses = [
     duration: "8 hours",
     durationIso: "PT8H",
     summary:
-      "Foundational Lean Six Sigma, DMAIC, waste, process thinking, and AI-assisted improvement basics.",
+      "Foundational DMAIC, waste, weak-data awareness, process visibility, and practical AI support for teams that need a common operating language.",
     metadata: {
       title: "Lean Six Sigma + AI Yellow Belt | Dan Feliciano Academy",
       description:
-        "Learn Lean Six Sigma foundations, DMAIC, waste reduction, process thinking, and AI-assisted improvement basics.",
+        "Build foundational Lean Six Sigma, DMAIC, weak-data, process-visibility, and AI-assisted problem-framing skills.",
     },
     objectives: [
       "Understand Lean Six Sigma principles",
@@ -318,11 +318,11 @@ export const courses = [
     duration: "40 hours",
     durationIso: "PT40H",
     summary:
-      "Project leadership, data analysis, root cause, process improvement, stakeholder engagement, and AI-supported DMAIC execution.",
+      "Applied DMAIC, root-cause analysis, data quality, stakeholder pressure, and AI-supported execution for real operating problems.",
     metadata: {
       title: "Lean Six Sigma + AI Green Belt | Dan Feliciano Academy",
       description:
-        "Lead improvement projects with Lean Six Sigma, data analysis, root-cause methods, stakeholder engagement, and AI-supported DMAIC execution.",
+        "Lead operating-risk projects with Lean Six Sigma, data analysis, root-cause methods, stakeholder clarity, and AI-supported DMAIC execution.",
     },
     objectives: [
       "Lead Lean Six Sigma improvement projects",
@@ -351,17 +351,17 @@ export const courses = [
     duration: "80 hours",
     durationIso: "PT80H",
     summary:
-      "Advanced improvement leadership, statistical thinking, complex project execution, mentoring, change leadership, and AI-enabled transformation.",
+      "Advanced DMAIC, statistical thinking, complex execution, mentoring, governance, and AI-aware operating control.",
     metadata: {
       title: "Lean Six Sigma + AI Black Belt | Dan Feliciano Academy",
       description:
-        "Advanced Lean Six Sigma + AI training for complex project leaders, mentors, transformation teams, and operational excellence professionals.",
+        "Advanced Lean Six Sigma + AI training for leaders who need to expose weak data, execution risk, process failure, and operating consequences.",
     },
     objectives: [
       "Lead complex Lean Six Sigma projects",
       "Apply advanced DMAIC methods",
       "Use statistical thinking and hypothesis testing",
-      "Manage cross-functional transformation work",
+      "Manage cross-functional execution risk",
       "Mentor Green Belts and project teams",
       "Build governance and sustainment systems",
       "Connect Lean Six Sigma with AI, automation, analytics, and decision support",
@@ -369,11 +369,11 @@ export const courses = [
     ],
     audience: [
       "Operational excellence leaders",
-      "Transformation leaders",
+      "Operating-risk leaders",
       "Senior project managers",
       "Quality leaders",
       "Black Belt candidates",
-      "Internal consultants",
+      "Internal diagnostic teams",
       "Continuous improvement teams",
     ],
     cta: "Ask about Black Belt training",
@@ -381,20 +381,20 @@ export const courses = [
 ] as const satisfies readonly Course[];
 
 export const caseStudies = [
-  "Healthcare billing transformation",
+  "Healthcare billing risk recovery",
   "Public-sector process recovery",
-  "Software rollout simplification",
+  "Software rollout risk reduction",
   "Manufacturing throughput and cost recovery",
   "Supply-chain and logistics redesign",
   "Executive reporting system",
 ].map((title) => ({
   title,
   challenge:
-    "Complex operating work needed clearer flow, ownership, visibility, and performance discipline.",
+    "Complex operating work hid weak data, unclear ownership, cost exposure, and failure points leaders could not see fast enough.",
   intervention:
-    "Mapped the work, identified constraints, redesigned routines, and strengthened performance management.",
+    "Mapped the work, exposed constraints, separated symptoms from root causes, and turned operating reality into decision evidence.",
   outcomes:
-    "Improved visibility, execution discipline, and decision support using anonymized proof language.",
+    "Improved visibility, execution control, and decision clarity using anonymized proof language.",
 }));
 
 export const speakingTopics = [
