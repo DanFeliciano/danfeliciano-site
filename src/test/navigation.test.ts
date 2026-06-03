@@ -3,8 +3,9 @@ import userEvent from "@testing-library/user-event";
 import { createElement } from "react";
 import { describe, expect, it } from "vitest";
 import { MobileNav } from "@/components/layout/mobile-nav";
+import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
-import { navItems } from "@/content/site";
+import { navItems, socialLinks } from "@/content/site";
 
 describe("navigation", () => {
   it("uses the approved navigation labels", () => {
@@ -101,5 +102,17 @@ describe("navigation", () => {
     await waitFor(() =>
       expect(screen.getByRole("button", { name: "Open navigation" })).toHaveFocus(),
     );
+  });
+
+  it("renders official social links with external-link hygiene", () => {
+    render(createElement(SiteFooter));
+
+    for (const social of socialLinks) {
+      const link = screen.getByRole("link", { name: social.label });
+
+      expect(link).toHaveAttribute("href", social.href);
+      expect(link).toHaveAttribute("target", "_blank");
+      expect(link).toHaveAttribute("rel", "noopener noreferrer");
+    }
   });
 });

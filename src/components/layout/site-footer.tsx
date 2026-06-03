@@ -48,7 +48,7 @@ const footerColumns: { title: string; links: FooterLink[] }[] = [
     title: "Connect",
     links: [
       { label: "Contact", href: "/contact" },
-      { label: "LinkedIn", href: site.linkedIn, external: true },
+      ...site.socialLinks.map((link) => ({ ...link, external: true as const })),
       { label: "Email", href: `mailto:${site.email}`, external: true },
       { label: "Privacy", href: "/privacy" },
       { label: "Terms", href: "/terms" },
@@ -84,7 +84,7 @@ export function SiteFooter() {
                       <a
                         className="transition hover:text-signal"
                         href={item.href}
-                        rel="noreferrer"
+                        rel={item.href.startsWith("mailto:") ? undefined : "noopener noreferrer"}
                         target={item.href.startsWith("mailto:") ? undefined : "_blank"}
                       >
                         {item.label}

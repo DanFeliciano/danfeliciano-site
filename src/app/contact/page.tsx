@@ -58,14 +58,19 @@ export default function ContactPage() {
                 >
                   {site.email}
                 </a>
-                <a
-                  className="text-ink underline decoration-signal decoration-2 underline-offset-4"
-                  href={site.linkedIn}
-                  rel="noreferrer"
-                  target="_blank"
-                >
-                  LinkedIn
-                </a>
+                <div className="flex flex-wrap gap-x-4 gap-y-2">
+                  {site.socialLinks.map((link) => (
+                    <a
+                      className="text-ink underline decoration-signal decoration-2 underline-offset-4"
+                      href={link.href}
+                      key={link.href}
+                      rel="noopener noreferrer"
+                      target="_blank"
+                    >
+                      {link.label}
+                    </a>
+                  ))}
+                </div>
               </div>
             </div>
           </div>

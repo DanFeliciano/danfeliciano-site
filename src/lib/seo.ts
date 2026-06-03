@@ -48,6 +48,8 @@ export function createMetadata({
       card: "summary_large_image",
       title,
       description,
+      creator: "@DanFeliciano",
+      site: "@DanFeliciano",
     },
     robots: {
       index: true,
@@ -63,7 +65,7 @@ export function personJsonLd() {
     name: site.name,
     url: site.url,
     email: site.email,
-    sameAs: [site.linkedIn],
+    sameAs: site.socialLinks.map((link) => link.href),
     knowsAbout: [
       "Strategic Forensics",
       "AI disruption",

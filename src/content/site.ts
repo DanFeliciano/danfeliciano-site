@@ -5,6 +5,21 @@ export type LinkItem = {
   href: SiteRoute;
 };
 
+export type SocialLink = {
+  label: "LinkedIn" | "X" | "Facebook" | "Bluesky";
+  href: string;
+};
+
+export const socialLinks = [
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/danfeliciano/" },
+  { label: "X", href: "https://x.com/DanFeliciano" },
+  { label: "Facebook", href: "https://www.facebook.com/DanFelicianoLLC" },
+  {
+    label: "Bluesky",
+    href: "https://bsky.app/profile/danfeliciano.bsky.social",
+  },
+] as const satisfies readonly SocialLink[];
+
 export type Offer = {
   slug: string;
   title: string;
@@ -42,7 +57,8 @@ export const site = {
   description:
     "Strategic Forensics for leaders facing AI disruption, policy complexity, operational failure, weak data, budgets, backlogs, and financial risk.",
   email: "hello@danfeliciano.com",
-  linkedIn: "https://www.linkedin.com/in/danfeliciano/",
+  linkedIn: socialLinks[0].href,
+  socialLinks,
 };
 
 export const navItems: LinkItem[] = [

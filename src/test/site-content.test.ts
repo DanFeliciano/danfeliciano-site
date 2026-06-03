@@ -9,6 +9,7 @@ import {
   products,
   services,
   site,
+  socialLinks,
 } from "@/content/site";
 import {
   createMetadata,
@@ -40,6 +41,20 @@ describe("site content", () => {
   it("uses Dan Feliciano as the master brand", () => {
     expect(site.name).toBe("Dan Feliciano");
     expect(site.url).toBe("https://danfeliciano.com");
+  });
+
+  it("centralizes official social profile URLs", () => {
+    expect(socialLinks).toEqual([
+      { label: "LinkedIn", href: "https://www.linkedin.com/in/danfeliciano/" },
+      { label: "X", href: "https://x.com/DanFeliciano" },
+      { label: "Facebook", href: "https://www.facebook.com/DanFelicianoLLC" },
+      {
+        label: "Bluesky",
+        href: "https://bsky.app/profile/danfeliciano.bsky.social",
+      },
+    ]);
+    expect(site.socialLinks).toBe(socialLinks);
+    expect(site.linkedIn).toBe("https://www.linkedin.com/in/danfeliciano/");
   });
 
   it("defines all required top-level content groups", () => {
@@ -176,6 +191,7 @@ describe("site content", () => {
       "@type": "Person",
       name: "Dan Feliciano",
       url: "https://danfeliciano.com",
+      sameAs: socialLinks.map((link) => link.href),
     });
 
     expect(professionalServiceJsonLd()).toMatchObject({
