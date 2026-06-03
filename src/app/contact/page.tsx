@@ -20,7 +20,7 @@ export const metadata = createMetadata({
 
 const relatedLinks = [
   { label: "Services", href: "/services" },
-  { label: "Policy Impact", href: "/products/policy-forensics" },
+  { label: "Policy Impact", href: "/policy-impact-analysis" },
   { label: "Backlog Kill", href: "/products/backlog-kill-kit" },
   { label: "Briefings", href: "/speaking" },
 ] as const satisfies readonly RelatedLink[];

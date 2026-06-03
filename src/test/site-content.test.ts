@@ -56,6 +56,7 @@ describe("site content", () => {
       "/",
       "/strategic-forensics",
       "/ai-process-redesign",
+      "/policy-impact-analysis",
       "/services",
       "/services/aesop-strategy-governance",
       "/services/phoenix-protocol",
@@ -137,6 +138,9 @@ describe("site content", () => {
     ).toBe("/strategic-forensics");
     expect(navItems.find((item) => item.label === "AI + Operations")?.href).toBe(
       "/ai-process-redesign",
+    );
+    expect(navItems.find((item) => item.label === "Policy Impact")?.href).toBe(
+      "/policy-impact-analysis",
     );
   });
 

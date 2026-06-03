@@ -50,7 +50,7 @@ const coreServices: OfferCardData[] = [
     title: "Policy Impact Analysis",
     summary:
       "Translate bills, budgets, and regulations into operational, financial, compliance, and taxpayer consequences.",
-    href: "/products/policy-forensics",
+    href: "/policy-impact-analysis",
     cta: "Request policy analysis",
     meta: "Best for public decisions, associations, candidates, and institutions.",
   },

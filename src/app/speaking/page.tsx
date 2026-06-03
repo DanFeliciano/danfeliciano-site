@@ -39,7 +39,7 @@ const formats = [
 const relatedLinks = [
   { label: "Strategic Forensics", href: "/strategic-forensics" },
   { label: "AI + Operations", href: "/ai-process-redesign" },
-  { label: "Policy Impact", href: "/products/policy-forensics" },
+  { label: "Policy Impact", href: "/policy-impact-analysis" },
 ] as const satisfies readonly RelatedLink[];
 
 export default function SpeakingPage() {

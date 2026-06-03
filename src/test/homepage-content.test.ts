@@ -52,6 +52,14 @@ describe("homepage content", () => {
         "https://danfeliciano.com",
       ).pathname,
     ).toBe("/ai-process-redesign");
+    expect(
+      new URL(
+        screen
+          .getByRole("link", { name: "Request policy analysis" })
+          .getAttribute("href") ?? "",
+        "https://danfeliciano.com",
+      ).pathname,
+    ).toBe("/policy-impact-analysis");
 
     for (const heading of [
       "Complex decisions hide expensive risks.",

@@ -57,7 +57,7 @@ const automationSteps = [
 ];
 
 const relatedLinks = [
-  { label: "Policy Impact", href: "/products/policy-forensics" },
+  { label: "Policy Impact", href: "/policy-impact-analysis" },
   { label: "Strategic Forensics", href: "/strategic-forensics" },
   { label: "Academy", href: "/academy" },
 ] as const satisfies readonly RelatedLink[];
