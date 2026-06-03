@@ -12,14 +12,15 @@ import { createMetadata } from "@/lib/seo";
 type RelatedLink = { label: string; href: SiteRoute };
 
 export const metadata = createMetadata({
-  title: "Contact | Book a Strategic Forensics Briefing | Dan Feliciano",
+  title: "Contact | Start a Conversation | Dan Feliciano",
   description:
-    "Contact Dan Feliciano to book a Strategic Forensics briefing for AI disruption, policy complexity, operational failure, weak data, backlogs, budgets, or financial risk.",
+    "Contact Dan Feliciano to request a Strategic Forensics Briefing, AI Process Redesign Diagnostic, Policy Impact Analysis, Backlog Kill review, or advisory support.",
   path: "/contact",
 });
 
 const relatedLinks = [
-  { label: "Services", href: "/services" },
+  { label: "Strategic Forensics", href: "/strategic-forensics" },
+  { label: "AI + Operations", href: "/ai-process-redesign" },
   { label: "Policy Impact", href: "/policy-impact-analysis" },
   { label: "Backlog Kill", href: "/backlog-kill" },
   { label: "Briefings", href: "/briefings" },
@@ -29,11 +30,11 @@ export default function ContactPage() {
   return (
     <main id="main-content">
       <PageHeader
-        subhead="Share the decision, risk, policy question, AI issue, backlog, budget pressure, or operational failure you need to understand."
-        title="Book a Strategic Forensics Briefing"
+        subhead="Use this page to request a Strategic Forensics Briefing, discuss an AI Process Redesign Diagnostic, request Policy Impact Analysis, diagnose a backlog, or explore advisory support."
+        title="Start with the decision, system, policy, backlog, or AI challenge you need to understand."
       >
-        <CtaButton href="/services" variant="secondary">
-          Review services first
+        <CtaButton href="/strategic-forensics" variant="secondary">
+          Review Strategic Forensics
         </CtaButton>
       </PageHeader>
 
@@ -41,13 +42,12 @@ export default function ContactPage() {
         <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr]">
           <div>
             <h2 className="text-balance text-3xl font-black tracking-normal sm:text-4xl">
-              Start with the decision
+              Start with what needs to be understood
             </h2>
             <p className="mt-4 text-base leading-7 text-slate-600">
-              Use the form to describe the decision, hidden risk, weak data,
-              budget issue, policy impact, AI question, backlog, or service
-              failure you want to examine. Dan will use that context to shape a
-              focused first conversation.
+              Describe the decision, system, policy, backlog, AI issue, weak
+              data, budget pressure, or operating failure you need to examine.
+              Dan will use that context to shape a focused first conversation.
             </p>
             <div className="mt-6 rounded-lg border border-slate-200 bg-white p-5">
               <h2 className="text-xl font-black">Contact alternatives</h2>
@@ -89,10 +89,10 @@ export default function ContactPage() {
       </Section>
 
       <FinalCTA
-        body="Not sure which path fits? Review the Strategic Forensics services before sending the inquiry."
-        cta="Explore services"
-        href="/services"
-        title="Want to compare options first?"
+        body="Not sure which path fits? Start with the issue you need to understand and the first conversation can sort the right next step."
+        cta="Explore Strategic Forensics"
+        href="/strategic-forensics"
+        title="Need a clearer frame before you send the inquiry?"
       />
     </main>
   );

@@ -7,38 +7,47 @@ import { createMetadata } from "@/lib/seo";
 export const metadata = createMetadata({
   title: "About | Dan Feliciano",
   description:
-    "Learn how Dan Feliciano brings Strategic Forensics to complex decisions involving AI disruption, policy impact, operational failure, weak data, backlogs, budgets, and financial risk.",
+    "Learn how Dan Feliciano uses Strategic Forensics to find hidden risk across business, government, operations, AI, finance, policy, and complex decisions.",
   path: "/about",
 });
 
 const credibilityPoints = [
-  "Strategic analysis with financial and operational consequences in view.",
-  "Plain-English communication for leaders who need the real tradeoffs.",
-  "AI-aware process thinking without tool-first hype.",
-  "Experience across public-sector, healthcare, finance, service, manufacturing, logistics, and complex operations.",
+  "Strategy and turnaround experience with financial and operational consequences in view.",
+  "Operations and process improvement expertise grounded in how work actually moves.",
+  "GE-certified Master Black Belt.",
+  "Dartmouth Lean Six Sigma instructor background.",
+  "AI, automation, analytics, and process redesign experience.",
+  "Public and private sector advisory experience.",
+  "Policy and fiscal analysis for decisions with taxpayer, customer, or stakeholder impact.",
+  "Media experience used as proof of clear communication for public, executive, and civic audiences.",
 ] as const;
 
 export default function AboutPage() {
   return (
     <main id="main-content">
       <PageHeader
-        subhead="Dan Feliciano helps leaders find what others miss inside complex decisions before hidden risk becomes expensive failure."
+        subhead="Dan Feliciano helps leaders find what others miss inside complex decisions."
         title="About Dan Feliciano"
       >
-        <CtaButton href="/contact">Book a Strategic Forensics Briefing</CtaButton>
+        <CtaButton href="/contact">Start a Conversation</CtaButton>
       </PageHeader>
 
       <Section className="bg-paper text-charcoal">
         <div className="grid gap-8 lg:grid-cols-[0.82fr_1.18fr]">
           <div>
             <h2 className="text-balance text-3xl font-black tracking-normal sm:text-4xl">
-              Blunt analysis for decisions with consequences
+              Forensic analysis for decisions with consequences
             </h2>
             <p className="mt-4 text-base leading-7 text-slate-600">
-              Strategic Forensics combines practical strategy, operational
-              reality, financial scrutiny, policy awareness, AI fluency, and
-              plain-English communication. The point is not to make complexity
-              sound impressive. The point is to make the decision clearer.
+              Dan Feliciano helps leaders find what others miss inside complex
+              decisions. His work combines strategy, operations, financial
+              scrutiny, AI fluency, public-policy analysis, and plain-English
+              communication.
+            </p>
+            <p className="mt-4 text-base leading-7 text-slate-600">
+              Dan&apos;s strength is forensic analysis: exposing hidden
+              assumptions, weak data, broken workflows, fiscal risk, and
+              execution problems before they become expensive failures.
             </p>
           </div>
           <div className="grid gap-3">
@@ -55,10 +64,10 @@ export default function AboutPage() {
       </Section>
 
       <FinalCTA
-        body="Bring the decision, the budget, the policy, the backlog, or the AI question into a focused Strategic Forensics briefing."
+        body="Bring the decision, system, policy, backlog, AI challenge, budget pressure, or operational failure into a focused Strategic Forensics conversation."
         cta="Start a Conversation"
         href="/contact"
-        title="Need a clearer read before the decision gets expensive?"
+        title="Need to understand what is hiding inside the decision?"
       />
     </main>
   );

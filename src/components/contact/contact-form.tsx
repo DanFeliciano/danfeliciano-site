@@ -6,10 +6,9 @@ type FormValues = {
   name: string;
   email: string;
   organization: string;
+  role: string;
   interest: string;
   problem: string;
-  timeline: string;
-  consent: boolean;
 };
 
 type FormErrors = Partial<Record<keyof FormValues, string>>;
@@ -18,27 +17,18 @@ const initialValues: FormValues = {
   name: "",
   email: "",
   organization: "",
-  interest: "Strategic Forensics",
+  role: "",
+  interest: "Strategic Forensics Briefing",
   problem: "",
-  timeline: "Exploring options",
-  consent: false,
 };
 
 const interestOptions = [
-  "Strategic Forensics",
+  "Strategic Forensics Briefing",
   "AI Process Redesign",
   "Policy Impact Analysis",
-  "Backlog Kill",
-  "Strategic Forensics Briefing",
-  "Academy / Training",
+  "Backlog Kill / Service Reimagined",
+  "Speaking / Media",
   "Other",
-];
-
-const timelineOptions = [
-  "Immediately",
-  "30 days",
-  "60-90 days",
-  "Exploring options",
 ];
 
 function validate(values: FormValues) {
@@ -57,10 +47,6 @@ function validate(values: FormValues) {
 
   if (!values.problem.trim()) {
     errors.problem = "Please describe the problem you are trying to solve.";
-  }
-
-  if (!values.consent) {
-    errors.consent = "Please agree to be contacted about your inquiry.";
   }
 
   return errors;
@@ -167,11 +153,26 @@ export function ContactForm() {
         </div>
 
         <div>
+          <label className="text-sm font-black text-charcoal" htmlFor="role">
+            Role
+          </label>
+          <input
+            autoComplete="organization-title"
+            className="mt-2 min-h-11 w-full rounded-md border border-slate-300 bg-white px-3 text-sm text-charcoal transition focus:border-signal"
+            id="role"
+            name="role"
+            onChange={(event) => updateValue("role", event.target.value)}
+            type="text"
+            value={values.role}
+          />
+        </div>
+
+        <div>
           <label
             className="text-sm font-black text-charcoal"
             htmlFor="interest"
           >
-            What are you interested in?
+            Area of interest:
           </label>
           <select
             className="mt-2 min-h-11 w-full rounded-md border border-slate-300 bg-white px-3 text-sm text-charcoal transition focus:border-signal"
@@ -190,7 +191,7 @@ export function ContactForm() {
 
         <div className="md:col-span-2">
           <label className="text-sm font-black text-charcoal" htmlFor="problem">
-            What problem are you trying to solve?
+            What are you trying to solve?
           </label>
           <textarea
             aria-describedby={errors.problem ? "problem-error" : undefined}
@@ -210,51 +211,6 @@ export function ContactForm() {
             </p>
           ) : null}
         </div>
-
-        <div>
-          <label
-            className="text-sm font-black text-charcoal"
-            htmlFor="timeline"
-          >
-            Desired timeline
-          </label>
-          <select
-            className="mt-2 min-h-11 w-full rounded-md border border-slate-300 bg-white px-3 text-sm text-charcoal transition focus:border-signal"
-            id="timeline"
-            name="timeline"
-            onChange={(event) => updateValue("timeline", event.target.value)}
-            value={values.timeline}
-          >
-            {timelineOptions.map((option) => (
-              <option key={option} value={option}>
-                {option}
-              </option>
-            ))}
-          </select>
-        </div>
-
-        <div className="md:col-span-2">
-          <label className="flex gap-3 text-sm font-semibold leading-6 text-slate-700">
-            <input
-              aria-describedby={errors.consent ? "consent-error" : undefined}
-              aria-invalid={errors.consent ? "true" : "false"}
-              checked={values.consent}
-              className="mt-1 size-4 rounded border-slate-300 accent-signal"
-              name="consent"
-              onChange={(event) => updateValue("consent", event.target.checked)}
-              type="checkbox"
-            />
-            <span>I agree to be contacted about my inquiry.</span>
-          </label>
-          {errors.consent ? (
-            <p
-              className="mt-2 text-sm font-semibold text-red-700"
-              id="consent-error"
-            >
-              {errors.consent}
-            </p>
-          ) : null}
-        </div>
       </div>
 
       <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
@@ -262,7 +218,7 @@ export function ContactForm() {
           className="inline-flex min-h-11 items-center justify-center rounded-md bg-ink px-5 text-sm font-bold text-signal transition hover:bg-charcoal"
           type="submit"
         >
-          Send inquiry
+          Start a Conversation
         </button>
         {status ? (
           <p

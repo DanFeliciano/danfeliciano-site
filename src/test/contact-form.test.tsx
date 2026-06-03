@@ -9,13 +9,43 @@ describe("ContactForm", () => {
 
     render(<ContactForm />);
 
-    await user.click(screen.getByRole("button", { name: "Send inquiry" }));
+    await user.click(
+      screen.getByRole("button", { name: "Start a Conversation" }),
+    );
 
     expect(screen.getByText("Name is required.")).toBeInTheDocument();
     expect(screen.getByText("Email is required.")).toBeInTheDocument();
     expect(
-      screen.getByText("Please agree to be contacted about your inquiry."),
+      screen.getByText("Please describe the problem you are trying to solve."),
     ).toBeInTheDocument();
+  });
+
+  it("renders the approved Strategic Forensics contact fields", () => {
+    render(<ContactForm />);
+
+    for (const label of [
+      "Name",
+      "Email",
+      "Organization",
+      "Role",
+      "What are you trying to solve?",
+      "Area of interest:",
+    ]) {
+      expect(screen.getByLabelText(label)).toBeInTheDocument();
+    }
+
+    for (const option of [
+      "Strategic Forensics Briefing",
+      "AI Process Redesign",
+      "Policy Impact Analysis",
+      "Backlog Kill / Service Reimagined",
+      "Speaking / Media",
+      "Other",
+    ]) {
+      expect(screen.getByRole("option", { name: option })).toBeInTheDocument();
+    }
+
+    expect(screen.queryByLabelText("Desired timeline")).not.toBeInTheDocument();
   });
 
   it("shows a success state after valid submission", async () => {
@@ -26,23 +56,19 @@ describe("ContactForm", () => {
     await user.type(screen.getByLabelText("Name"), "Dana Operator");
     await user.type(screen.getByLabelText("Email"), "dana@example.com");
     await user.type(screen.getByLabelText("Organization"), "Example Agency");
+    await user.type(screen.getByLabelText("Role"), "Operations Director");
     await user.selectOptions(
-      screen.getByLabelText("What are you interested in?"),
-      "Academy / Training",
+      screen.getByLabelText("Area of interest:"),
+      "Backlog Kill / Service Reimagined",
     );
     await user.type(
-      screen.getByLabelText("What problem are you trying to solve?"),
+      screen.getByLabelText("What are you trying to solve?"),
       "We need to reduce backlog and improve decision visibility.",
     );
-    await user.selectOptions(
-      screen.getByLabelText("Desired timeline"),
-      "60-90 days",
-    );
-    await user.click(
-      screen.getByLabelText("I agree to be contacted about my inquiry."),
-    );
 
-    await user.click(screen.getByRole("button", { name: "Send inquiry" }));
+    await user.click(
+      screen.getByRole("button", { name: "Start a Conversation" }),
+    );
 
     expect(
       screen.getByText("Thanks. Your request has been received."),
