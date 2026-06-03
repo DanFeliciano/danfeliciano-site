@@ -59,7 +59,7 @@ const coreServices: OfferCardData[] = [
     title: "Service Reimagined / Backlog Kill",
     summary:
       "Diagnose backlogs, bottlenecks, staffing pressure, service delays, and broken workflows before throwing more money at the wrong problem.",
-    href: "/products/backlog-kill-kit",
+    href: "/backlog-kill",
     cta: "Diagnose the backlog",
     meta: "Best when service risk is rising and the cause is still unclear.",
   },

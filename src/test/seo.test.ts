@@ -37,7 +37,7 @@ describe("seo helpers", () => {
   });
 
   it("has at least all required sitemap routes", () => {
-    expect(requiredRoutes.length).toBe(22);
+    expect(requiredRoutes.length).toBe(23);
   });
 
   it("exports full homepage metadata", () => {

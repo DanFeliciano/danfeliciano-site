@@ -18,7 +18,7 @@ export const metadata = createMetadata({
 });
 
 const relatedLinks = [
-  { label: "Backlog Kill", href: "/products/backlog-kill-kit" },
+  { label: "Backlog Kill", href: "/backlog-kill" },
   { label: "Strategic Forensics", href: "/strategic-forensics" },
   { label: "AI + Operations", href: "/ai-process-redesign" },
 ] as const satisfies readonly RelatedLink[];

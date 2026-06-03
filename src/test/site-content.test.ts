@@ -57,6 +57,7 @@ describe("site content", () => {
       "/strategic-forensics",
       "/ai-process-redesign",
       "/policy-impact-analysis",
+      "/backlog-kill",
       "/services",
       "/services/aesop-strategy-governance",
       "/services/phoenix-protocol",
@@ -141,6 +142,9 @@ describe("site content", () => {
     );
     expect(navItems.find((item) => item.label === "Policy Impact")?.href).toBe(
       "/policy-impact-analysis",
+    );
+    expect(navItems.find((item) => item.label === "Backlog Kill")?.href).toBe(
+      "/backlog-kill",
     );
   });
 

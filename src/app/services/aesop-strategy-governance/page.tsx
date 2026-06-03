@@ -35,7 +35,7 @@ const breadcrumbs = [
 const relatedLinks = [
   { label: "AI + Operations", href: "/ai-process-redesign" },
   { label: "Policy Impact", href: "/policy-impact-analysis" },
-  { label: "Backlog Kill", href: "/products/backlog-kill-kit" },
+  { label: "Backlog Kill", href: "/backlog-kill" },
 ] as const satisfies readonly RelatedLink[];
 
 export default function AesopStrategyGovernancePage() {
