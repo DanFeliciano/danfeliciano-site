@@ -166,7 +166,7 @@ export const services = [
       "Executive summary",
       "Sustainment plan",
     ],
-    cta: "Diagnose the backlog",
+    cta: "Diagnose the Backlog",
   },
   {
     slug: "ai-automation-analytics",
@@ -201,7 +201,7 @@ export const services = [
       "Adoption plan",
       "Measurement model",
     ],
-    cta: "Map AI and operations risk",
+    cta: "Assess Your AI Readiness",
   },
 ] as const satisfies readonly Offer[];
 
@@ -233,7 +233,7 @@ export const products = [
       "Quick-win recommendations",
       "Recovery roadmap",
     ],
-    cta: "Request a Backlog Kill briefing",
+    cta: "Diagnose the Backlog",
   },
   {
     slug: "policy-forensics",
@@ -263,7 +263,7 @@ export const products = [
       "Decision memo",
       "Executive briefing deck",
     ],
-    cta: "Request a policy impact brief",
+    cta: "Request a Policy Impact Briefing",
   },
   {
     slug: "academy",

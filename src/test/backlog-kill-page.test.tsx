@@ -78,7 +78,9 @@ describe("Service Reimagined / Backlog Kill page", () => {
       canonical: "https://danfeliciano.com/backlog-kill",
     });
     expect(metadata.openGraph).toMatchObject({
-      title: "Service Reimagined / Backlog Kill | Dan Feliciano",
+      description:
+        "Diagnose service backlogs, workflow bottlenecks, staffing constraints, process failure, and AI/automation opportunities.",
+      title: "Backlog Kill & Service Reimagined | Dan Feliciano",
       url: "https://danfeliciano.com/backlog-kill",
     });
   });

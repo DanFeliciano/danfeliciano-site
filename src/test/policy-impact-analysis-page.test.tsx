@@ -79,6 +79,8 @@ describe("Policy Impact Analysis page", () => {
       canonical: "https://danfeliciano.com/policy-impact-analysis",
     });
     expect(metadata.openGraph).toMatchObject({
+      description:
+        "Plain-English analysis of bills, budgets, regulations, fiscal risks, compliance burdens, and operational consequences.",
       title: "Policy Impact Analysis | Dan Feliciano",
       url: "https://danfeliciano.com/policy-impact-analysis",
     });

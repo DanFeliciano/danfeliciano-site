@@ -1,3 +1,5 @@
+import Link from "next/link";
+import { Container } from "@/components/layout/container";
 import { Section } from "@/components/layout/section";
 import { CtaButton } from "@/components/ui/cta-button";
 import { FinalCTA } from "@/components/ui/final-cta";
@@ -5,11 +7,17 @@ import { PageHeader } from "@/components/ui/page-header";
 import { createMetadata } from "@/lib/seo";
 
 export const metadata = createMetadata({
-  title: "Service Reimagined / Backlog Kill | Dan Feliciano",
+  title: "Backlog Kill & Service Reimagined | Dan Feliciano",
   description:
-    "Backlog Kill diagnoses service delays by mapping demand, aging, triage, bottlenecks, rework, staffing constraints, policy constraints, technology gaps, and customer or citizen impact.",
+    "Diagnose service backlogs, workflow bottlenecks, staffing constraints, process failure, and AI/automation opportunities.",
   path: "/backlog-kill",
 });
+
+const relatedLinks = [
+  { label: "Strategic Forensics", href: "/strategic-forensics" },
+  { label: "Briefings", href: "/briefings" },
+  { label: "Start a Conversation", href: "/contact" },
+] as const;
 
 const diagnosticAreas = [
   "Incoming demand",
@@ -166,6 +174,25 @@ export default function BacklogKillPage() {
           </div>
           <ScanList items={buyers} />
         </div>
+      </Section>
+
+      <Section className="bg-paper text-charcoal">
+        <Container className="px-0">
+          <div className="rounded-lg border border-slate-200 bg-white p-6">
+            <h2 className="text-2xl font-black">Related paths</h2>
+            <div className="mt-4 flex flex-wrap gap-3">
+              {relatedLinks.map((link) => (
+                <Link
+                  className="rounded-md border border-slate-200 px-4 py-3 text-sm font-bold text-charcoal transition hover:border-signal hover:text-ink"
+                  href={link.href}
+                  key={link.href}
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </div>
+          </div>
+        </Container>
       </Section>
 
       <FinalCTA

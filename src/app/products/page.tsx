@@ -30,8 +30,8 @@ export default function ProductsPage() {
           <CtaButton className="w-full sm:w-auto" href="/contact">
             Book a Strategic Forensics Briefing
           </CtaButton>
-          <CtaButton className="w-full sm:w-auto" href="/services" variant="secondary">
-            Explore Services
+          <CtaButton className="w-full sm:w-auto" href="/strategic-forensics" variant="secondary">
+            Explore Strategic Forensics
           </CtaButton>
         </div>
       </PageHeader>

@@ -8,7 +8,7 @@ import { homepage, insightCards } from "@/content/site";
 import { createMetadata } from "@/lib/seo";
 
 export const metadata = createMetadata({
-  title: "Dan Feliciano | Strategic Forensics",
+  title: "Dan Feliciano | Strategic Forensics for AI, Policy, Operations & Risk",
   description:
     "Strategic Forensics for leaders facing AI disruption, policy complexity, operational failure, weak data, backlogs, and financial risk.",
   path: "/",
@@ -42,7 +42,7 @@ const coreServices: OfferCardData[] = [
     summary:
       "AI is not the strategy. Redesign the work first: workflows, data, risks, and automation opportunities before tools or pilots.",
     href: "/ai-process-redesign",
-    cta: "Map AI risk",
+    cta: "Assess Your AI Readiness",
     meta: "Best before buying tools, launching pilots, or automating broken work.",
   },
   {
@@ -51,7 +51,7 @@ const coreServices: OfferCardData[] = [
     summary:
       "Translate bills, budgets, and regulations into operational, financial, compliance, and taxpayer consequences.",
     href: "/policy-impact-analysis",
-    cta: "Request policy analysis",
+    cta: "Request a Policy Impact Briefing",
     meta: "Best for public decisions, associations, candidates, and institutions.",
   },
   {
@@ -60,7 +60,7 @@ const coreServices: OfferCardData[] = [
     summary:
       "Diagnose backlogs, bottlenecks, staffing pressure, service delays, and broken workflows before throwing more money at the wrong problem.",
     href: "/backlog-kill",
-    cta: "Diagnose the backlog",
+    cta: "Diagnose the Backlog",
     meta: "Best when service risk is rising and the cause is still unclear.",
   },
   {
@@ -69,7 +69,7 @@ const coreServices: OfferCardData[] = [
     summary:
       "A focused 60-90 minute session that turns a complex issue into plain-English consequences, risks, and next actions.",
     href: "/briefings",
-    cta: "Plan a briefing",
+    cta: "Book a Strategic Forensics Briefing",
     meta: "Best for boards, executives, campaigns, associations, and public leaders.",
   },
 ];
@@ -114,10 +114,10 @@ export default function HomePage() {
                 </CtaButton>
                 <CtaButton
                   className="w-full sm:w-auto"
-                  href="/services"
+                  href="/strategic-forensics"
                   variant="secondary"
                 >
-                  Explore Services
+                  Explore Strategic Forensics
                 </CtaButton>
               </div>
             </div>

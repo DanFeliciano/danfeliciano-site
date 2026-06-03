@@ -1,3 +1,5 @@
+import Link from "next/link";
+import { Container } from "@/components/layout/container";
 import { Section } from "@/components/layout/section";
 import { CtaButton } from "@/components/ui/cta-button";
 import { FinalCTA } from "@/components/ui/final-cta";
@@ -7,9 +9,16 @@ import { createMetadata } from "@/lib/seo";
 export const metadata = createMetadata({
   title: "Strategic Forensics | Dan Feliciano",
   description:
-    "Strategic Forensics is Dan Feliciano's method for finding hidden risk, weak assumptions, operational consequences, and financial exposure before decisions become expensive.",
+    "Find hidden assumptions, weak data, operational risks, and financial consequences before complex decisions become expensive failures.",
   path: "/strategic-forensics",
 });
+
+const relatedLinks = [
+  { label: "Briefings", href: "/briefings" },
+  { label: "AI Process Redesign", href: "/ai-process-redesign" },
+  { label: "Policy Impact Analysis", href: "/policy-impact-analysis" },
+  { label: "Backlog Kill", href: "/backlog-kill" },
+] as const;
 
 const forensicTargets = [
   "Hidden assumptions",
@@ -70,10 +79,10 @@ export default function StrategicForensicsPage() {
       >
         <div className="flex flex-col gap-3 sm:flex-row">
           <CtaButton className="w-full sm:w-auto" href="/contact">
-            Schedule a Strategic Forensics Briefing
+            Book a Strategic Forensics Briefing
           </CtaButton>
-          <CtaButton className="w-full sm:w-auto" href="/services" variant="secondary">
-            Explore Services
+          <CtaButton className="w-full sm:w-auto" href="/contact" variant="secondary">
+            Start a Conversation
           </CtaButton>
         </div>
       </PageHeader>
@@ -158,9 +167,28 @@ export default function StrategicForensicsPage() {
         </div>
       </Section>
 
+      <Section className="bg-white text-charcoal">
+        <Container className="px-0">
+          <div className="rounded-lg border border-slate-200 bg-paper p-6">
+            <h2 className="text-2xl font-black">Related paths</h2>
+            <div className="mt-4 flex flex-wrap gap-3">
+              {relatedLinks.map((link) => (
+                <Link
+                  className="rounded-md border border-slate-200 bg-white px-4 py-3 text-sm font-bold text-charcoal transition hover:border-signal hover:text-ink"
+                  href={link.href}
+                  key={link.href}
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </div>
+          </div>
+        </Container>
+      </Section>
+
       <FinalCTA
         body="Bring the official story, the data, the budget, the workflow, and the decision into one focused Strategic Forensics conversation."
-        cta="Schedule a Strategic Forensics Briefing"
+        cta="Book a Strategic Forensics Briefing"
         href="/contact"
         title="Need to know what is hiding underneath the surface?"
       />

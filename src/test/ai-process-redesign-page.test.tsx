@@ -72,6 +72,8 @@ describe("AI Process Redesign Diagnostic page", () => {
       canonical: "https://danfeliciano.com/ai-process-redesign",
     });
     expect(metadata.openGraph).toMatchObject({
+      description:
+        "A practical diagnostic for organizations that need to map workflows, data, risks, automation opportunities, and AI readiness.",
       title: "AI Process Redesign Diagnostic | Dan Feliciano",
       url: "https://danfeliciano.com/ai-process-redesign",
     });

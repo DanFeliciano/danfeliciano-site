@@ -45,11 +45,19 @@ describe("seo helpers", () => {
       canonical: "https://danfeliciano.com/",
     });
     expect(homepageMetadata.openGraph).toMatchObject({
+      description:
+        "Strategic Forensics for leaders facing AI disruption, policy complexity, operational failure, weak data, backlogs, and financial risk.",
+      title:
+        "Dan Feliciano | Strategic Forensics for AI, Policy, Operations & Risk",
       url: "https://danfeliciano.com/",
       type: "website",
     });
     expect(homepageMetadata.twitter).toMatchObject({
       card: "summary_large_image",
+      description:
+        "Strategic Forensics for leaders facing AI disruption, policy complexity, operational failure, weak data, backlogs, and financial risk.",
+      title:
+        "Dan Feliciano | Strategic Forensics for AI, Policy, Operations & Risk",
     });
     expect(homepageMetadata.robots).toEqual({
       index: true,

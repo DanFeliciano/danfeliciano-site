@@ -8,7 +8,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL("https://danfeliciano.com"),
   title: {
-    default: "Dan Feliciano | Strategic Forensics",
+    default: "Dan Feliciano | Strategic Forensics for AI, Policy, Operations & Risk",
     template: "%s",
   },
   description:

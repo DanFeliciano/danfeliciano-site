@@ -31,7 +31,7 @@ describe("homepage content", () => {
       name: "Book a Strategic Forensics Briefing",
     });
     const secondaryCta = heroScope.getByRole("link", {
-      name: "Explore Services",
+      name: "Explore Strategic Forensics",
     });
 
     expect(
@@ -43,34 +43,40 @@ describe("homepage content", () => {
         secondaryCta.getAttribute("href") ?? "",
         "https://danfeliciano.com",
       ).pathname,
-    ).toBe("/services");
+    ).toBe("/strategic-forensics");
     expect(screen.getByText("Strategic forensics map")).toBeInTheDocument();
     expect(
       new URL(
-        screen.getByRole("link", { name: "Map AI risk" }).getAttribute("href") ??
-          "",
+        screen
+          .getByRole("link", { name: "Assess Your AI Readiness" })
+          .getAttribute("href") ?? "",
         "https://danfeliciano.com",
       ).pathname,
     ).toBe("/ai-process-redesign");
     expect(
       new URL(
         screen
-          .getByRole("link", { name: "Request policy analysis" })
+          .getByRole("link", { name: "Request a Policy Impact Briefing" })
           .getAttribute("href") ?? "",
         "https://danfeliciano.com",
       ).pathname,
     ).toBe("/policy-impact-analysis");
     expect(
       new URL(
-        screen.getByRole("link", { name: "Diagnose the backlog" }).getAttribute("href") ??
-          "",
+        screen
+          .getByRole("link", { name: "Diagnose the Backlog" })
+          .getAttribute("href") ?? "",
         "https://danfeliciano.com",
       ).pathname,
     ).toBe("/backlog-kill");
     expect(
       new URL(
-        screen.getByRole("link", { name: "Plan a briefing" }).getAttribute("href") ??
-          "",
+        screen
+          .getAllByRole("link", {
+            name: "Book a Strategic Forensics Briefing",
+          })
+          .find((link) => link.getAttribute("href") === "/briefings")
+          ?.getAttribute("href") ?? "",
         "https://danfeliciano.com",
       ).pathname,
     ).toBe("/briefings");

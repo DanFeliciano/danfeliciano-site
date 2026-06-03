@@ -20,6 +20,8 @@ export const metadata = createMetadata({
 const relatedLinks = [
   { label: "Strategic Forensics", href: "/strategic-forensics" },
   { label: "AI + Operations", href: "/ai-process-redesign" },
+  { label: "Policy Impact", href: "/policy-impact-analysis" },
+  { label: "Backlog Kill", href: "/backlog-kill" },
   { label: "Briefings", href: "/briefings" },
 ] as const satisfies readonly RelatedLink[];
 
@@ -30,7 +32,7 @@ export default function InsightsPage() {
         subhead="Practical writing on Strategic Forensics, AI disruption, policy complexity, weak data, budgets, backlogs, and operational risk."
         title="Insights for leaders facing complex decisions"
       >
-        <CtaButton href="/contact">Ask a question</CtaButton>
+        <CtaButton href="/contact">Start a Conversation</CtaButton>
       </PageHeader>
 
       <Section className="bg-paper text-charcoal">

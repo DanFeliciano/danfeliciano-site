@@ -36,6 +36,8 @@ const relatedLinks = [
   { label: "AI + Operations", href: "/ai-process-redesign" },
   { label: "Policy Impact", href: "/policy-impact-analysis" },
   { label: "Backlog Kill", href: "/backlog-kill" },
+  { label: "Briefings", href: "/briefings" },
+  { label: "Start a Conversation", href: "/contact" },
 ] as const satisfies readonly RelatedLink[];
 
 export default function AesopStrategyGovernancePage() {

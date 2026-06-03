@@ -49,7 +49,7 @@ export default function SpeakingPage() {
         subhead="Focused briefings, workshops, and executive sessions for leaders who need to understand what a complex issue actually means."
         title="Strategic Forensics Briefings"
       >
-        <CtaButton href="/contact">Book a briefing</CtaButton>
+        <CtaButton href="/contact">Book a Strategic Forensics Briefing</CtaButton>
       </PageHeader>
 
       <Section className="bg-paper text-charcoal">

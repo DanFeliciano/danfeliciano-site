@@ -1,3 +1,5 @@
+import Link from "next/link";
+import { Container } from "@/components/layout/container";
 import { Section } from "@/components/layout/section";
 import { CtaButton } from "@/components/ui/cta-button";
 import { FinalCTA } from "@/components/ui/final-cta";
@@ -7,9 +9,15 @@ import { createMetadata } from "@/lib/seo";
 export const metadata = createMetadata({
   title: "Policy Impact Analysis | Dan Feliciano",
   description:
-    "Policy Impact Analysis translates bills, budgets, regulations, and public decisions into plain-English operational, financial, compliance, taxpayer, and accountability consequences.",
+    "Plain-English analysis of bills, budgets, regulations, fiscal risks, compliance burdens, and operational consequences.",
   path: "/policy-impact-analysis",
 });
+
+const relatedLinks = [
+  { label: "Strategic Forensics", href: "/strategic-forensics" },
+  { label: "Briefings", href: "/briefings" },
+  { label: "Start a Conversation", href: "/contact" },
+] as const;
 
 const analysisAreas = [
   "Who pays",
@@ -164,6 +172,25 @@ export default function PolicyImpactAnalysisPage() {
           </div>
           <ScanList items={buyers} />
         </div>
+      </Section>
+
+      <Section className="bg-paper text-charcoal">
+        <Container className="px-0">
+          <div className="rounded-lg border border-slate-200 bg-white p-6">
+            <h2 className="text-2xl font-black">Related paths</h2>
+            <div className="mt-4 flex flex-wrap gap-3">
+              {relatedLinks.map((link) => (
+                <Link
+                  className="rounded-md border border-slate-200 px-4 py-3 text-sm font-bold text-charcoal transition hover:border-signal hover:text-ink"
+                  href={link.href}
+                  key={link.href}
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </div>
+          </div>
+        </Container>
       </Section>
 
       <FinalCTA

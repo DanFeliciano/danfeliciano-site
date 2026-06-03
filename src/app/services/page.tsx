@@ -29,7 +29,7 @@ const additionalServices: OfferCardData[] = [
     summary:
       "A focused 60-90 minute session that turns a complex issue into plain-English consequences, risks, and next actions.",
     href: "/briefings",
-    cta: "Plan a briefing",
+    cta: "Book a Strategic Forensics Briefing",
     meta: "Best for boards, executives, associations, campaigns, and public leaders.",
   },
   {
@@ -37,7 +37,7 @@ const additionalServices: OfferCardData[] = [
     summary:
       "Translate bills, budgets, regulations, and policy changes into operational, financial, compliance, and taxpayer consequences.",
     href: "/policy-impact-analysis",
-    cta: "Request policy analysis",
+    cta: "Request a Policy Impact Briefing",
     meta: "Best for public decisions, associations, candidates, and institutional leaders.",
   },
   {
@@ -45,7 +45,7 @@ const additionalServices: OfferCardData[] = [
     summary:
       "Blunt counsel for leaders who need to pressure-test assumptions, money, data, operations, and execution before moving.",
     href: "/services",
-    cta: "Start the conversation",
+    cta: "Start a Conversation",
     meta: "Best when the stakes are high and the decision is still murky.",
   },
 ];

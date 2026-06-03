@@ -104,7 +104,7 @@ export default function TermsPage() {
 
       <FinalCTA
         body="For scope, terms, and fit for advisory, training, speaking, or productized work, start with a focused inquiry."
-        cta="Contact Dan"
+        cta="Start a Conversation"
         href="/contact"
         title="Need terms for a specific engagement?"
       />

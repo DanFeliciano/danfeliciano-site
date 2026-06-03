@@ -7,7 +7,7 @@ import { createMetadata } from "@/lib/seo";
 export const metadata = createMetadata({
   title: "Strategic Forensics Briefings | Dan Feliciano",
   description:
-    "Strategic Forensics Briefings give leaders a focused, plain-English read on hidden risks, consequences, tradeoffs, and the right next questions before expensive decisions.",
+    "Focused briefings that turn complex issues into plain-English consequences, risks, and next actions.",
   path: "/briefings",
 });
 

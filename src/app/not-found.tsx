@@ -21,7 +21,7 @@ export default function NotFound() {
             Return home
           </CtaButton>
           <CtaButton className="w-full sm:w-auto" href="/contact" variant="secondary">
-            Contact Dan
+            Start a Conversation
           </CtaButton>
         </div>
       </PageHeader>

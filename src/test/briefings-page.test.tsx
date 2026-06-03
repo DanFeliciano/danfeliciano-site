@@ -76,6 +76,8 @@ describe("Strategic Forensics Briefings page", () => {
       canonical: "https://danfeliciano.com/briefings",
     });
     expect(metadata.openGraph).toMatchObject({
+      description:
+        "Focused briefings that turn complex issues into plain-English consequences, risks, and next actions.",
       title: "Strategic Forensics Briefings | Dan Feliciano",
       url: "https://danfeliciano.com/briefings",
     });

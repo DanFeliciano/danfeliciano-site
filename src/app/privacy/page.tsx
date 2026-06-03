@@ -99,7 +99,7 @@ export default function PrivacyPage() {
 
       <FinalCTA
         body="Send questions about this policy or previously submitted inquiry information through the contact page."
-        cta="Contact Dan"
+        cta="Start a Conversation"
         href="/contact"
         title="Have a privacy question?"
       />

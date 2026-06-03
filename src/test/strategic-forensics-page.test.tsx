@@ -27,13 +27,21 @@ describe("Strategic Forensics page", () => {
     expect(
       screen
         .getAllByRole("link", {
-        name: "Schedule a Strategic Forensics Briefing",
-      })
+          name: "Book a Strategic Forensics Briefing",
+        })
         .map((link) => link.getAttribute("href")),
     ).toEqual(["/contact", "/contact"]);
     expect(
-      screen.getByRole("link", { name: "Explore Services" }),
-    ).toHaveAttribute("href", "/services");
+      screen.getByRole("link", { name: "Start a Conversation" }),
+    ).toHaveAttribute("href", "/contact");
+    for (const [name, href] of [
+      ["Briefings", "/briefings"],
+      ["AI Process Redesign", "/ai-process-redesign"],
+      ["Policy Impact Analysis", "/policy-impact-analysis"],
+      ["Backlog Kill", "/backlog-kill"],
+    ]) {
+      expect(screen.getByRole("link", { name })).toHaveAttribute("href", href);
+    }
   });
 
   it("includes the requested scan-friendly sections", () => {
@@ -68,6 +76,8 @@ describe("Strategic Forensics page", () => {
       canonical: "https://danfeliciano.com/strategic-forensics",
     });
     expect(metadata.openGraph).toMatchObject({
+      description:
+        "Find hidden assumptions, weak data, operational risks, and financial consequences before complex decisions become expensive failures.",
       title: "Strategic Forensics | Dan Feliciano",
       url: "https://danfeliciano.com/strategic-forensics",
     });
