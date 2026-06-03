@@ -1,22 +1,22 @@
 const signals = [
-  ["Backlog aging", "72%", "bg-signal"],
-  ["Cycle-time drag", "48%", "bg-amber"],
-  ["AI readiness", "61%", "bg-emerald-400"],
+  ["Hidden fiscal risk", "72%", "bg-signal"],
+  ["Workflow failure", "48%", "bg-amber"],
+  ["Weak data exposure", "61%", "bg-emerald-400"],
 ] as const;
 
 const commandRows = [
-  ["Constraint", "Intake rules creating avoidable rework"],
-  ["Decision", "Segment demand before adding capacity"],
-  ["Cadence", "Daily recovery rhythm with weekly executive review"],
+  ["Assumption", "Projected savings depend on untested staffing math"],
+  ["Decision", "Separate policy intent from operating consequence"],
+  ["Fix", "Redesign intake before funding more capacity"],
 ] as const;
 
 export function OperatingCommandVisual() {
   return (
     <div className="min-w-0 overflow-hidden rounded-lg border border-white/15 bg-white/5 p-3 shadow-command sm:p-4">
       <div className="mb-3 flex items-center justify-between gap-4 text-xs font-semibold text-slate-300 sm:mb-4">
-        <span>Operating signal map</span>
+        <span>Strategic forensics map</span>
         <span className="hidden text-right text-signal sm:inline">
-          Live diagnostic view
+          Decision-risk view
         </span>
       </div>
 
@@ -55,8 +55,8 @@ export function OperatingCommandVisual() {
       </div>
 
       <div className="mt-4 hidden rounded-md border border-signal/30 bg-signal/10 p-3 text-xs font-semibold leading-5 text-slate-100 sm:block">
-        Command readout: stabilize the queue, remove rule friction, and automate
-        only after the workflow is visible.
+        Briefing readout: expose the hidden cost, test the assumption, and fix
+        the system before the decision gets expensive.
       </div>
     </div>
   );

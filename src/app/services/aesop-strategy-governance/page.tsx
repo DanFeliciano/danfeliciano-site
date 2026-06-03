@@ -33,9 +33,9 @@ const breadcrumbs = [
 ] as const satisfies readonly RelatedLink[];
 
 const relatedLinks = [
-  { label: "Phoenix Protocol", href: "/services/phoenix-protocol" },
-  { label: "AI, Automation & Analytics", href: "/services/ai-automation-analytics" },
-  { label: "Products", href: "/products" },
+  { label: "AI + Operations", href: "/services/ai-automation-analytics" },
+  { label: "Policy Impact", href: "/products/policy-forensics" },
+  { label: "Backlog Kill", href: "/products/backlog-kill-kit" },
 ] as const satisfies readonly RelatedLink[];
 
 export default function AesopStrategyGovernancePage() {
@@ -52,13 +52,13 @@ export default function AesopStrategyGovernancePage() {
         <div className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr]">
           <div>
             <h2 className="text-balance text-3xl font-black tracking-normal sm:text-4xl">
-              Strategy needs an operating system
+              Complex decisions need forensic scrutiny
             </h2>
             <p className="mt-4 text-base leading-7 text-slate-600">
-              Many organizations do not fail because the strategy is
-              unintelligent. They fail because priorities, decision rights,
-              metrics, routines, and escalation paths never become a durable
-              management system.
+              Hidden assumptions, weak data, budget pressure, policy
+              complexity, operational constraints, and AI risk can make a
+              decision look cleaner than it is. Strategic Forensics brings
+              those consequences into view before leaders commit.
             </p>
           </div>
           <div className="rounded-lg border border-slate-200 bg-white p-5 shadow-command">
@@ -77,11 +77,12 @@ export default function AesopStrategyGovernancePage() {
       <Section className="bg-graphite text-white">
         <div className="max-w-3xl">
           <h2 className="text-balance text-3xl font-black tracking-normal sm:text-4xl">
-            The AESOP framework
+            The Strategic Forensics method
           </h2>
           <p className="mt-4 text-base leading-7 text-slate-300">
-            AESOP turns strategy into a practical cadence of assessment,
-            governance, synchronization, operating routines, and persistence.
+            The method moves from hidden risk to decision-grade evidence:
+            surface the assumption, scrutinize the consequence, brief the
+            tradeoff, fix the system, and govern the risk.
           </p>
         </div>
         <div className="mt-8">
@@ -97,7 +98,8 @@ export default function AesopStrategyGovernancePage() {
             </h2>
             <p className="mt-4 text-base leading-7 text-slate-600">
               The engagement produces executive-ready artifacts leaders can use
-              to govern priorities, decisions, performance, and accountability.
+              to understand consequences, challenge assumptions, and choose the
+              next action.
             </p>
           </div>
           <div className="grid gap-3 md:grid-cols-2">
@@ -126,10 +128,10 @@ export default function AesopStrategyGovernancePage() {
       </Section>
 
       <FinalCTA
-        body="Build the governance, KPIs, cadence, and decision rights that make strategy executable."
+        body="Expose the assumptions, weak data, fiscal risk, operational failure points, and execution problems before the decision gets expensive."
         cta={service.cta}
         href="/contact"
-        title="Ready to operationalize the strategy?"
+        title="Need to know what the decision is hiding?"
       />
       <JsonLd
         data={[

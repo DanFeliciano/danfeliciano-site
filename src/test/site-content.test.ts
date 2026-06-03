@@ -3,6 +3,7 @@ import { describe, expect, it } from "vitest";
 import {
   caseStudies,
   courses,
+  homepage,
   insightCards,
   navItems,
   products,
@@ -42,7 +43,7 @@ describe("site content", () => {
   });
 
   it("defines all required top-level content groups", () => {
-    expect(navItems).toHaveLength(7);
+    expect(navItems).toHaveLength(9);
     expect(services.length).toBeGreaterThanOrEqual(3);
     expect(products.length).toBeGreaterThanOrEqual(3);
     expect(courses).toHaveLength(3);
@@ -67,6 +68,7 @@ describe("site content", () => {
       "/speaking",
       "/case-studies",
       "/insights",
+      "/about",
       "/contact",
       "/privacy",
       "/terms",
@@ -119,6 +121,15 @@ describe("site content", () => {
       siteName: "Dan Feliciano",
       type: "website",
     });
+  });
+
+  it("uses Strategic Forensics as the primary positioning", () => {
+    expect(site.description).toContain("Strategic Forensics");
+    expect(homepage.title).toBe(
+      "Find the hidden risk. Clarify the decision. Fix the system.",
+    );
+    expect(navItems.map((item) => item.label)).toContain("Strategic Forensics");
+    expect(navItems.map((item) => item.label)).toContain("Policy Impact");
   });
 
   it("rejects external canonical URL inputs", () => {

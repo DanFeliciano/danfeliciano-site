@@ -14,6 +14,7 @@ export const requiredRoutes = [
   "/speaking",
   "/case-studies",
   "/insights",
+  "/about",
   "/contact",
   "/privacy",
   "/terms",

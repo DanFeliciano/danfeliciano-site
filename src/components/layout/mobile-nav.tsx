@@ -47,7 +47,7 @@ export function MobileNav() {
   }
 
   return (
-    <div className="relative lg:hidden">
+    <div className="relative xl:hidden">
       <button
         aria-controls={mobileNavigationPanelId}
         aria-expanded={isOpen}
@@ -87,7 +87,7 @@ export function MobileNav() {
             href="/contact"
             onClick={closeNavigation}
           >
-            Book Diagnostic
+            Book Briefing
           </CtaButton>
         </div>
       ) : null}

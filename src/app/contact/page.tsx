@@ -12,25 +12,25 @@ import { createMetadata } from "@/lib/seo";
 type RelatedLink = { label: string; href: SiteRoute };
 
 export const metadata = createMetadata({
-  title: "Contact | Book a Strategy Diagnostic | Dan Feliciano",
+  title: "Contact | Book a Strategic Forensics Briefing | Dan Feliciano",
   description:
-    "Contact Dan Feliciano to book a Strategy Diagnostic for operational strategy, AI automation, Lean Six Sigma, backlog recovery, training, or speaking.",
+    "Contact Dan Feliciano to book a Strategic Forensics briefing for AI disruption, policy complexity, operational failure, weak data, backlogs, budgets, or financial risk.",
   path: "/contact",
 });
 
 const relatedLinks = [
   { label: "Services", href: "/services" },
-  { label: "Products", href: "/products" },
-  { label: "Academy", href: "/academy" },
-  { label: "Speaking", href: "/speaking" },
+  { label: "Policy Impact", href: "/products/policy-forensics" },
+  { label: "Backlog Kill", href: "/products/backlog-kill-kit" },
+  { label: "Briefings", href: "/speaking" },
 ] as const satisfies readonly RelatedLink[];
 
 export default function ContactPage() {
   return (
     <main id="main-content">
       <PageHeader
-        subhead="Share the operating challenge, timeline, and kind of support you are considering. The goal is a focused first conversation, not a sprawling intake process."
-        title="Book a Strategy Diagnostic"
+        subhead="Share the decision, risk, policy question, AI issue, backlog, budget pressure, or operational failure you need to understand."
+        title="Book a Strategic Forensics Briefing"
       >
         <CtaButton href="/services" variant="secondary">
           Review services first
@@ -41,12 +41,13 @@ export default function ContactPage() {
         <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr]">
           <div>
             <h2 className="text-balance text-3xl font-black tracking-normal sm:text-4xl">
-              Start with the problem
+              Start with the decision
             </h2>
             <p className="mt-4 text-base leading-7 text-slate-600">
-              Use the form to describe the work, backlog, strategy, AI,
-              analytics, training, or speaking need you want to discuss. Dan
-              will use that context to shape a practical next conversation.
+              Use the form to describe the decision, hidden risk, weak data,
+              budget issue, policy impact, AI question, backlog, or service
+              failure you want to examine. Dan will use that context to shape a
+              focused first conversation.
             </p>
             <div className="mt-6 rounded-lg border border-slate-200 bg-white p-5">
               <h2 className="text-xl font-black">Contact alternatives</h2>
@@ -88,7 +89,7 @@ export default function ContactPage() {
       </Section>
 
       <FinalCTA
-        body="Not sure which path fits? Review the core advisory offers before sending the inquiry."
+        body="Not sure which path fits? Review the Strategic Forensics services before sending the inquiry."
         cta="Explore services"
         href="/services"
         title="Want to compare options first?"

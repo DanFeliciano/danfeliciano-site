@@ -18,20 +18,19 @@ const initialValues: FormValues = {
   name: "",
   email: "",
   organization: "",
-  interest: "Strategy & Governance",
+  interest: "Strategic Forensics",
   problem: "",
   timeline: "Exploring options",
   consent: false,
 };
 
 const interestOptions = [
-  "Strategy & Governance",
-  "Phoenix Protocol",
-  "AI, Automation & Analytics",
-  "Backlog Kill Kit",
-  "Policy Forensics",
+  "Strategic Forensics",
+  "AI Process Redesign",
+  "Policy Impact Analysis",
+  "Backlog Kill",
+  "Strategic Forensics Briefing",
   "Academy / Training",
-  "Speaking",
   "Other",
 ];
 

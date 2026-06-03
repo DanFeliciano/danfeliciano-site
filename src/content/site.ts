@@ -40,118 +40,120 @@ export const site = {
   name: "Dan Feliciano",
   url: "https://danfeliciano.com",
   description:
-    "Operational strategy, AI automation, Lean Six Sigma execution, analytics, training, speaking, and productized advisory services.",
+    "Strategic Forensics for leaders facing AI disruption, policy complexity, operational failure, weak data, budgets, backlogs, and financial risk.",
   email: "hello@danfeliciano.com",
   linkedIn: "https://www.linkedin.com/in/danfeliciano/",
 };
 
 export const navItems: LinkItem[] = [
-  { label: "Services", href: "/services" },
-  { label: "Products", href: "/products" },
-  { label: "Academy", href: "/academy" },
-  { label: "Results", href: "/case-studies" },
-  { label: "Speaking", href: "/speaking" },
+  { label: "Home", href: "/" },
+  { label: "Strategic Forensics", href: "/services" },
+  { label: "AI + Operations", href: "/services/ai-automation-analytics" },
+  { label: "Policy Impact", href: "/products/policy-forensics" },
+  { label: "Backlog Kill", href: "/products/backlog-kill-kit" },
+  { label: "Briefings", href: "/speaking" },
   { label: "Insights", href: "/insights" },
+  { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
 ];
 
 export const homepage = {
-  title: "Operational Strategy, AI Automation, and Lean Six Sigma Execution",
+  title: "Find the hidden risk. Clarify the decision. Fix the system.",
   subhead:
-    "For leaders who need to reduce backlog, improve service, accelerate decisions, and create measurable performance gains.",
+    "Strategic Forensics for leaders facing AI disruption, policy complexity, operational failure, weak data, backlogs, and financial risk.",
   body:
-    "I help executives, public-sector leaders, and operators stabilize broken workflows, redesign service delivery, deploy practical AI, and build operating systems that survive contact with reality.",
+    "Dan Feliciano helps business owners, public-sector leaders, candidates, associations, and organizations understand what complex decisions actually mean: financially, operationally, and strategically.",
   proof: [
-    "25+ years transforming complex operations",
-    "GE Six Sigma Master Black Belt background",
-    "Experience across healthcare, government, finance, manufacturing, logistics, and service operations",
-    "Strategy, execution, training, analytics, and AI automation under one roof",
+    "Strategic, financial, operational, and policy analysis in one view",
+    "Plain-English briefings for leaders who need consequences, not noise",
+    "AI-aware, data-literate, and grounded in how work actually moves",
+    "Built for decisions involving budgets, backlogs, service risk, and public impact",
   ],
 };
 
 export const services = [
   {
     slug: "aesop-strategy-governance",
-    title: "AESOP Strategy & Governance",
+    title: "Strategic Forensics",
     href: "/services/aesop-strategy-governance",
     summary:
-      "Translate strategy into operating cadence, KPIs, governance, decision rights, and measurable execution.",
+      "Decision-grade analysis for leaders who need to understand hidden risks, tradeoffs, and consequences inside complex choices.",
     description:
-      "A practical strategy-to-execution system for leaders who need alignment, accountability, and measurable progress.",
+      "A focused forensic read of the assumptions, data, money, operations, and execution risk sitting underneath a decision.",
     metadata: {
-      title: "AESOP Strategy & Governance | Dan Feliciano",
+      title: "Strategic Forensics | Dan Feliciano",
       description:
-        "Turn strategy into operating cadence, governance, KPIs, accountability, and measurable execution with Dan Feliciano's AESOP framework.",
+        "Strategic Forensics helps leaders find hidden assumptions, weak data, fiscal risk, operational failure points, and execution problems before decisions get expensive.",
     },
     steps: [
       {
-        title: "Assess",
+        title: "Surface",
         description:
-          "Understand the current operating reality, constraints, risks, data, and performance gaps.",
+          "Find the hidden assumptions, weak data, incentives, constraints, and risk that are shaping the decision.",
       },
       {
-        title: "Establish",
+        title: "Scrutinize",
         description:
-          "Define priorities, decision rights, success measures, governance forums, and execution principles.",
+          "Pressure-test the financial, operational, policy, AI, and stakeholder consequences in plain English.",
       },
       {
-        title: "Synchronize",
+        title: "Brief",
         description:
-          "Align leaders, teams, projects, data, and operating cadences around shared priorities.",
+          "Turn the complexity into decision-grade options, tradeoffs, risks, and next actions.",
       },
       {
-        title: "Operationalize",
+        title: "Fix",
         description:
-          "Convert strategy into workflows, KPIs, dashboards, routines, charters, and accountable plans.",
+          "Identify the system changes needed to reduce risk, improve flow, and make the decision executable.",
       },
       {
-        title: "Persist",
+        title: "Govern",
         description:
-          "Build review cycles, learning loops, sustainment mechanisms, and corrective-action discipline.",
+          "Define ownership, cadence, controls, and measures so risk does not drift back underground.",
       },
     ],
     useCases: [
-      "Strategic planning",
-      "Executive operating cadence",
-      "Transformation governance",
-      "KPI architecture",
-      "Portfolio prioritization",
-      "Decision-rights clarification",
-      "Cross-functional alignment",
-      "AI governance and adoption governance",
+      "Budget and financial risk",
+      "AI disruption and tool decisions",
+      "Policy and regulatory consequences",
+      "Operational failure and service breakdown",
+      "Weak data and misleading dashboards",
+      "Board, campaign, or public decision briefings",
+      "Backlogs, compliance burden, and execution risk",
+      "Stakeholder, customer, and taxpayer impact",
     ],
     deliverables: [
-      "Strategy-to-execution map",
-      "Governance model",
-      "KPI architecture",
-      "Operating cadence",
-      "Decision-rights matrix",
-      "Transformation roadmap",
-      "Executive dashboard design",
-      "30/60/90-day action plan",
+      "Strategic Forensics briefing",
+      "Hidden-risk map",
+      "Financial and operational consequence scan",
+      "Assumption and data-quality review",
+      "Decision memo",
+      "Risk and tradeoff matrix",
+      "Next-action plan",
+      "Executive talking points",
     ],
-    cta: "Build an execution system",
+    cta: "Book a Strategic Forensics Briefing",
   },
   {
     slug: "phoenix-protocol",
-    title: "Phoenix Protocol",
+    title: "Service Reimagined / Backlog Kill",
     href: "/services/phoenix-protocol",
     summary:
-      "A 30/60/90-day stabilization and recovery approach for backlogs, service breakdowns, and execution drift.",
+      "Diagnose backlogs, bottlenecks, staffing pressure, service delays, and broken workflows before throwing more money at the wrong problem.",
     description:
-      "A 30/60/90-day operating system for stabilizing backlogs, service breakdowns, cycle-time delays, and execution drift.",
+      "A forensic look at service failure, flow, prioritization, accountability, staffing pressure, and the decisions needed to restore control.",
     metadata: {
       title:
-        "Phoenix Protocol | 30/60/90-Day Operational Recovery | Dan Feliciano",
+        "Service Reimagined and Backlog Kill | Dan Feliciano",
       description:
-        "Stabilize backlogs, service breakdowns, cycle-time delays, and execution drift with Dan Feliciano's Phoenix Protocol.",
+        "Diagnose backlogs, bottlenecks, service delays, staffing pressure, and broken workflows before adding money or headcount to the wrong problem.",
     },
     useCases: [
       "Aging backlog is increasing",
-      "Teams are missing service commitments",
-      "Work ownership is unclear",
-      "Reporting exists, but decisions are slow",
-      "Staff are overwhelmed by manual work and rework",
+      "Service delays are becoming financial or public risk",
+      "Staffing pressure is hiding process failure",
+      "Work ownership and priorities are unclear",
+      "Reporting exists, but leaders still cannot act",
     ],
     deliverables: [
       "Backlog diagnostic",
@@ -164,19 +166,20 @@ export const services = [
       "Executive summary",
       "Sustainment plan",
     ],
-    cta: "Run a Phoenix Diagnostic",
+    cta: "Diagnose the backlog",
   },
   {
     slug: "ai-automation-analytics",
-    title: "AI, Automation & Analytics",
+    title: "AI Process Redesign",
     href: "/services/ai-automation-analytics",
     summary:
-      "Practical AI implementation that improves workflows before automating them.",
-    description: "AI that fixes work, not just automates waste.",
+      "AI is not the strategy. Redesign the work, data, risk, and automation path before buying tools or launching pilots.",
+    description:
+      "A practical AI and operations review that maps workflows, data quality, failure points, risk, and automation opportunities before the tool decision.",
     metadata: {
-      title: "AI, Automation & Analytics | Dan Feliciano",
+      title: "AI Process Redesign | Dan Feliciano",
       description:
-        "Deploy practical AI, automation, and analytics by fixing workflows first and building decision-ready operating systems.",
+        "Map workflows, data, risks, and automation opportunities before buying AI tools, launching pilots, or speeding up broken work.",
     },
     useCases: [
       "Workflow triage",
@@ -198,21 +201,21 @@ export const services = [
       "Adoption plan",
       "Measurement model",
     ],
-    cta: "Assess your AI automation opportunities",
+    cta: "Map AI and operations risk",
   },
 ] as const satisfies readonly Offer[];
 
 export const products = [
   {
     slug: "backlog-kill-kit",
-    title: "Backlog Kill Kit",
+    title: "Backlog Kill Diagnostic",
     href: "/products/backlog-kill-kit",
     summary:
-      "A fixed-scope diagnostic for backlog drivers, cycle-time constraints, aging work, and recovery actions.",
+      "A fixed-scope diagnostic for backlog drivers, bottlenecks, staffing pressure, service delays, and recovery decisions.",
     metadata: {
-      title: "Backlog Kill Kit | Dan Feliciano",
+      title: "Backlog Kill Diagnostic | Dan Feliciano",
       description:
-        "Diagnose backlog drivers, cycle-time constraints, aging work, ownership gaps, and recovery actions with Dan Feliciano's Backlog Kill Kit.",
+        "Diagnose backlog drivers, bottlenecks, staffing pressure, service delays, ownership gaps, and recovery decisions with Dan Feliciano.",
     },
     useCases: [
       "Service operations",
@@ -230,18 +233,18 @@ export const products = [
       "Quick-win recommendations",
       "Recovery roadmap",
     ],
-    cta: "Request a Backlog Kill Kit",
+    cta: "Request a Backlog Kill briefing",
   },
   {
     slug: "policy-forensics",
-    title: "Policy Forensics",
+    title: "Policy Impact Analysis",
     href: "/products/policy-forensics",
     summary:
-      "Nonpartisan policy analysis and institutional intelligence for leaders facing regulatory, legislative, or public-policy change.",
+      "Translate bills, budgets, and regulations into operational, financial, compliance, and taxpayer consequences.",
     metadata: {
-      title: "Policy Forensics | Dan Feliciano",
+      title: "Policy Impact Analysis | Dan Feliciano",
       description:
-        "Policy Forensics helps institutions understand proposed laws, regulations, and policy shifts before they become operational, financial, or reputational surprises.",
+        "Policy Impact Analysis helps leaders understand proposed laws, budgets, regulations, and policy shifts before they create operational, financial, compliance, or taxpayer surprises.",
     },
     useCases: [
       "Proposed legislation",
@@ -260,17 +263,18 @@ export const products = [
       "Decision memo",
       "Executive briefing deck",
     ],
-    cta: "Request a Policy Forensics brief",
+    cta: "Request a policy impact brief",
   },
   {
     slug: "academy",
     title: "Dan Feliciano Academy",
     href: "/academy",
-    summary: "Lean Six Sigma + AI training for professionals and organizations.",
+    summary:
+      "Training in process improvement, AI-aware operations, and decision discipline for teams that need practical capability.",
     metadata: {
-      title: "Dan Feliciano Academy | Lean Six Sigma + AI Training",
+      title: "Dan Feliciano Academy | Process Improvement and AI Operations Training",
       description:
-        "Lean Six Sigma + AI training for professionals and organizations through Dan Feliciano Academy.",
+        "Training in process improvement, AI-aware operations, and decision discipline through Dan Feliciano Academy.",
     },
     cta: "Explore Academy",
   },
@@ -378,7 +382,7 @@ export const courses = [
 
 export const caseStudies = [
   "Healthcare billing transformation",
-  "Public-sector Lean Six Sigma deployment",
+  "Public-sector process recovery",
   "Software rollout simplification",
   "Manufacturing throughput and cost recovery",
   "Supply-chain and logistics redesign",
@@ -394,45 +398,46 @@ export const caseStudies = [
 }));
 
 export const speakingTopics = [
-  "Stop Automating Chaos",
-  "Operational Excellence in the AI Era",
-  "The Phoenix Protocol",
-  "Strategy That Survives Contact With Reality",
-  "AI, Analytics, and the Future of Work",
+  "Find the Hidden Risk",
+  "AI Is Not the Strategy",
+  "Policy Impact Before the Vote",
+  "Backlogs Are Financial Risk",
+  "Plain-English Briefings for Complex Decisions",
 ].map((title) => ({
   title,
   description:
-    "A practical executive session on operational excellence, strategy, analytics, AI adoption, and measurable execution.",
+    "A blunt, practical session on hidden assumptions, weak data, financial exposure, operational failure, AI risk, and what leaders should do next.",
 }));
 
 export const insightCards = [
   {
-    title: "Stop Automating Chaos",
+    title: "AI Is Not the Strategy",
     excerpt:
-      "AI will not fix a broken workflow. It will usually make the broken workflow faster, louder, and harder to control.",
-    status: "Coming soon",
+      "Buying tools before redesigning the work usually makes the risk faster, louder, and harder to govern.",
+    status: "AI + Operations",
   },
   {
-    title: "Why Backlogs Are a Strategy Problem",
+    title: "Why Backlogs Are Financial Risk",
     excerpt:
-      "Backlog is rarely just about staffing. It is often a signal that demand, capacity, rules, ownership, and management systems are out of sync.",
-    status: "Coming soon",
+      "Backlogs are often blamed on staffing when the real issue is visibility, flow, prioritization, and accountability.",
+    status: "Backlog Kill",
   },
   {
-    title: "The 30/60/90-Day Turnaround Plan for Service Operations",
+    title: "Budget Gimmicks Hide Operational Consequences",
     excerpt:
-      "Service recovery requires segmentation, control rhythm, root-cause discipline, and visible ownership.",
-    status: "Coming soon",
+      "A balanced-looking budget can still move liabilities, compliance burden, and service failure offstage.",
+    status: "Financial Risk",
   },
   {
-    title: "AI + Lean Six Sigma: What Actually Works",
+    title: "Policy Impact Before the Headline",
     excerpt:
-      "AI strengthens Lean Six Sigma when it helps teams see patterns, document work, test ideas, and accelerate learning.",
-    status: "Coming soon",
+      "Bills and regulations need a plain-English read on costs, compliance, operational impact, and who carries the burden.",
+    status: "Policy Impact",
   },
   {
     title: "Dashboards Are Not Decisions",
-    excerpt: "Reporting only matters when it changes what leaders do next.",
-    status: "Coming soon",
+    excerpt:
+      "Weak or misleading data can make leaders feel informed while the real decision risk stays hidden.",
+    status: "Weak Data",
   },
 ] as const;

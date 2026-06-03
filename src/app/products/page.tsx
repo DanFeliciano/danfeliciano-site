@@ -7,28 +7,28 @@ import { products } from "@/content/site";
 import { createMetadata } from "@/lib/seo";
 
 export const metadata = createMetadata({
-  title: "Products | Dan Feliciano",
+  title: "Briefings and Diagnostics | Dan Feliciano",
   description:
-    "Explore Dan Feliciano's productized diagnostics, policy intelligence, Lean Six Sigma and AI training, and practical operating tools for leaders who need momentum fast.",
+    "Explore focused Strategic Forensics briefings, Policy Impact Analysis, Backlog Kill diagnostics, and practical training for leaders who need clarity before expensive decisions.",
   path: "/products",
 });
 
 const productPrinciples = [
-  "Fixed-scope entry points for leaders who need evidence before a larger engagement.",
-  "Executive-ready outputs built around decisions, ownership, and next actions.",
-  "Practical diagnostics that expose constraints, risks, and opportunities without months of delay.",
+  "Fixed-scope entry points for leaders who need the hidden risk before the larger move.",
+  "Executive-ready outputs built around consequences, tradeoffs, and next actions.",
+  "Practical diagnostics that expose assumptions, weak data, costs, bottlenecks, and execution risk.",
 ];
 
 export default function ProductsPage() {
   return (
     <main id="main-content">
       <PageHeader
-        subhead="Productized diagnostics, intelligence briefs, and training paths for leaders who need focused momentum without a sprawling engagement."
-        title="Products for faster operating clarity"
+        subhead="Focused diagnostics, impact analysis, and briefings for leaders who need plain-English consequences before a bigger decision."
+        title="Briefings and diagnostics"
       >
         <div className="flex flex-col gap-3 sm:flex-row">
           <CtaButton className="w-full sm:w-auto" href="/contact">
-            Request a Productized Offer
+            Book a Strategic Forensics Briefing
           </CtaButton>
           <CtaButton className="w-full sm:w-auto" href="/services" variant="secondary">
             Explore Services
@@ -40,12 +40,12 @@ export default function ProductsPage() {
         <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr]">
           <div>
             <h2 className="text-balance text-3xl font-black tracking-normal sm:text-4xl">
-              Focused offers, useful outputs
+              Focused offers, decision-grade outputs
             </h2>
             <p className="mt-4 text-base leading-7 text-slate-600">
-              These offers are built for leaders who need a clear diagnostic,
-              brief, or training path before committing to a broader
-              transformation program.
+              These offers are built for leaders who need to understand cost,
+              risk, compliance, workflow, and stakeholder consequences before
+              committing money, time, or public credibility.
             </p>
           </div>
           <div className="grid gap-3">
@@ -67,8 +67,9 @@ export default function ProductsPage() {
             Productized offers
           </h2>
           <p className="mt-4 text-base leading-7 text-slate-600">
-            Start with the problem you need to understand: backlog, policy
-            change, or team capability. Each path creates a concrete next step.
+            Start with the decision you need to understand: backlog, policy
+            impact, AI process risk, or team capability. Each path creates a
+            concrete next step.
           </p>
         </div>
         <div className="mt-8 grid gap-4 md:grid-cols-3">
@@ -91,10 +92,10 @@ export default function ProductsPage() {
       </Section>
 
       <FinalCTA
-        body="Choose a focused diagnostic or brief when the next decision needs evidence, structure, and a clear path forward."
-        cta="Request a Productized Offer"
+        body="Choose a focused diagnostic or brief when the next decision needs consequences, tradeoffs, and a clear path forward."
+        cta="Start a Conversation"
         href="/contact"
-        title="Need clarity before a bigger move?"
+        title="Need clarity before the expensive move?"
       />
     </main>
   );

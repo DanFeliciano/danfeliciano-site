@@ -9,12 +9,14 @@ import { navItems } from "@/content/site";
 describe("navigation", () => {
   it("uses the approved navigation labels", () => {
     expect(navItems.map((item) => item.label)).toEqual([
-      "Services",
-      "Products",
-      "Academy",
-      "Results",
-      "Speaking",
+      "Home",
+      "Strategic Forensics",
+      "AI + Operations",
+      "Policy Impact",
+      "Backlog Kill",
+      "Briefings",
       "Insights",
+      "About",
       "Contact",
     ]);
   });
@@ -23,7 +25,7 @@ describe("navigation", () => {
     render(createElement(SiteHeader));
 
     const diagnosticLinks = screen.getAllByRole("link", {
-      name: "Book Diagnostic",
+      name: "Book Briefing",
     });
 
     expect(diagnosticLinks.length).toBeGreaterThan(0);
@@ -59,7 +61,7 @@ describe("navigation", () => {
     expect(closeButton).toHaveAttribute("aria-expanded", "true");
     expect(screen.getByRole("navigation", { name: "Mobile navigation" })).toBeInTheDocument();
     await waitFor(() =>
-      expect(screen.getByRole("link", { name: "Services" })).toHaveFocus(),
+      expect(screen.getByRole("link", { name: "Home" })).toHaveFocus(),
     );
 
     for (const item of navItems) {
@@ -67,7 +69,7 @@ describe("navigation", () => {
     }
 
     const diagnosticLink = screen.getByRole("link", {
-      name: "Book Diagnostic",
+      name: "Book Briefing",
     });
 
     expect(

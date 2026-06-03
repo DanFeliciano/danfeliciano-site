@@ -18,10 +18,10 @@ describe("supporting page content", () => {
     ]);
   });
 
-  it("marks insight cards as coming soon when article pages are not built", () => {
-    expect(insightCards.every((card) => card.status === "Coming soon")).toBe(
-      true,
-    );
+  it("uses non-placeholder insight card labels", () => {
+    expect(
+      insightCards.every((card) => !/coming soon|placeholder|todo/i.test(card.status)),
+    ).toBe(true);
   });
 
   it("defines speaking topics", () => {

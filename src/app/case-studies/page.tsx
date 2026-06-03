@@ -11,24 +11,24 @@ import { createMetadata } from "@/lib/seo";
 type RelatedLink = { label: string; href: SiteRoute };
 
 export const metadata = createMetadata({
-  title: "Results | Case Studies | Dan Feliciano",
+  title: "Results | Strategic Forensics Case Themes | Dan Feliciano",
   description:
-    "Review anonymized case study themes from operations, healthcare, public sector, software rollout, manufacturing, logistics, and executive reporting work.",
+    "Review anonymized case study themes from Strategic Forensics, operational recovery, public-sector process work, service redesign, and decision support.",
   path: "/case-studies",
 });
 
 const relatedLinks = [
-  { label: "Phoenix Protocol", href: "/services/phoenix-protocol" },
-  { label: "Backlog Kill Kit", href: "/products/backlog-kill-kit" },
-  { label: "Services", href: "/services" },
+  { label: "Backlog Kill", href: "/products/backlog-kill-kit" },
+  { label: "Strategic Forensics", href: "/services" },
+  { label: "AI + Operations", href: "/services/ai-automation-analytics" },
 ] as const satisfies readonly RelatedLink[];
 
 export default function CaseStudiesPage() {
   return (
     <main id="main-content">
       <PageHeader
-        subhead="Anonymized examples from complex operating environments where clearer work, ownership, cadence, and decision support created measurable control."
-        title="Results from complex operating work"
+        subhead="Anonymized examples from complex environments where hidden risk, weak data, broken flow, and unclear ownership had to be made visible."
+        title="Results from complex decision and operating work"
       >
         <CtaButton href="/contact">Discuss your operating challenge</CtaButton>
       </PageHeader>
@@ -95,10 +95,10 @@ export default function CaseStudiesPage() {
       </Section>
 
       <FinalCTA
-        body="If the work is stuck, unclear, aging, or hard to govern, start with the operating problem and the decisions it is blocking."
-        cta="Book a Strategy Diagnostic"
+        body="If the decision is stuck, unclear, risky, aging, or hard to govern, start with what it is hiding."
+        cta="Book a Strategic Forensics Briefing"
         href="/contact"
-        title="Want a result like this in your environment?"
+        title="Need a clearer read in your environment?"
       />
     </main>
   );

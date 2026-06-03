@@ -62,13 +62,14 @@ export default function PolicyForensicsPage() {
         <div className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr]">
           <div>
             <h2 className="text-balance text-3xl font-black tracking-normal sm:text-4xl">
-              Policy becomes operational quickly
+              Policy impact becomes operational quickly
             </h2>
             <p className="mt-4 text-base leading-7 text-slate-600">
               Proposed laws, regulations, budget decisions, and institutional
-              policy shifts can become operational, financial, and reputational
-              surprises. Policy Forensics gives leaders a nonpartisan read on
-              what is changing and what it means for execution.
+              policy shifts can become operational, financial, compliance, and
+              taxpayer surprises. Policy Impact Analysis gives leaders a
+              nonpartisan read on what is changing and what it means in the
+              real system.
             </p>
           </div>
           <div className="rounded-lg border border-slate-200 bg-white p-5 shadow-command">
@@ -87,11 +88,12 @@ export default function PolicyForensicsPage() {
       <Section className="bg-graphite text-white">
         <div className="max-w-3xl">
           <h2 className="text-balance text-3xl font-black tracking-normal sm:text-4xl">
-            What the brief includes
+            What the analysis includes
           </h2>
           <p className="mt-4 text-base leading-7 text-slate-300">
             The work turns dense policy movement into a clear executive view of
-            exposure, operational impact, stakeholders, and decisions.
+            exposure, operating impact, financial risk, stakeholders, and
+            decisions.
           </p>
         </div>
         <div className="mt-8">
@@ -121,10 +123,10 @@ export default function PolicyForensicsPage() {
       </Section>
 
       <FinalCTA
-        body="Translate policy movement into institutional risk, operational impact, and executive-ready next steps."
+        body="Translate policy movement into institutional risk, financial exposure, operational impact, compliance burden, and executive-ready next steps."
         cta={product.cta}
         href="/contact"
-        title="Need a nonpartisan policy brief?"
+        title="Need to know what a policy decision really does?"
       />
       <JsonLd
         data={[
@@ -134,7 +136,7 @@ export default function PolicyForensicsPage() {
             name: product.title,
             description: product.metadata.description,
             brand: { "@type": "Person", name: site.name, url: site.url },
-            category: "Policy intelligence service",
+            category: "Policy impact analysis service",
             url: absoluteUrl(product.href),
           },
           breadcrumbListJsonLd(breadcrumbs),

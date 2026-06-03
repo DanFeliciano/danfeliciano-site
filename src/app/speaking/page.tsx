@@ -12,44 +12,44 @@ import { createMetadata } from "@/lib/seo";
 type RelatedLink = { label: string; href: SiteRoute };
 
 export const metadata = createMetadata({
-  title: "Speaking | Operational Excellence, AI, and Strategy | Dan Feliciano",
+  title: "Strategic Forensics Briefings | Dan Feliciano",
   description:
-    "Book Dan Feliciano for keynotes, executive sessions, workshops, and leadership offsites on operational excellence, AI, strategy, service recovery, and measurable execution.",
+    "Book Dan Feliciano for Strategic Forensics briefings that turn complex issues into plain-English consequences, risks, and next actions.",
   path: "/speaking",
 });
 
 const formats = [
   {
-    title: "Keynotes",
+    title: "Strategic briefings",
     description:
-      "Direct, practical talks for leaders and teams facing operational change, AI adoption, and execution pressure.",
+      "Focused 60-90 minute sessions that expose hidden risk, financial consequences, and practical next actions.",
   },
   {
     title: "Executive workshops",
     description:
-      "Working sessions that help leadership teams translate ideas into operating cadence, decisions, and next actions.",
+      "Working sessions that pressure-test decisions, assumptions, data, policy impact, and execution risk.",
   },
   {
-    title: "Leadership offsites",
+    title: "Board and public-decision sessions",
     description:
-      "Focused facilitation around strategy, transformation, backlog recovery, analytics, and governance.",
+      "Plain-English analysis for rooms that need consequences, not talking points.",
   },
 ];
 
 const relatedLinks = [
-  { label: "Services", href: "/services" },
-  { label: "Academy", href: "/academy" },
-  { label: "AI, Automation & Analytics", href: "/services/ai-automation-analytics" },
+  { label: "Strategic Forensics", href: "/services" },
+  { label: "AI + Operations", href: "/services/ai-automation-analytics" },
+  { label: "Policy Impact", href: "/products/policy-forensics" },
 ] as const satisfies readonly RelatedLink[];
 
 export default function SpeakingPage() {
   return (
     <main id="main-content">
       <PageHeader
-        subhead="Keynotes, workshops, and executive sessions for leaders who need a practical operating view of strategy, AI, analytics, service recovery, and measurable execution."
-        title="Speaking for leaders who need operational clarity"
+        subhead="Focused briefings, workshops, and executive sessions for leaders who need to understand what a complex issue actually means."
+        title="Strategic Forensics Briefings"
       >
-        <CtaButton href="/contact">Plan a session</CtaButton>
+        <CtaButton href="/contact">Book a briefing</CtaButton>
       </PageHeader>
 
       <Section className="bg-paper text-charcoal">
@@ -58,9 +58,9 @@ export default function SpeakingPage() {
             Topics
           </h2>
           <p className="mt-4 text-base leading-7 text-slate-600">
-            Sessions are built for executive teams, transformation groups,
-            public-sector leaders, operators, and organizations trying to make
-            AI, strategy, and improvement work in the real operating system.
+            Sessions are built for executives, public-sector leaders,
+            candidates, associations, boards, and organizations facing AI,
+            policy, budget, backlog, data, or operational risk.
           </p>
         </div>
         <div className="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
@@ -85,7 +85,7 @@ export default function SpeakingPage() {
           </h2>
           <p className="mt-4 text-base leading-7 text-slate-300">
             Bring Dan in for the level of depth the room needs, from a sharp
-            keynote to a working session with immediate operating outputs.
+            briefing to a working session with practical decision outputs.
           </p>
         </div>
         <div className="mt-8">
@@ -109,10 +109,10 @@ export default function SpeakingPage() {
       </Section>
 
       <FinalCTA
-        body="Bring a practical operating lens to your next leadership meeting, conference, workshop, or transformation event."
-        cta="Plan a speaking session"
+        body="Bring a complex issue into a focused briefing and leave with consequences, risks, and next actions."
+        cta="Book a Strategic Forensics Briefing"
         href="/contact"
-        title="Need the room aligned around execution?"
+        title="Need the room clear on what the decision really means?"
       />
     </main>
   );

@@ -8,11 +8,11 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL("https://danfeliciano.com"),
   title: {
-    default: "Dan Feliciano | Operational Strategy, AI Automation & Lean Six Sigma",
+    default: "Dan Feliciano | Strategic Forensics",
     template: "%s",
   },
   description:
-    "Dan Feliciano helps leaders reduce backlog, improve service, automate intelligently, and turn operational chaos into measurable performance.",
+    "Dan Feliciano provides Strategic Forensics for leaders facing AI disruption, policy complexity, operational failure, weak data, backlogs, and financial risk.",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

@@ -57,8 +57,8 @@ const automationSteps = [
 ];
 
 const relatedLinks = [
-  { label: "Policy Forensics", href: "/products/policy-forensics" },
-  { label: "AESOP Strategy & Governance", href: "/services/aesop-strategy-governance" },
+  { label: "Policy Impact", href: "/products/policy-forensics" },
+  { label: "Strategic Forensics", href: "/services/aesop-strategy-governance" },
   { label: "Academy", href: "/academy" },
 ] as const satisfies readonly RelatedLink[];
 
@@ -76,13 +76,13 @@ export default function AiAutomationAnalyticsPage() {
         <div className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr]">
           <div>
             <h2 className="text-balance text-3xl font-black tracking-normal sm:text-4xl">
-              Fix the workflow before scaling AI
+              Redesign the work before scaling AI
             </h2>
             <p className="mt-4 text-base leading-7 text-slate-600">
               AI can accelerate work, but it can also amplify unclear rules,
-              poor handoffs, weak data, and unmanaged risk. This service starts
-              with operating design, then applies automation and analytics where
-              they can improve measurable performance.
+              poor handoffs, weak data, and unmanaged risk. AI Process Redesign
+              starts with the workflow, data, consequences, and controls before
+              the tool decision.
             </p>
           </div>
           <div className="rounded-lg border border-slate-200 bg-white p-5 shadow-command">
@@ -101,12 +101,12 @@ export default function AiAutomationAnalyticsPage() {
       <Section className="bg-graphite text-white">
         <div className="max-w-3xl">
           <h2 className="text-balance text-3xl font-black tracking-normal sm:text-4xl">
-            Practical AI implementation path
+            AI Process Redesign path
           </h2>
           <p className="mt-4 text-base leading-7 text-slate-300">
             The work links automation ideas to the operating model, risk
             controls, adoption path, and performance measures that make them
-            useful.
+            worth doing.
           </p>
         </div>
         <div className="mt-8">
@@ -121,9 +121,9 @@ export default function AiAutomationAnalyticsPage() {
               Deliverables
             </h2>
             <p className="mt-4 text-base leading-7 text-slate-600">
-              The output is an executive-ready path for automation that respects
-              workflow readiness, governance, adoption, and measurable operating
-              outcomes.
+              The output is an executive-ready path for AI and automation that
+              respects workflow readiness, governance, adoption, and measurable
+              operating outcomes.
             </p>
           </div>
           <div className="grid gap-3 md:grid-cols-2">
@@ -152,10 +152,10 @@ export default function AiAutomationAnalyticsPage() {
       </Section>
 
       <FinalCTA
-        body="Find the AI, automation, and analytics opportunities that improve work instead of speeding up waste."
+        body="Find the AI and automation opportunities that improve work instead of speeding up waste."
         cta={service.cta}
         href="/contact"
-        title="Ready to automate the right work?"
+        title="Ready to redesign the work before buying the tool?"
       />
       <JsonLd
         data={[

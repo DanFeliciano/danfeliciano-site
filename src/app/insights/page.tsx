@@ -11,24 +11,24 @@ import { createMetadata } from "@/lib/seo";
 type RelatedLink = { label: string; href: SiteRoute };
 
 export const metadata = createMetadata({
-  title: "Insights | Operations, AI, Strategy, and Lean Six Sigma",
+  title: "Insights | Strategic Forensics, AI, Policy, and Backlog Risk",
   description:
-    "Read forthcoming insights from Dan Feliciano on operational excellence, AI automation, backlogs, strategy execution, analytics, and Lean Six Sigma.",
+    "Read field notes from Dan Feliciano on Strategic Forensics, AI disruption, policy impact, budgets, backlogs, weak data, and operational risk.",
   path: "/insights",
 });
 
 const relatedLinks = [
-  { label: "Services", href: "/services" },
-  { label: "Academy", href: "/academy" },
-  { label: "Speaking", href: "/speaking" },
+  { label: "Strategic Forensics", href: "/services" },
+  { label: "AI + Operations", href: "/services/ai-automation-analytics" },
+  { label: "Briefings", href: "/speaking" },
 ] as const satisfies readonly RelatedLink[];
 
 export default function InsightsPage() {
   return (
     <main id="main-content">
       <PageHeader
-        subhead="Practical writing on operational excellence, AI automation, backlogs, strategy execution, analytics, and Lean Six Sigma."
-        title="Insights for leaders improving real work"
+        subhead="Practical writing on Strategic Forensics, AI disruption, policy complexity, weak data, budgets, backlogs, and operational risk."
+        title="Insights for leaders facing complex decisions"
       >
         <CtaButton href="/contact">Ask a question</CtaButton>
       </PageHeader>
@@ -36,11 +36,11 @@ export default function InsightsPage() {
       <Section className="bg-paper text-charcoal">
         <div className="max-w-3xl">
           <h2 className="text-balance text-3xl font-black tracking-normal sm:text-4xl">
-            Coming soon
+            Field notes on hidden risk
           </h2>
           <p className="mt-4 text-base leading-7 text-slate-600">
-            Article pages are not live yet, so these cards show the upcoming
-            editorial direction without linking to unpublished slugs.
+            Short reads for leaders who need to see the operating, financial,
+            policy, and AI consequences before a decision hardens.
           </p>
         </div>
         <div className="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
@@ -79,10 +79,10 @@ export default function InsightsPage() {
       </Section>
 
       <FinalCTA
-        body="Bring a current operating question into a focused diagnostic conversation."
-        cta="Book a Strategy Diagnostic"
+        body="Bring a current decision, risk, budget, AI, policy, or backlog question into a focused Strategic Forensics conversation."
+        cta="Book a Strategic Forensics Briefing"
         href="/contact"
-        title="Need a practical answer before the next article drops?"
+        title="Need a practical answer before the next decision?"
       />
     </main>
   );

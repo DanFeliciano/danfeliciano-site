@@ -65,11 +65,12 @@ export function personJsonLd() {
     email: site.email,
     sameAs: [site.linkedIn],
     knowsAbout: [
-      "Operational strategy",
-      "Lean Six Sigma",
-      "AI automation",
-      "Analytics",
-      "Strategy execution",
+      "Strategic Forensics",
+      "AI disruption",
+      "Policy impact",
+      "Operational failure",
+      "Financial risk",
+      "Backlog diagnosis",
     ],
   };
 }

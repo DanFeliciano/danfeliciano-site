@@ -17,31 +17,31 @@ type FooterExternalLink = {
 type FooterLink = FooterInternalLink | FooterExternalLink;
 
 const expertise = [
-  "Strategy",
-  "Operations",
-  "AI Automation",
-  "Lean Six Sigma",
-  "Analytics",
+  "Strategic Forensics",
+  "AI + Operations",
+  "Policy Impact",
+  "Backlog Kill",
+  "Financial Risk",
 ];
 
 const footerColumns: { title: string; links: FooterLink[] }[] = [
   {
     title: "Services",
     links: [
-      { label: "AESOP Strategy & Governance", href: "/services/aesop-strategy-governance" },
-      { label: "Phoenix Protocol", href: "/services/phoenix-protocol" },
-      { label: "AI, Automation & Analytics", href: "/services/ai-automation-analytics" },
-      { label: "Service Reimagined", href: "/services" },
-      { label: "Speaking & Workshops", href: "/speaking" },
+      { label: "Strategic Forensics", href: "/services" },
+      { label: "AI + Operations", href: "/services/ai-automation-analytics" },
+      { label: "Policy Impact", href: "/products/policy-forensics" },
+      { label: "Backlog Kill", href: "/products/backlog-kill-kit" },
+      { label: "Briefings", href: "/speaking" },
     ],
   },
   {
     title: "Products",
     links: [
-      { label: "Backlog Kill Kit", href: "/products/backlog-kill-kit" },
-      { label: "Policy Forensics", href: "/products/policy-forensics" },
+      { label: "Backlog Kill Diagnostic", href: "/products/backlog-kill-kit" },
+      { label: "Policy Impact Analysis", href: "/products/policy-forensics" },
       { label: "Dan Feliciano Academy", href: "/academy" },
-      { label: "Strategy Tools", href: "/products" },
+      { label: "About Dan", href: "/about" },
     ],
   },
   {

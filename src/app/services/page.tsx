@@ -9,67 +9,67 @@ import { services } from "@/content/site";
 import { createMetadata } from "@/lib/seo";
 
 export const metadata = createMetadata({
-  title: "Services | Dan Feliciano",
+  title: "Strategic Forensics Services | Dan Feliciano",
   description:
-    "Explore Dan Feliciano's advisory services in strategy, governance, operational turnaround, AI automation, analytics, service redesign, and Lean Six Sigma execution.",
+    "Explore Strategic Forensics, AI Process Redesign, Policy Impact Analysis, Backlog Kill, and briefings for complex decisions with hidden risk.",
   path: "/services",
 });
 
 const bringDanIn = [
-  "Strategy is clear at the top, but execution is inconsistent across teams.",
-  "Backlog, cycle time, rework, or service misses are becoming executive risks.",
-  "Dashboards exist, but leaders still do not have decision-ready operating rhythm.",
-  "AI and automation are on the agenda, but the workflow is not ready to scale.",
-  "Transformation work needs governance, accountability, and practical momentum.",
+  "A decision looks simple, but the cost, compliance, and operating consequences are unclear.",
+  "AI is on the table, but the workflow, data, and risk have not been mapped.",
+  "Backlog, staffing pressure, or service delay is becoming financial or public risk.",
+  "Dashboards exist, but the numbers do not explain what leaders should do next.",
+  "A bill, budget, regulation, or policy shift needs plain-English impact analysis.",
 ];
 
 const additionalServices: OfferCardData[] = [
   {
-    title: "Service Reimagined",
+    title: "Briefings",
     summary:
-      "Redesign intake, handoffs, service standards, and customer-facing operations around flow, visibility, and measurable performance.",
-    href: "/services",
-    cta: "Discuss service redesign",
-    meta: "Best for teams rebuilding service delivery around real operating constraints.",
-  },
-  {
-    title: "Speaking & Workshops",
-    summary:
-      "Direct executive sessions on strategy, AI, operational excellence, service recovery, and practical transformation.",
+      "A focused 60-90 minute session that turns a complex issue into plain-English consequences, risks, and next actions.",
     href: "/speaking",
-    cta: "Plan a session",
-    meta: "Best for offsites, leadership meetings, and transformation events.",
+    cta: "Plan a briefing",
+    meta: "Best for boards, executives, associations, campaigns, and public leaders.",
   },
   {
-    title: "Executive Advisory",
+    title: "Policy Impact Analysis",
     summary:
-      "Focused counsel for leaders who need a trusted operator to pressure-test decisions, cadence, metrics, and recovery plans.",
+      "Translate bills, budgets, regulations, and policy changes into operational, financial, compliance, and taxpayer consequences.",
+    href: "/products/policy-forensics",
+    cta: "Request policy analysis",
+    meta: "Best for public decisions, associations, candidates, and institutional leaders.",
+  },
+  {
+    title: "Decision Risk Counsel",
+    summary:
+      "Blunt counsel for leaders who need to pressure-test assumptions, money, data, operations, and execution before moving.",
     href: "/services",
     cta: "Start the conversation",
-    meta: "Best for executive teams navigating complex operating change.",
+    meta: "Best when the stakes are high and the decision is still murky.",
   },
 ];
 
 const engagementSteps = [
   {
-    title: "Diagnose the operating reality",
+    title: "Find the hidden risk",
     description:
-      "Clarify the work, data, constraints, stakeholders, risks, and decisions that need better control.",
+      "Clarify the decision, assumptions, data, money, stakeholders, constraints, and consequences.",
   },
   {
-    title: "Design the operating system",
+    title: "Translate consequences",
     description:
-      "Build the cadence, governance, KPIs, ownership model, and improvement roadmap needed to move.",
+      "Turn policy, budget, AI, backlog, and operating complexity into plain-English tradeoffs.",
   },
   {
-    title: "Execute in the work",
+    title: "Fix the system",
     description:
-      "Turn recommendations into routines, dashboards, meetings, decisions, and measurable recovery actions.",
+      "Identify the workflow, governance, ownership, data, and recovery actions needed to reduce risk.",
   },
   {
-    title: "Transfer capability",
+    title: "Brief the decision",
     description:
-      "Leave leaders and teams with the methods, templates, and discipline to keep improving after the engagement.",
+      "Leave leaders with consequences, options, next actions, and a clearer path forward.",
   },
 ];
 
@@ -88,12 +88,12 @@ export default function ServicesPage() {
   return (
     <main id="main-content">
       <PageHeader
-        subhead="Advisory systems for leaders who need strategy, operations, AI, analytics, and execution discipline in the same conversation."
-        title="Services for strategy, operations, AI, and execution"
+        subhead="Strategic Forensics for leaders facing AI disruption, policy complexity, operational failure, weak data, backlogs, budgets, and financial risk."
+        title="Strategic Forensics services"
       >
         <div className="flex flex-col gap-3 sm:flex-row">
           <CtaButton className="w-full sm:w-auto" href="/contact">
-            Book a Strategy Diagnostic
+            Book a Strategic Forensics Briefing
           </CtaButton>
           <CtaButton className="w-full sm:w-auto" href="/products" variant="secondary">
             View Productized Offers
@@ -105,13 +105,12 @@ export default function ServicesPage() {
         <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
           <div>
             <h2 className="text-balance text-3xl font-black tracking-normal sm:text-4xl">
-              Operating clarity for complex work
+              Find what the decision is hiding
             </h2>
             <p className="mt-4 text-base leading-7 text-slate-600">
-              Dan helps executives, public-sector leaders, and operators
-              stabilize broken workflows, redesign service delivery, deploy
-              practical AI, and build operating systems that survive contact
-              with reality.
+              Dan helps leaders understand what complex decisions actually
+              mean financially, operationally, strategically, and publicly
+              before hidden risk becomes an expensive failure.
             </p>
           </div>
           <div className="rounded-lg border border-slate-200 bg-white p-5 shadow-command">
@@ -135,9 +134,9 @@ export default function ServicesPage() {
             Advisory offers
           </h2>
           <p className="mt-4 text-base leading-7 text-slate-600">
-            Start with the constraint that matters most. Each service is built
-            to connect executive decisions with the work, data, and cadence
-            needed for measurable execution.
+            Start with the decision, risk, or operating failure that needs a
+            clearer read. Each service turns complexity into consequences,
+            tradeoffs, and next actions.
           </p>
         </div>
         <div className="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
@@ -153,8 +152,9 @@ export default function ServicesPage() {
             How engagements work
           </h2>
           <p className="mt-4 text-base leading-7 text-slate-300">
-            The work moves from diagnosis to operating rhythm quickly, with
-            executive visibility and practical transfer built into the cadence.
+            The work moves from hidden risk to clear decision quickly, with
+            plain-English consequences and practical fixes built into the
+            briefing.
           </p>
         </div>
         <div className="mt-8">
@@ -163,10 +163,10 @@ export default function ServicesPage() {
       </Section>
 
       <FinalCTA
-        body="Bring the operating problem, the data, and the decision cadence into one focused conversation."
-        cta="Book a Strategy Diagnostic"
+        body="Bring the decision, the data, the money, and the operating reality into one focused Strategic Forensics conversation."
+        cta="Book a Strategic Forensics Briefing"
         href="/contact"
-        title="Need a clearer operating path?"
+        title="Need to know what the decision is hiding?"
       />
     </main>
   );

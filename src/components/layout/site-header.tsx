@@ -8,7 +8,7 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-40 border-b border-white/10 bg-ink text-white shadow-command">
       <Container>
-        <div className="flex min-h-20 items-center justify-between gap-5">
+        <div className="flex min-h-20 items-center justify-between gap-4">
           <Link
             className="group inline-flex items-center gap-3 font-bold"
             href="/"
@@ -22,10 +22,10 @@ export function SiteHeader() {
             </span>
           </Link>
 
-          <nav aria-label="Primary navigation" className="hidden items-center gap-6 lg:flex">
+          <nav aria-label="Primary navigation" className="hidden items-center gap-3 xl:flex">
             {navItems.map((item) => (
               <Link
-                className="text-sm font-semibold text-white/80 transition hover:text-signal"
+                className="text-xs font-semibold text-white/80 transition hover:text-signal"
                 href={item.href}
                 key={item.href}
               >
@@ -34,8 +34,8 @@ export function SiteHeader() {
             ))}
           </nav>
 
-          <div className="hidden lg:block">
-            <CtaButton href="/contact">Book Diagnostic</CtaButton>
+          <div className="hidden xl:block">
+            <CtaButton href="/contact">Book Briefing</CtaButton>
           </div>
 
           <MobileNav />

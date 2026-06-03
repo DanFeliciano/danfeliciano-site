@@ -62,13 +62,14 @@ export default function BacklogKillKitPage() {
         <div className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr]">
           <div>
             <h2 className="text-balance text-3xl font-black tracking-normal sm:text-4xl">
-              Backlog is an operating signal
+              Backlog is a risk signal
             </h2>
             <p className="mt-4 text-base leading-7 text-slate-600">
               Aging work usually points to a deeper operating mismatch:
               unclear demand, constrained capacity, weak ownership, rework,
-              policy friction, or decisions that arrive too late. The Backlog
-              Kill Kit exposes the drivers and turns them into action.
+              policy friction, or decisions that arrive too late. Backlog Kill
+              exposes the drivers before leaders spend against the wrong
+              problem.
             </p>
           </div>
           <div className="rounded-lg border border-slate-200 bg-white p-5 shadow-command">
@@ -87,7 +88,7 @@ export default function BacklogKillKitPage() {
       <Section className="bg-graphite text-white">
         <div className="max-w-3xl">
           <h2 className="text-balance text-3xl font-black tracking-normal sm:text-4xl">
-            What the diagnostic includes
+            What the briefing includes
           </h2>
           <p className="mt-4 text-base leading-7 text-slate-300">
             A compact review of the queue, flow, ownership model, recovery
@@ -106,8 +107,8 @@ export default function BacklogKillKitPage() {
               Deliverables
             </h2>
             <p className="mt-4 text-base leading-7 text-slate-600">
-              The output is direct: a diagnostic view of the backlog and a
-              recovery roadmap leaders can act on immediately.
+              The output is direct: a diagnostic view of the backlog, the risk
+              behind it, and a recovery roadmap leaders can act on immediately.
             </p>
           </div>
           <div className="grid gap-3 md:grid-cols-2">
@@ -121,10 +122,10 @@ export default function BacklogKillKitPage() {
       </Section>
 
       <FinalCTA
-        body="Get a focused diagnostic of backlog drivers, aging risk, ownership gaps, and recovery actions."
+        body="Get a focused diagnostic of backlog drivers, aging risk, staffing pressure, ownership gaps, and recovery actions."
         cta={product.cta}
         href="/contact"
-        title="Ready to understand the backlog?"
+        title="Ready to understand what the backlog is hiding?"
       />
       <JsonLd
         data={[

@@ -5,11 +5,12 @@ import HomePage from "@/app/page";
 import { homepage } from "@/content/site";
 
 describe("homepage content", () => {
-  it("uses the approved headline and CTAs", () => {
+  it("uses the Strategic Forensics headline and CTAs", () => {
     expect(homepage.title).toBe(
-      "Operational Strategy, AI Automation, and Lean Six Sigma Execution",
+      "Find the hidden risk. Clarify the decision. Fix the system.",
     );
-    expect(homepage.subhead).toContain("reduce backlog");
+    expect(homepage.subhead).toContain("Strategic Forensics");
+    expect(homepage.body).toContain("business owners");
     expect(homepage.proof).toHaveLength(4);
   });
 
@@ -27,7 +28,7 @@ describe("homepage content", () => {
 
     const heroScope = within(hero as HTMLElement);
     const primaryCta = heroScope.getByRole("link", {
-      name: "Book a Strategy Diagnostic",
+      name: "Book a Strategic Forensics Briefing",
     });
     const secondaryCta = heroScope.getByRole("link", {
       name: "Explore Services",
@@ -43,13 +44,15 @@ describe("homepage content", () => {
         "https://danfeliciano.com",
       ).pathname,
     ).toBe("/services");
-    expect(screen.getByText("Operating signal map")).toBeInTheDocument();
+    expect(screen.getByText("Strategic forensics map")).toBeInTheDocument();
 
     for (const heading of [
-      "What do you need to fix first?",
-      "Services",
-      "Products",
-      "Results",
+      "Complex decisions hide expensive risks.",
+      "Strategic Forensics is the discipline of finding what others miss.",
+      "Core services",
+      "Strategic Forensics Briefings",
+      "Who this is for",
+      "About Dan Feliciano",
     ]) {
       expect(
         screen.getByRole("heading", { level: 2, name: heading }),

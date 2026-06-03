@@ -34,26 +34,26 @@ const breadcrumbs = [
 
 const recoverySteps = [
   {
-    title: "Stabilize",
+    title: "Expose",
     description:
-      "Segment the backlog, expose aging risk, clarify ownership, and create immediate management rhythm.",
+      "Segment the backlog, expose aging risk, clarify ownership, and identify the real constraint.",
   },
   {
-    title: "Recover",
+    title: "Prioritize",
     description:
-      "Attack root causes, remove handoff friction, rebalance capacity, and track daily recovery actions.",
+      "Separate staffing pressure from flow failure, policy friction, rework, weak data, and late decisions.",
   },
   {
-    title: "Sustain",
+    title: "Fix",
     description:
-      "Install controls, dashboards, escalation paths, and leadership routines that prevent relapse.",
+      "Turn findings into recovery actions, decision cadence, ownership, and controls that prevent relapse.",
   },
 ];
 
 const relatedLinks = [
-  { label: "Backlog Kill Kit", href: "/products/backlog-kill-kit" },
-  { label: "AESOP Strategy & Governance", href: "/services/aesop-strategy-governance" },
-  { label: "AI, Automation & Analytics", href: "/services/ai-automation-analytics" },
+  { label: "Backlog Kill Diagnostic", href: "/products/backlog-kill-kit" },
+  { label: "Strategic Forensics", href: "/services/aesop-strategy-governance" },
+  { label: "AI + Operations", href: "/services/ai-automation-analytics" },
 ] as const satisfies readonly RelatedLink[];
 
 export default function PhoenixProtocolPage() {
@@ -70,13 +70,13 @@ export default function PhoenixProtocolPage() {
         <div className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr]">
           <div>
             <h2 className="text-balance text-3xl font-black tracking-normal sm:text-4xl">
-              Recovery starts with control
+              Backlog kill starts with visibility
             </h2>
             <p className="mt-4 text-base leading-7 text-slate-600">
               Backlogs become dangerous when leaders cannot see aging risk,
               ownership, demand-capacity mismatch, failure demand, or the
-              decisions required to restore flow. Phoenix Protocol creates the
-              control rhythm first, then drives recovery.
+              decisions required to restore flow. Backlog Kill starts by
+              finding what is actually driving the delay.
             </p>
           </div>
           <div className="rounded-lg border border-slate-200 bg-white p-5 shadow-command">
@@ -95,11 +95,12 @@ export default function PhoenixProtocolPage() {
       <Section className="bg-graphite text-white">
         <div className="max-w-3xl">
           <h2 className="text-balance text-3xl font-black tracking-normal sm:text-4xl">
-            30/60/90-day recovery framework
+            Backlog Kill framework
           </h2>
           <p className="mt-4 text-base leading-7 text-slate-300">
-            The protocol moves from stabilization to root-cause recovery to a
-            sustainment model leaders can manage without heroic escalation.
+            The work moves from visibility to prioritization to a recovery
+            model leaders can manage without heroic escalation or blind
+            spending.
           </p>
         </div>
         <div className="mt-8">
@@ -114,9 +115,9 @@ export default function PhoenixProtocolPage() {
               Deliverables
             </h2>
             <p className="mt-4 text-base leading-7 text-slate-600">
-              Leaders leave with a practical recovery plan, daily management
-              system, and the evidence needed to make staffing, process, and
-              policy decisions.
+              Leaders leave with a practical recovery plan and the evidence
+              needed to make staffing, process, policy, and customer-impact
+              decisions.
             </p>
           </div>
           <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-3">
@@ -145,10 +146,10 @@ export default function PhoenixProtocolPage() {
       </Section>
 
       <FinalCTA
-        body="Expose the backlog drivers, restore operating rhythm, and give leaders a recovery path they can govern."
+        body="Expose backlog drivers, service risk, staffing pressure, and the operating decisions needed to restore control."
         cta={service.cta}
         href="/contact"
-        title="Need to stabilize service performance?"
+        title="Need to know what is really causing the backlog?"
       />
       <JsonLd
         data={[

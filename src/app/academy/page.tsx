@@ -9,9 +9,9 @@ import { courses } from "@/content/site";
 import { academyCourseItemListJsonLd, createMetadata } from "@/lib/seo";
 
 export const metadata = createMetadata({
-  title: "Academy | Lean Six Sigma + AI Training | Dan Feliciano",
+  title: "Academy | Process Improvement and AI Operations Training | Dan Feliciano",
   description:
-    "Explore Dan Feliciano Academy courses in Lean Six Sigma + AI Yellow Belt, Green Belt, and Black Belt training for professionals and organizations.",
+    "Explore Dan Feliciano Academy training in process improvement, AI-aware operations, decision discipline, and Lean Six Sigma methods.",
   path: "/academy",
 });
 
@@ -37,7 +37,7 @@ export default function AcademyPage() {
   return (
     <main id="main-content">
       <PageHeader
-        subhead="Lean Six Sigma + AI training for professionals, managers, analysts, and organizations that need improvement capability grounded in modern operating reality."
+        subhead="Training for professionals, managers, analysts, and organizations that need process improvement capability grounded in modern AI-aware operating reality."
         title="Dan Feliciano Academy"
       >
         <div className="flex flex-col gap-3 sm:flex-row">
@@ -54,12 +54,13 @@ export default function AcademyPage() {
         <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr]">
           <div>
             <h2 className="text-balance text-3xl font-black tracking-normal sm:text-4xl">
-              Improvement training for AI-era operations
+              Improvement training for AI-aware operations
             </h2>
             <p className="mt-4 text-base leading-7 text-slate-600">
-              The Academy connects Lean Six Sigma discipline with practical AI
-              support, helping teams see work clearly, improve flow, analyze
-              problems, document decisions, and lead projects with confidence.
+              The Academy connects practical process-improvement discipline
+              with AI-aware operations, helping teams see work clearly, improve
+              flow, analyze problems, document decisions, and lead projects
+              with confidence.
             </p>
           </div>
           <div className="grid gap-3">
@@ -109,7 +110,7 @@ export default function AcademyPage() {
           <p className="mt-4 text-base leading-7 text-slate-300">
             Training can be delivered for intact teams, leadership cohorts, or
             transformation groups that need a shared language for improvement,
-            analytics, AI assistance, and measurable execution.
+            analytics, AI assistance, risk, and execution.
           </p>
         </div>
         <div className="mt-8">
