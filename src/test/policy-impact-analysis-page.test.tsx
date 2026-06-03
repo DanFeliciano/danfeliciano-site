@@ -80,7 +80,7 @@ describe("Policy Impact Analysis page", () => {
     });
     expect(metadata.openGraph).toMatchObject({
       description:
-        "Plain-English analysis of bills, budgets, regulations, fiscal risks, compliance burdens, and operational consequences.",
+        "Find the hidden risk. Clarify the decision. Fix the system. Plain-English analysis of bills, budgets, regulations, fiscal risk, compliance burden, and taxpayer impact.",
       title: "Policy Impact Analysis | Dan Feliciano",
       url: "https://danfeliciano.com/policy-impact-analysis",
     });

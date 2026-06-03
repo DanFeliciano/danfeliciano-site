@@ -9,7 +9,7 @@ import { createMetadata } from "@/lib/seo";
 export const metadata = createMetadata({
   title: "AI Process Redesign Diagnostic | Dan Feliciano",
   description:
-    "A practical diagnostic for organizations that need to map workflows, data, risks, automation opportunities, and AI readiness.",
+    "Find the hidden risk. Clarify the decision. Fix the system. Map workflows, data, risks, decision points, bottlenecks, and AI readiness before buying tools.",
   path: "/ai-process-redesign",
 });
 

@@ -9,7 +9,7 @@ import { createMetadata } from "@/lib/seo";
 export const metadata = createMetadata({
   title: "Backlog Kill & Service Reimagined | Dan Feliciano",
   description:
-    "Diagnose service backlogs, workflow bottlenecks, staffing constraints, process failure, and AI/automation opportunities.",
+    "Find the hidden risk. Clarify the decision. Fix the system. Diagnose backlogs, flow, rework, staffing constraints, process failure, and service-risk consequences.",
   path: "/backlog-kill",
 });
 

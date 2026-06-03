@@ -9,7 +9,7 @@ import { createMetadata } from "@/lib/seo";
 export const metadata = createMetadata({
   title: "Strategic Forensics | Dan Feliciano",
   description:
-    "Find hidden assumptions, weak data, operational risks, and financial consequences before complex decisions become expensive failures.",
+    "Find the hidden risk. Clarify the decision. Fix the system. Strategic Forensics finds weak assumptions, weak data, operational consequences, and financial exposure.",
   path: "/strategic-forensics",
 });
 

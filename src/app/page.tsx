@@ -8,9 +8,9 @@ import { homepage, insightCards } from "@/content/site";
 import { createMetadata } from "@/lib/seo";
 
 export const metadata = createMetadata({
-  title: "Dan Feliciano | Strategic Forensics for AI, Policy, Operations & Risk",
+  title: "Dan Feliciano | Strategic Forensics",
   description:
-    "Strategic Forensics for leaders facing AI disruption, policy complexity, operational failure, weak data, backlogs, and financial risk.",
+    "Find the hidden risk. Clarify the decision. Fix the system. Strategic Forensics for leaders facing AI disruption, policy complexity, operational failure, weak data, backlogs, and financial risk.",
   path: "/",
 });
 

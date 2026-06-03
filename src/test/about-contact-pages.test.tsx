@@ -38,6 +38,8 @@ describe("About page", () => {
       canonical: "https://danfeliciano.com/about",
     });
     expect(aboutMetadata.openGraph).toMatchObject({
+      description:
+        "Find the hidden risk. Clarify the decision. Fix the system. Dan Feliciano helps leaders examine complex decisions across business, government, AI, finance, operations, and policy.",
       title: "About | Dan Feliciano",
       url: "https://danfeliciano.com/about",
     });
@@ -79,6 +81,8 @@ describe("Contact page", () => {
       canonical: "https://danfeliciano.com/contact",
     });
     expect(contactMetadata.openGraph).toMatchObject({
+      description:
+        "Find the hidden risk. Clarify the decision. Fix the system. Request a Strategic Forensics Briefing, AI diagnostic, Policy Impact Analysis, or Backlog Kill review.",
       title: "Contact | Start a Conversation | Dan Feliciano",
       url: "https://danfeliciano.com/contact",
     });

@@ -7,7 +7,7 @@ import { createMetadata } from "@/lib/seo";
 export const metadata = createMetadata({
   title: "About | Dan Feliciano",
   description:
-    "Learn how Dan Feliciano uses Strategic Forensics to find hidden risk across business, government, operations, AI, finance, policy, and complex decisions.",
+    "Find the hidden risk. Clarify the decision. Fix the system. Dan Feliciano helps leaders examine complex decisions across business, government, AI, finance, operations, and policy.",
   path: "/about",
 });
 

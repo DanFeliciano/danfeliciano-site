@@ -9,6 +9,13 @@ type SeoInput = {
   path: SiteRoute;
 };
 
+export const socialImage = {
+  url: new URL("/opengraph-image", site.url).toString(),
+  width: 1200,
+  height: 630,
+  alt: "Dan Feliciano Strategic Forensics social preview",
+};
+
 export type BreadcrumbJsonLdItem = {
   label: string;
   href: SiteRoute;
@@ -43,11 +50,13 @@ export function createMetadata({
       url: canonical,
       siteName: site.name,
       type: "website",
+      images: [socialImage],
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
+      images: [socialImage.url],
       creator: "@DanFeliciano",
       site: "@DanFeliciano",
     },

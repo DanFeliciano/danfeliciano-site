@@ -15,6 +15,7 @@ import {
   createMetadata,
   personJsonLd,
   professionalServiceJsonLd,
+  socialImage,
 } from "@/lib/seo";
 import { legacyRedirects, requiredRoutes } from "@/lib/routes";
 
@@ -136,15 +137,23 @@ describe("site content", () => {
       "https://danfeliciano.com/services",
     );
     expect(metadata.openGraph).toMatchObject({
+      images: [socialImage],
       title: "Services | Dan Feliciano",
       url: "https://danfeliciano.com/services",
       siteName: "Dan Feliciano",
       type: "website",
     });
+    expect(metadata.twitter).toMatchObject({
+      card: "summary_large_image",
+      images: [socialImage.url],
+    });
   });
 
   it("uses Strategic Forensics as the primary positioning", () => {
     expect(site.description).toContain("Strategic Forensics");
+    expect(site.description).toContain(
+      "Find the hidden risk. Clarify the decision. Fix the system.",
+    );
     expect(homepage.title).toBe(
       "Find the hidden risk. Clarify the decision. Fix the system.",
     );

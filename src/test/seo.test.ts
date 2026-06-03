@@ -5,7 +5,10 @@ import robots from "@/app/robots";
 import sitemap from "@/app/sitemap";
 import { site } from "@/content/site";
 import { legacyRedirects, requiredRoutes } from "@/lib/routes";
-import { absoluteUrl, createMetadata } from "@/lib/seo";
+import { absoluteUrl, createMetadata, socialImage } from "@/lib/seo";
+
+const homepageSocialDescription =
+  "Find the hidden risk. Clarify the decision. Fix the system. Strategic Forensics for leaders facing AI disruption, policy complexity, operational failure, weak data, backlogs, and financial risk.";
 
 describe("seo helpers", () => {
   it("creates canonical absolute URLs", () => {
@@ -23,12 +26,16 @@ describe("seo helpers", () => {
       canonical: "https://danfeliciano.com/services",
     });
     expect(metadata.openGraph).toMatchObject({
+      images: [socialImage],
       url: "https://danfeliciano.com/services",
     });
     expect(metadata.twitter).toMatchObject({
       card: "summary_large_image",
+      creator: "@DanFeliciano",
       title: "Services | Dan Feliciano",
       description: "Explore Strategic Forensics services.",
+      images: [socialImage.url],
+      site: "@DanFeliciano",
     });
     expect(metadata.robots).toEqual({
       index: true,
@@ -45,19 +52,19 @@ describe("seo helpers", () => {
       canonical: "https://danfeliciano.com/",
     });
     expect(homepageMetadata.openGraph).toMatchObject({
-      description:
-        "Strategic Forensics for leaders facing AI disruption, policy complexity, operational failure, weak data, backlogs, and financial risk.",
-      title:
-        "Dan Feliciano | Strategic Forensics for AI, Policy, Operations & Risk",
+      description: homepageSocialDescription,
+      images: [socialImage],
+      title: "Dan Feliciano | Strategic Forensics",
       url: "https://danfeliciano.com/",
       type: "website",
     });
     expect(homepageMetadata.twitter).toMatchObject({
       card: "summary_large_image",
-      description:
-        "Strategic Forensics for leaders facing AI disruption, policy complexity, operational failure, weak data, backlogs, and financial risk.",
-      title:
-        "Dan Feliciano | Strategic Forensics for AI, Policy, Operations & Risk",
+      creator: "@DanFeliciano",
+      description: homepageSocialDescription,
+      images: [socialImage.url],
+      site: "@DanFeliciano",
+      title: "Dan Feliciano | Strategic Forensics",
     });
     expect(homepageMetadata.robots).toEqual({
       index: true,

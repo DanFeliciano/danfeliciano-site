@@ -9,7 +9,7 @@ import { createMetadata } from "@/lib/seo";
 export const metadata = createMetadata({
   title: "Policy Impact Analysis | Dan Feliciano",
   description:
-    "Plain-English analysis of bills, budgets, regulations, fiscal risks, compliance burdens, and operational consequences.",
+    "Find the hidden risk. Clarify the decision. Fix the system. Plain-English analysis of bills, budgets, regulations, fiscal risk, compliance burden, and taxpayer impact.",
   path: "/policy-impact-analysis",
 });
 
