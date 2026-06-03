@@ -22,7 +22,7 @@ const relatedLinks = [
   { label: "Services", href: "/services" },
   { label: "Policy Impact", href: "/policy-impact-analysis" },
   { label: "Backlog Kill", href: "/backlog-kill" },
-  { label: "Briefings", href: "/speaking" },
+  { label: "Briefings", href: "/briefings" },
 ] as const satisfies readonly RelatedLink[];
 
 export default function ContactPage() {

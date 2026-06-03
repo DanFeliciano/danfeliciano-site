@@ -69,6 +69,7 @@ describe("site content", () => {
       "/academy/lean-six-sigma-ai-yellow-belt",
       "/academy/lean-six-sigma-ai-green-belt",
       "/academy/lean-six-sigma-ai-black-belt",
+      "/briefings",
       "/speaking",
       "/case-studies",
       "/insights",
@@ -145,6 +146,9 @@ describe("site content", () => {
     );
     expect(navItems.find((item) => item.label === "Backlog Kill")?.href).toBe(
       "/backlog-kill",
+    );
+    expect(navItems.find((item) => item.label === "Briefings")?.href).toBe(
+      "/briefings",
     );
   });
 

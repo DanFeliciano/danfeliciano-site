@@ -28,7 +28,7 @@ const additionalServices: OfferCardData[] = [
     title: "Briefings",
     summary:
       "A focused 60-90 minute session that turns a complex issue into plain-English consequences, risks, and next actions.",
-    href: "/speaking",
+    href: "/briefings",
     cta: "Plan a briefing",
     meta: "Best for boards, executives, associations, campaigns, and public leaders.",
   },

@@ -15,6 +15,7 @@ export const requiredRoutes = [
   "/academy/lean-six-sigma-ai-yellow-belt",
   "/academy/lean-six-sigma-ai-green-belt",
   "/academy/lean-six-sigma-ai-black-belt",
+  "/briefings",
   "/speaking",
   "/case-studies",
   "/insights",

@@ -20,7 +20,7 @@ export const metadata = createMetadata({
 const relatedLinks = [
   { label: "Strategic Forensics", href: "/strategic-forensics" },
   { label: "AI + Operations", href: "/ai-process-redesign" },
-  { label: "Briefings", href: "/speaking" },
+  { label: "Briefings", href: "/briefings" },
 ] as const satisfies readonly RelatedLink[];
 
 export default function InsightsPage() {

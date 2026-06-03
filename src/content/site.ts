@@ -51,7 +51,7 @@ export const navItems: LinkItem[] = [
   { label: "AI + Operations", href: "/ai-process-redesign" },
   { label: "Policy Impact", href: "/policy-impact-analysis" },
   { label: "Backlog Kill", href: "/backlog-kill" },
-  { label: "Briefings", href: "/speaking" },
+  { label: "Briefings", href: "/briefings" },
   { label: "Insights", href: "/insights" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
