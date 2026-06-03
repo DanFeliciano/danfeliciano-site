@@ -41,7 +41,7 @@ const coreServices: OfferCardData[] = [
     title: "AI Process Redesign",
     summary:
       "AI is not the strategy. Redesign the work first: workflows, data, risks, and automation opportunities before tools or pilots.",
-    href: "/services/ai-automation-analytics",
+    href: "/ai-process-redesign",
     cta: "Map AI risk",
     meta: "Best before buying tools, launching pilots, or automating broken work.",
   },

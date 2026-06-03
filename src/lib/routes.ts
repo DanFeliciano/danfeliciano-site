@@ -1,6 +1,7 @@
 export const requiredRoutes = [
   "/",
   "/strategic-forensics",
+  "/ai-process-redesign",
   "/services",
   "/services/aesop-strategy-governance",
   "/services/phoenix-protocol",
@@ -45,6 +46,6 @@ export const legacyRedirects = [
   { source: "/consulting", destination: "/services" },
   { source: "/training", destination: "/academy" },
   { source: "/phoenix", destination: "/services/phoenix-protocol" },
-  { source: "/ai", destination: "/services/ai-automation-analytics" },
+  { source: "/ai", destination: "/ai-process-redesign" },
   { source: "/policy", destination: "/products/policy-forensics" },
 ] as const satisfies readonly LegacyRedirect[];

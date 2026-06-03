@@ -45,6 +45,13 @@ describe("homepage content", () => {
       ).pathname,
     ).toBe("/services");
     expect(screen.getByText("Strategic forensics map")).toBeInTheDocument();
+    expect(
+      new URL(
+        screen.getByRole("link", { name: "Map AI risk" }).getAttribute("href") ??
+          "",
+        "https://danfeliciano.com",
+      ).pathname,
+    ).toBe("/ai-process-redesign");
 
     for (const heading of [
       "Complex decisions hide expensive risks.",

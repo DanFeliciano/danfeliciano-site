@@ -33,7 +33,7 @@ const breadcrumbs = [
 ] as const satisfies readonly RelatedLink[];
 
 const relatedLinks = [
-  { label: "AI + Operations", href: "/services/ai-automation-analytics" },
+  { label: "AI + Operations", href: "/ai-process-redesign" },
   { label: "Policy Impact", href: "/products/policy-forensics" },
   { label: "Backlog Kill", href: "/products/backlog-kill-kit" },
 ] as const satisfies readonly RelatedLink[];

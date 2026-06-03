@@ -55,6 +55,7 @@ describe("site content", () => {
     expect(requiredRoutes).toEqual([
       "/",
       "/strategic-forensics",
+      "/ai-process-redesign",
       "/services",
       "/services/aesop-strategy-governance",
       "/services/phoenix-protocol",
@@ -134,6 +135,9 @@ describe("site content", () => {
     expect(
       navItems.find((item) => item.label === "Strategic Forensics")?.href,
     ).toBe("/strategic-forensics");
+    expect(navItems.find((item) => item.label === "AI + Operations")?.href).toBe(
+      "/ai-process-redesign",
+    );
   });
 
   it("rejects external canonical URL inputs", () => {
