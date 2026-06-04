@@ -41,7 +41,7 @@ const relatedLinks = [
   { label: "Academy overview", href: "/academy" },
   { label: "Yellow Belt", href: "/academy/lean-six-sigma-ai-yellow-belt" },
   { label: "Black Belt", href: "/academy/lean-six-sigma-ai-black-belt" },
-  { label: "Backlog Kill", href: "/backlog-kill" },
+  { label: "Backlog Kill Kit", href: "/backlog-kill-kit" },
 ] as const satisfies readonly RelatedLink[];
 
 export default function GreenBeltCoursePage() {
@@ -50,7 +50,10 @@ export default function GreenBeltCoursePage() {
       <Breadcrumbs
         items={breadcrumbs}
       />
-      <PageHeader subhead={course.summary} title={course.title}>
+      <PageHeader
+        subhead="A practical project-leadership program for people who need to improve workflows, analyze problems, and deliver measurable results."
+        title={course.title}
+      >
         <CtaButton href="/contact">{course.cta}</CtaButton>
       </PageHeader>
 

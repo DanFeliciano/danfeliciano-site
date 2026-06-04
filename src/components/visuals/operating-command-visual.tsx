@@ -1,22 +1,22 @@
 const signals = [
-  ["Hidden fiscal risk", "72%", "bg-signal"],
-  ["Workflow failure", "48%", "bg-amber"],
-  ["Weak data exposure", "61%", "bg-emerald-400"],
+  ["Owner bottleneck", "72%", "bg-signal"],
+  ["Manual follow-up", "54%", "bg-amber"],
+  ["Backlog pressure", "61%", "bg-emerald-400"],
 ] as const;
 
 const commandRows = [
-  ["Assumption", "Projected savings depend on untested staffing math"],
-  ["Decision", "Separate policy intent from operating consequence"],
-  ["Fix", "Redesign intake before funding more capacity"],
+  ["Find", "Where work waits, repeats, or depends on one person"],
+  ["Fix", "Clarify ownership, handoffs, follow-up, and flow"],
+  ["Automate", "Use AI where it saves time instead of adding noise"],
 ] as const;
 
 export function OperatingCommandVisual() {
   return (
     <div className="min-w-0 overflow-hidden rounded-lg border border-white/15 bg-white/5 p-3 shadow-command sm:p-4">
       <div className="mb-3 flex items-center justify-between gap-4 text-xs font-semibold text-slate-300 sm:mb-4">
-        <span>Strategic forensics map</span>
+        <span>Bottleneck snapshot</span>
         <span className="hidden text-right text-signal sm:inline">
-          Decision-risk view
+          Owner/operator view
         </span>
       </div>
 
@@ -55,8 +55,8 @@ export function OperatingCommandVisual() {
       </div>
 
       <div className="mt-4 hidden rounded-md border border-signal/30 bg-signal/10 p-3 text-xs font-semibold leading-5 text-slate-100 sm:block">
-        Briefing readout: expose the hidden cost, test the assumption, and fix
-        the system before the decision gets expensive.
+        Readout: find what is slowing the business down, fix the work, and use
+        the right tool only where it makes the work easier to run.
       </div>
     </div>
   );

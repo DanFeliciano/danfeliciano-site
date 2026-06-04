@@ -11,38 +11,38 @@ import { createMetadata } from "@/lib/seo";
 type RelatedLink = { label: string; href: SiteRoute };
 
 export const metadata = createMetadata({
-  title: "Insights | Strategic Forensics, AI, Policy, and Backlog Risk",
+  title: "Insights | Dan Feliciano",
   description:
-    "Read field notes from Dan Feliciano on Strategic Forensics, AI disruption, policy impact, budgets, backlogs, weak data, and operational risk.",
+    "Read practical notes from Dan Feliciano on bottlenecks, backlogs, AI, automation, policy risk, and fixing work that slows businesses down.",
   path: "/insights",
 });
 
 const relatedLinks = [
-  { label: "Strategic Forensics", href: "/strategic-forensics" },
-  { label: "AI + Operations", href: "/ai-process-redesign" },
-  { label: "Policy Impact", href: "/policy-impact-analysis" },
-  { label: "Backlog Kill", href: "/backlog-kill" },
-  { label: "Briefings", href: "/briefings" },
+  { label: "What I Fix", href: "/what-i-fix" },
+  { label: "AI Time Saver Sprint", href: "/ai-time-saver-sprint" },
+  { label: "Policy Forensics", href: "/policy-forensics" },
+  { label: "Backlog Kill Kit", href: "/backlog-kill-kit" },
+  { label: "Find My Bottleneck", href: "/contact" },
 ] as const satisfies readonly RelatedLink[];
 
 export default function InsightsPage() {
   return (
     <main id="main-content">
       <PageHeader
-        subhead="Practical writing on Strategic Forensics, AI disruption, policy complexity, weak data, budgets, backlogs, and operational risk."
-        title="Insights for leaders facing complex decisions"
+        subhead="Practical writing on bottlenecks, backlogs, AI, automation, policy risk, and the work that slows businesses down."
+        title="Insights for owners and operators"
       >
-        <CtaButton href="/contact">Start a Conversation</CtaButton>
+        <CtaButton href="/contact">Find My Bottleneck</CtaButton>
       </PageHeader>
 
       <Section className="bg-paper text-charcoal">
         <div className="max-w-3xl">
           <h2 className="text-balance text-3xl font-black tracking-normal sm:text-4xl">
-            Field notes on hidden risk
+            Field notes on stuck work
           </h2>
           <p className="mt-4 text-base leading-7 text-slate-600">
-            Short reads for leaders who need to see the operating, financial,
-            policy, and AI consequences before a decision hardens.
+            Short reads for people who need to see where time, money, customers,
+            or control are leaking before a problem gets expensive.
           </p>
         </div>
         <div className="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
@@ -81,10 +81,10 @@ export default function InsightsPage() {
       </Section>
 
       <FinalCTA
-        body="Bring a current decision, risk, budget, AI, policy, or backlog question into a focused Strategic Forensics conversation."
-        cta="Book a Strategic Forensics Briefing"
+        body="Bring the work, follow-up, backlog, AI, policy, or owner-bottleneck problem that keeps coming back."
+        cta="Find My Bottleneck"
         href="/contact"
-        title="Need a practical answer before the next decision?"
+        title="Need a practical answer before the next fix?"
       />
     </main>
   );

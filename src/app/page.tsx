@@ -2,92 +2,136 @@ import { OperatingCommandVisual } from "@/components/visuals/operating-command-v
 import { Container } from "@/components/layout/container";
 import { CtaButton } from "@/components/ui/cta-button";
 import { FinalCTA } from "@/components/ui/final-cta";
-import { OfferCard, type OfferCardData } from "@/components/ui/offer-card";
 import { ProofStrip } from "@/components/ui/proof-strip";
 import { homepage, insightCards } from "@/content/site";
+import type { SiteRoute } from "@/lib/routes";
 import { createMetadata } from "@/lib/seo";
 
 export const metadata = createMetadata({
-  title: "Dan Feliciano | Strategic Forensics",
+  title: "Dan Feliciano | Fix What Is Slowing Your Business Down",
   description:
-    "Find the hidden risk. Clarify the decision. Fix the system. Strategic Forensics for leaders facing AI disruption, policy complexity, operational failure, weak data, backlogs, and financial risk.",
+    "Dan Feliciano helps business owners and operators find bottlenecks, recover lost time, improve follow-up, and use AI or automation where it actually makes work easier.",
   path: "/",
 });
 
-const forensicSignals = [
-  "Hidden assumptions",
-  "Weak or misleading data",
-  "Budget gimmicks",
-  "Operational bottlenecks",
-  "AI misuse",
-  "Backlogs and service failure",
-  "Compliance burden",
-  "Execution risk",
-  "Taxpayer, customer, and stakeholder impact",
+const painPoints = [
+  {
+    title: "Work is piling up",
+    body: "For backlog, delays, missed handoffs, aging tasks, and work that keeps getting stuck.",
+    cta: "Kill the Backlog",
+    href: "/backlog-kill-kit",
+  },
+  {
+    title: "We are wasting too much time",
+    body: "For repetitive admin, manual reporting, status chasing, duplicate entry, and tasks that should not take this long.",
+    cta: "Find Time-Saving Automation",
+    href: "/ai-time-saver-sprint",
+  },
+  {
+    title: "Customers are slipping through the cracks",
+    body: "For slow follow-up, missed leads, inconsistent communication, weak retention, and unclear ownership.",
+    cta: "Fix Follow-Up",
+    href: "/what-i-fix",
+  },
+  {
+    title: "Everything depends on me",
+    body: "For owners who are tired of being the bottleneck, traffic cop, reminder system, and final decision point for everything.",
+    cta: "Build an Owner Operating System",
+    href: "/owner-operating-system",
+  },
+  {
+    title: "My team needs better problem-solving skills",
+    body: "For teams that need to reduce waste, improve service, solve problems, and use AI responsibly.",
+    cta: "Train the Team",
+    href: "/academy",
+  },
+  {
+    title: "I need to understand policy or regulatory change",
+    body: "For institutions, associations, and policy-sensitive organizations that need decision-ready analysis.",
+    cta: "Explore Policy Forensics",
+    href: "/policy-forensics",
+  },
+] as const satisfies readonly {
+  title: string;
+  body: string;
+  cta: string;
+  href: SiteRoute;
+}[];
+
+const howDanHelps = [
+  {
+    title: "Find the friction",
+    body: "Map where time, money, customers, decisions, or work are getting stuck.",
+  },
+  {
+    title: "Fix the system",
+    body: "Redesign the workflow, clarify ownership, remove waste, and create a better operating rhythm.",
+  },
+  {
+    title: "Use the right tools",
+    body: "Apply AI, automation, analytics, Lean Six Sigma, training, or strategy where they create measurable value.",
+  },
 ] as const;
 
-const coreServices: OfferCardData[] = [
+const starterOffers = [
   {
-    eyebrow: "Decision risk",
-    title: "Strategic Forensics",
-    summary:
-      "Decision-grade analysis for leaders who need to understand the hidden risks, tradeoffs, and consequences inside complex choices.",
-    href: "/strategic-forensics",
-    cta: "Explore Strategic Forensics",
-    meta: "Best for expensive decisions with unclear assumptions, weak data, or public consequences.",
+    title: "Bottleneck Diagnostic",
+    body:
+      "A focused review to identify where work is getting stuck, where time is being lost, and what to fix first.",
+    href: "/contact",
   },
   {
-    eyebrow: "AI + operations",
-    title: "AI Process Redesign",
-    summary:
-      "AI is not the strategy. Redesign the work first: workflows, data, risks, and automation opportunities before tools or pilots.",
-    href: "/ai-process-redesign",
-    cta: "Assess Your AI Readiness",
-    meta: "Best before buying tools, launching pilots, or automating broken work.",
+    title: "Backlog Kill Kit",
+    body:
+      "Find out why work is piling up, what is aging, where handoffs are failing, and what recovery path makes sense.",
+    href: "/backlog-kill-kit",
   },
   {
-    eyebrow: "Policy impact",
-    title: "Policy Impact Analysis",
-    summary:
-      "Translate bills, budgets, and regulations into operational, financial, compliance, and taxpayer consequences.",
-    href: "/policy-impact-analysis",
-    cta: "Request a Policy Impact Briefing",
-    meta: "Best for public decisions, associations, candidates, and institutions.",
+    title: "AI Time Saver Sprint",
+    body:
+      "Identify repetitive tasks, manual reporting, missed follow-up, and customer communication gaps where AI or automation can save real time.",
+    href: "/ai-time-saver-sprint",
   },
   {
-    eyebrow: "Service failure",
-    title: "Service Reimagined / Backlog Kill",
-    summary:
-      "Diagnose backlogs, bottlenecks, staffing pressure, service delays, and broken workflows before throwing more money at the wrong problem.",
-    href: "/backlog-kill",
-    cta: "Diagnose the Backlog",
-    meta: "Best when service risk is rising and the cause is still unclear.",
+    title: "90-Day Operations Reset",
+    body:
+      "Stabilize a chaotic operation, reduce delays, clarify ownership, and install a rhythm that keeps the business moving.",
+    href: "/operations-reset",
   },
   {
-    eyebrow: "Focused session",
-    title: "Briefings",
-    summary:
-      "A focused 60-90 minute session that turns a complex issue into plain-English consequences, risks, and next actions.",
-    href: "/briefings",
-    cta: "Book a Strategic Forensics Briefing",
-    meta: "Best for boards, executives, campaigns, associations, and public leaders.",
+    title: "Owner Operating System",
+    body:
+      "Build clearer priorities, better follow-up, simple metrics, decision rules, and a weekly rhythm that reduces owner dependency.",
+    href: "/owner-operating-system",
   },
-];
+  {
+    title: "Dan Feliciano Academy",
+    body:
+      "Train your team to solve problems, improve work, reduce waste, and use AI responsibly.",
+    href: "/academy",
+  },
+] as const satisfies readonly {
+  title: string;
+  body: string;
+  href: SiteRoute;
+}[];
 
-const audiences = [
-  "Business owners and executives",
-  "Associations and chambers",
-  "Municipal and public-sector leaders",
-  "Candidates and policymakers",
-  "Advocacy groups and lobbyists",
-  "Boards and nonprofit leaders",
-  "Media platforms needing serious analysis",
+const outcomeProof = [
+  "Reduced delays",
+  "Improved follow-up",
+  "Simplified reporting",
+  "Increased capacity",
+  "Improved service flow",
+  "Strengthened decision-making",
+  "Built problem-solving capability",
+  "Improved operating discipline",
 ] as const;
 
-const briefingPoints = [
-  "Define the decision and the stakes.",
-  "Expose the hidden assumptions, fiscal risk, weak data, and operating consequences.",
-  "Leave with plain-English next actions leaders can actually use.",
+const credentials = [
+  "25+ years of experience",
+  "GE Six Sigma Master Black Belt background",
+  "Experience across healthcare, public sector, finance, manufacturing, logistics, and service operations",
+  "AI, automation, analytics, Lean Six Sigma, and strategy expertise",
 ] as const;
 
 export default function HomePage() {
@@ -110,14 +154,14 @@ export default function HomePage() {
               </p>
               <div className="mt-5 flex flex-col gap-3 sm:mt-7 sm:flex-row">
                 <CtaButton className="w-full sm:w-auto" href="/contact">
-                  Book a Strategic Forensics Briefing
+                  Find My Bottleneck
                 </CtaButton>
                 <CtaButton
                   className="w-full sm:w-auto"
-                  href="/strategic-forensics"
+                  href="/what-i-fix"
                   variant="secondary"
                 >
-                  Explore Strategic Forensics
+                  See How Dan Helps
                 </CtaButton>
               </div>
             </div>
@@ -133,19 +177,18 @@ export default function HomePage() {
         <Container>
           <div className="max-w-3xl">
             <h2 className="text-balance text-3xl font-black tracking-normal sm:text-4xl">
-              Complex decisions hide expensive risks.
+              You do not need more buzzwords. You need the work to flow.
             </h2>
             <p className="mt-4 text-base leading-7 text-slate-600">
-              Budgets can look balanced while liabilities move offstage. AI
-              projects can look modern while workflows remain broken. Bills can
-              sound simple while creating new costs, compliance burdens, and
-              operational failure points.
+              Maybe customers are waiting too long. Maybe your team is buried
+              in manual follow-up. Maybe everything still runs through you.
+              Maybe you know AI could help, but you are not sure where to
+              start.
             </p>
             <p className="mt-4 text-base leading-7 text-slate-600">
-              Backlogs can be blamed on staffing when the real problem is
-              visibility, flow, prioritization, and accountability. Strategic
-              Forensics looks underneath the surface before the decision becomes
-              expensive.
+              The first step is not buying software. The first step is finding
+              where the business is leaking time, money, attention, and
+              opportunity.
             </p>
           </div>
         </Container>
@@ -153,28 +196,32 @@ export default function HomePage() {
 
       <section className="bg-white py-16 text-charcoal sm:py-20">
         <Container>
-          <div className="grid gap-8 lg:grid-cols-[0.82fr_1.18fr]">
-            <div>
-              <h2 className="text-balance text-3xl font-black tracking-normal sm:text-4xl">
-                Strategic Forensics is the discipline of finding what others miss.
-              </h2>
-              <p className="mt-4 text-base leading-7 text-slate-600">
-                It combines strategic analysis, financial scrutiny, operational
-                reality, AI fluency, and plain-English communication to expose
-                hidden assumptions, weak data, process failure, fiscal risk, and
-                execution problems.
-              </p>
-            </div>
-            <div className="grid gap-3 sm:grid-cols-2">
-              {forensicSignals.map((signal) => (
-                <div
-                  className="rounded-lg border border-slate-200 bg-paper p-4 text-sm font-bold leading-6 text-charcoal"
-                  key={signal}
-                >
-                  {signal}
-                </div>
-              ))}
-            </div>
+          <div className="max-w-3xl">
+            <h2 className="text-balance text-3xl font-black tracking-normal sm:text-4xl">
+              Choose the problem you want to solve first.
+            </h2>
+            <p className="mt-4 text-base leading-7 text-slate-600">
+              Start with the pain you can feel. The method comes after the
+              bottleneck is visible.
+            </p>
+          </div>
+          <div className="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+            {painPoints.map((point) => (
+              <article
+                className="rounded-lg border border-slate-200 bg-paper p-5 shadow-command"
+                key={point.title}
+              >
+                <h3 className="text-lg font-black leading-6 text-charcoal">
+                  {point.title}
+                </h3>
+                <p className="mt-3 text-sm leading-6 text-slate-600">
+                  {point.body}
+                </p>
+                <CtaButton className="mt-5 w-full" href={point.href}>
+                  {point.cta}
+                </CtaButton>
+              </article>
+            ))}
           </div>
         </Container>
       </section>
@@ -183,17 +230,25 @@ export default function HomePage() {
         <Container>
           <div className="max-w-3xl">
             <h2 className="text-balance text-3xl font-black tracking-normal sm:text-4xl">
-              Core services
+              First we find the stuck work. Then we fix what matters.
             </h2>
             <p className="mt-4 text-base leading-7 text-slate-300">
-              Start with the decision, risk, or operating failure that needs a
-              clearer read. Each service turns complexity into consequences,
-              tradeoffs, and next actions.
+              The work starts with what is slow, repeated, missed, or too
+              dependent on one person. Then the fix becomes much easier to
+              choose.
             </p>
           </div>
-          <div className="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-5">
-            {coreServices.map((offer) => (
-              <OfferCard key={offer.title} offer={offer} variant="dark" />
+          <div className="mt-8 grid gap-4 md:grid-cols-3">
+            {howDanHelps.map((step) => (
+              <article
+                className="rounded-lg border border-white/10 bg-white/[0.04] p-5"
+                key={step.title}
+              >
+                <h3 className="text-xl font-black text-white">{step.title}</h3>
+                <p className="mt-3 text-sm leading-6 text-slate-300">
+                  {step.body}
+                </p>
+              </article>
             ))}
           </div>
         </Container>
@@ -201,26 +256,71 @@ export default function HomePage() {
 
       <section className="bg-paper py-16 text-charcoal sm:py-20">
         <Container>
-          <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
+          <div className="max-w-3xl">
+            <h2 className="text-balance text-3xl font-black tracking-normal sm:text-4xl">
+              Practical ways to get started
+            </h2>
+            <p className="mt-4 text-base leading-7 text-slate-600">
+              Pick the entry point that matches the headache in front of you.
+              Each path is built to create clearer work, fewer delays, and a
+              more manageable business.
+            </p>
+          </div>
+          <div className="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+            {starterOffers.map((offer) => (
+              <article
+                className="flex h-full min-h-48 flex-col rounded-lg border border-slate-200 bg-white p-5 text-charcoal shadow-command"
+                key={offer.title}
+              >
+                <h3 className="text-balance text-lg font-black leading-6">
+                  {offer.title}
+                </h3>
+                <p className="mt-4 text-sm leading-6 text-slate-600">
+                  {offer.body}
+                </p>
+                <div className="mt-auto pt-5">
+                  <CtaButton className="w-full" href={offer.href}>
+                    See How Dan Helps
+                  </CtaButton>
+                </div>
+              </article>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      <section className="bg-white py-16 text-charcoal sm:py-20">
+        <Container>
+          <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr]">
             <div>
               <h2 className="text-balance text-3xl font-black tracking-normal sm:text-4xl">
-                Strategic Forensics Briefings
+                Strategy is not a slide deck. It is knowing what to say yes and no to.
               </h2>
               <p className="mt-4 text-base leading-7 text-slate-600">
-                A focused 60-90 minute session turns a complex issue into
-                plain-English consequences, risks, and next actions.
+                Most businesses do not struggle because they lack goals. They
+                struggle because everything becomes urgent, every opportunity
+                looks equal, and no one is clear about what matters most.
               </p>
-              <CtaButton className="mt-6" href="/contact">
-                Book a Strategic Forensics Briefing
-              </CtaButton>
+              <p className="mt-4 text-base leading-7 text-slate-600">
+                Dan helps turn operational pain into better choices: what to
+                fix, what to stop, what to automate, what to measure, and what
+                to focus on next.
+              </p>
             </div>
-            <div className="grid gap-3">
-              {briefingPoints.map((point) => (
+            <div className="grid gap-3 sm:grid-cols-2">
+              {[
+                "What to fix",
+                "What to stop",
+                "What to automate",
+                "What to measure",
+                "What to focus on next",
+                "What can wait",
+              ].map((item) => (
                 <div
-                  className="rounded-lg border border-slate-200 bg-white p-4 text-sm font-bold leading-6 text-charcoal shadow-command"
-                  key={point}
+                  className="rounded-lg border border-slate-200 bg-paper p-4 text-sm font-bold leading-6 text-charcoal"
+                  key={item}
                 >
-                  {point}
+                  {item}
                 </div>
               ))}
             </div>
@@ -228,44 +328,19 @@ export default function HomePage() {
         </Container>
       </section>
 
-      <section className="bg-white py-16 text-charcoal sm:py-20">
-        <Container>
-          <div className="max-w-3xl">
-            <h2 className="text-balance text-3xl font-black tracking-normal sm:text-4xl">
-              Who this is for
-            </h2>
-            <p className="mt-4 text-base leading-7 text-slate-600">
-              For leaders who need a serious read before the decision gets
-              expensive, public, or operationally hard to reverse.
-            </p>
-          </div>
-          <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-            {audiences.map((audience) => (
-              <div
-                className="rounded-lg border border-slate-200 bg-paper p-4 text-sm font-bold leading-6 text-charcoal"
-                key={audience}
-              >
-                {audience}
-              </div>
-            ))}
-          </div>
-        </Container>
-      </section>
-
       <section className="bg-paper py-16 text-charcoal sm:py-20">
         <Container>
-          <div className="grid gap-8 lg:grid-cols-[0.75fr_1.25fr]">
+          <div className="grid gap-8 lg:grid-cols-[0.75fr_1.25fr] lg:items-start">
             <div>
               <h2 className="text-balance text-3xl font-black tracking-normal sm:text-4xl">
-                Insights
+                AI should save time, not create another project.
               </h2>
               <p className="mt-4 text-base leading-7 text-slate-600">
-                Short analysis for leaders sorting through AI, policy,
-                backlogs, budgets, data, and operational risk.
+                AI is useful when it helps real work move faster, better, or
+                with less manual effort. Before recommending tools, Dan helps
+                identify where the business is losing time and which workflows
+                are worth automating.
               </p>
-              <CtaButton className="mt-6" href="/insights">
-                Read insights
-              </CtaButton>
             </div>
             <div className="grid gap-4 md:grid-cols-3">
               {featuredInsights.map((card) => (
@@ -291,30 +366,51 @@ export default function HomePage() {
 
       <section className="bg-white py-16 text-charcoal sm:py-20">
         <Container>
-          <div className="grid gap-8 rounded-lg border border-slate-200 bg-ink p-6 text-white shadow-command lg:grid-cols-[1fr_auto] lg:items-center lg:p-8">
+          <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr]">
             <div>
               <h2 className="text-balance text-3xl font-black tracking-normal sm:text-4xl">
-                About Dan Feliciano
+                Practical experience. Measurable work.
               </h2>
-              <p className="mt-4 max-w-3xl text-base leading-7 text-slate-300">
-                Dan brings a financially literate, operationally grounded, and
-                AI-aware lens to decisions that cross strategy, policy, process,
-                data, and execution. The work is blunt, practical, and built for
-                leaders who need to know what is hiding inside the decision.
+              <p className="mt-4 text-base leading-7 text-slate-600">
+                The proof should show up in how the work moves: fewer delays,
+                clearer follow-up, simpler reporting, better service, and more
+                capacity to solve the right problems.
               </p>
+              <CtaButton className="mt-6" href="/results">
+                See Results
+              </CtaButton>
             </div>
-            <CtaButton className="w-full lg:w-auto" href="/about">
-              Learn about Dan
-            </CtaButton>
+            <div className="grid gap-4">
+              <div className="grid gap-3 sm:grid-cols-2">
+                {outcomeProof.map((item) => (
+                  <div
+                    className="rounded-lg border border-slate-200 bg-paper p-4 text-sm font-bold leading-6 text-charcoal"
+                    key={item}
+                  >
+                    {item}
+                  </div>
+                ))}
+              </div>
+              <div className="grid gap-3 sm:grid-cols-2">
+                {credentials.map((item) => (
+                  <div
+                    className="rounded-lg border border-slate-200 bg-white p-4 text-sm font-semibold leading-6 text-slate-700"
+                    key={item}
+                  >
+                    {item}
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </Container>
       </section>
 
       <FinalCTA
-        body="Before you make the expensive decision, understand what is hiding inside it."
-        cta="Start a Conversation"
+        body="Start with a practical conversation about where work is stuck, what is costing time, and what to fix first."
+        cta="Start with a Bottleneck Diagnostic"
         href="/contact"
-        title="Before you make the expensive decision, understand what is hiding inside it."
+        title="Ready to find what is slowing your business down?"
       />
     </main>
   );

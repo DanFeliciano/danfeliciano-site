@@ -571,26 +571,26 @@ export const services: Offer[] = [
     title: "AESOP Strategy & Governance",
     href: "/services/aesop-strategy-governance",
     summary:
-      "Translate strategy into operating cadence, KPIs, governance, decision rights, and measurable execution.",
+      "Help owners decide what to measure, what to review each week, and who owns follow-up so the business keeps moving.",
     description:
       "A practical strategy-to-execution system for leaders who need alignment, accountability, and measurable progress.",
     metadata: {
       title: "AESOP Strategy & Governance | Dan Feliciano",
       description:
-        "Turn strategy into operating cadence, governance, KPIs, accountability, and measurable execution with Dan Feliciano's AESOP framework.",
+        "Build clearer priorities, better follow-up, simple metrics, decision rules, and a weekly rhythm with Dan Feliciano's AESOP framework.",
     },
     steps: [
       { title: "Assess", description: "Understand the current operating reality, constraints, risks, data, and performance gaps." },
       { title: "Establish", description: "Define priorities, decision rights, success measures, governance forums, and execution principles." },
-      { title: "Synchronize", description: "Align leaders, teams, projects, data, and operating cadences around shared priorities." },
-      { title: "Operationalize", description: "Convert strategy into workflows, KPIs, dashboards, routines, charters, and accountable plans." },
+      { title: "Synchronize", description: "Align leaders, teams, projects, data, and weekly routines around shared priorities." },
+      { title: "Operationalize", description: "Convert strategy into workflows, practical measures, dashboards, routines, charters, and accountable plans." },
       { title: "Persist", description: "Build review cycles, learning loops, sustainment mechanisms, and corrective-action discipline." },
     ],
     useCases: [
       "Strategic planning",
-      "Executive operating cadence",
+      "Weekly owner review rhythm",
       "Transformation governance",
-      "KPI architecture",
+      "Practical metrics",
       "Portfolio prioritization",
       "Decision-rights clarification",
       "Cross-functional alignment",
@@ -599,8 +599,8 @@ export const services: Offer[] = [
     deliverables: [
       "Strategy-to-execution map",
       "Governance model",
-      "KPI architecture",
-      "Operating cadence",
+      "Practical metrics",
+      "Weekly review rhythm",
       "Decision-rights matrix",
       "Transformation roadmap",
       "Executive dashboard design",
@@ -1548,7 +1548,7 @@ export function ContactForm() {
   }
 
   if (submitted) {
-    return <p role="status" className="rounded-md border border-signal/30 bg-signal/10 p-4 font-semibold text-ink">Thanks. Your request has been received.</p>;
+    return <p role="status" className="rounded-md border border-signal/30 bg-signal/10 p-4 font-semibold text-ink">Your email draft is ready. Please send it from your email app to complete the inquiry.</p>;
   }
 
   return (
@@ -1854,6 +1854,6 @@ git commit -m "chore: remove prototype files and verify site rebuild"
 - [ ] Each page has one H1.
 - [ ] Every route has unique metadata.
 - [ ] JSON-LD renders.
-- [ ] No lorem ipsum appears.
+- [ ] No placeholder filler text appears.
 - [ ] Forbidden legacy-brand search returns no deployed-source matches.
 - [ ] The final homepage is recognizably Operating Command.

@@ -1,104 +1,140 @@
-import Link from "next/link";
 import { ContactForm } from "@/components/contact/contact-form";
-import { Container } from "@/components/layout/container";
 import { Section } from "@/components/layout/section";
-import { CtaButton } from "@/components/ui/cta-button";
-import { FinalCTA } from "@/components/ui/final-cta";
 import { PageHeader } from "@/components/ui/page-header";
-import { site } from "@/content/site";
-import type { SiteRoute } from "@/lib/routes";
+import { contactEmail } from "@/lib/contact";
 import { createMetadata } from "@/lib/seo";
 
-type RelatedLink = { label: string; href: SiteRoute };
-
 export const metadata = createMetadata({
-  title: "Contact | Start a Conversation | Dan Feliciano",
+  title: "Find My Bottleneck | Dan Feliciano",
   description:
-    "Find the hidden risk. Clarify the decision. Fix the system. Request a Strategic Forensics Briefing, AI diagnostic, Policy Impact Analysis, or Backlog Kill review.",
+    "Tell Dan Feliciano what is getting stuck, delayed, missed, repeated, or routed through you. Start with a practical bottleneck diagnostic.",
   path: "/contact",
 });
 
-const relatedLinks = [
-  { label: "Strategic Forensics", href: "/strategic-forensics" },
-  { label: "AI + Operations", href: "/ai-process-redesign" },
-  { label: "Policy Impact", href: "/policy-impact-analysis" },
-  { label: "Backlog Kill", href: "/backlog-kill" },
-  { label: "Briefings", href: "/briefings" },
-] as const satisfies readonly RelatedLink[];
+const goodReasons = [
+  "Work is piling up and no one is sure why",
+  "Follow-up is inconsistent",
+  "Customers or internal teams are waiting too long",
+  "Too much depends on the owner",
+  "Reporting or admin work takes too much time",
+  "You want to use AI, but need to know where it actually helps",
+  "Your team needs practical problem-solving capability",
+] as const;
+
+const nextSteps = [
+  {
+    title: "Share what is stuck",
+    body:
+      "Tell Dan where work, follow-up, decisions, customers, or tasks are slowing down.",
+  },
+  {
+    title: "Clarify the real bottleneck",
+    body:
+      "Dan looks for the pattern underneath the symptoms: handoffs, ownership, rework, missing rules, manual effort, unclear priorities, or bad fit for tools.",
+  },
+  {
+    title: "Decide the right next step",
+    body:
+      "The next step may be a Bottleneck Diagnostic, Backlog Kill Kit, AI Time Saver Sprint, Operations Reset, Owner Operating System, training, or a different practical recommendation.",
+  },
+] as const;
 
 export default function ContactPage() {
   return (
     <main id="main-content">
       <PageHeader
-        subhead="Use this page to request a Strategic Forensics Briefing, discuss an AI Process Redesign Diagnostic, request Policy Impact Analysis, diagnose a backlog, or examine a decision-risk issue."
-        title="Start with the decision, system, policy, backlog, or AI challenge you need to understand."
-      >
-        <CtaButton href="/strategic-forensics" variant="secondary">
-          Review Strategic Forensics
-        </CtaButton>
-      </PageHeader>
+        subhead="Tell me what is getting stuck, delayed, missed, repeated, or routed through you."
+        title="Find My Bottleneck"
+      />
 
       <Section className="bg-paper text-charcoal">
-        <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr]">
+        <div className="grid gap-8 lg:grid-cols-[0.76fr_1.24fr] lg:items-start">
           <div>
             <h2 className="text-balance text-3xl font-black tracking-normal sm:text-4xl">
-              Start with what needs to be understood
+              Start with the problem you can see.
             </h2>
             <p className="mt-4 text-base leading-7 text-slate-600">
-              Describe the decision, system, policy, backlog, AI issue, weak
-              data, budget pressure, or operating failure you need to examine.
-              Dan will use that context to shape a focused first conversation.
+              You do not need to know whether the answer is strategy, AI,
+              automation, Lean Six Sigma, training, or process redesign. Start
+              with the problem you can see.
             </p>
-            <div className="mt-6 rounded-lg border border-slate-200 bg-white p-5">
-              <h2 className="text-xl font-black">Contact alternatives</h2>
-              <div className="mt-4 grid gap-3 text-sm font-semibold leading-6">
-                <a
-                  className="text-ink underline decoration-signal decoration-2 underline-offset-4"
-                  href={`mailto:${site.email}`}
-                >
-                  {site.email}
-                </a>
-                <div className="flex flex-wrap gap-x-4 gap-y-2">
-                  {site.socialLinks.map((link) => (
-                    <a
-                      className="text-ink underline decoration-signal decoration-2 underline-offset-4"
-                      href={link.href}
-                      key={link.href}
-                      rel="noopener noreferrer"
-                      target="_blank"
-                    >
-                      {link.label}
-                    </a>
-                  ))}
-                </div>
-              </div>
-            </div>
+            <p className="mt-4 text-base leading-7 text-slate-600">
+              Use this form to share where work is slowing down, where
+              customers or tasks are slipping through the cracks, and what you
+              want to make easier to run.
+            </p>
+            <p className="mt-4 rounded-lg border border-slate-200 bg-white p-4 text-sm font-bold leading-6 text-charcoal shadow-command">
+              This form prepares an email draft. Your message is not sent until
+              you send it from your email app.
+            </p>
+            <p className="mt-4 text-sm leading-6 text-slate-600">
+              Prefer to email directly? Send a message to{" "}
+              <a
+                className="font-black text-ink underline decoration-signal decoration-2 underline-offset-4 focus:outline focus:outline-2 focus:outline-offset-2 focus:outline-signal"
+                href={`mailto:${contactEmail}`}
+              >
+                {contactEmail}
+              </a>
+              .
+            </p>
           </div>
           <ContactForm />
         </div>
       </Section>
 
       <Section className="bg-white text-charcoal">
-        <Container className="px-0">
-          <div className="rounded-lg border border-slate-200 bg-paper p-6">
-            <h2 className="text-2xl font-black">Related paths</h2>
-            <div className="mt-4 flex flex-wrap gap-3">
-              {relatedLinks.map((link) => (
-                <Link className="rounded-md border border-slate-200 bg-white px-4 py-3 text-sm font-bold text-charcoal transition hover:border-signal hover:text-ink" href={link.href} key={link.href}>
-                  {link.label}
-                </Link>
-              ))}
-            </div>
+        <div className="grid gap-8 lg:grid-cols-[0.72fr_1.28fr]">
+          <div>
+            <h2 className="text-balance text-3xl font-black tracking-normal sm:text-4xl">
+              Good reasons to reach out
+            </h2>
           </div>
-        </Container>
+          <ul className="grid gap-3 sm:grid-cols-2">
+            {goodReasons.map((reason) => (
+              <li
+                className="rounded-lg border border-slate-200 bg-paper p-4 text-sm font-bold leading-6 text-charcoal shadow-command"
+                key={reason}
+              >
+                {reason}
+              </li>
+            ))}
+          </ul>
+        </div>
       </Section>
 
-      <FinalCTA
-        body="Not sure which path fits? Start with the issue you need to understand and the first conversation can sort the right next step."
-        cta="Explore Strategic Forensics"
-        href="/strategic-forensics"
-        title="Need a clearer frame before you send the inquiry?"
-      />
+      <Section className="bg-graphite text-white">
+        <div className="max-w-3xl">
+          <h2 className="text-balance text-3xl font-black tracking-normal sm:text-4xl">
+            What happens next
+          </h2>
+        </div>
+        <div className="mt-8 grid gap-4 md:grid-cols-3">
+          {nextSteps.map((step) => (
+            <article
+              className="rounded-lg border border-white/10 bg-white/[0.04] p-5"
+              key={step.title}
+            >
+              <h3 className="text-xl font-black text-white">{step.title}</h3>
+              <p className="mt-3 text-sm leading-6 text-slate-300">
+                {step.body}
+              </p>
+            </article>
+          ))}
+        </div>
+      </Section>
+
+      <Section className="bg-paper text-charcoal">
+        <div className="max-w-3xl">
+          <h2 className="text-balance text-3xl font-black tracking-normal sm:text-4xl">
+            Not sure what you need?
+          </h2>
+          <p className="mt-4 text-base leading-7 text-slate-600">
+            That is normal. Most business owners do not start with the name of
+            a service. They start with a problem that keeps coming back. Use the
+            form to describe the friction in plain English.
+          </p>
+        </div>
+      </Section>
     </main>
   );
 }

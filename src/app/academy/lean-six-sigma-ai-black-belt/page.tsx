@@ -40,8 +40,8 @@ const breadcrumbs = [
 const relatedLinks = [
   { label: "Academy overview", href: "/academy" },
   { label: "Green Belt", href: "/academy/lean-six-sigma-ai-green-belt" },
-  { label: "Strategic Forensics", href: "/strategic-forensics" },
-  { label: "AI Process Redesign", href: "/ai-process-redesign" },
+  { label: "Owner Operating System", href: "/owner-operating-system" },
+  { label: "AI Time Saver Sprint", href: "/ai-time-saver-sprint" },
 ] as const satisfies readonly RelatedLink[];
 
 export default function BlackBeltCoursePage() {
@@ -50,7 +50,10 @@ export default function BlackBeltCoursePage() {
       <Breadcrumbs
         items={breadcrumbs}
       />
-      <PageHeader subhead={course.summary} title={course.title}>
+      <PageHeader
+        subhead="Advanced improvement leadership for people who need to lead complex projects, mentor others, and drive transformation that lasts."
+        title={course.title}
+      >
         <CtaButton href="/contact">{course.cta}</CtaButton>
       </PageHeader>
 
@@ -64,7 +67,7 @@ export default function BlackBeltCoursePage() {
               Black Belt develops advanced operators who can manage complex
               projects, mentor teams, challenge weak data, connect Lean Six
               Sigma to AI and analytics, and build governance that keeps risk
-              from drifting back underground.
+              from coming back.
             </p>
           </div>
           <div className="rounded-lg border border-slate-200 bg-white p-5 shadow-command">

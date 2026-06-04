@@ -47,33 +47,54 @@ describe("About page", () => {
 });
 
 describe("Contact page", () => {
-  it("frames contact around Strategic Forensics entry points", () => {
+  it("frames contact around finding the bottleneck", () => {
     render(<ContactPage />);
 
     expect(
       screen.getByRole("heading", {
         level: 1,
-        name: "Start with the decision, system, policy, backlog, or AI challenge you need to understand.",
+        name: "Find My Bottleneck",
       }),
     ).toBeInTheDocument();
     expect(
-      screen.getByText(/request a Strategic Forensics Briefing/),
+      screen.getByText(
+        "Tell me what is getting stuck, delayed, missed, repeated, or routed through you.",
+      ),
     ).toBeInTheDocument();
     expect(
-      screen.getByText(/discuss an AI Process Redesign Diagnostic/),
+      screen.getByRole("heading", {
+        level: 2,
+        name: "Start with the problem you can see.",
+      }),
     ).toBeInTheDocument();
     expect(
-      screen.getByText(/request Policy Impact Analysis/),
+      screen.getByRole("heading", {
+        level: 2,
+        name: "Good reasons to reach out",
+      }),
     ).toBeInTheDocument();
     expect(
-      screen.getByText(/diagnose a backlog/),
+      screen.getByRole("heading", { level: 2, name: "What happens next" }),
     ).toBeInTheDocument();
     expect(
-      screen.getByRole("button", { name: "Start a Conversation" }),
+      screen.getByRole("heading", { level: 2, name: "Not sure what you need?" }),
     ).toBeInTheDocument();
     expect(
-      screen.getByRole("link", { name: "Review Strategic Forensics" }),
-    ).toHaveAttribute("href", "/strategic-forensics");
+      screen.getByRole("button", { name: "Prepare Email to Dan" }),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByText(
+        "This form prepares an email draft. Your message is not sent until you send it from your email app.",
+      ),
+    ).toBeInTheDocument();
+    expect(screen.getByText("dan@danfeliciano.com")).toHaveAttribute(
+      "href",
+      "mailto:dan@danfeliciano.com",
+    );
+    expect(screen.getByText("Work is piling up and no one is sure why")).toBeInTheDocument();
+    expect(
+      screen.queryByText(["Book", "a", "Strategy", "Diagnostic"].join(" ")),
+    ).not.toBeInTheDocument();
   });
 
   it("exports route-safe metadata", () => {
@@ -82,8 +103,8 @@ describe("Contact page", () => {
     });
     expect(contactMetadata.openGraph).toMatchObject({
       description:
-        "Find the hidden risk. Clarify the decision. Fix the system. Request a Strategic Forensics Briefing, AI diagnostic, Policy Impact Analysis, or Backlog Kill review.",
-      title: "Contact | Start a Conversation | Dan Feliciano",
+        "Tell Dan Feliciano what is getting stuck, delayed, missed, repeated, or routed through you. Start with a practical bottleneck diagnostic.",
+      title: "Find My Bottleneck | Dan Feliciano",
       url: "https://danfeliciano.com/contact",
     });
   });

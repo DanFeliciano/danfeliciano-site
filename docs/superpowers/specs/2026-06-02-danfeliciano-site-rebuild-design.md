@@ -22,13 +22,13 @@ The former dissolved-company brand must not appear anywhere in deployed source, 
 
 The approved direction is **Operating Command**.
 
-The site should feel like a premium executive operating system, not a resume page or generic consulting template. It should combine direct advisory-firm credibility with command-center visual language: operating signals, constraint maps, KPI strips, recovery timelines, decision panels, and clear routing by business problem.
+The site should feel like a practical owner-facing operating system, not a resume page or generic consulting template. It should combine direct credibility with clear visual language: operating signals, constraint maps, practical metrics, recovery timelines, decision panels, and clear routing by business problem.
 
 The homepage first viewport should use the brief's headline:
 
-> Operational Strategy, AI Automation, and Lean Six Sigma Execution
+> Fix what is slowing your business down.
 
-The first screen must clearly explain what Dan does, who the site is for, and what action to take next. The primary CTA is **Book a Strategy Diagnostic**. The secondary CTA is **Explore Services**.
+The first screen must clearly explain what Dan does, who the site is for, and what action to take next. The primary CTA is **Find My Bottleneck**. The secondary CTA is **See How Dan Helps**.
 
 ## Visual System
 
@@ -346,7 +346,7 @@ Before completion, verify:
 - Every page has unique metadata.
 - Sitemap and robots are generated.
 - JSON-LD renders into pages.
-- No lorem ipsum appears.
+- No placeholder filler text appears.
 - No forbidden legacy-brand references appear in deployed source.
 - CTAs route to `/contact` or relevant internal pages.
 - No visible overlap, clipped text, or horizontal overflow.

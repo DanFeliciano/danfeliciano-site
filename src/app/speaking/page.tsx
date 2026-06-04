@@ -1,118 +1,108 @@
-import Link from "next/link";
-import { Container } from "@/components/layout/container";
 import { Section } from "@/components/layout/section";
-import { CtaButton } from "@/components/ui/cta-button";
 import { FinalCTA } from "@/components/ui/final-cta";
-import { FrameworkSteps } from "@/components/ui/framework-steps";
 import { PageHeader } from "@/components/ui/page-header";
 import { speakingTopics } from "@/content/site";
-import type { SiteRoute } from "@/lib/routes";
 import { createMetadata } from "@/lib/seo";
 
-type RelatedLink = { label: string; href: SiteRoute };
-
 export const metadata = createMetadata({
-  title: "Strategic Forensics Briefings | Dan Feliciano",
+  title: "Speaking & Workshops | Dan Feliciano",
   description:
-    "Book Dan Feliciano for Strategic Forensics briefings that turn complex issues into plain-English consequences, risks, and next actions.",
+    "Book Dan Feliciano for practical keynotes and workshops on stuck work, AI without the hype, operational excellence, strategy, Lean Six Sigma, and execution.",
   path: "/speaking",
 });
 
 const formats = [
-  {
-    title: "Strategic briefings",
-    description:
-      "Focused 60-90 minute sessions that expose hidden risk, financial consequences, and practical next actions.",
-  },
-  {
-    title: "Executive workshops",
-    description:
-      "Working sessions that pressure-test decisions, assumptions, data, policy impact, and execution risk.",
-  },
-  {
-    title: "Board and public-decision sessions",
-    description:
-      "Plain-English analysis for rooms that need consequences, not talking points.",
-  },
-];
-
-const relatedLinks = [
-  { label: "Strategic Forensics", href: "/strategic-forensics" },
-  { label: "AI + Operations", href: "/ai-process-redesign" },
-  { label: "Policy Impact", href: "/policy-impact-analysis" },
-] as const satisfies readonly RelatedLink[];
+  "Keynotes",
+  "Executive briefings",
+  "Half-day workshops",
+  "Full-day workshops",
+  "Leadership offsites",
+  "Team training",
+  "Virtual sessions",
+] as const;
 
 export default function SpeakingPage() {
   return (
     <main id="main-content">
       <PageHeader
-        subhead="Focused briefings, workshops, and executive sessions for leaders who need to understand what a complex issue actually means."
-        title="Strategic Forensics Briefings"
-      >
-        <CtaButton href="/contact">Book a Strategic Forensics Briefing</CtaButton>
-      </PageHeader>
+        subhead="Practical, high-energy sessions on operational excellence, AI, strategy, analytics, and execution."
+        title="Speaking & Workshops"
+      />
 
       <Section className="bg-paper text-charcoal">
+        <div className="max-w-3xl">
+          <p className="text-base leading-7 text-slate-600">
+            Dan helps audiences make sense of complex change without burying
+            them in buzzwords. His sessions translate strategy, AI, Lean Six
+            Sigma, analytics, and operational excellence into practical
+            decisions leaders and teams can use.
+          </p>
+        </div>
+      </Section>
+
+      <Section className="bg-white text-charcoal">
         <div className="max-w-3xl">
           <h2 className="text-balance text-3xl font-black tracking-normal sm:text-4xl">
             Topics
           </h2>
-          <p className="mt-4 text-base leading-7 text-slate-600">
-            Sessions are built for executives, public-sector leaders,
-            candidates, associations, boards, and organizations facing AI,
-            policy, budget, backlog, data, or operational risk.
-          </p>
         </div>
         <div className="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
           {speakingTopics.map((topic) => (
             <article
-              className="rounded-lg border border-slate-200 bg-white p-5 shadow-command"
+              className="rounded-lg border border-slate-200 bg-paper p-5 shadow-command"
               key={topic.title}
             >
-              <h3 className="text-lg font-black leading-6">{topic.title}</h3>
+              <h3 className="text-lg font-black leading-6 text-charcoal">
+                {topic.title}
+              </h3>
               <p className="mt-3 text-sm leading-6 text-slate-600">
                 {topic.description}
               </p>
+              <div className="mt-5">
+                <p className="text-xs font-black uppercase tracking-[0.12em] text-slate-500">
+                  Audience takeaways
+                </p>
+                <ul className="mt-3 grid gap-2">
+                  {topic.takeaways.map((takeaway) => (
+                    <li
+                      className="border-l-2 border-signal pl-3 text-sm leading-6 text-slate-700"
+                      key={takeaway}
+                    >
+                      {takeaway}
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </article>
           ))}
         </div>
       </Section>
 
       <Section className="bg-graphite text-white">
-        <div className="max-w-3xl">
-          <h2 className="text-balance text-3xl font-black tracking-normal sm:text-4xl">
-            Formats
-          </h2>
-          <p className="mt-4 text-base leading-7 text-slate-300">
-            Bring Dan in for the level of depth the room needs, from a sharp
-            briefing to a working session with practical decision outputs.
-          </p>
-        </div>
-        <div className="mt-8">
-          <FrameworkSteps steps={formats} variant="dark" />
-        </div>
-      </Section>
-
-      <Section className="bg-paper text-charcoal">
-        <Container className="px-0">
-          <div className="rounded-lg border border-slate-200 bg-white p-6">
-            <h2 className="text-2xl font-black">Related paths</h2>
-            <div className="mt-4 flex flex-wrap gap-3">
-              {relatedLinks.map((link) => (
-                <Link className="rounded-md border border-slate-200 px-4 py-3 text-sm font-bold text-charcoal transition hover:border-signal hover:text-ink" href={link.href} key={link.href}>
-                  {link.label}
-                </Link>
-              ))}
-            </div>
+        <div className="grid gap-8 lg:grid-cols-[0.75fr_1.25fr]">
+          <div>
+            <h2 className="text-balance text-3xl font-black tracking-normal sm:text-4xl">
+              Available formats
+            </h2>
           </div>
-        </Container>
+          <ul className="grid gap-3 sm:grid-cols-2">
+            {formats.map((format) => (
+              <li
+                className="rounded-lg border border-white/10 bg-white/[0.04] p-4 text-sm font-bold leading-6 text-slate-100"
+                key={format}
+              >
+                {format}
+              </li>
+            ))}
+          </ul>
+        </div>
       </Section>
 
       <FinalCTA
-        body="Bring a complex issue into a focused briefing and leave with consequences, risks, and next actions."
-        cta="Book a Strategic Forensics Briefing"
+        body="Bring Dan in for a keynote, workshop, executive briefing, or team session that makes strategy, AI, and operational excellence useful."
+        cta="Book Dan for an Event"
         href="/contact"
-        title="Need the room clear on what the decision really means?"
+        title="Need a practical session for your audience?"
       />
     </main>
   );

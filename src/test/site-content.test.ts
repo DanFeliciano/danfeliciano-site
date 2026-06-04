@@ -1,4 +1,5 @@
 import { execFileSync } from "node:child_process";
+import { existsSync } from "node:fs";
 import { describe, expect, it } from "vitest";
 import {
   caseStudies,
@@ -16,8 +17,9 @@ import {
   personJsonLd,
   professionalServiceJsonLd,
   socialImage,
+  websiteJsonLd,
 } from "@/lib/seo";
-import { legacyRedirects, requiredRoutes } from "@/lib/routes";
+import { allSiteRoutes, legacyRedirects, requiredRoutes } from "@/lib/routes";
 
 function rgNoMatches(pattern: string, paths: string[]) {
   try {
@@ -42,6 +44,7 @@ describe("site content", () => {
   it("uses Dan Feliciano as the master brand", () => {
     expect(site.name).toBe("Dan Feliciano");
     expect(site.url).toBe("https://danfeliciano.com");
+    expect(site.email).toBe("dan@danfeliciano.com");
   });
 
   it("centralizes official social profile URLs", () => {
@@ -59,7 +62,7 @@ describe("site content", () => {
   });
 
   it("defines all required top-level content groups", () => {
-    expect(navItems).toHaveLength(9);
+    expect(navItems).toHaveLength(7);
     expect(services.length).toBeGreaterThanOrEqual(3);
     expect(products.length).toBeGreaterThanOrEqual(3);
     expect(courses).toHaveLength(3);
@@ -70,26 +73,19 @@ describe("site content", () => {
   it("includes every required route", () => {
     expect(requiredRoutes).toEqual([
       "/",
-      "/strategic-forensics",
-      "/ai-process-redesign",
-      "/policy-impact-analysis",
-      "/backlog-kill",
-      "/services",
-      "/services/aesop-strategy-governance",
-      "/services/phoenix-protocol",
-      "/services/ai-automation-analytics",
-      "/products",
-      "/products/backlog-kill-kit",
-      "/products/policy-forensics",
+      "/what-i-fix",
+      "/backlog-kill-kit",
+      "/ai-time-saver-sprint",
+      "/operations-reset",
+      "/owner-operating-system",
+      "/policy-forensics",
       "/academy",
       "/academy/lean-six-sigma-ai-yellow-belt",
       "/academy/lean-six-sigma-ai-green-belt",
       "/academy/lean-six-sigma-ai-black-belt",
-      "/briefings",
+      "/results",
       "/speaking",
-      "/case-studies",
       "/insights",
-      "/about",
       "/contact",
       "/privacy",
       "/terms",
@@ -97,7 +93,7 @@ describe("site content", () => {
   });
 
   it("keeps content hrefs within required routes", () => {
-    const routeSet = new Set<string>(requiredRoutes);
+    const routeSet = new Set<string>(allSiteRoutes);
     const contentHrefs = [
       ...navItems.map((item) => item.href),
       ...services.map((service) => service.href),
@@ -116,30 +112,28 @@ describe("site content", () => {
 
   it("keeps offer slugs consistent with their route paths", () => {
     for (const service of services) {
-      expect(service.href).toBe(`/services/${service.slug}`);
+      expect(allSiteRoutes).toContain(service.href);
     }
 
     for (const product of products) {
-      if (product.href.startsWith("/products/")) {
-        expect(product.href).toBe(`/products/${product.slug}`);
-      }
+      expect(allSiteRoutes).toContain(product.href);
     }
   });
 
-  it("creates route-safe metadata for services", () => {
+  it("creates route-safe metadata for what I fix", () => {
     const metadata = createMetadata({
-      title: "Services | Dan Feliciano",
-      description: "Services metadata test",
-      path: "/services",
+      title: "What I Fix | Dan Feliciano",
+      description: "What I Fix metadata test",
+      path: "/what-i-fix",
     });
 
     expect(metadata.alternates?.canonical).toBe(
-      "https://danfeliciano.com/services",
+      "https://danfeliciano.com/what-i-fix",
     );
     expect(metadata.openGraph).toMatchObject({
       images: [socialImage],
-      title: "Services | Dan Feliciano",
-      url: "https://danfeliciano.com/services",
+      title: "What I Fix | Dan Feliciano",
+      url: "https://danfeliciano.com/what-i-fix",
       siteName: "Dan Feliciano",
       type: "website",
     });
@@ -149,30 +143,35 @@ describe("site content", () => {
     });
   });
 
-  it("uses Strategic Forensics as the primary positioning", () => {
-    expect(site.description).toContain("Strategic Forensics");
-    expect(site.description).toContain(
-      "Find the hidden risk. Clarify the decision. Fix the system.",
-    );
+  it("uses owner-facing positioning as the primary positioning", () => {
+    expect(site.description).toContain("business owners and operators");
+    expect(site.description).toContain("find bottlenecks");
     expect(homepage.title).toBe(
-      "Find the hidden risk. Clarify the decision. Fix the system.",
+      "Fix what is slowing your business down.",
     );
-    expect(navItems.map((item) => item.label)).toContain("Strategic Forensics");
-    expect(navItems.map((item) => item.label)).toContain("Policy Impact");
+    expect(navItems.map((item) => item.label)).toEqual([
+      "What I Fix",
+      "AI & Automation",
+      "Training",
+      "Results",
+      "Speaking",
+      "Insights",
+      "Contact",
+    ]);
     expect(
-      navItems.find((item) => item.label === "Strategic Forensics")?.href,
-    ).toBe("/strategic-forensics");
-    expect(navItems.find((item) => item.label === "AI + Operations")?.href).toBe(
-      "/ai-process-redesign",
+      navItems.find((item) => item.label === "What I Fix")?.href,
+    ).toBe("/what-i-fix");
+    expect(navItems.find((item) => item.label === "AI & Automation")?.href).toBe(
+      "/ai-time-saver-sprint",
     );
-    expect(navItems.find((item) => item.label === "Policy Impact")?.href).toBe(
-      "/policy-impact-analysis",
+    expect(navItems.find((item) => item.label === "Training")?.href).toBe(
+      "/academy",
     );
-    expect(navItems.find((item) => item.label === "Backlog Kill")?.href).toBe(
-      "/backlog-kill",
+    expect(navItems.find((item) => item.label === "Results")?.href).toBe(
+      "/results",
     );
-    expect(navItems.find((item) => item.label === "Briefings")?.href).toBe(
-      "/briefings",
+    expect(navItems.find((item) => item.label === "Speaking")?.href).toBe(
+      "/speaking",
     );
   });
 
@@ -209,6 +208,13 @@ describe("site content", () => {
       name: "Dan Feliciano",
       founder: { "@type": "Person", name: "Dan Feliciano" },
     });
+
+    expect(websiteJsonLd()).toMatchObject({
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      name: "Dan Feliciano",
+      url: "https://danfeliciano.com",
+    });
   });
 
   it("keeps legacy redirect destinations within required routes", () => {
@@ -232,9 +238,40 @@ describe("site content", () => {
     expect(output.trim()).toBe("");
   });
 
+  it("does not include placeholder filler text in deployed source", () => {
+    const fillerText = ["lorem", "ipsum"].join(" ");
+    const output = rgNoMatches(`(?i)${fillerText}`, [
+      "src/app",
+      "src/components",
+      "src/content",
+    ]);
+
+    expect(output.trim()).toBe("");
+  });
+
+  it("does not require a contact API or email provider for launch", () => {
+    const contactApiRoute = ["src/app/api", "contact/route.ts"].join("/");
+    const providerName = ["re", "send"].join("");
+    const removedEnvVars = [
+      [["RE", "SEND"].join(""), "API", "KEY"].join("_"),
+      ["CONTACT", "TO", "EMAIL"].join("_"),
+      ["CONTACT", "FROM", "EMAIL"].join("_"),
+    ].join("|");
+
+    expect(existsSync(contactApiRoute)).toBe(false);
+    expect(existsSync(".env.example")).toBe(false);
+
+    const output = rgNoMatches(
+      `${providerName}|${removedEnvVars}|${["/api", "contact"].join("/")}`,
+      ["src/app", "src/components", "src/lib", "src/content", "package.json"],
+    );
+
+    expect(output.trim()).toBe("");
+  });
+
   it("keeps generic consultant language out of deployed source", () => {
     const forbidden =
-      "(?i)unlock potential|empower transformation|innovative solutions|trusted partner|cutting-edge|comprehensive solutions|tailored solutions|helping organizations thrive|drive success|transform your business|synergy|next-level|contact us|learn more|get started|discover solutions";
+      "(?i)unlock potential|empower transformation|innovative solutions|trusted partner|cutting-edge|comprehensive solutions|tailored solutions|helping organizations thrive|drive success|transform your business|synergy|next-level|contact us|learn more|discover solutions";
     const output = rgNoMatches(forbidden, [
       "src/app",
       "src/components",

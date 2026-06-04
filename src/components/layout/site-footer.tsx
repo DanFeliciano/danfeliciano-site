@@ -17,31 +17,34 @@ type FooterExternalLink = {
 type FooterLink = FooterInternalLink | FooterExternalLink;
 
 const expertise = [
-  "Strategic Forensics",
-  "AI + Operations",
-  "Policy Impact",
-  "Backlog Kill",
-  "Financial Risk",
+  "Find bottlenecks",
+  "Recover lost time",
+  "Improve follow-up",
+  "Automate the right work",
+  "Reduce owner dependency",
 ];
 
 const footerColumns: { title: string; links: FooterLink[] }[] = [
   {
     title: "Services",
     links: [
-      { label: "Strategic Forensics", href: "/strategic-forensics" },
-      { label: "AI + Operations", href: "/ai-process-redesign" },
-      { label: "Policy Impact", href: "/policy-impact-analysis" },
-      { label: "Backlog Kill", href: "/backlog-kill" },
-      { label: "Briefings", href: "/briefings" },
+      { label: "What I Fix", href: "/what-i-fix" },
+      { label: "AI & Automation", href: "/ai-time-saver-sprint" },
+      { label: "Training", href: "/academy" },
+      { label: "Results", href: "/results" },
+      { label: "Speaking", href: "/speaking" },
+      { label: "Insights", href: "/insights" },
+      { label: "Contact", href: "/contact" },
     ],
   },
   {
-    title: "Diagnostics",
+    title: "Offers",
     links: [
-      { label: "Backlog Kill Diagnostic", href: "/products/backlog-kill-kit" },
-      { label: "Policy Impact Analysis", href: "/products/policy-forensics" },
-      { label: "Operational Risk Training", href: "/academy" },
-      { label: "About Dan", href: "/about" },
+      { label: "Backlog Kill Kit", href: "/backlog-kill-kit" },
+      { label: "90-Day Operations Reset", href: "/operations-reset" },
+      { label: "Owner Operating System", href: "/owner-operating-system" },
+      { label: "Bottleneck Diagnostic", href: "/contact" },
+      { label: "Policy Forensics", href: "/policy-forensics" },
     ],
   },
   {

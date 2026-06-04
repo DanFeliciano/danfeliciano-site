@@ -1,31 +1,46 @@
 export const requiredRoutes = [
   "/",
-  "/strategic-forensics",
-  "/ai-process-redesign",
-  "/policy-impact-analysis",
-  "/backlog-kill",
-  "/services",
-  "/services/aesop-strategy-governance",
-  "/services/phoenix-protocol",
-  "/services/ai-automation-analytics",
-  "/products",
-  "/products/backlog-kill-kit",
-  "/products/policy-forensics",
+  "/what-i-fix",
+  "/backlog-kill-kit",
+  "/ai-time-saver-sprint",
+  "/operations-reset",
+  "/owner-operating-system",
+  "/policy-forensics",
   "/academy",
   "/academy/lean-six-sigma-ai-yellow-belt",
   "/academy/lean-six-sigma-ai-green-belt",
   "/academy/lean-six-sigma-ai-black-belt",
-  "/briefings",
+  "/results",
   "/speaking",
-  "/case-studies",
   "/insights",
-  "/about",
   "/contact",
   "/privacy",
   "/terms",
 ] as const;
 
-export type SiteRoute = (typeof requiredRoutes)[number];
+export const compatibilityRoutes = [
+  "/strategic-forensics",
+  "/policy-impact-analysis",
+  "/backlog-kill",
+  "/products",
+  "/briefings",
+  "/about",
+  "/services",
+  "/services/aesop-strategy-governance",
+  "/services/phoenix-protocol",
+  "/services/ai-automation-analytics",
+  "/products/backlog-kill-kit",
+  "/products/policy-forensics",
+  "/ai-process-redesign",
+  "/case-studies",
+] as const;
+
+export const allSiteRoutes = [
+  ...requiredRoutes,
+  ...compatibilityRoutes,
+] as const;
+
+export type SiteRoute = (typeof allSiteRoutes)[number];
 
 export type LegacyRedirect = {
   source: string;
@@ -46,10 +61,24 @@ export const legacyRedirects = [
     source: "/lean-six-sigma-black-belt",
     destination: "/academy/lean-six-sigma-ai-black-belt",
   },
-  { source: "/consulting", destination: "/services" },
+  { source: "/consulting", destination: "/what-i-fix" },
   { source: "/training", destination: "/academy" },
-  { source: "/phoenix", destination: "/backlog-kill" },
-  { source: "/backlog", destination: "/backlog-kill" },
-  { source: "/ai", destination: "/ai-process-redesign" },
-  { source: "/policy", destination: "/policy-impact-analysis" },
+  { source: "/phoenix", destination: "/operations-reset" },
+  { source: "/backlog", destination: "/backlog-kill-kit" },
+  { source: "/ai", destination: "/ai-time-saver-sprint" },
+  { source: "/policy", destination: "/policy-forensics" },
+  { source: "/services", destination: "/what-i-fix" },
+  { source: "/products/backlog-kill-kit", destination: "/backlog-kill-kit" },
+  { source: "/ai-process-redesign", destination: "/ai-time-saver-sprint" },
+  { source: "/products/policy-forensics", destination: "/policy-forensics" },
+  { source: "/services/phoenix-protocol", destination: "/operations-reset" },
+  {
+    source: "/services/aesop-strategy-governance",
+    destination: "/owner-operating-system",
+  },
+  {
+    source: "/services/ai-automation-analytics",
+    destination: "/ai-time-saver-sprint",
+  },
+  { source: "/case-studies", destination: "/results" },
 ] as const satisfies readonly LegacyRedirect[];

@@ -9,16 +9,14 @@ import { navItems, socialLinks } from "@/content/site";
 
 describe("navigation", () => {
   it("uses the approved navigation labels", () => {
-    expect(navItems.map((item) => item.label)).toEqual([
-      "Home",
-      "Strategic Forensics",
-      "AI + Operations",
-      "Policy Impact",
-      "Backlog Kill",
-      "Briefings",
-      "Insights",
-      "About",
-      "Contact",
+    expect(navItems).toEqual([
+      { label: "What I Fix", href: "/what-i-fix" },
+      { label: "AI & Automation", href: "/ai-time-saver-sprint" },
+      { label: "Training", href: "/academy" },
+      { label: "Results", href: "/results" },
+      { label: "Speaking", href: "/speaking" },
+      { label: "Insights", href: "/insights" },
+      { label: "Contact", href: "/contact" },
     ]);
   });
 
@@ -26,7 +24,7 @@ describe("navigation", () => {
     render(createElement(SiteHeader));
 
     const diagnosticLinks = screen.getAllByRole("link", {
-      name: "Book a Briefing",
+      name: "Find My Bottleneck",
     });
 
     expect(diagnosticLinks.length).toBeGreaterThan(0);
@@ -62,7 +60,7 @@ describe("navigation", () => {
     expect(closeButton).toHaveAttribute("aria-expanded", "true");
     expect(screen.getByRole("navigation", { name: "Mobile navigation" })).toBeInTheDocument();
     await waitFor(() =>
-      expect(screen.getByRole("link", { name: "Home" })).toHaveFocus(),
+      expect(screen.getByRole("link", { name: "What I Fix" })).toHaveFocus(),
     );
 
     for (const item of navItems) {
@@ -70,7 +68,7 @@ describe("navigation", () => {
     }
 
     const diagnosticLink = screen.getByRole("link", {
-      name: "Book a Briefing",
+      name: "Find My Bottleneck",
     });
 
     expect(
@@ -113,6 +111,25 @@ describe("navigation", () => {
       expect(link).toHaveAttribute("href", social.href);
       expect(link).toHaveAttribute("target", "_blank");
       expect(link).toHaveAttribute("rel", "noopener noreferrer");
+    }
+  });
+
+  it("renders owner-facing footer links", () => {
+    render(createElement(SiteFooter));
+
+    for (const [label, href] of [
+      ["What I Fix", "/what-i-fix"],
+      ["AI & Automation", "/ai-time-saver-sprint"],
+      ["Backlog Kill Kit", "/backlog-kill-kit"],
+      ["90-Day Operations Reset", "/operations-reset"],
+      ["Owner Operating System", "/owner-operating-system"],
+      ["Policy Forensics", "/policy-forensics"],
+      ["Results", "/results"],
+    ] as const) {
+      expect(screen.getByRole("link", { name: label })).toHaveAttribute(
+        "href",
+        href,
+      );
     }
   });
 });

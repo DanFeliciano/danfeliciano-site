@@ -8,32 +8,34 @@ import { legacyRedirects, requiredRoutes } from "@/lib/routes";
 import { absoluteUrl, createMetadata, socialImage } from "@/lib/seo";
 
 const homepageSocialDescription =
-  "Find the hidden risk. Clarify the decision. Fix the system. Strategic Forensics for leaders facing AI disruption, policy complexity, operational failure, weak data, backlogs, and financial risk.";
+  "Dan Feliciano helps business owners and operators find bottlenecks, recover lost time, improve follow-up, and use AI or automation where it actually makes work easier.";
 
 describe("seo helpers", () => {
   it("creates canonical absolute URLs", () => {
-    expect(absoluteUrl("/services")).toBe("https://danfeliciano.com/services");
+    expect(absoluteUrl("/what-i-fix")).toBe(
+      "https://danfeliciano.com/what-i-fix",
+    );
   });
 
   it("creates metadata with canonical and open graph URL", () => {
     const metadata = createMetadata({
-      title: "Services | Dan Feliciano",
-      description: "Explore Strategic Forensics services.",
-      path: "/services",
+      title: "What I Fix | Dan Feliciano",
+      description: "Practical help for business owners and operators.",
+      path: "/what-i-fix",
     });
 
     expect(metadata.alternates).toEqual({
-      canonical: "https://danfeliciano.com/services",
+      canonical: "https://danfeliciano.com/what-i-fix",
     });
     expect(metadata.openGraph).toMatchObject({
       images: [socialImage],
-      url: "https://danfeliciano.com/services",
+      url: "https://danfeliciano.com/what-i-fix",
     });
     expect(metadata.twitter).toMatchObject({
       card: "summary_large_image",
       creator: "@DanFeliciano",
-      title: "Services | Dan Feliciano",
-      description: "Explore Strategic Forensics services.",
+      title: "What I Fix | Dan Feliciano",
+      description: "Practical help for business owners and operators.",
       images: [socialImage.url],
       site: "@DanFeliciano",
     });
@@ -44,7 +46,7 @@ describe("seo helpers", () => {
   });
 
   it("has at least all required sitemap routes", () => {
-    expect(requiredRoutes.length).toBe(24);
+    expect(requiredRoutes.length).toBe(17);
   });
 
   it("exports full homepage metadata", () => {
@@ -54,7 +56,7 @@ describe("seo helpers", () => {
     expect(homepageMetadata.openGraph).toMatchObject({
       description: homepageSocialDescription,
       images: [socialImage],
-      title: "Dan Feliciano | Strategic Forensics",
+      title: "Dan Feliciano | Fix What Is Slowing Your Business Down",
       url: "https://danfeliciano.com/",
       type: "website",
     });
@@ -64,7 +66,7 @@ describe("seo helpers", () => {
       description: homepageSocialDescription,
       images: [socialImage.url],
       site: "@DanFeliciano",
-      title: "Dan Feliciano | Strategic Forensics",
+      title: "Dan Feliciano | Fix What Is Slowing Your Business Down",
     });
     expect(homepageMetadata.robots).toEqual({
       index: true,

@@ -87,7 +87,7 @@ export function MobileNav() {
             href="/contact"
             onClick={closeNavigation}
           >
-            Book a Briefing
+            Find My Bottleneck
           </CtaButton>
         </div>
       ) : null}

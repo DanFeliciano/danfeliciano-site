@@ -1,75 +1,39 @@
 "use client";
 
 import { FormEvent, useState } from "react";
+import {
+  buildContactMailtoHref,
+  desiredTimelineOptions,
+  initialContactValues,
+  problemTypeOptions,
+  validateContactForm,
+  type ContactFormErrors,
+  type ContactFormValues,
+} from "@/lib/contact";
 
-type FormValues = {
-  name: string;
-  email: string;
-  organization: string;
-  role: string;
-  interest: string;
-  problem: string;
-};
-
-type FormErrors = Partial<Record<keyof FormValues, string>>;
-
-const initialValues: FormValues = {
-  name: "",
-  email: "",
-  organization: "",
-  role: "",
-  interest: "Strategic Forensics Briefing",
-  problem: "",
-};
-
-const interestOptions = [
-  "Strategic Forensics Briefing",
-  "AI Process Redesign",
-  "Policy Impact Analysis",
-  "Backlog Kill / Service Reimagined",
-  "Speaking / Media",
-  "Other",
-];
-
-function validate(values: FormValues) {
-  const errors: FormErrors = {};
-  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-  if (!values.name.trim()) {
-    errors.name = "Name is required.";
-  }
-
-  if (!values.email.trim()) {
-    errors.email = "Email is required.";
-  } else if (!emailPattern.test(values.email)) {
-    errors.email = "Enter a valid email address.";
-  }
-
-  if (!values.problem.trim()) {
-    errors.problem = "Please describe the problem you are trying to solve.";
-  }
-
-  return errors;
-}
+export { desiredTimelineOptions, problemTypeOptions };
 
 export function ContactForm() {
-  const [values, setValues] = useState<FormValues>(initialValues);
-  const [errors, setErrors] = useState<FormErrors>({});
+  const [values, setValues] =
+    useState<ContactFormValues>(initialContactValues);
+  const [errors, setErrors] = useState<ContactFormErrors>({});
   const [status, setStatus] = useState("");
+  const [emailHref, setEmailHref] = useState("");
 
-  function updateValue<K extends keyof FormValues>(
+  function updateValue<K extends keyof ContactFormValues>(
     key: K,
-    value: FormValues[K],
+    value: ContactFormValues[K],
   ) {
     setValues((current) => ({ ...current, [key]: value }));
     setErrors((current) => ({ ...current, [key]: undefined }));
     setStatus("");
+    setEmailHref("");
   }
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
-    const nextErrors = validate(values);
+    const nextErrors = validateContactForm(values);
     setErrors(nextErrors);
 
     if (Object.keys(nextErrors).length > 0) {
@@ -77,8 +41,18 @@ export function ContactForm() {
       return;
     }
 
-    setValues(initialValues);
-    setStatus("Thanks. Your request has been received.");
+    const nextEmailHref = buildContactMailtoHref(values);
+
+    setEmailHref(nextEmailHref);
+    setStatus(
+      "Your email draft is ready. Please send it from your email app to complete the inquiry.",
+    );
+
+    try {
+      window.open(nextEmailHref, "_self");
+    } catch {
+      // The visible draft link remains available if a browser blocks mailto.
+    }
   }
 
   return (
@@ -95,11 +69,13 @@ export function ContactForm() {
           <input
             aria-describedby={errors.name ? "name-error" : undefined}
             aria-invalid={errors.name ? "true" : "false"}
+            aria-required="true"
             autoComplete="name"
-            className="mt-2 min-h-11 w-full rounded-md border border-slate-300 bg-white px-3 text-sm text-charcoal transition focus:border-signal"
+            className="mt-2 min-h-11 w-full rounded-md border border-slate-300 bg-white px-3 text-sm text-charcoal transition focus:border-signal focus:outline focus:outline-2 focus:outline-offset-2 focus:outline-signal"
             id="name"
             name="name"
             onChange={(event) => updateValue("name", event.target.value)}
+            required
             type="text"
             value={values.name}
           />
@@ -117,11 +93,13 @@ export function ContactForm() {
           <input
             aria-describedby={errors.email ? "email-error" : undefined}
             aria-invalid={errors.email ? "true" : "false"}
+            aria-required="true"
             autoComplete="email"
-            className="mt-2 min-h-11 w-full rounded-md border border-slate-300 bg-white px-3 text-sm text-charcoal transition focus:border-signal"
+            className="mt-2 min-h-11 w-full rounded-md border border-slate-300 bg-white px-3 text-sm text-charcoal transition focus:border-signal focus:outline focus:outline-2 focus:outline-offset-2 focus:outline-signal"
             id="email"
             name="email"
             onChange={(event) => updateValue("email", event.target.value)}
+            required
             type="email"
             value={values.email}
           />
@@ -140,16 +118,30 @@ export function ContactForm() {
             Organization
           </label>
           <input
+            aria-describedby={
+              errors.organization ? "organization-error" : undefined
+            }
+            aria-invalid={errors.organization ? "true" : "false"}
+            aria-required="true"
             autoComplete="organization"
-            className="mt-2 min-h-11 w-full rounded-md border border-slate-300 bg-white px-3 text-sm text-charcoal transition focus:border-signal"
+            className="mt-2 min-h-11 w-full rounded-md border border-slate-300 bg-white px-3 text-sm text-charcoal transition focus:border-signal focus:outline focus:outline-2 focus:outline-offset-2 focus:outline-signal"
             id="organization"
             name="organization"
             onChange={(event) =>
               updateValue("organization", event.target.value)
             }
+            required
             type="text"
             value={values.organization}
           />
+          {errors.organization ? (
+            <p
+              className="mt-2 text-sm font-semibold text-red-700"
+              id="organization-error"
+            >
+              {errors.organization}
+            </p>
+          ) : null}
         </div>
 
         <div>
@@ -158,7 +150,7 @@ export function ContactForm() {
           </label>
           <input
             autoComplete="organization-title"
-            className="mt-2 min-h-11 w-full rounded-md border border-slate-300 bg-white px-3 text-sm text-charcoal transition focus:border-signal"
+            className="mt-2 min-h-11 w-full rounded-md border border-slate-300 bg-white px-3 text-sm text-charcoal transition focus:border-signal focus:outline focus:outline-2 focus:outline-offset-2 focus:outline-signal"
             id="role"
             name="role"
             onChange={(event) => updateValue("role", event.target.value)}
@@ -167,21 +159,98 @@ export function ContactForm() {
           />
         </div>
 
-        <div>
+        <div className="md:col-span-2">
           <label
             className="text-sm font-black text-charcoal"
-            htmlFor="interest"
+            htmlFor="problemType"
           >
-            Area of interest:
+            What kind of problem are you trying to solve?
           </label>
           <select
-            className="mt-2 min-h-11 w-full rounded-md border border-slate-300 bg-white px-3 text-sm text-charcoal transition focus:border-signal"
-            id="interest"
-            name="interest"
-            onChange={(event) => updateValue("interest", event.target.value)}
-            value={values.interest}
+            aria-describedby={errors.problemType ? "problemType-error" : undefined}
+            aria-invalid={errors.problemType ? "true" : "false"}
+            aria-required="true"
+            className="mt-2 min-h-11 w-full rounded-md border border-slate-300 bg-white px-3 text-sm text-charcoal transition focus:border-signal focus:outline focus:outline-2 focus:outline-offset-2 focus:outline-signal"
+            id="problemType"
+            name="problemType"
+            onChange={(event) => updateValue("problemType", event.target.value)}
+            required
+            value={values.problemType}
           >
-            {interestOptions.map((option) => (
+            <option value="">Select a problem type</option>
+            {problemTypeOptions.map((option) => (
+              <option key={option} value={option}>
+                {option}
+              </option>
+            ))}
+          </select>
+          {errors.problemType ? (
+            <p
+              className="mt-2 text-sm font-semibold text-red-700"
+              id="problemType-error"
+            >
+              {errors.problemType}
+            </p>
+          ) : null}
+        </div>
+
+        <div className="md:col-span-2">
+          <label
+            className="text-sm font-black text-charcoal"
+            htmlFor="problemDescription"
+          >
+            What is getting stuck, delayed, missed, or repeated?
+          </label>
+          <p className="mt-2 text-sm leading-6 text-slate-600" id="problem-help">
+            A few sentences are enough. Describe the work, follow-up,
+            decision, customer issue, backlog, or manual task that keeps
+            causing friction.
+          </p>
+          <textarea
+            aria-describedby={
+              errors.problemDescription
+                ? "problem-help problemDescription-error"
+                : "problem-help"
+            }
+            aria-invalid={errors.problemDescription ? "true" : "false"}
+            aria-required="true"
+            className="mt-2 min-h-36 w-full rounded-md border border-slate-300 bg-white px-3 py-3 text-sm leading-6 text-charcoal transition focus:border-signal focus:outline focus:outline-2 focus:outline-offset-2 focus:outline-signal"
+            id="problemDescription"
+            name="problemDescription"
+            onChange={(event) =>
+              updateValue("problemDescription", event.target.value)
+            }
+            required
+            value={values.problemDescription}
+          />
+          {errors.problemDescription ? (
+            <p
+              className="mt-2 text-sm font-semibold text-red-700"
+              id="problemDescription-error"
+            >
+              {errors.problemDescription}
+            </p>
+          ) : null}
+        </div>
+
+        <div className="md:col-span-2">
+          <label
+            className="text-sm font-black text-charcoal"
+            htmlFor="desiredTimeline"
+          >
+            Desired timeline
+          </label>
+          <select
+            className="mt-2 min-h-11 w-full rounded-md border border-slate-300 bg-white px-3 text-sm text-charcoal transition focus:border-signal focus:outline focus:outline-2 focus:outline-offset-2 focus:outline-signal"
+            id="desiredTimeline"
+            name="desiredTimeline"
+            onChange={(event) =>
+              updateValue("desiredTimeline", event.target.value)
+            }
+            value={values.desiredTimeline}
+          >
+            <option value="">Select a timeline</option>
+            {desiredTimelineOptions.map((option) => (
               <option key={option} value={option}>
                 {option}
               </option>
@@ -190,24 +259,32 @@ export function ContactForm() {
         </div>
 
         <div className="md:col-span-2">
-          <label className="text-sm font-black text-charcoal" htmlFor="problem">
-            What are you trying to solve?
-          </label>
-          <textarea
-            aria-describedby={errors.problem ? "problem-error" : undefined}
-            aria-invalid={errors.problem ? "true" : "false"}
-            className="mt-2 min-h-36 w-full rounded-md border border-slate-300 bg-white px-3 py-3 text-sm leading-6 text-charcoal transition focus:border-signal"
-            id="problem"
-            name="problem"
-            onChange={(event) => updateValue("problem", event.target.value)}
-            value={values.problem}
-          />
-          {errors.problem ? (
+          <div className="flex gap-3">
+            <input
+              aria-describedby={errors.consent ? "consent-error" : undefined}
+              aria-invalid={errors.consent ? "true" : "false"}
+              aria-required="true"
+              checked={values.consent}
+              className="mt-1 h-5 w-5 rounded border-slate-300 text-ink focus:outline focus:outline-2 focus:outline-offset-2 focus:outline-signal"
+              id="consent"
+              name="consent"
+              onChange={(event) => updateValue("consent", event.target.checked)}
+              required
+              type="checkbox"
+            />
+            <label
+              className="text-sm font-bold leading-6 text-charcoal"
+              htmlFor="consent"
+            >
+              I agree to be contacted about my inquiry.
+            </label>
+          </div>
+          {errors.consent ? (
             <p
               className="mt-2 text-sm font-semibold text-red-700"
-              id="problem-error"
+              id="consent-error"
             >
-              {errors.problem}
+              {errors.consent}
             </p>
           ) : null}
         </div>
@@ -215,19 +292,23 @@ export function ContactForm() {
 
       <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
         <button
-          className="inline-flex min-h-11 items-center justify-center rounded-md bg-ink px-5 text-sm font-bold text-signal transition hover:bg-charcoal"
+          className="inline-flex min-h-11 items-center justify-center rounded-md bg-ink px-5 text-sm font-bold text-signal transition hover:bg-charcoal focus:outline focus:outline-2 focus:outline-offset-2 focus:outline-signal"
           type="submit"
         >
-          Start a Conversation
+          Prepare Email to Dan
         </button>
         {status ? (
-          <p
-            aria-live="polite"
-            className="text-sm font-black leading-6 text-ink"
-            role="status"
-          >
-            {status}
-          </p>
+          <div aria-live="polite" className="grid gap-2" role="status">
+            <p className="text-sm font-black leading-6 text-ink">{status}</p>
+            {emailHref ? (
+              <a
+                className="text-sm font-black text-ink underline decoration-signal decoration-2 underline-offset-4 focus:outline focus:outline-2 focus:outline-offset-2 focus:outline-signal"
+                href={emailHref}
+              >
+                Open Email Draft
+              </a>
+            ) : null}
+          </div>
         ) : null}
       </div>
     </form>

@@ -55,51 +55,50 @@ export const site = {
   name: "Dan Feliciano",
   url: "https://danfeliciano.com",
   description:
-    "Find the hidden risk. Clarify the decision. Fix the system. Strategic Forensics for leaders facing AI disruption, policy complexity, operational failure, weak data, backlogs, and financial risk.",
-  email: "hello@danfeliciano.com",
+    "Dan Feliciano helps business owners and operators find bottlenecks, recover lost time, improve follow-up, reduce chaos, and use AI or automation where it actually makes the business easier to run.",
+  email: "dan@danfeliciano.com",
   linkedIn: socialLinks[0].href,
   socialLinks,
 };
 
 export const navItems: LinkItem[] = [
-  { label: "Home", href: "/" },
-  { label: "Strategic Forensics", href: "/strategic-forensics" },
-  { label: "AI + Operations", href: "/ai-process-redesign" },
-  { label: "Policy Impact", href: "/policy-impact-analysis" },
-  { label: "Backlog Kill", href: "/backlog-kill" },
-  { label: "Briefings", href: "/briefings" },
+  { label: "What I Fix", href: "/what-i-fix" },
+  { label: "AI & Automation", href: "/ai-time-saver-sprint" },
+  { label: "Training", href: "/academy" },
+  { label: "Results", href: "/results" },
+  { label: "Speaking", href: "/speaking" },
   { label: "Insights", href: "/insights" },
-  { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
 ];
 
 export const homepage = {
-  title: "Find the hidden risk. Clarify the decision. Fix the system.",
+  title: "Fix what is slowing your business down.",
   subhead:
-    "Strategic Forensics for leaders facing AI disruption, policy complexity, operational failure, weak data, backlogs, and financial risk.",
+    "I help business owners and operators find bottlenecks, recover lost time, improve follow-up, and use AI or automation where it actually makes the business easier to run.",
   body:
-    "Dan Feliciano helps business owners, public-sector leaders, candidates, associations, and organizations understand what complex decisions actually mean: financially, operationally, and strategically.",
+    "Start with the work that is stuck, slow, manual, missed, or too dependent on you. Then decide what to fix first, what to stop doing, and where AI or automation can actually help.",
   proof: [
-    "Strategic, financial, operational, and policy analysis in one view",
-    "Plain-English briefings for leaders who need consequences, not noise",
-    "AI-aware, data-literate, and grounded in how work actually moves",
-    "Built for decisions involving budgets, backlogs, service risk, and public impact",
+    "Find where work gets stuck",
+    "Recover lost time",
+    "Improve follow-up",
+    "Automate the right work",
+    "Build a business that runs with less chaos",
   ],
 };
 
 export const services = [
   {
     slug: "aesop-strategy-governance",
-    title: "Strategic Forensics",
-    href: "/services/aesop-strategy-governance",
+    title: "Owner Operating System",
+    href: "/owner-operating-system",
     summary:
-      "Decision-grade analysis for leaders who need to understand hidden risks, tradeoffs, and consequences inside complex choices.",
+      "Build clearer priorities, better follow-up, simple metrics, decision rules, and a weekly rhythm so the business does not depend on constant owner intervention.",
     description:
-      "A focused forensic read of the assumptions, data, money, operations, and execution risk sitting underneath a decision.",
+      "A practical operating rhythm for owners who are tired of being the bottleneck, reminder system, traffic cop, and final decision point.",
     metadata: {
-      title: "Strategic Forensics | Dan Feliciano",
+      title: "Owner Operating System | Dan Feliciano",
       description:
-        "Strategic Forensics helps leaders find hidden assumptions, weak data, fiscal risk, operational failure points, and execution problems before decisions get expensive.",
+        "Build clearer priorities, better follow-up, simple metrics, decision rules, and a weekly rhythm so the business does not depend on constant owner intervention.",
     },
     steps: [
       {
@@ -148,21 +147,20 @@ export const services = [
       "Next-action plan",
       "Executive talking points",
     ],
-    cta: "Book a Strategic Forensics Briefing",
+    cta: "Build an Owner Operating System",
   },
   {
     slug: "phoenix-protocol",
-    title: "Service Reimagined / Backlog Kill",
-    href: "/services/phoenix-protocol",
+    title: "90-Day Operations Reset",
+    href: "/operations-reset",
     summary:
-      "Diagnose backlogs, bottlenecks, staffing pressure, service delays, and broken workflows before throwing more money at the wrong problem.",
+      "Stabilize chaotic operations, reduce delays, clarify ownership, improve visibility, and install a rhythm that keeps the business moving.",
     description:
-      "A forensic look at service failure, flow, prioritization, accountability, staffing pressure, and the decisions needed to restore control.",
+      "A 90-day practical reset for businesses stuck in firefighting mode, service delays, missed follow-up, unclear ownership, or operational chaos.",
     metadata: {
-      title:
-        "Service Reimagined and Backlog Kill | Dan Feliciano",
+      title: "90-Day Operations Reset | Dan Feliciano",
       description:
-        "Diagnose backlogs, bottlenecks, service delays, staffing pressure, and broken workflows before adding money or headcount to the wrong problem.",
+        "A practical 90-day engagement for businesses stuck in firefighting mode, service delays, missed follow-up, unclear ownership, or operational chaos.",
     },
     useCases: [
       "Aging backlog is increasing",
@@ -182,20 +180,20 @@ export const services = [
       "Executive summary",
       "Sustainment plan",
     ],
-    cta: "Diagnose the Backlog",
+    cta: "Start an Operations Reset",
   },
   {
     slug: "ai-automation-analytics",
-    title: "AI Process Redesign",
-    href: "/services/ai-automation-analytics",
+    title: "AI Time Saver Sprint",
+    href: "/ai-time-saver-sprint",
     summary:
-      "AI is not the strategy. Redesign the work, data, risk, and automation path before buying tools or launching pilots.",
+      "Stop guessing where AI belongs. Find the repetitive work, missed follow-up, manual reporting, and communication gaps where AI or automation can save real time.",
     description:
-      "A practical AI and operations review that maps workflows, data quality, failure points, risk, and automation opportunities before the tool decision.",
+      "A practical sprint to find where AI or automation can save time, reduce manual work, improve follow-up, or simplify reporting.",
     metadata: {
-      title: "AI Process Redesign | Dan Feliciano",
+      title: "AI Time Saver Sprint | Dan Feliciano",
       description:
-        "Map workflows, data, risks, and automation opportunities before buying AI tools, launching pilots, or speeding up broken work.",
+        "Stop guessing where AI belongs. Find repetitive work, missed follow-up, manual reporting, and communication gaps where AI or automation can save real time.",
     },
     useCases: [
       "Workflow triage",
@@ -217,21 +215,21 @@ export const services = [
       "Adoption plan",
       "Measurement model",
     ],
-    cta: "Assess Your AI Readiness",
+    cta: "Find Time-Saving Automation",
   },
 ] as const satisfies readonly Offer[];
 
 export const products = [
   {
     slug: "backlog-kill-kit",
-    title: "Backlog Kill Diagnostic",
-    href: "/products/backlog-kill-kit",
+    title: "Backlog Kill Kit",
+    href: "/backlog-kill-kit",
     summary:
       "A fixed-scope diagnostic for backlog drivers, bottlenecks, staffing pressure, service delays, and recovery decisions.",
     metadata: {
-      title: "Backlog Kill Diagnostic | Dan Feliciano",
+      title: "Backlog Kill Kit | Dan Feliciano",
       description:
-        "Diagnose backlog drivers, bottlenecks, staffing pressure, service delays, ownership gaps, and recovery decisions with Dan Feliciano.",
+        "A practical diagnostic for teams whose work is piling up, taking too long, aging, or falling through the cracks.",
     },
     useCases: [
       "Service operations",
@@ -249,18 +247,18 @@ export const products = [
       "Quick-win recommendations",
       "Recovery roadmap",
     ],
-    cta: "Diagnose the Backlog",
+    cta: "Request a Backlog Kill Kit",
   },
   {
     slug: "policy-forensics",
-    title: "Policy Impact Analysis",
-    href: "/products/policy-forensics",
+    title: "Policy Forensics",
+    href: "/policy-forensics",
     summary:
-      "Translate bills, budgets, and regulations into operational, financial, compliance, and taxpayer consequences.",
+      "Decision intelligence for institutions, associations, and policy-sensitive organizations facing policy, regulatory, legislative, or public-sector change.",
     metadata: {
-      title: "Policy Impact Analysis | Dan Feliciano",
+      title: "Policy Forensics | Dan Feliciano",
       description:
-        "Policy Impact Analysis helps leaders understand proposed laws, budgets, regulations, and policy shifts before they create operational, financial, compliance, or taxpayer surprises.",
+        "Decision intelligence for institutions, associations, and policy-sensitive organizations facing policy, regulatory, legislative, or public-sector change.",
     },
     useCases: [
       "Proposed legislation",
@@ -279,20 +277,20 @@ export const products = [
       "Decision memo",
       "Executive briefing deck",
     ],
-    cta: "Request a Policy Impact Briefing",
+    cta: "Request a Policy Forensics Brief",
   },
   {
     slug: "academy",
     title: "Dan Feliciano Academy",
     href: "/academy",
     summary:
-      "Training for teams that need to see weak data, broken flow, AI misuse, and execution risk inside real work.",
+      "Lean Six Sigma + AI training for teams that need to solve problems, reduce waste, improve service, and use modern tools responsibly.",
     metadata: {
-      title: "Dan Feliciano Academy | Operational Risk and AI-Aware Training",
+      title: "Train Your Team to Fix Work | Dan Feliciano Academy",
       description:
-        "Training in operational risk, weak data, AI-aware work redesign, decision discipline, and Lean Six Sigma methods through Dan Feliciano Academy.",
+        "Lean Six Sigma + AI training for teams that need to solve problems, reduce waste, improve service, and use modern tools responsibly.",
     },
-    cta: "Ask about Academy training",
+    cta: "Ask About Team Training",
   },
 ] as const satisfies readonly Offer[];
 
@@ -303,30 +301,30 @@ export const courses = [
     duration: "8 hours",
     durationIso: "PT8H",
     summary:
-      "Foundational DMAIC, waste, weak-data awareness, process visibility, and practical AI support for teams that need a common operating language.",
+      "Foundations, DMAIC, waste, process thinking, basic problem-solving, and AI-assisted improvement basics.",
     metadata: {
       title: "Lean Six Sigma + AI Yellow Belt | Dan Feliciano Academy",
       description:
-        "Build foundational Lean Six Sigma, DMAIC, weak-data, process-visibility, and AI-assisted problem-framing skills.",
+        "An 8-hour practical foundation in Lean Six Sigma, DMAIC, waste, process thinking, and AI-assisted improvement basics.",
     },
     objectives: [
-      "Understand Lean Six Sigma principles",
+      "Understand Lean Six Sigma basics",
       "Learn the DMAIC improvement cycle",
-      "Identify waste and process friction",
+      "Identify waste, delays, and rework",
+      "Understand basic process thinking",
       "Support improvement projects",
-      "Use basic improvement templates",
-      "Understand where AI can assist with analysis, documentation, and problem solving",
+      "Use AI carefully for brainstorming, documentation, and communication support",
       "Prepare for Yellow Belt certification",
     ],
     audience: [
       "Team members",
       "New managers",
       "Analysts",
-      "Public-sector professionals",
-      "Healthcare and service operators",
+      "Service professionals",
+      "Healthcare and public-sector staff",
       "Anyone new to Lean Six Sigma",
     ],
-    cta: "Ask about Yellow Belt training",
+    cta: "Ask About Yellow Belt Training",
   },
   {
     title: "Lean Six Sigma + AI Green Belt",
@@ -334,20 +332,21 @@ export const courses = [
     duration: "40 hours",
     durationIso: "PT40H",
     summary:
-      "Applied DMAIC, root-cause analysis, data quality, stakeholder pressure, and AI-supported execution for real operating problems.",
+      "Project leadership, data analysis, root cause, process improvement, stakeholder engagement, control plans, and AI-supported DMAIC execution.",
     metadata: {
       title: "Lean Six Sigma + AI Green Belt | Dan Feliciano Academy",
       description:
-        "Lead operating-risk projects with Lean Six Sigma, data analysis, root-cause methods, stakeholder clarity, and AI-supported DMAIC execution.",
+        "A 40-hour practical program for leading improvement projects, analyzing data, finding root causes, and using AI to support DMAIC execution.",
     },
     objectives: [
       "Lead Lean Six Sigma improvement projects",
       "Apply DMAIC to real operational problems",
-      "Use process maps, data collection plans, and root-cause tools",
-      "Analyze variation, defects, cycle time, and performance gaps",
+      "Map workflows and identify friction",
+      "Use data to understand variation, defects, cycle time, and performance gaps",
+      "Identify root causes",
       "Engage stakeholders and cross-functional teams",
       "Build control plans and sustainment routines",
-      "Use AI to accelerate project documentation, analysis, brainstorming, and communication",
+      "Use AI to support project documentation, analysis, brainstorming, and communication",
       "Prepare for Green Belt certification",
     ],
     audience: [
@@ -359,7 +358,7 @@ export const courses = [
       "Government process-improvement teams",
       "Service and support leaders",
     ],
-    cta: "Ask about Green Belt training",
+    cta: "Ask About Green Belt Training",
   },
   {
     title: "Lean Six Sigma + AI Black Belt",
@@ -367,63 +366,149 @@ export const courses = [
     duration: "80 hours",
     durationIso: "PT80H",
     summary:
-      "Advanced DMAIC, statistical thinking, complex execution, mentoring, governance, and AI-aware operating control.",
+      "Advanced improvement leadership, complex project execution, mentoring, change leadership, statistical thinking, and AI-enabled transformation.",
     metadata: {
       title: "Lean Six Sigma + AI Black Belt | Dan Feliciano Academy",
       description:
-        "Advanced Lean Six Sigma + AI training for leaders who need to expose weak data, execution risk, process failure, and operating consequences.",
+        "An 80-hour advanced program for leading complex improvement work, mentoring teams, using advanced problem-solving methods, and connecting Lean Six Sigma with AI.",
     },
     objectives: [
       "Lead complex Lean Six Sigma projects",
       "Apply advanced DMAIC methods",
       "Use statistical thinking and hypothesis testing",
-      "Manage cross-functional execution risk",
+      "Manage cross-functional improvement work",
       "Mentor Green Belts and project teams",
-      "Build governance and sustainment systems",
+      "Build governance and sustainment systems in plain, practical ways",
       "Connect Lean Six Sigma with AI, automation, analytics, and decision support",
       "Prepare for Black Belt certification",
     ],
     audience: [
       "Operational excellence leaders",
-      "Operating-risk leaders",
+      "Transformation leaders",
       "Senior project managers",
       "Quality leaders",
       "Black Belt candidates",
-      "Internal diagnostic teams",
+      "Internal consultants",
       "Continuous improvement teams",
     ],
-    cta: "Ask about Black Belt training",
+    cta: "Ask About Black Belt Training",
   },
 ] as const satisfies readonly Course[];
 
 export const caseStudies = [
-  "Healthcare billing risk recovery",
-  "Public-sector process recovery",
-  "Software rollout risk reduction",
-  "Manufacturing throughput and cost recovery",
-  "Supply-chain and logistics redesign",
-  "Executive reporting system",
-].map((title) => ({
-  title,
-  challenge:
-    "Complex operating work hid weak data, unclear ownership, cost exposure, and failure points leaders could not see fast enough.",
-  intervention:
-    "Mapped the work, exposed constraints, separated symptoms from root causes, and turned operating reality into decision evidence.",
-  outcomes:
-    "Improved visibility, execution control, and decision clarity using anonymized proof language.",
-}));
+  {
+    title: "Healthcare billing transformation",
+    challenge:
+      "Billing workflows were slowed by defects, unclear handoffs, aging work, and limited visibility.",
+    intervention:
+      "The work was mapped, defect patterns were identified, reporting was simplified, and follow-up rhythms were strengthened.",
+    outcomes:
+      "Improved cash-flow visibility, reduced rework, and stronger performance management.",
+  },
+  {
+    title: "Public-sector improvement deployment",
+    challenge:
+      "Leaders needed a practical way to identify, prioritize, execute, and sustain improvement work.",
+    intervention:
+      "Training, governance, benefit tracking, and leadership alignment were connected to real operational priorities.",
+    outcomes:
+      "Improved execution discipline, clearer ownership, and stronger benefits realization.",
+  },
+  {
+    title: "Software rollout simplification",
+    challenge:
+      "Implementation work had too many manual steps, long cycle times, and high effort.",
+    intervention:
+      "Workflows were redesigned, non-value-added steps were removed, tasks were standardized, and visibility improved.",
+    outcomes:
+      "Reduced implementation burden, increased delivery capacity, and improved adoption support.",
+  },
+  {
+    title: "Manufacturing throughput and cost recovery",
+    challenge:
+      "Operations needed better throughput, less cost leakage, and stronger use of capacity.",
+    intervention:
+      "Lean Six Sigma, constraint analysis, process redesign, and performance management were applied to the work.",
+    outcomes:
+      "Improved capacity, reduced waste, and stronger operating discipline.",
+  },
+  {
+    title: "Supply-chain and logistics redesign",
+    challenge:
+      "Distribution and logistics complexity created avoidable cost, inventory pressure, and freight burden.",
+    intervention:
+      "Network structure, inventory, freight, and operating tradeoffs were analyzed and simplified.",
+    outcomes:
+      "Improved footprint decisions, reduced cost pressure, and stronger working-capital visibility.",
+  },
+  {
+    title: "Executive reporting system",
+    challenge:
+      "Leaders were spending too much time preparing updates and not enough time making decisions.",
+    intervention:
+      "KPI reporting, dashboards, and executive review routines were simplified and standardized.",
+    outcomes:
+      "Reduced reporting friction and improved decision support.",
+  },
+] as const;
 
 export const speakingTopics = [
-  "Find the Hidden Risk",
-  "AI Is Not the Strategy",
-  "Policy Impact Before the Vote",
-  "Backlogs Are Financial Risk",
-  "Plain-English Briefings for Complex Decisions",
-].map((title) => ({
-  title,
-  description:
-    "A blunt, practical session on hidden assumptions, weak data, financial exposure, operational failure, AI risk, and what leaders should do next.",
-}));
+  {
+    title: "Stop Automating Chaos",
+    description:
+      "Why AI fails when workflows are broken, and how leaders can find the work AI should actually improve.",
+    takeaways: [
+      "How to spot bad AI use cases",
+      "Where automation can save time",
+      "Why workflow clarity comes before tools",
+      "How to avoid making broken processes faster",
+    ],
+  },
+  {
+    title: "Operational Excellence in the AI Era",
+    description:
+      "How Lean Six Sigma, analytics, and AI can work together to improve service, reduce waste, and help teams make better decisions.",
+    takeaways: [
+      "Why operational excellence still matters",
+      "How AI can support improvement work",
+      "What leaders should measure",
+      "How to keep people in the loop",
+    ],
+  },
+  {
+    title: "The 90-Day Operations Reset",
+    description:
+      "A practical approach to stabilizing backlog, service delays, missed follow-up, and operational firefighting.",
+    takeaways: [
+      "How to find stuck work",
+      "How to stabilize the first 30 days",
+      "How to improve handoffs and ownership",
+      "How to sustain the gains",
+    ],
+  },
+  {
+    title: "Strategy That Survives Contact With Reality",
+    description:
+      "Strategy is not a slide deck. It is knowing what to say yes and no to, then building the rhythm to follow through.",
+    takeaways: [
+      "How to translate strategy into choices",
+      "How to stop treating every problem as equally urgent",
+      "How to connect priorities to weekly execution",
+      "How to make strategy practical for teams",
+    ],
+  },
+  {
+    title: "AI, Analytics, and the Future of Work",
+    description:
+      "A plain-English executive session on AI use cases, risks, practical adoption, and how work changes when teams use better tools.",
+    takeaways: [
+      "What AI is good at",
+      "What AI should not do",
+      "How to think about risk and trust",
+      "How to start with useful, practical use cases",
+    ],
+  },
+] as const;
 
 export const insightCards = [
   {

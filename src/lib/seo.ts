@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import type { Course } from "@/content/site";
 import { site } from "@/content/site";
-import { requiredRoutes, type SiteRoute } from "@/lib/routes";
+import { allSiteRoutes, type SiteRoute } from "@/lib/routes";
 
 type SeoInput = {
   title: string;
@@ -13,7 +13,7 @@ export const socialImage = {
   url: new URL("/opengraph-image", site.url).toString(),
   width: 1200,
   height: 630,
-  alt: "Dan Feliciano Strategic Forensics social preview",
+  alt: "Dan Feliciano Fix What Is Slowing Your Business Down social preview",
 };
 
 export type BreadcrumbJsonLdItem = {
@@ -22,7 +22,7 @@ export type BreadcrumbJsonLdItem = {
 };
 
 function assertSiteRoute(path: SiteRoute) {
-  if (!(requiredRoutes as readonly string[]).includes(path)) {
+  if (!(allSiteRoutes as readonly string[]).includes(path)) {
     throw new Error("Canonical URL path must be an internal site route.");
   }
 }
@@ -76,12 +76,12 @@ export function personJsonLd() {
     email: site.email,
     sameAs: site.socialLinks.map((link) => link.href),
     knowsAbout: [
-      "Strategic Forensics",
-      "AI disruption",
-      "Policy impact",
-      "Operational failure",
-      "Financial risk",
-      "Backlog diagnosis",
+      "Bottleneck diagnosis",
+      "Backlog reduction",
+      "AI and automation",
+      "Lean Six Sigma",
+      "Policy Forensics",
+      "Operations improvement",
     ],
   };
 }
@@ -94,6 +94,17 @@ export function professionalServiceJsonLd() {
     url: site.url,
     description: site.description,
     founder: { "@type": "Person", name: site.name },
+  };
+}
+
+export function websiteJsonLd() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: site.name,
+    url: site.url,
+    description: site.description,
+    publisher: { "@type": "Person", name: site.name, url: site.url },
   };
 }
 

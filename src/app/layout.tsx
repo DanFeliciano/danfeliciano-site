@@ -2,17 +2,21 @@ import type { Metadata } from "next";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
 import { JsonLd } from "@/components/ui/json-ld";
-import { personJsonLd, professionalServiceJsonLd } from "@/lib/seo";
+import {
+  personJsonLd,
+  professionalServiceJsonLd,
+  websiteJsonLd,
+} from "@/lib/seo";
 import "./globals.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://danfeliciano.com"),
   title: {
-    default: "Dan Feliciano | Strategic Forensics",
+    default: "Dan Feliciano | Fix What Is Slowing Your Business Down",
     template: "%s",
   },
   description:
-    "Find the hidden risk. Clarify the decision. Fix the system. Strategic Forensics for leaders facing AI disruption, policy complexity, operational failure, weak data, backlogs, and financial risk.",
+    "Dan Feliciano helps business owners and operators find bottlenecks, recover lost time, improve follow-up, reduce chaos, and use AI or automation where it actually makes the business easier to run.",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -28,7 +32,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <SiteHeader />
         {children}
         <SiteFooter />
-        <JsonLd data={[personJsonLd(), professionalServiceJsonLd()]} />
+        <JsonLd
+          data={[personJsonLd(), professionalServiceJsonLd(), websiteJsonLd()]}
+        />
       </body>
     </html>
   );

@@ -1,6 +1,7 @@
 import { ImageResponse } from "next/og";
 
-export const alt = "Dan Feliciano Strategic Forensics social preview";
+export const alt =
+  "Dan Feliciano Fix What Is Slowing Your Business Down social preview";
 export const size = {
   width: 1200,
   height: 630,
@@ -34,7 +35,7 @@ export default function Image() {
             textTransform: "uppercase",
           }}
         >
-          Dan Feliciano | Strategic Forensics
+          Dan Feliciano
         </div>
         <div style={{ display: "flex", flexDirection: "column", gap: 26 }}>
           <div
@@ -47,7 +48,7 @@ export default function Image() {
               maxWidth: 980,
             }}
           >
-            Find the hidden risk. Clarify the decision. Fix the system.
+            Fix what is slowing your business down.
           </div>
           <div
             style={{
@@ -59,9 +60,8 @@ export default function Image() {
               maxWidth: 980,
             }}
           >
-            Strategic Forensics for leaders facing AI disruption, policy
-            complexity, operational failure, weak data, backlogs, and financial
-            risk.
+            Find bottlenecks, recover lost time, improve follow-up, and use AI
+            or automation where it actually makes work easier.
           </div>
         </div>
         <div
@@ -75,10 +75,10 @@ export default function Image() {
             paddingTop: 28,
           }}
         >
-          <span>Hidden risk</span>
-          <span>Decision clarity</span>
-          <span>Operational consequences</span>
-          <span>Financial exposure</span>
+          <span>Bottlenecks</span>
+          <span>Follow-up</span>
+          <span>Backlogs</span>
+          <span>Automation</span>
         </div>
       </div>
     ),

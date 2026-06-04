@@ -40,7 +40,7 @@ const breadcrumbs = [
 const relatedLinks = [
   { label: "Academy overview", href: "/academy" },
   { label: "Green Belt", href: "/academy/lean-six-sigma-ai-green-belt" },
-  { label: "AI Process Redesign", href: "/ai-process-redesign" },
+  { label: "AI Time Saver Sprint", href: "/ai-time-saver-sprint" },
 ] as const satisfies readonly RelatedLink[];
 
 export default function YellowBeltCoursePage() {
@@ -49,7 +49,10 @@ export default function YellowBeltCoursePage() {
       <Breadcrumbs
         items={breadcrumbs}
       />
-      <PageHeader subhead={course.summary} title={course.title}>
+      <PageHeader
+        subhead="A practical foundation for people who need to understand improvement work and support better workflows."
+        title={course.title}
+      >
         <CtaButton href="/contact">{course.cta}</CtaButton>
       </PageHeader>
 
