@@ -63,10 +63,9 @@ export const site = {
 
 export const navItems: LinkItem[] = [
   { label: "What I Fix", href: "/what-i-fix" },
-  { label: "AI & Automation", href: "/ai-time-saver-sprint" },
-  { label: "Training", href: "/academy" },
+  { label: "Services", href: "/services" },
   { label: "Results", href: "/results" },
-  { label: "Speaking", href: "/speaking" },
+  { label: "About", href: "/about" },
   { label: "Insights", href: "/insights" },
   { label: "Contact", href: "/contact" },
 ];
@@ -85,6 +84,186 @@ export const homepage = {
     "Build a business that runs with less chaos",
   ],
 };
+
+export type CapabilityPillar = {
+  id:
+    | "strategic-exposure"
+    | "forensic-financial"
+    | "operational-recovery"
+    | "decision-analytics"
+    | "ai-process-redesign";
+  title: string;
+  homepageSummary: string;
+  promise: string;
+  buyerTriggers: readonly string[];
+  examines: readonly string[];
+  deliverables: readonly string[];
+  startingPoint: {
+    title: string;
+    summary: string;
+    href: SiteRoute;
+    cta: string;
+  };
+  related?: readonly { label: string; href: SiteRoute }[];
+};
+
+export const capabilityPillars = [
+  {
+    id: "strategic-exposure",
+    title: "Strategic Exposure & Decision Planning",
+    homepageSummary:
+      "Sort urgent noise from real exposure, pressure-test assumptions, and decide what deserves action now.",
+    promise:
+      "When every problem feels urgent, Dan helps expose the financial, operational, policy, and execution consequences so leaders can choose what to fix, what to stop, and what to do next.",
+    buyerTriggers: [
+      "A major decision is moving faster than the evidence behind it.",
+      "Too many priorities are competing for the same money, people, and attention.",
+      "A policy, regulatory, or market change could create operating risk.",
+    ],
+    examines: [
+      "Assumptions, constraints, and hidden dependencies",
+      "Financial, operating, customer, and policy consequences",
+      "Tradeoffs, ownership, timing, and decision rules",
+    ],
+    deliverables: [
+      "A clear exposure map and priority decision",
+      "Options, tradeoffs, and actions with named ownership",
+      "A practical rhythm for follow-up and course correction",
+    ],
+    startingPoint: {
+      title: "Owner Operating System",
+      summary:
+        "Build clearer priorities, better follow-up, simple measures, decision rules, and a weekly rhythm that reduces owner dependency.",
+      href: "/owner-operating-system",
+      cta: "Build clearer priorities",
+    },
+    related: [{ label: "Policy Forensics", href: "/policy-forensics" }],
+  },
+  {
+    id: "forensic-financial",
+    title: "Forensic Financial Analysis",
+    homepageSummary:
+      "Connect margin, cash, cost, backlog, and budget pressure to the operating causes behind the numbers.",
+    promise:
+      "Dan traces financial symptoms back to the work, policies, timing choices, and operating behavior creating them. The goal is not another financial report. It is knowing what the numbers are hiding and what must change.",
+    buyerTriggers: [
+      "Reported performance does not match the operating reality.",
+      "Margin, cash, or budget pressure keeps returning without a clear cause.",
+      "One-time fixes, delayed work, or accounting timing may be masking exposure.",
+    ],
+    examines: [
+      "Revenue quality, cost movement, cash pressure, and margin variance",
+      "Backlog, rework, capacity, service delay, and deferred maintenance",
+      "Timing shifts, one-time items, liabilities, assumptions, and data quality",
+    ],
+    deliverables: [
+      "A financial-to-operational exposure bridge",
+      "A fact pattern separating recurring risk from one-time noise",
+      "Priority questions, corrective actions, and reversal conditions",
+    ],
+    startingPoint: {
+      title: "Financial Exposure Review",
+      summary:
+        "A bounded review of one material financial concern to identify the operating causes, hidden assumptions, evidence gaps, and decisions that require action.",
+      href: "/contact",
+      cta: "Request a financial exposure review",
+    },
+  },
+  {
+    id: "operational-recovery",
+    title: "Operational Excellence & Recovery",
+    homepageSummary:
+      "Remove bottlenecks, stabilize work, recover capacity, and build a repeatable operating rhythm.",
+    promise:
+      "Dan helps teams get out of firefighting mode by finding where work stalls, why handoffs fail, what is driving backlog, and which operating changes will restore flow.",
+    buyerTriggers: [
+      "Work is piling up, aging, or repeatedly missing commitments.",
+      "Staff are overloaded, but leaders cannot see the actual constraint.",
+      "Customers are waiting while ownership and priorities remain unclear.",
+    ],
+    examines: [
+      "Demand, capacity, queue age, cycle time, and handoffs",
+      "Rework, missed follow-up, priority conflicts, and owner bottlenecks",
+      "Daily management, escalation, measures, and sustainment",
+    ],
+    deliverables: [
+      "A visible bottleneck and backlog fact base",
+      "A recovery sequence with fast actions and clear ownership",
+      "A management rhythm that keeps the work moving",
+    ],
+    startingPoint: {
+      title: "Backlog Kill Kit",
+      summary:
+        "A fixed-scope diagnostic for work that is piling up, taking too long, or falling through the cracks.",
+      href: "/backlog-kill-kit",
+      cta: "Start with the backlog",
+    },
+    related: [
+      { label: "90-Day Operations Reset", href: "/operations-reset" },
+      { label: "Train your team to fix work", href: "/academy" },
+    ],
+  },
+  {
+    id: "decision-analytics",
+    title: "Decision Analytics",
+    homepageSummary:
+      "Turn scattered reports into a small set of measures, forecasts, and signals that change the decision.",
+    promise:
+      "Dan starts with the decision, not the dashboard. He helps leaders define what they need to know, test whether the data can answer it, and build only the measures that lead to action.",
+    buyerTriggers: [
+      "Teams have dashboards but still argue about what the numbers mean.",
+      "Important decisions depend on incomplete, inconsistent, or delayed data.",
+      "Measures describe activity without showing cost, capacity, risk, or outcomes.",
+    ],
+    examines: [
+      "The decision, evidence standard, and action threshold",
+      "Metric definitions, source quality, latency, and missing data",
+      "Leading indicators, forecasts, scenarios, and operating review",
+    ],
+    deliverables: [
+      "A decision question and minimum useful measure set",
+      "A data-quality and source-dependence assessment",
+      "A decision brief, dashboard specification, or review cadence",
+    ],
+    startingPoint: {
+      title: "Decision Signal Review",
+      summary:
+        "A bounded review of one important decision to define the minimum evidence, measures, data gaps, and action thresholds leaders actually need.",
+      href: "/contact",
+      cta: "Request a decision signal review",
+    },
+  },
+  {
+    id: "ai-process-redesign",
+    title: "AI Process Redesign & Automation",
+    homepageSummary:
+      "Redesign the work first, then automate repetitive tasks and follow-up where the value is real.",
+    promise:
+      "AI is not the strategy. Dan finds the work that is slow, repetitive, inconsistent, or too dependent on one person, then decides whether AI, automation, analytics, process redesign, training, or simple discipline is the right fix.",
+    buyerTriggers: [
+      "Skilled people are losing time to repetitive admin and reporting.",
+      "Leads, requests, documents, or follow-up are handled inconsistently.",
+      "The business wants AI but has not fixed the underlying workflow.",
+    ],
+    examines: [
+      "Workflow steps, handoffs, exceptions, and human judgment",
+      "Data readiness, risk, controls, ownership, and adoption",
+      "Time saved, service improvement, cost, and measurable value",
+    ],
+    deliverables: [
+      "A ranked map of automation opportunities",
+      "A redesigned workflow with safe human and tool boundaries",
+      "An implementation sequence and value measurement plan",
+    ],
+    startingPoint: {
+      title: "AI Time Saver Sprint",
+      summary:
+        "Find repetitive work, missed follow-up, manual reporting, and communication gaps where AI or automation can save real time.",
+      href: "/ai-time-saver-sprint",
+      cta: "Find time-saving automation",
+    },
+  },
+] as const satisfies readonly CapabilityPillar[];
 
 export const services = [
   {

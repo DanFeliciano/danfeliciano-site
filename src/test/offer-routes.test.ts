@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { ownerOffers } from "@/content/owner-offers";
 import { products, services } from "@/content/site";
+import { legacyRedirects, requiredRoutes } from "@/lib/routes";
 
 describe("offer routes", () => {
   it("defines required service routes", () => {
@@ -35,5 +36,11 @@ describe("offer routes", () => {
       expect(offer.metadata.title.length).toBeGreaterThan(12);
       expect(offer.metadata.description.length).toBeGreaterThan(40);
     }
+  });
+
+  it("serves the Services page as a canonical route", () => {
+    expect(requiredRoutes).toContain("/services");
+    expect(legacyRedirects.some((redirect) => redirect.source === "/services"))
+      .toBe(false);
   });
 });

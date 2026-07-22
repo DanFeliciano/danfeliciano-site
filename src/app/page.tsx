@@ -1,9 +1,10 @@
+import Link from "next/link";
 import { OperatingCommandVisual } from "@/components/visuals/operating-command-visual";
 import { Container } from "@/components/layout/container";
 import { CtaButton } from "@/components/ui/cta-button";
 import { FinalCTA } from "@/components/ui/final-cta";
 import { ProofStrip } from "@/components/ui/proof-strip";
-import { homepage, insightCards } from "@/content/site";
+import { capabilityPillars, homepage, insightCards } from "@/content/site";
 import type { SiteRoute } from "@/lib/routes";
 import { createMetadata } from "@/lib/seo";
 
@@ -248,6 +249,54 @@ export default function HomePage() {
                 <p className="mt-3 text-sm leading-6 text-slate-300">
                   {step.body}
                 </p>
+              </article>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      <section className="bg-white py-16 text-charcoal sm:py-20">
+        <Container>
+          <div className="grid gap-6 lg:grid-cols-[1fr_auto] lg:items-end">
+            <div className="max-w-3xl">
+              <p className="text-xs font-black uppercase tracking-[0.12em] text-slate-500">
+                Capabilities
+              </p>
+              <h2 className="mt-3 text-balance text-3xl font-black tracking-normal sm:text-4xl">
+                Five ways I help fix the work.
+              </h2>
+              <p className="mt-4 text-base leading-7 text-slate-600">
+                These are not five disconnected consulting services. They are
+                five ways to expose what is wrong, understand the evidence,
+                and choose a practical fix.
+              </p>
+            </div>
+            <CtaButton className="w-full lg:w-auto" href="/services">
+              Explore All Services
+            </CtaButton>
+          </div>
+
+          <div className="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+            {capabilityPillars.map((pillar, index) => (
+              <article
+                className="group rounded-lg border border-slate-200 bg-paper p-5 transition hover:border-signal hover:shadow-command"
+                key={pillar.id}
+              >
+                <p className="text-xs font-black uppercase tracking-[0.12em] text-slate-500">
+                  Service {String(index + 1).padStart(2, "0")}
+                </p>
+                <h3 className="mt-3 text-balance text-xl font-black leading-7 text-charcoal">
+                  {pillar.title}
+                </h3>
+                <p className="mt-3 text-sm leading-6 text-slate-600">
+                  {pillar.homepageSummary}
+                </p>
+                <Link
+                  className="mt-5 inline-flex text-sm font-black text-charcoal underline decoration-signal decoration-2 underline-offset-4 group-hover:text-slate-600"
+                  href={`/services#${pillar.id}`}
+                >
+                  See how this helps
+                </Link>
               </article>
             ))}
           </div>

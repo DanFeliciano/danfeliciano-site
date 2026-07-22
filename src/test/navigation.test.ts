@@ -11,10 +11,9 @@ describe("navigation", () => {
   it("uses the approved navigation labels", () => {
     expect(navItems).toEqual([
       { label: "What I Fix", href: "/what-i-fix" },
-      { label: "AI & Automation", href: "/ai-time-saver-sprint" },
-      { label: "Training", href: "/academy" },
+      { label: "Services", href: "/services" },
       { label: "Results", href: "/results" },
-      { label: "Speaking", href: "/speaking" },
+      { label: "About", href: "/about" },
       { label: "Insights", href: "/insights" },
       { label: "Contact", href: "/contact" },
     ]);

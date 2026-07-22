@@ -29,9 +29,11 @@ const footerColumns: { title: string; links: FooterLink[] }[] = [
     title: "Services",
     links: [
       { label: "What I Fix", href: "/what-i-fix" },
+      { label: "Services", href: "/services" },
       { label: "AI & Automation", href: "/ai-time-saver-sprint" },
       { label: "Training", href: "/academy" },
       { label: "Results", href: "/results" },
+      { label: "About", href: "/about" },
       { label: "Speaking", href: "/speaking" },
       { label: "Insights", href: "/insights" },
       { label: "Contact", href: "/contact" },

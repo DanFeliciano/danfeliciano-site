@@ -1,6 +1,7 @@
 export const requiredRoutes = [
   "/",
   "/what-i-fix",
+  "/services",
   "/backlog-kill-kit",
   "/ai-time-saver-sprint",
   "/operations-reset",
@@ -25,7 +26,6 @@ export const compatibilityRoutes = [
   "/products",
   "/briefings",
   "/about",
-  "/services",
   "/services/aesop-strategy-governance",
   "/services/phoenix-protocol",
   "/services/ai-automation-analytics",
@@ -67,7 +67,6 @@ export const legacyRedirects = [
   { source: "/backlog", destination: "/backlog-kill-kit" },
   { source: "/ai", destination: "/ai-time-saver-sprint" },
   { source: "/policy", destination: "/policy-forensics" },
-  { source: "/services", destination: "/what-i-fix" },
   { source: "/products/backlog-kill-kit", destination: "/backlog-kill-kit" },
   { source: "/ai-process-redesign", destination: "/ai-time-saver-sprint" },
   { source: "/products/policy-forensics", destination: "/policy-forensics" },

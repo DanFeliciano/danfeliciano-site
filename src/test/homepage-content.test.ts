@@ -88,6 +88,7 @@ describe("homepage content", () => {
       "You do not need more buzzwords. You need the work to flow.",
       "Choose the problem you want to solve first.",
       "First we find the stuck work. Then we fix what matters.",
+      "Five ways I help fix the work.",
       "Practical ways to get started",
       "Strategy is not a slide deck. It is knowing what to say yes and no to.",
       "AI should save time, not create another project.",
@@ -95,6 +96,18 @@ describe("homepage content", () => {
     ]) {
       expect(
         screen.getByRole("heading", { level: 2, name: heading }),
+      ).toBeInTheDocument();
+    }
+
+    for (const capability of [
+      "Strategic Exposure & Decision Planning",
+      "Forensic Financial Analysis",
+      "Operational Excellence & Recovery",
+      "Decision Analytics",
+      "AI Process Redesign & Automation",
+    ]) {
+      expect(
+        screen.getByRole("heading", { level: 3, name: capability }),
       ).toBeInTheDocument();
     }
 

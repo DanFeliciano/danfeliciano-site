@@ -62,7 +62,7 @@ describe("site content", () => {
   });
 
   it("defines all required top-level content groups", () => {
-    expect(navItems).toHaveLength(7);
+    expect(navItems).toHaveLength(6);
     expect(services.length).toBeGreaterThanOrEqual(3);
     expect(products.length).toBeGreaterThanOrEqual(3);
     expect(courses).toHaveLength(3);
@@ -74,6 +74,7 @@ describe("site content", () => {
     expect(requiredRoutes).toEqual([
       "/",
       "/what-i-fix",
+      "/services",
       "/backlog-kill-kit",
       "/ai-time-saver-sprint",
       "/operations-reset",
@@ -151,27 +152,23 @@ describe("site content", () => {
     );
     expect(navItems.map((item) => item.label)).toEqual([
       "What I Fix",
-      "AI & Automation",
-      "Training",
+      "Services",
       "Results",
-      "Speaking",
+      "About",
       "Insights",
       "Contact",
     ]);
     expect(
       navItems.find((item) => item.label === "What I Fix")?.href,
     ).toBe("/what-i-fix");
-    expect(navItems.find((item) => item.label === "AI & Automation")?.href).toBe(
-      "/ai-time-saver-sprint",
-    );
-    expect(navItems.find((item) => item.label === "Training")?.href).toBe(
-      "/academy",
+    expect(navItems.find((item) => item.label === "Services")?.href).toBe(
+      "/services",
     );
     expect(navItems.find((item) => item.label === "Results")?.href).toBe(
       "/results",
     );
-    expect(navItems.find((item) => item.label === "Speaking")?.href).toBe(
-      "/speaking",
+    expect(navItems.find((item) => item.label === "About")?.href).toBe(
+      "/about",
     );
   });
 
