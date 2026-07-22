@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { headers } from "next/headers";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
 import { JsonLd } from "@/components/ui/json-ld";
@@ -9,15 +10,52 @@ import {
 } from "@/lib/seo";
 import "./globals.css";
 
-export const metadata: Metadata = {
-  metadataBase: new URL("https://danfeliciano.com"),
-  title: {
-    default: "Dan Feliciano | Fix What Is Slowing Your Business Down",
-    template: "%s",
-  },
-  description:
-    "Dan Feliciano helps business owners and operators find bottlenecks, recover lost time, improve follow-up, reduce chaos, and use AI or automation where it actually makes the business easier to run.",
-};
+const defaultTitle = "Dan Feliciano | Fix What Is Slowing Your Business Down";
+const defaultDescription =
+  "Dan Feliciano helps business owners and operators find bottlenecks, recover lost time, improve follow-up, reduce chaos, and use AI or automation where it actually makes the business easier to run.";
+
+export async function generateMetadata(): Promise<Metadata> {
+  const requestHeaders = await headers();
+  const host =
+    requestHeaders.get("x-forwarded-host") ??
+    requestHeaders.get("host") ??
+    "danfeliciano.com";
+  const protocol =
+    requestHeaders.get("x-forwarded-proto") ??
+    (host.startsWith("localhost") || host.startsWith("127.0.0.1")
+      ? "http"
+      : "https");
+  const metadataBase = new URL(`${protocol}://${host}`);
+  const socialImage = new URL("/og.png", metadataBase);
+
+  return {
+    metadataBase,
+    title: {
+      default: defaultTitle,
+      template: "%s",
+    },
+    description: defaultDescription,
+    openGraph: {
+      type: "website",
+      title: defaultTitle,
+      description: defaultDescription,
+      images: [
+        {
+          url: socialImage,
+          width: 1200,
+          height: 630,
+          alt: "Dan Feliciano Fix What Is Slowing Your Business Down social preview",
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: defaultTitle,
+      description: defaultDescription,
+      images: [socialImage],
+    },
+  };
+}
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (

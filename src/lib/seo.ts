@@ -10,7 +10,7 @@ type SeoInput = {
 };
 
 export const socialImage = {
-  url: new URL("/opengraph-image", site.url).toString(),
+  url: "/og.png",
   width: 1200,
   height: 630,
   alt: "Dan Feliciano Fix What Is Slowing Your Business Down social preview",
