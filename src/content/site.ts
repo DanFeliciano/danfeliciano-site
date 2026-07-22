@@ -55,7 +55,7 @@ export const site = {
   name: "Dan Feliciano",
   url: "https://danfeliciano.com",
   description:
-    "Dan Feliciano helps business owners and operators find bottlenecks, recover lost time, improve follow-up, reduce chaos, and use AI or automation where it actually makes the business easier to run.",
+    "Dan Feliciano helps owners and operators make better decisions, understand financial exposure, fix broken work, turn data into action, and automate the right work.",
   email: "dan@danfeliciano.com",
   linkedIn: socialLinks[0].href,
   socialLinks,
@@ -73,15 +73,15 @@ export const navItems: LinkItem[] = [
 export const homepage = {
   title: "Fix what is slowing your business down.",
   subhead:
-    "I help business owners and operators find bottlenecks, recover lost time, improve follow-up, and use AI or automation where it actually makes the business easier to run.",
+    "I help owners and operators understand what the numbers are hiding, make better decisions, fix broken work, and use analytics, AI or automation where they create measurable value.",
   body:
-    "Start with the work that is stuck, slow, manual, missed, or too dependent on you. Then decide what to fix first, what to stop doing, and where AI or automation can actually help.",
+    "Start with the decision, number, workflow, or repeated task creating risk or drag. Then determine what to fix, what to stop, what to measure, and where AI or automation actually helps.",
   proof: [
-    "Find where work gets stuck",
-    "Recover lost time",
-    "Improve follow-up",
+    "Clarify the decision",
+    "Expose financial risk",
+    "Fix broken work",
+    "Turn data into action",
     "Automate the right work",
-    "Build a business that runs with less chaos",
   ],
 };
 

@@ -11,7 +11,7 @@ import { createMetadata } from "@/lib/seo";
 export const metadata = createMetadata({
   title: "Dan Feliciano | Fix What Is Slowing Your Business Down",
   description:
-    "Dan Feliciano helps business owners and operators find bottlenecks, recover lost time, improve follow-up, and use AI or automation where it actually makes work easier.",
+    "Dan Feliciano helps owners and operators make better decisions, understand financial exposure, fix broken work, turn data into action, and automate the right work.",
   path: "/",
 });
 
@@ -59,64 +59,6 @@ const painPoints = [
   href: SiteRoute;
 }[];
 
-const howDanHelps = [
-  {
-    title: "Find the friction",
-    body: "Map where time, money, customers, decisions, or work are getting stuck.",
-  },
-  {
-    title: "Fix the system",
-    body: "Redesign the workflow, clarify ownership, remove waste, and create a better operating rhythm.",
-  },
-  {
-    title: "Use the right tools",
-    body: "Apply AI, automation, analytics, Lean Six Sigma, training, or strategy where they create measurable value.",
-  },
-] as const;
-
-const starterOffers = [
-  {
-    title: "Bottleneck Diagnostic",
-    body:
-      "A focused review to identify where work is getting stuck, where time is being lost, and what to fix first.",
-    href: "/contact",
-  },
-  {
-    title: "Backlog Kill Kit",
-    body:
-      "Find out why work is piling up, what is aging, where handoffs are failing, and what recovery path makes sense.",
-    href: "/backlog-kill-kit",
-  },
-  {
-    title: "AI Time Saver Sprint",
-    body:
-      "Identify repetitive tasks, manual reporting, missed follow-up, and customer communication gaps where AI or automation can save real time.",
-    href: "/ai-time-saver-sprint",
-  },
-  {
-    title: "90-Day Operations Reset",
-    body:
-      "Stabilize a chaotic operation, reduce delays, clarify ownership, and install a rhythm that keeps the business moving.",
-    href: "/operations-reset",
-  },
-  {
-    title: "Owner Operating System",
-    body:
-      "Build clearer priorities, better follow-up, simple metrics, decision rules, and a weekly rhythm that reduces owner dependency.",
-    href: "/owner-operating-system",
-  },
-  {
-    title: "Dan Feliciano Academy",
-    body:
-      "Train your team to solve problems, improve work, reduce waste, and use AI responsibly.",
-    href: "/academy",
-  },
-] as const satisfies readonly {
-  title: string;
-  body: string;
-  href: SiteRoute;
-}[];
-
 const outcomeProof = [
   "Reduced delays",
   "Improved follow-up",
@@ -154,103 +96,20 @@ export default function HomePage() {
                 {homepage.body}
               </p>
               <div className="mt-5 flex flex-col gap-3 sm:mt-7 sm:flex-row">
-                <CtaButton className="w-full sm:w-auto" href="/contact">
-                  Find My Bottleneck
+                <CtaButton className="w-full sm:w-auto" href="/services">
+                  Explore How I Help
                 </CtaButton>
                 <CtaButton
                   className="w-full sm:w-auto"
-                  href="/what-i-fix"
+                  href="/contact"
                   variant="secondary"
                 >
-                  See How Dan Helps
+                  Start with a Diagnostic
                 </CtaButton>
               </div>
             </div>
 
             <OperatingCommandVisual />
-          </div>
-        </Container>
-      </section>
-
-      <ProofStrip items={homepage.proof} />
-
-      <section className="bg-paper py-16 text-charcoal sm:py-20">
-        <Container>
-          <div className="max-w-3xl">
-            <h2 className="text-balance text-3xl font-black tracking-normal sm:text-4xl">
-              You do not need more buzzwords. You need the work to flow.
-            </h2>
-            <p className="mt-4 text-base leading-7 text-slate-600">
-              Maybe customers are waiting too long. Maybe your team is buried
-              in manual follow-up. Maybe everything still runs through you.
-              Maybe you know AI could help, but you are not sure where to
-              start.
-            </p>
-            <p className="mt-4 text-base leading-7 text-slate-600">
-              The first step is not buying software. The first step is finding
-              where the business is leaking time, money, attention, and
-              opportunity.
-            </p>
-          </div>
-        </Container>
-      </section>
-
-      <section className="bg-white py-16 text-charcoal sm:py-20">
-        <Container>
-          <div className="max-w-3xl">
-            <h2 className="text-balance text-3xl font-black tracking-normal sm:text-4xl">
-              Choose the problem you want to solve first.
-            </h2>
-            <p className="mt-4 text-base leading-7 text-slate-600">
-              Start with the pain you can feel. The method comes after the
-              bottleneck is visible.
-            </p>
-          </div>
-          <div className="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-            {painPoints.map((point) => (
-              <article
-                className="rounded-lg border border-slate-200 bg-paper p-5 shadow-command"
-                key={point.title}
-              >
-                <h3 className="text-lg font-black leading-6 text-charcoal">
-                  {point.title}
-                </h3>
-                <p className="mt-3 text-sm leading-6 text-slate-600">
-                  {point.body}
-                </p>
-                <CtaButton className="mt-5 w-full" href={point.href}>
-                  {point.cta}
-                </CtaButton>
-              </article>
-            ))}
-          </div>
-        </Container>
-      </section>
-
-      <section className="bg-graphite py-16 text-white sm:py-20">
-        <Container>
-          <div className="max-w-3xl">
-            <h2 className="text-balance text-3xl font-black tracking-normal sm:text-4xl">
-              First we find the stuck work. Then we fix what matters.
-            </h2>
-            <p className="mt-4 text-base leading-7 text-slate-300">
-              The work starts with what is slow, repeated, missed, or too
-              dependent on one person. Then the fix becomes much easier to
-              choose.
-            </p>
-          </div>
-          <div className="mt-8 grid gap-4 md:grid-cols-3">
-            {howDanHelps.map((step) => (
-              <article
-                className="rounded-lg border border-white/10 bg-white/[0.04] p-5"
-                key={step.title}
-              >
-                <h3 className="text-xl font-black text-white">{step.title}</h3>
-                <p className="mt-3 text-sm leading-6 text-slate-300">
-                  {step.body}
-                </p>
-              </article>
-            ))}
           </div>
         </Container>
       </section>
@@ -263,12 +122,13 @@ export default function HomePage() {
                 Capabilities
               </p>
               <h2 className="mt-3 text-balance text-3xl font-black tracking-normal sm:text-4xl">
-                Five ways I help fix the work.
+                Five ways to make the business easier to run.
               </h2>
               <p className="mt-4 text-base leading-7 text-slate-600">
-                These are not five disconnected consulting services. They are
-                five ways to expose what is wrong, understand the evidence,
-                and choose a practical fix.
+                Start with the decision, financial concern, broken workflow,
+                weak signal, or repeated task creating the most risk or drag.
+                Then choose the smallest practical intervention that changes
+                the result.
               </p>
             </div>
             <CtaButton className="w-full lg:w-auto" href="/services">
@@ -279,7 +139,7 @@ export default function HomePage() {
           <div className="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
             {capabilityPillars.map((pillar, index) => (
               <article
-                className="group rounded-lg border border-slate-200 bg-paper p-5 transition hover:border-signal hover:shadow-command"
+                className="group flex h-full flex-col rounded-lg border border-slate-200 bg-paper p-5 transition hover:border-signal hover:shadow-command"
                 key={pillar.id}
               >
                 <p className="text-xs font-black uppercase tracking-[0.12em] text-slate-500">
@@ -292,10 +152,10 @@ export default function HomePage() {
                   {pillar.homepageSummary}
                 </p>
                 <Link
-                  className="mt-5 inline-flex text-sm font-black text-charcoal underline decoration-signal decoration-2 underline-offset-4 group-hover:text-slate-600"
+                  className="mt-auto inline-flex pt-5 text-sm font-black text-charcoal underline decoration-signal decoration-2 underline-offset-4 group-hover:text-slate-600"
                   href={`/services#${pillar.id}`}
                 >
-                  See how this helps
+                  Explore {pillar.title}
                 </Link>
               </article>
             ))}
@@ -306,30 +166,33 @@ export default function HomePage() {
       <section className="bg-paper py-16 text-charcoal sm:py-20">
         <Container>
           <div className="max-w-3xl">
-            <h2 className="text-balance text-3xl font-black tracking-normal sm:text-4xl">
-              Practical ways to get started
+            <p className="text-xs font-black uppercase tracking-[0.12em] text-slate-500">
+              What is happening now?
+            </p>
+            <h2 className="mt-3 text-balance text-3xl font-black tracking-normal sm:text-4xl">
+              Choose the problem you want to solve first.
             </h2>
             <p className="mt-4 text-base leading-7 text-slate-600">
-              Pick the entry point that matches the headache in front of you.
-              Each path is built to create clearer work, fewer delays, and a
-              more manageable business.
+              You do not need to diagnose the method. Start with the pain you
+              can see or feel, and we will trace it to the right decision,
+              analysis, operating fix, measure, or automation path.
             </p>
           </div>
           <div className="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-            {starterOffers.map((offer) => (
+            {painPoints.map((point) => (
               <article
-                className="flex h-full min-h-48 flex-col rounded-lg border border-slate-200 bg-white p-5 text-charcoal shadow-command"
-                key={offer.title}
+                className="flex h-full flex-col rounded-lg border border-slate-200 bg-white p-5 shadow-command"
+                key={point.title}
               >
-                <h3 className="text-balance text-lg font-black leading-6">
-                  {offer.title}
+                <h3 className="text-lg font-black leading-6 text-charcoal">
+                  {point.title}
                 </h3>
-                <p className="mt-4 text-sm leading-6 text-slate-600">
-                  {offer.body}
+                <p className="mt-3 text-sm leading-6 text-slate-600">
+                  {point.body}
                 </p>
                 <div className="mt-auto pt-5">
-                  <CtaButton className="w-full" href={offer.href}>
-                    See How Dan Helps
+                  <CtaButton className="w-full" href={point.href}>
+                    {point.cta}
                   </CtaButton>
                 </div>
               </article>
@@ -337,6 +200,107 @@ export default function HomePage() {
           </div>
         </Container>
       </section>
+
+      <section className="bg-graphite py-16 text-white sm:py-20">
+        <Container>
+          <div className="max-w-3xl">
+            <p className="text-xs font-black uppercase tracking-[0.12em] text-slate-400">
+              Focused starting points
+            </p>
+            <h2 className="mt-3 text-balance text-3xl font-black tracking-normal sm:text-4xl">
+              Start with the problem, not a long engagement.
+            </h2>
+            <p className="mt-4 text-base leading-7 text-slate-300">
+              Each capability has a bounded starting point designed to expose
+              the facts, clarify the decision, and show what deserves action
+              next.
+            </p>
+          </div>
+          <div className="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+            {capabilityPillars.map((pillar) => (
+              <article
+                className="flex h-full min-h-60 flex-col rounded-lg border border-white/10 bg-white/[0.04] p-5"
+                key={pillar.id}
+              >
+                <p className="text-xs font-black uppercase tracking-[0.12em] text-signal">
+                  {pillar.title}
+                </p>
+                <h3 className="mt-3 text-balance text-xl font-black leading-7 text-white">
+                  {pillar.id === "operational-recovery"
+                    ? "Backlog Kill Kit / 90-Day Operations Reset"
+                    : pillar.startingPoint.title}
+                </h3>
+                <p className="mt-4 text-sm leading-6 text-slate-300">
+                  {pillar.id === "operational-recovery"
+                    ? "Start with a fixed-scope backlog diagnostic, or stabilize the wider operation when delays, ownership, and firefighting require a 90-day reset."
+                    : pillar.startingPoint.summary}
+                </p>
+                <div className="mt-auto pt-5">
+                  <CtaButton className="w-full" href={pillar.startingPoint.href}>
+                    {pillar.startingPoint.cta}
+                  </CtaButton>
+                  {pillar.id === "operational-recovery" ? (
+                    <Link
+                      className="mt-4 inline-flex text-sm font-black text-white underline decoration-signal decoration-2 underline-offset-4 hover:text-signal"
+                      href="/operations-reset"
+                    >
+                      Explore the 90-Day Operations Reset
+                    </Link>
+                  ) : null}
+                </div>
+              </article>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      <section className="bg-white py-16 text-charcoal sm:py-20">
+        <Container>
+          <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr]">
+            <div>
+              <p className="text-xs font-black uppercase tracking-[0.12em] text-slate-500">
+                Proof
+              </p>
+              <h2 className="mt-3 text-balance text-3xl font-black tracking-normal sm:text-4xl">
+                Practical experience. Measurable work.
+              </h2>
+              <p className="mt-4 text-base leading-7 text-slate-600">
+                The proof should show up in better decisions and in how the
+                work moves: fewer delays, clearer follow-up, simpler
+                reporting, better service, and more capacity to solve the
+                right problems.
+              </p>
+              <CtaButton className="mt-6" href="/results">
+                See Results
+              </CtaButton>
+            </div>
+            <div className="grid gap-4">
+              <div className="grid gap-3 sm:grid-cols-2">
+                {outcomeProof.map((item) => (
+                  <div
+                    className="rounded-lg border border-slate-200 bg-paper p-4 text-sm font-bold leading-6 text-charcoal"
+                    key={item}
+                  >
+                    {item}
+                  </div>
+                ))}
+              </div>
+              <div className="grid gap-3 sm:grid-cols-2">
+                {credentials.map((item) => (
+                  <div
+                    className="rounded-lg border border-slate-200 bg-white p-4 text-sm font-semibold leading-6 text-slate-700"
+                    key={item}
+                  >
+                    {item}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </Container>
+      </section>
+
+      <ProofStrip items={homepage.proof} />
 
       <section className="bg-white py-16 text-charcoal sm:py-20">
         <Container>
@@ -351,9 +315,9 @@ export default function HomePage() {
                 looks equal, and no one is clear about what matters most.
               </p>
               <p className="mt-4 text-base leading-7 text-slate-600">
-                Dan helps turn operational pain into better choices: what to
-                fix, what to stop, what to automate, what to measure, and what
-                to focus on next.
+                Dan helps turn financial and operational exposure into better
+                choices: what to fix, what to stop, what to automate, what to
+                measure, and what to focus on next.
               </p>
             </div>
             <div className="grid gap-3 sm:grid-cols-2">
@@ -388,7 +352,7 @@ export default function HomePage() {
                 AI is useful when it helps real work move faster, better, or
                 with less manual effort. Before recommending tools, Dan helps
                 identify where the business is losing time and which workflows
-                are worth automating.
+                are worth redesigning or automating.
               </p>
             </div>
             <div className="grid gap-4 md:grid-cols-3">
@@ -413,53 +377,11 @@ export default function HomePage() {
         </Container>
       </section>
 
-      <section className="bg-white py-16 text-charcoal sm:py-20">
-        <Container>
-          <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr]">
-            <div>
-              <h2 className="text-balance text-3xl font-black tracking-normal sm:text-4xl">
-                Practical experience. Measurable work.
-              </h2>
-              <p className="mt-4 text-base leading-7 text-slate-600">
-                The proof should show up in how the work moves: fewer delays,
-                clearer follow-up, simpler reporting, better service, and more
-                capacity to solve the right problems.
-              </p>
-              <CtaButton className="mt-6" href="/results">
-                See Results
-              </CtaButton>
-            </div>
-            <div className="grid gap-4">
-              <div className="grid gap-3 sm:grid-cols-2">
-                {outcomeProof.map((item) => (
-                  <div
-                    className="rounded-lg border border-slate-200 bg-paper p-4 text-sm font-bold leading-6 text-charcoal"
-                    key={item}
-                  >
-                    {item}
-                  </div>
-                ))}
-              </div>
-              <div className="grid gap-3 sm:grid-cols-2">
-                {credentials.map((item) => (
-                  <div
-                    className="rounded-lg border border-slate-200 bg-white p-4 text-sm font-semibold leading-6 text-slate-700"
-                    key={item}
-                  >
-                    {item}
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </Container>
-      </section>
-
       <FinalCTA
-        body="Start with a practical conversation about where work is stuck, what is costing time, and what to fix first."
-        cta="Start with a Bottleneck Diagnostic"
+        body="Start with the decision, financial concern, broken workflow, weak signal, or repeated task creating the most risk or drag."
+        cta="Start with a Diagnostic"
         href="/contact"
-        title="Ready to find what is slowing your business down?"
+        title="Ready to make the next problem easier to see and fix?"
       />
     </main>
   );

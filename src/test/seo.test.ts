@@ -8,7 +8,7 @@ import { legacyRedirects, requiredRoutes } from "@/lib/routes";
 import { absoluteUrl, createMetadata, socialImage } from "@/lib/seo";
 
 const homepageSocialDescription =
-  "Dan Feliciano helps business owners and operators find bottlenecks, recover lost time, improve follow-up, and use AI or automation where it actually makes work easier.";
+  "Dan Feliciano helps owners and operators make better decisions, understand financial exposure, fix broken work, turn data into action, and automate the right work.";
 
 describe("seo helpers", () => {
   it("creates canonical absolute URLs", () => {

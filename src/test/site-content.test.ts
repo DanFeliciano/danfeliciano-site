@@ -145,8 +145,10 @@ describe("site content", () => {
   });
 
   it("uses owner-facing positioning as the primary positioning", () => {
-    expect(site.description).toContain("business owners and operators");
-    expect(site.description).toContain("find bottlenecks");
+    expect(site.description).toContain("owners and operators");
+    expect(site.description).toContain("make better decisions");
+    expect(site.description).toContain("understand financial exposure");
+    expect(site.description).toContain("automate the right work");
     expect(homepage.title).toBe(
       "Fix what is slowing your business down.",
     );

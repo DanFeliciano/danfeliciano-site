@@ -8,11 +8,11 @@ import {
   professionalServiceJsonLd,
   websiteJsonLd,
 } from "@/lib/seo";
+import { site } from "@/content/site";
 import "./globals.css";
 
 const defaultTitle = "Dan Feliciano | Fix What Is Slowing Your Business Down";
-const defaultDescription =
-  "Dan Feliciano helps business owners and operators find bottlenecks, recover lost time, improve follow-up, reduce chaos, and use AI or automation where it actually makes the business easier to run.";
+const defaultDescription = site.description;
 
 export async function generateMetadata(): Promise<Metadata> {
   const requestHeaders = await headers();
