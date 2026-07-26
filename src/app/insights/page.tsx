@@ -2,11 +2,11 @@ import Link from "next/link";
 import { InsightArticleCard } from "@/components/insights/insight-article-card";
 import { Container } from "@/components/layout/container";
 import { Section } from "@/components/layout/section";
-import { CtaButton } from "@/components/ui/cta-button";
 import { FinalCTA } from "@/components/ui/final-cta";
 import { PageHeader } from "@/components/ui/page-header";
-import { insightCards } from "@/content/site";
 import { publishedInsights } from "@/content/insights";
+import { pageHeroes } from "@/content/page-heroes";
+import { insightCards } from "@/content/site";
 import type { SiteRoute } from "@/lib/routes";
 import { createMetadata } from "@/lib/seo";
 
@@ -15,7 +15,7 @@ type RelatedLink = { label: string; href: SiteRoute };
 export const metadata = createMetadata({
   title: "Insights | Dan Feliciano",
   description:
-    "Read practical notes from Dan Feliciano on bottlenecks, backlogs, AI, automation, policy risk, and fixing work that slows businesses down.",
+    "Read Dan Feliciano’s practical Points of View on backlogs, cash pressure, weak decisions, failed automation, operating risk, and stuck work.",
   path: "/insights",
 });
 
@@ -24,7 +24,7 @@ const relatedLinks = [
   { label: "AI Time Saver Sprint", href: "/ai-time-saver-sprint" },
   { label: "Policy Forensics", href: "/policy-forensics" },
   { label: "Backlog Kill Kit", href: "/backlog-kill-kit" },
-  { label: "Find My Bottleneck", href: "/contact" },
+  { label: "Make the System Visible", href: "/contact" },
 ] as const satisfies readonly RelatedLink[];
 
 export default function InsightsPage() {
@@ -32,14 +32,9 @@ export default function InsightsPage() {
 
   return (
     <main id="main-content">
-      <PageHeader
-        subhead="Practical writing on bottlenecks, backlogs, AI, automation, policy risk, and the work that slows businesses down."
-        title="Insights for owners and operators"
-      >
-        <CtaButton href="/contact">Find My Bottleneck</CtaButton>
-      </PageHeader>
+      <PageHeader {...pageHeroes["/insights"]} />
 
-      <Section className="bg-white text-charcoal">
+      <Section className="bg-white py-10 text-charcoal sm:py-12">
         <InsightArticleCard
           article={featuredArticle}
           headingLevel={2}
@@ -47,7 +42,11 @@ export default function InsightsPage() {
         />
       </Section>
 
-      <Section className="bg-paper text-charcoal">
+      <Section
+        className="scroll-mt-24 bg-paper text-charcoal"
+        id="insights-index"
+        tabIndex={-1}
+      >
         <div className="max-w-3xl">
           <h2 className="text-balance text-3xl font-black tracking-normal sm:text-4xl">
             Field notes on stuck work
@@ -100,8 +99,8 @@ export default function InsightsPage() {
       </Section>
 
       <FinalCTA
-        body="Bring the work, follow-up, backlog, AI, policy, or owner-bottleneck problem that keeps coming back."
-        cta="Find My Bottleneck"
+        body="Bring the work, follow-up, backlog, AI, policy, or owner-dependency problem that keeps coming back."
+        cta="Start an Operational Visibility Diagnostic"
         href="/contact"
         title="Need a practical answer before the next fix?"
       />

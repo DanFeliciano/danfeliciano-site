@@ -9,6 +9,7 @@ import {
   allServiceMisdiagnoses,
   serviceMisdiagnoses,
 } from "@/content/service-misdiagnoses";
+import { pageHeroes } from "@/content/page-heroes";
 import { capabilityPillars } from "@/content/site";
 import { createMetadata, faqPageJsonLd } from "@/lib/seo";
 
@@ -22,25 +23,9 @@ export const metadata = createMetadata({
 export default function ServicesPage() {
   return (
     <main id="main-content">
-      <PageHeader
-        subhead="Start with the work that is stuck, the number that does not make sense, or the decision that cannot wait. Dan helps expose the cause, choose the right fix, and leave you with a practical way forward."
-        title="Five ways to fix what is slowing the business down."
-      >
-        <div className="flex flex-col gap-3 sm:flex-row">
-          <CtaButton className="w-full sm:w-auto" href="/contact">
-            Find My Bottleneck
-          </CtaButton>
-          <CtaButton
-            className="w-full sm:w-auto"
-            href="/what-i-fix"
-            variant="secondary"
-          >
-            Choose the Problem First
-          </CtaButton>
-        </div>
-      </PageHeader>
+      <PageHeader {...pageHeroes["/services"]} />
 
-      <Section className="bg-paper text-charcoal">
+      <Section className="bg-paper py-10 text-charcoal sm:py-12">
         <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
           <div>
             <p className="text-xs font-black uppercase tracking-[0.12em] text-slate-500">
@@ -83,7 +68,11 @@ export default function ServicesPage() {
         </div>
       </Section>
 
-      <Section className="bg-white text-charcoal">
+      <Section
+        className="scroll-mt-24 bg-white text-charcoal"
+        id="service-capabilities"
+        tabIndex={-1}
+      >
         <div className="max-w-3xl">
           <p className="text-xs font-black uppercase tracking-[0.12em] text-slate-500">
             Service capabilities
@@ -230,7 +219,7 @@ export default function ServicesPage() {
               begin—not to force your problem into the wrong offer.
             </p>
             <CtaButton className="mt-6" href="/contact">
-              Find My Bottleneck
+              Make the System Visible
             </CtaButton>
           </div>
         </div>
@@ -238,7 +227,7 @@ export default function ServicesPage() {
 
       <FinalCTA
         body="Start with the problem you can feel. Dan will help expose the cause, choose the right fix, and define the next action."
-        cta="Start with a Bottleneck Diagnostic"
+        cta="Start an Operational Visibility Diagnostic"
         href="/contact"
         title="Ready to stop guessing what to fix first?"
       />

@@ -11,9 +11,29 @@ describe("services page", () => {
     expect(
       screen.getByRole("heading", {
         level: 1,
-        name: "Five ways to fix what is slowing the business down.",
+        name: "Bring me the stuck work, confusing number, or decision that cannot wait.",
       }),
     ).toBeInTheDocument();
+    expect(
+      screen.getByRole("link", { name: "Choose the Problem First" }),
+    ).toHaveAttribute("href", "#service-capabilities");
+    expect(
+      screen.getAllByRole("link", {
+        name: "Start an Operational Visibility Diagnostic",
+      }),
+    ).not.toHaveLength(0);
+    expect(screen.queryByText("Find My Bottleneck")).not.toBeInTheDocument();
+    expect(
+      screen.queryByText("Start with a Bottleneck Diagnostic"),
+    ).not.toBeInTheDocument();
+
+    const serviceCapabilities = screen
+      .getByRole("heading", {
+        level: 2,
+        name: "What Dan examines—and what you leave with.",
+      })
+      .closest("section");
+    expect(serviceCapabilities).toHaveAttribute("id", "service-capabilities");
 
     expect(capabilityPillars).toHaveLength(5);
 

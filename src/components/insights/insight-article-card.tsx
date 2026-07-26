@@ -59,6 +59,8 @@ export function InsightArticleCard({
         </p>
         {isFeatured ? (
           <p className="mt-5 text-sm font-semibold text-slate-300">
+            {article.author}
+            <span aria-hidden="true"> · </span>
             {article.publishedLabel}
             <span aria-hidden="true"> · </span>
             {article.readTime}
