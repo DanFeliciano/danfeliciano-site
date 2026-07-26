@@ -9,12 +9,12 @@ describe("Strategic Forensics Briefings page", () => {
     expect(
       screen.getByRole("heading", {
         level: 1,
-        name: "Strategic Forensics Briefings",
+        name: "Give leaders a clear read before they commit.",
       }),
     ).toBeInTheDocument();
     expect(
       screen.getByText(
-        "A focused briefing for leaders who need clarity before making expensive decisions.",
+        /Turn a complex issue into plain-English consequences/,
       ),
     ).toBeInTheDocument();
     expect(
@@ -68,10 +68,10 @@ describe("Strategic Forensics Briefings page", () => {
           name: "Book a Strategic Forensics Briefing",
         })
         .map((link) => link.getAttribute("href")),
-    ).toEqual(["/contact", "/contact"]);
+    ).toEqual(["/contact"]);
     expect(
-      screen.getByRole("link", { name: "Start a Conversation" }),
-    ).toHaveAttribute("href", "/contact");
+      screen.getByRole("link", { name: "See Briefing Topics" }),
+    ).toHaveAttribute("href", "#briefing-topics");
     expect(metadata.alternates).toEqual({
       canonical: "https://danfeliciano.com/briefings",
     });

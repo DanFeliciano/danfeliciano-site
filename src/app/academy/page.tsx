@@ -3,6 +3,7 @@ import { CtaButton } from "@/components/ui/cta-button";
 import { FinalCTA } from "@/components/ui/final-cta";
 import { JsonLd } from "@/components/ui/json-ld";
 import { PageHeader } from "@/components/ui/page-header";
+import { pageHeroes } from "@/content/page-heroes";
 import { courses } from "@/content/site";
 import { academyCourseItemListJsonLd, createMetadata } from "@/lib/seo";
 
@@ -54,12 +55,7 @@ const trainingBullets = [
 export default function AcademyPage() {
   return (
     <main id="main-content">
-      <PageHeader
-        subhead="Lean Six Sigma + AI training for teams that need to solve problems, reduce waste, improve service, and use modern tools responsibly."
-        title="Train your team to fix work."
-      >
-        <CtaButton href="/contact">Ask About Team Training</CtaButton>
-      </PageHeader>
+      <PageHeader {...pageHeroes["/academy"]} />
 
       <Section className="bg-paper text-charcoal">
         <div className="max-w-3xl">
@@ -148,7 +144,7 @@ export default function AcademyPage() {
               improvement.
             </p>
             <CtaButton className="mt-6" href="/contact">
-              Ask About Team Training
+              Train the Team
             </CtaButton>
           </div>
           <ul className="grid gap-3 sm:grid-cols-2">
@@ -166,7 +162,7 @@ export default function AcademyPage() {
 
       <FinalCTA
         body="Start with the skills your team needs to see stuck work, solve the right problems, and improve follow-through."
-        cta="Ask About Team Training"
+        cta="Train the Team"
         href="/contact"
         title="Ready to train your team to fix work?"
       />

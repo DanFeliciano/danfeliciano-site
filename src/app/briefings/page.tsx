@@ -1,7 +1,7 @@
 import { Section } from "@/components/layout/section";
-import { CtaButton } from "@/components/ui/cta-button";
 import { FinalCTA } from "@/components/ui/final-cta";
 import { PageHeader } from "@/components/ui/page-header";
+import { pageHeroes } from "@/content/page-heroes";
 import { createMetadata } from "@/lib/seo";
 
 export const metadata = createMetadata({
@@ -72,19 +72,7 @@ function ScanList({
 export default function BriefingsPage() {
   return (
     <main id="main-content">
-      <PageHeader
-        subhead="A focused briefing for leaders who need clarity before making expensive decisions."
-        title="Strategic Forensics Briefings"
-      >
-        <div className="flex flex-col gap-3 sm:flex-row">
-          <CtaButton className="w-full sm:w-auto" href="/contact">
-            Book a Strategic Forensics Briefing
-          </CtaButton>
-          <CtaButton className="w-full sm:w-auto" href="/contact" variant="secondary">
-            Start a Conversation
-          </CtaButton>
-        </div>
-      </PageHeader>
+      <PageHeader {...pageHeroes["/briefings"]} />
 
       <Section className="bg-paper text-charcoal">
         <div className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
@@ -165,7 +153,11 @@ export default function BriefingsPage() {
         </div>
       </Section>
 
-      <Section className="bg-white text-charcoal">
+      <Section
+        className="scroll-mt-24 bg-white text-charcoal"
+        id="briefing-topics"
+        tabIndex={-1}
+      >
         <div className="grid gap-8 lg:grid-cols-[0.75fr_1.25fr]">
           <div>
             <h2 className="text-balance text-3xl font-black tracking-normal sm:text-4xl">

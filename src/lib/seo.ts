@@ -121,7 +121,7 @@ export function personJsonLd() {
     sameAs: site.socialLinks.map((link) => link.href),
     knowsAbout: [
       "Operational Visibility",
-      "Bottleneck diagnosis",
+      "Operational diagnostics",
       "Backlog reduction",
       "AI and automation",
       "Lean Six Sigma",

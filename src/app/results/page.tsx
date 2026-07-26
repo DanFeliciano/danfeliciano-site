@@ -1,7 +1,7 @@
 import { Section } from "@/components/layout/section";
-import { CtaButton } from "@/components/ui/cta-button";
 import { FinalCTA } from "@/components/ui/final-cta";
 import { PageHeader } from "@/components/ui/page-header";
+import { pageHeroes } from "@/content/page-heroes";
 import { caseStudies } from "@/content/site";
 import { createMetadata } from "@/lib/seo";
 
@@ -26,12 +26,34 @@ const outcomeProof = [
 export default function ResultsPage() {
   return (
     <main id="main-content">
-      <PageHeader
-        subhead="Examples of improving flow, reducing waste, increasing visibility, and helping leaders make better decisions."
-        title="Results"
+      <PageHeader {...pageHeroes["/results"]} />
+
+      <Section
+        className="scroll-mt-24 bg-graphite py-10 text-white sm:py-12"
+        id="results-evidence"
+        tabIndex={-1}
       >
-        <CtaButton href="/contact">Find My Bottleneck</CtaButton>
-      </PageHeader>
+        <div className="grid gap-6 lg:grid-cols-[0.65fr_1.35fr] lg:items-start">
+          <div>
+            <p className="text-xs font-black uppercase tracking-[0.12em] text-signal">
+              Evidence of change
+            </p>
+            <h2 className="mt-3 text-balance text-3xl font-black tracking-normal sm:text-4xl">
+              The work shows up in practical ways.
+            </h2>
+          </div>
+          <ul className="grid gap-3 sm:grid-cols-2">
+            {outcomeProof.map((item) => (
+              <li
+                className="rounded-lg border border-white/10 bg-white/[0.04] p-4 text-sm font-bold leading-6 text-slate-100"
+                key={item}
+              >
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </Section>
 
       <Section className="bg-paper text-charcoal">
         <div className="max-w-3xl">
@@ -88,29 +110,9 @@ export default function ResultsPage() {
         </div>
       </Section>
 
-      <Section className="bg-graphite text-white">
-        <div className="grid gap-8 lg:grid-cols-[0.75fr_1.25fr]">
-          <div>
-            <h2 className="text-balance text-3xl font-black tracking-normal sm:text-4xl">
-              The work usually shows up in practical ways
-            </h2>
-          </div>
-          <ul className="grid gap-3 sm:grid-cols-2">
-            {outcomeProof.map((item) => (
-              <li
-                className="rounded-lg border border-white/10 bg-white/[0.04] p-4 text-sm font-bold leading-6 text-slate-100"
-                key={item}
-              >
-                {item}
-              </li>
-            ))}
-          </ul>
-        </div>
-      </Section>
-
       <FinalCTA
         body="Start with a practical conversation about where work is stuck, what is costing time, and what to fix first."
-        cta="Find My Bottleneck"
+        cta="Start an Operational Visibility Diagnostic"
         href="/contact"
         title="Want to know what could improve first in your business?"
       />

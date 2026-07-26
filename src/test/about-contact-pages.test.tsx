@@ -8,11 +8,14 @@ describe("About page", () => {
     render(<AboutPage />);
 
     expect(
-      screen.getByRole("heading", { level: 1, name: "About Dan Feliciano" }),
+      screen.getByRole("heading", {
+        level: 1,
+        name: "I find the hidden cause behind visible business problems.",
+      }),
     ).toBeInTheDocument();
     expect(
       screen.getByText(
-        "Dan Feliciano helps leaders find what others miss inside complex decisions.",
+        /For more than 25 years, I have worked across operations/,
       ),
     ).toBeInTheDocument();
     expect(
@@ -29,8 +32,12 @@ describe("About page", () => {
       screen.getByText(/Media experience used as proof of clear communication/),
     ).toBeInTheDocument();
     expect(
-      screen.getAllByRole("link", { name: "Start a Conversation" })[0],
-    ).toHaveAttribute("href", "/contact");
+      screen.getByRole("link", { name: "See What I Fix" }),
+    ).toHaveAttribute("href", "/what-i-fix");
+    expect(screen.getByRole("link", { name: "See Results" })).toHaveAttribute(
+      "href",
+      "/results",
+    );
   });
 
   it("exports route-safe metadata", () => {
@@ -47,19 +54,17 @@ describe("About page", () => {
 });
 
 describe("Contact page", () => {
-  it("frames contact around finding the bottleneck", () => {
+  it("frames contact around the recurring problem", () => {
     render(<ContactPage />);
 
     expect(
       screen.getByRole("heading", {
         level: 1,
-        name: "Find My Bottleneck",
+        name: "Bring me the problem that keeps coming back.",
       }),
     ).toBeInTheDocument();
     expect(
-      screen.getByText(
-        "Tell me what is getting stuck, delayed, missed, repeated, or routed through you.",
-      ),
+      screen.getByText(/Tell me what is stuck, delayed, confusing, costly/),
     ).toBeInTheDocument();
     expect(
       screen.getByRole("heading", {
@@ -93,6 +98,13 @@ describe("Contact page", () => {
     );
     expect(screen.getByText("Work is piling up and no one is sure why")).toBeInTheDocument();
     expect(
+      screen.getByText(
+        "What is happening, what have you already tried, and what consequence is becoming difficult to ignore?",
+      ),
+    ).toBeInTheDocument();
+    expect(screen.queryByText("Find My Bottleneck")).not.toBeInTheDocument();
+    expect(screen.queryByText("Bottleneck Diagnostic")).not.toBeInTheDocument();
+    expect(
       screen.queryByText(["Book", "a", "Strategy", "Diagnostic"].join(" ")),
     ).not.toBeInTheDocument();
   });
@@ -103,8 +115,8 @@ describe("Contact page", () => {
     });
     expect(contactMetadata.openGraph).toMatchObject({
       description:
-        "Tell Dan Feliciano what is getting stuck, delayed, missed, repeated, or routed through you. Start with a practical bottleneck diagnostic.",
-      title: "Find My Bottleneck | Dan Feliciano",
+        "Tell Dan Feliciano what is stuck, delayed, confusing, costly, or too dependent on one person. Find the right diagnostic or practical intervention.",
+      title: "Contact Dan Feliciano | Operational Visibility",
       url: "https://danfeliciano.com/contact",
     });
   });

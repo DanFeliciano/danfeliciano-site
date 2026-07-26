@@ -9,10 +9,13 @@ describe("Strategic Forensics page", () => {
     render(<StrategicForensicsPage />);
 
     expect(
-      screen.getByRole("heading", { level: 1, name: "Strategic Forensics" }),
+      screen.getByRole("heading", {
+        level: 1,
+        name: "Find the hidden risk before the decision gets expensive.",
+      }),
     ).toBeInTheDocument();
     expect(
-      screen.getByText("Find what others miss before it becomes expensive."),
+      screen.getByText(/Pressure-test the claim, the data, the money/),
     ).toBeInTheDocument();
     expect(
       screen.getByText(
@@ -27,13 +30,13 @@ describe("Strategic Forensics page", () => {
     expect(
       screen
         .getAllByRole("link", {
-          name: "Book a Strategic Forensics Briefing",
+          name: "Request a Strategic Forensics Briefing",
         })
         .map((link) => link.getAttribute("href")),
-    ).toEqual(["/contact", "/contact"]);
+    ).toEqual(["/contact"]);
     expect(
-      screen.getByRole("link", { name: "Start a Conversation" }),
-    ).toHaveAttribute("href", "/contact");
+      screen.getByRole("link", { name: "See What Dan Examines" }),
+    ).toHaveAttribute("href", "#forensic-targets");
     for (const [name, href] of [
       ["Briefings", "/briefings"],
       ["AI Process Redesign", "/ai-process-redesign"],

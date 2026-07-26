@@ -2,10 +2,10 @@ import Link from "next/link";
 import { Container } from "@/components/layout/container";
 import { Section } from "@/components/layout/section";
 import { Breadcrumbs } from "@/components/ui/breadcrumbs";
-import { CtaButton } from "@/components/ui/cta-button";
 import { FinalCTA } from "@/components/ui/final-cta";
 import { JsonLd } from "@/components/ui/json-ld";
 import { PageHeader } from "@/components/ui/page-header";
+import { pageHeroes } from "@/content/page-heroes";
 import { courses } from "@/content/site";
 import type { SiteRoute } from "@/lib/routes";
 import {
@@ -51,11 +51,8 @@ export default function GreenBeltCoursePage() {
         items={breadcrumbs}
       />
       <PageHeader
-        subhead="A practical project-leadership program for people who need to improve workflows, analyze problems, and deliver measurable results."
-        title={course.title}
-      >
-        <CtaButton href="/contact">{course.cta}</CtaButton>
-      </PageHeader>
+        {...pageHeroes["/academy/lean-six-sigma-ai-green-belt"]}
+      />
 
       <Section className="bg-paper text-charcoal">
         <div className="grid gap-8 lg:grid-cols-[0.75fr_1.25fr]">

@@ -35,7 +35,7 @@ export function SiteHeader() {
           </nav>
 
           <div className="hidden xl:block">
-            <CtaButton href="/contact">Find My Bottleneck</CtaButton>
+            <CtaButton href="/contact">Make the System Visible</CtaButton>
           </div>
 
           <MobileNav />

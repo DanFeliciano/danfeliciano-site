@@ -1,9 +1,9 @@
 import Link from "next/link";
 import { Container } from "@/components/layout/container";
 import { Section } from "@/components/layout/section";
-import { CtaButton } from "@/components/ui/cta-button";
 import { FinalCTA } from "@/components/ui/final-cta";
 import { PageHeader } from "@/components/ui/page-header";
+import { pageHeroes } from "@/content/page-heroes";
 import { createMetadata } from "@/lib/seo";
 
 export const metadata = createMetadata({
@@ -84,19 +84,7 @@ function ScanList({
 export default function BacklogKillPage() {
   return (
     <main id="main-content">
-      <PageHeader
-        subhead="Backlogs are rarely just staffing problems."
-        title="Service Reimagined / Backlog Kill"
-      >
-        <div className="flex flex-col gap-3 sm:flex-row">
-          <CtaButton className="w-full sm:w-auto" href="/contact">
-            Diagnose the Backlog
-          </CtaButton>
-          <CtaButton className="w-full sm:w-auto" href="/contact" variant="secondary">
-            Book a Strategic Forensics Briefing
-          </CtaButton>
-        </div>
-      </PageHeader>
+      <PageHeader {...pageHeroes["/backlog-kill"]} />
 
       <Section className="bg-paper text-charcoal">
         <div className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">

@@ -1,13 +1,14 @@
 import { ContactForm } from "@/components/contact/contact-form";
 import { Section } from "@/components/layout/section";
 import { PageHeader } from "@/components/ui/page-header";
+import { pageHeroes } from "@/content/page-heroes";
 import { contactEmail } from "@/lib/contact";
 import { createMetadata } from "@/lib/seo";
 
 export const metadata = createMetadata({
-  title: "Find My Bottleneck | Dan Feliciano",
+  title: "Contact Dan Feliciano | Operational Visibility",
   description:
-    "Tell Dan Feliciano what is getting stuck, delayed, missed, repeated, or routed through you. Start with a practical bottleneck diagnostic.",
+    "Tell Dan Feliciano what is stuck, delayed, confusing, costly, or too dependent on one person. Find the right diagnostic or practical intervention.",
   path: "/contact",
 });
 
@@ -28,26 +29,27 @@ const nextSteps = [
       "Tell Dan where work, follow-up, decisions, customers, or tasks are slowing down.",
   },
   {
-    title: "Clarify the real bottleneck",
+    title: "Clarify the real cause",
     body:
       "Dan looks for the pattern underneath the symptoms: handoffs, ownership, rework, missing rules, manual effort, unclear priorities, or bad fit for tools.",
   },
   {
     title: "Decide the right next step",
     body:
-      "The next step may be a Bottleneck Diagnostic, Backlog Kill Kit, AI Time Saver Sprint, Operations Reset, Owner Operating System, training, or a different practical recommendation.",
+      "The next step may be an Operational Visibility Diagnostic, Backlog Kill Kit, AI Time Saver Sprint, Operations Reset, Owner Operating System, training, or a different practical recommendation.",
   },
 ] as const;
 
 export default function ContactPage() {
   return (
     <main id="main-content">
-      <PageHeader
-        subhead="Tell me what is getting stuck, delayed, missed, repeated, or routed through you."
-        title="Find My Bottleneck"
-      />
+      <PageHeader {...pageHeroes["/contact"]} />
 
-      <Section className="bg-paper text-charcoal">
+      <Section
+        className="scroll-mt-24 bg-paper text-charcoal"
+        id="describe-the-problem"
+        tabIndex={-1}
+      >
         <div className="grid gap-8 lg:grid-cols-[0.76fr_1.24fr] lg:items-start">
           <div>
             <h2 className="text-balance text-3xl font-black tracking-normal sm:text-4xl">

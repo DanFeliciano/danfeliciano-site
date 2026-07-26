@@ -36,6 +36,20 @@ export const compatibilityRoutes = [
   "/case-studies",
 ] as const;
 
+export const compatibilityContentRoutes = [
+  "/strategic-forensics",
+  "/policy-impact-analysis",
+  "/backlog-kill",
+  "/products",
+  "/briefings",
+  "/about",
+] as const;
+
+export const indexableRoutes = [
+  ...requiredRoutes,
+  ...compatibilityContentRoutes,
+] as const;
+
 export const allSiteRoutes = [
   ...requiredRoutes,
   ...compatibilityRoutes,

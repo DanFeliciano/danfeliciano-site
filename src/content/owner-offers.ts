@@ -422,7 +422,7 @@ export const ownerOffers = [
         "Build clearer priorities, better follow-up, simple metrics, decision rules, and a weekly rhythm so the business does not depend on constant owner intervention.",
     },
     subhead:
-      "For owners who are tired of being the bottleneck, reminder system, traffic cop, and final decision point for everything.",
+      "For owners who are tired of being the operating system, reminder system, traffic cop, and final decision point for everything.",
     intro: [
       "A business gets easier to run when people know what matters, what to measure, who owns what, when decisions get made, and how follow-up happens.",
       "The Owner Operating System creates a simple rhythm for priorities, metrics, meetings, decisions, and accountability so the business does not depend on constant chasing.",

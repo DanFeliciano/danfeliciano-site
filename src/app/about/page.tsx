@@ -1,7 +1,7 @@
 import { Section } from "@/components/layout/section";
-import { CtaButton } from "@/components/ui/cta-button";
 import { FinalCTA } from "@/components/ui/final-cta";
 import { PageHeader } from "@/components/ui/page-header";
+import { pageHeroes } from "@/content/page-heroes";
 import { createMetadata } from "@/lib/seo";
 
 export const metadata = createMetadata({
@@ -25,12 +25,7 @@ const credibilityPoints = [
 export default function AboutPage() {
   return (
     <main id="main-content">
-      <PageHeader
-        subhead="Dan Feliciano helps leaders find what others miss inside complex decisions."
-        title="About Dan Feliciano"
-      >
-        <CtaButton href="/contact">Start a Conversation</CtaButton>
-      </PageHeader>
+      <PageHeader {...pageHeroes["/about"]} />
 
       <Section className="bg-paper text-charcoal">
         <div className="grid gap-8 lg:grid-cols-[0.82fr_1.18fr]">

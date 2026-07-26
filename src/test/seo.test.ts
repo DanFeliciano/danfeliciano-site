@@ -4,7 +4,11 @@ import { metadata as homepageMetadata } from "@/app/page";
 import robots from "@/app/robots";
 import sitemap from "@/app/sitemap";
 import { site } from "@/content/site";
-import { legacyRedirects, requiredRoutes } from "@/lib/routes";
+import {
+  indexableRoutes,
+  legacyRedirects,
+  requiredRoutes,
+} from "@/lib/routes";
 import { absoluteUrl, createMetadata, socialImage } from "@/lib/seo";
 
 const homepageSocialDescription =
@@ -47,8 +51,19 @@ describe("seo helpers", () => {
 
   it("has at least all required sitemap routes", () => {
     expect(requiredRoutes).toHaveLength(19);
+    expect(indexableRoutes).toHaveLength(25);
     expect(requiredRoutes).toContain(
       "/insights/your-ai-isnt-broken-your-business-is-invisible",
+    );
+    expect(indexableRoutes).toEqual(
+      expect.arrayContaining([
+        "/strategic-forensics",
+        "/policy-impact-analysis",
+        "/backlog-kill",
+        "/products",
+        "/briefings",
+        "/about",
+      ]),
     );
   });
 
@@ -98,7 +113,7 @@ describe("seo routes", () => {
         priority: 0.8,
       }),
     );
-    expect(sitemap()).toHaveLength(requiredRoutes.length);
+    expect(sitemap()).toHaveLength(indexableRoutes.length);
   });
 });
 

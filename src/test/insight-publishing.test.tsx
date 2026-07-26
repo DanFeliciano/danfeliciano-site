@@ -188,6 +188,13 @@ describe("Point of View publishing", () => {
     expect(screen.getByText("The Visibility Thesis")).toBeInTheDocument();
     expect(screen.getByText("POINT OF VIEW #1")).toBeInTheDocument();
     expect(container.querySelector("article")).toBeInTheDocument();
+    expect(
+      screen.getByRole("link", { name: "Read the Point of View" }),
+    ).toHaveAttribute("href", "#article-body");
+    expect(
+      screen.getByRole("link", { name: "Explore All Insights" }),
+    ).toHaveAttribute("href", "/insights");
+    expect(container.querySelector("#article-body")).toBeInTheDocument();
 
     const breadcrumb = screen.getByRole("navigation", {
       name: "Breadcrumb",

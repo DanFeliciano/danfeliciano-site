@@ -272,7 +272,7 @@ export const services = [
     summary:
       "Build clearer priorities, better follow-up, simple metrics, decision rules, and a weekly rhythm so the business does not depend on constant owner intervention.",
     description:
-      "A practical operating rhythm for owners who are tired of being the bottleneck, reminder system, traffic cop, and final decision point.",
+      "A practical operating rhythm for owners who are tired of being the operating system, reminder system, traffic cop, and final decision point.",
     metadata: {
       title: "Owner Operating System | Dan Feliciano",
       description:

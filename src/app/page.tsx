@@ -49,7 +49,7 @@ const painPoints = [
   },
   {
     title: "Everything depends on me",
-    body: "For owners who are tired of being the bottleneck, traffic cop, reminder system, and final decision point for everything.",
+    body: "For owners who are tired of being the operating system, traffic cop, reminder system, and final decision point for everything.",
     cta: "Build an Owner Operating System",
     href: "/owner-operating-system",
   },
