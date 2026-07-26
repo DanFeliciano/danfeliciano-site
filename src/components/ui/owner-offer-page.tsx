@@ -1,15 +1,20 @@
+import Link from "next/link";
 import { Section } from "@/components/layout/section";
-import { CtaButton } from "@/components/ui/cta-button";
 import { FinalCTA } from "@/components/ui/final-cta";
 import { JsonLd } from "@/components/ui/json-ld";
 import { PageHeader } from "@/components/ui/page-header";
 import type { OwnerOffer, OfferSection } from "@/content/owner-offers";
+import { pageHeroes } from "@/content/page-heroes";
 import { site } from "@/content/site";
 import { absoluteUrl } from "@/lib/seo";
 
 function OfferSectionBlock({ section }: { section: OfferSection }) {
   return (
-    <Section className="bg-paper text-charcoal">
+    <Section
+      className="scroll-mt-24 bg-paper text-charcoal"
+      id={section.id}
+      tabIndex={section.id ? -1 : undefined}
+    >
       <div className="grid gap-8 lg:grid-cols-[0.72fr_1.28fr]">
         <div>
           {section.eyebrow ? (
@@ -44,26 +49,38 @@ function OfferSectionBlock({ section }: { section: OfferSection }) {
         ) : null}
         {section.cards ? (
           <div className="grid gap-4 sm:grid-cols-2">
-            {section.cards.map((card) => (
-              <article
-                className="flex h-full flex-col rounded-lg border border-slate-200 bg-white p-5 shadow-command"
-                key={card.title}
-              >
-                <h3 className="text-lg font-black leading-6 text-charcoal">
-                  {card.title}
-                </h3>
-                <p className="mt-3 text-sm leading-6 text-slate-600">
-                  {card.body}
-                </p>
-                {card.href && card.cta ? (
-                  <div className="mt-auto pt-5">
-                    <CtaButton className="w-full" href={card.href}>
-                      {card.cta}
-                    </CtaButton>
-                  </div>
-                ) : null}
-              </article>
-            ))}
+            {section.cards.map((card) =>
+              card.href && card.cta ? (
+                <Link
+                  aria-label={card.cta}
+                  className="group flex h-full min-h-44 flex-col rounded-lg border border-slate-200 bg-white p-5 shadow-command transition hover:border-signal hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-offset-4 focus-visible:outline-signal"
+                  href={card.href}
+                  key={card.title}
+                >
+                  <h3 className="text-lg font-black leading-6 text-charcoal">
+                    {card.title}
+                  </h3>
+                  <p className="mt-3 text-sm leading-6 text-slate-600">
+                    {card.body}
+                  </p>
+                  <span className="mt-auto pt-5 text-sm font-black text-charcoal underline decoration-signal decoration-2 underline-offset-4 group-hover:text-slate-600">
+                    {card.cta} →
+                  </span>
+                </Link>
+              ) : (
+                <article
+                  className="flex h-full flex-col rounded-lg border border-slate-200 bg-white p-5 shadow-command"
+                  key={card.title}
+                >
+                  <h3 className="text-lg font-black leading-6 text-charcoal">
+                    {card.title}
+                  </h3>
+                  <p className="mt-3 text-sm leading-6 text-slate-600">
+                    {card.body}
+                  </p>
+                </article>
+              ),
+            )}
           </div>
         ) : null}
       </div>
@@ -72,11 +89,14 @@ function OfferSectionBlock({ section }: { section: OfferSection }) {
 }
 
 export function OwnerOfferPage({ offer }: { offer: OwnerOffer }) {
+  const hero = pageHeroes[offer.href as keyof typeof pageHeroes];
+  const [firstSection, ...remainingSections] = offer.sections;
+
   return (
     <main id="main-content">
-      <PageHeader subhead={offer.subhead} title={offer.title}>
-        <CtaButton href="/contact">{offer.primaryCta}</CtaButton>
-      </PageHeader>
+      <PageHeader {...hero} />
+
+      {firstSection ? <OfferSectionBlock section={firstSection} /> : null}
 
       <Section className="bg-white text-charcoal">
         <div className="max-w-3xl">
@@ -91,7 +111,7 @@ export function OwnerOfferPage({ offer }: { offer: OwnerOffer }) {
         </div>
       </Section>
 
-      {offer.sections.map((section) => (
+      {remainingSections.map((section) => (
         <OfferSectionBlock key={section.title} section={section} />
       ))}
 

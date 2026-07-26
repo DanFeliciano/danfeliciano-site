@@ -34,7 +34,7 @@ describe("homepage content", () => {
 
     const heroScope = within(hero as HTMLElement);
     const primaryCta = heroScope.getByRole("link", {
-      name: "Start with an Operational Visibility Diagnostic",
+      name: "Start an Operational Visibility Diagnostic",
     });
     const secondaryCta = heroScope.getByRole("link", {
       name: "Explore What I Fix",
@@ -55,8 +55,14 @@ describe("homepage content", () => {
       heroScope.getByText("Operational Visibility for owners and operators"),
     ).toBeInTheDocument();
     expect(
-      heroScope.getByText("Operational Visibility in practice"),
-    ).toBeInTheDocument();
+      heroScope.queryByText("Operational Visibility in practice"),
+    ).not.toBeInTheDocument();
+    const practiceSection = screen
+      .getByRole("heading", {
+        level: 2,
+        name: "Operational Visibility in practice",
+      })
+      .closest("section");
     for (const operatingLens of [
       "Make the decision",
       "Understand the numbers",
@@ -64,7 +70,9 @@ describe("homepage content", () => {
       "See the signals",
       "Automate the right work",
     ]) {
-      expect(heroScope.getByText(operatingLens)).toBeInTheDocument();
+      expect(
+        within(practiceSection as HTMLElement).getByText(operatingLens),
+      ).toBeInTheDocument();
     }
     expect(screen.queryByText("Bottleneck snapshot")).not.toBeInTheDocument();
     expect(screen.queryByText("Owner bottleneck")).not.toBeInTheDocument();
@@ -119,13 +127,14 @@ describe("homepage content", () => {
     ).toBeInTheDocument();
   });
 
-  it("puts capabilities before buyer problems and starting offers", () => {
+  it("puts buyer recognition before category and capability explanations", () => {
     render(createElement(HomePage));
 
     const sectionHeadings = [
+      "Choose the problem you want to solve first.",
+      "Operational Visibility in practice",
       "Make the business visible before trying to fix it.",
       "Five ways to make the business easier to run.",
-      "Choose the problem you want to solve first.",
       "Start with the problem, not a long engagement.",
       "Practical experience. Measurable work.",
     ].map((name) => screen.getByRole("heading", { level: 2, name }));

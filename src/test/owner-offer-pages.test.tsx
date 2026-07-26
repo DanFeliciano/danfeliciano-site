@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { render, screen, within } from "@testing-library/react";
 import { createElement } from "react";
 import { describe, expect, it } from "vitest";
 import AiTimeSaverSprintPage from "@/app/ai-time-saver-sprint/page";
@@ -9,12 +9,27 @@ import PolicyForensicsPage from "@/app/policy-forensics/page";
 import WhatIFixPage from "@/app/what-i-fix/page";
 
 const pages = [
-  { component: WhatIFixPage, h1: "What I Fix" },
-  { component: BacklogKillKitPage, h1: "Backlog Kill Kit" },
-  { component: AiTimeSaverSprintPage, h1: "AI Time Saver Sprint" },
-  { component: OperationsResetPage, h1: "90-Day Operations Reset" },
-  { component: OwnerOperatingSystemPage, h1: "Owner Operating System" },
-  { component: PolicyForensicsPage, h1: "Policy Forensics" },
+  { component: WhatIFixPage, h1: "Which problem keeps coming back?" },
+  {
+    component: BacklogKillKitPage,
+    h1: "Find why work is aging—and what will move it.",
+  },
+  {
+    component: AiTimeSaverSprintPage,
+    h1: "Find where AI can save time—before you automate the wrong work.",
+  },
+  {
+    component: OperationsResetPage,
+    h1: "Move from firefighting to control in 90 days.",
+  },
+  {
+    component: OwnerOperatingSystemPage,
+    h1: "Stop being the operating system.",
+  },
+  {
+    component: PolicyForensicsPage,
+    h1: "What will this policy actually do to costs, operations and risk?",
+  },
 ] as const;
 
 describe("owner-facing offer pages", () => {
@@ -27,12 +42,27 @@ describe("owner-facing offer pages", () => {
   });
 
   it("makes Operational Visibility the broad entry point on What I Fix", () => {
-    render(createElement(WhatIFixPage));
+    const { container } = render(createElement(WhatIFixPage));
+
+    const hero = container.querySelector("main > section");
+    const firstContentSection = hero?.nextElementSibling;
+
+    expect(hero).toHaveTextContent("What I Fix");
+    expect(hero).toHaveTextContent(
+      "Work is piling up. Follow-up is inconsistent. Employees are overloaded.",
+    );
+    expect(firstContentSection).toHaveAttribute("id", "common-problems");
+    expect(firstContentSection).toHaveTextContent(
+      "Which of these sounds familiar?",
+    );
+    expect(
+      screen.getByRole("link", { name: "Choose Your Problem" }),
+    ).toHaveAttribute("href", "#common-problems");
 
     expect(
       screen.getByRole("heading", {
         level: 2,
-        name: "See why the same problems keep coming back.",
+        name: "See why the same problem keeps coming back.",
       }),
     ).toBeInTheDocument();
     expect(
@@ -44,6 +74,7 @@ describe("owner-facing offer pages", () => {
       "Expose the cause",
       "Fix the system",
       "Automate the right work",
+      "Build the operating rhythm",
     ]) {
       expect(
         screen.getByRole("heading", { level: 3, name: step }),
@@ -78,6 +109,21 @@ describe("owner-facing offer pages", () => {
           name: specializedOffer,
         }),
       ).toBeInTheDocument();
+    }
+
+    for (const problemLink of [
+      "Diagnose the Backlog",
+      "Fix Follow-Up",
+      "Build an Owner Operating System",
+      "Start an Operations Reset",
+      "Find Time-Saving Automation",
+      "Find the Right AI Use Case",
+    ]) {
+      expect(
+        within(firstContentSection as HTMLElement).getByRole("link", {
+          name: problemLink,
+        }),
+      ).toBeVisible();
     }
   });
 });

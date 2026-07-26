@@ -4,7 +4,9 @@ import { OperatingCommandVisual } from "@/components/visuals/operating-command-v
 import { Container } from "@/components/layout/container";
 import { CtaButton } from "@/components/ui/cta-button";
 import { FinalCTA } from "@/components/ui/final-cta";
+import { PageHeader } from "@/components/ui/page-header";
 import { ProofStrip } from "@/components/ui/proof-strip";
+import { pageHeroes } from "@/content/page-heroes";
 import { capabilityPillars, homepage, insightCards } from "@/content/site";
 import { publishedInsights } from "@/content/insights";
 import type { SiteRoute } from "@/lib/routes";
@@ -94,36 +96,61 @@ export default function HomePage() {
 
   return (
     <main id="main-content">
-      <section className="bg-ink text-white">
-        <Container>
-          <div className="grid min-w-0 gap-5 py-6 sm:gap-8 sm:py-10 lg:grid-cols-[1.08fr_0.92fr] lg:items-center lg:py-12">
-            <div className="min-w-0">
-              <p className="mb-3 text-xs font-black uppercase tracking-[0.12em] text-signal">
-                Operational Visibility for owners and operators
-              </p>
-              <h1 className="max-w-4xl text-balance text-[1.95rem] font-black leading-[2.3rem] tracking-normal sm:text-5xl sm:leading-tight">
-                {homepage.title}
-              </h1>
-              <p className="mt-4 max-w-3xl text-base font-semibold leading-7 text-slate-200 sm:mt-5 sm:text-lg sm:leading-8">
-                {homepage.subhead}
-              </p>
-              <p className="mt-4 max-w-2xl text-base leading-7 text-slate-300">
-                {homepage.body}
-              </p>
-              <div className="mt-5 flex flex-col gap-3 sm:mt-7 sm:flex-row">
-                <CtaButton className="w-full sm:w-auto" href="/contact">
-                  Start with an Operational Visibility Diagnostic
-                </CtaButton>
-                <CtaButton
-                  className="w-full sm:w-auto"
-                  href="/what-i-fix"
-                  variant="secondary"
-                >
-                  Explore What I Fix
-                </CtaButton>
-              </div>
-            </div>
+      <PageHeader {...pageHeroes["/"]} />
 
+      <section className="bg-paper py-10 text-charcoal sm:py-12">
+        <Container>
+          <div className="max-w-3xl">
+            <p className="text-xs font-black uppercase tracking-[0.12em] text-slate-500">
+              What is happening now?
+            </p>
+            <h2 className="mt-3 text-balance text-3xl font-black tracking-normal sm:text-4xl">
+              Choose the problem you want to solve first.
+            </h2>
+            <p className="mt-4 text-base leading-7 text-slate-600">
+              Start with the problem you can see. Operational Visibility traces
+              it to the work, decision, information, constraint or financial
+              consequence underneath it.
+            </p>
+          </div>
+          <div className="mt-7 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+            {painPoints.map((point) => (
+              <article
+                className="flex h-full flex-col rounded-lg border border-slate-200 bg-white p-5 shadow-command"
+                key={point.title}
+              >
+                <h3 className="text-lg font-black leading-6 text-charcoal">
+                  {point.title}
+                </h3>
+                <p className="mt-3 text-sm leading-6 text-slate-600">
+                  {point.body}
+                </p>
+                <div className="mt-auto pt-5">
+                  <CtaButton className="w-full" href={point.href}>
+                    {point.cta}
+                  </CtaButton>
+                </div>
+              </article>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      <section className="bg-graphite py-12 text-white sm:py-14">
+        <Container>
+          <div className="grid gap-8 lg:grid-cols-[0.72fr_1.28fr] lg:items-center">
+            <div className="max-w-2xl">
+              <p className="text-xs font-black uppercase tracking-[0.12em] text-signal">
+                How Dan sees the system
+              </p>
+              <h2 className="mt-3 text-balance text-3xl font-black tracking-normal sm:text-4xl">
+                Operational Visibility in practice
+              </h2>
+              <p className="mt-4 text-base leading-7 text-slate-300">
+                Make the decision, understand the numbers, fix the work, see the
+                signals and automate only after the process is visible.
+              </p>
+            </div>
             <OperatingCommandVisual />
           </div>
         </Container>
@@ -211,44 +238,6 @@ export default function HomePage() {
                 >
                   Explore {pillar.title}
                 </Link>
-              </article>
-            ))}
-          </div>
-        </Container>
-      </section>
-
-      <section className="bg-paper py-16 text-charcoal sm:py-20">
-        <Container>
-          <div className="max-w-3xl">
-            <p className="text-xs font-black uppercase tracking-[0.12em] text-slate-500">
-              What is happening now?
-            </p>
-            <h2 className="mt-3 text-balance text-3xl font-black tracking-normal sm:text-4xl">
-              Choose the problem you want to solve first.
-            </h2>
-            <p className="mt-4 text-base leading-7 text-slate-600">
-              Start with the problem you can see. Operational Visibility traces
-              it to the work, decision, information, constraint or financial
-              consequence underneath it.
-            </p>
-          </div>
-          <div className="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-            {painPoints.map((point) => (
-              <article
-                className="flex h-full flex-col rounded-lg border border-slate-200 bg-white p-5 shadow-command"
-                key={point.title}
-              >
-                <h3 className="text-lg font-black leading-6 text-charcoal">
-                  {point.title}
-                </h3>
-                <p className="mt-3 text-sm leading-6 text-slate-600">
-                  {point.body}
-                </p>
-                <div className="mt-auto pt-5">
-                  <CtaButton className="w-full" href={point.href}>
-                    {point.cta}
-                  </CtaButton>
-                </div>
               </article>
             ))}
           </div>
@@ -400,42 +389,57 @@ export default function HomePage() {
 
       <section className="bg-paper py-16 text-charcoal sm:py-20">
         <Container>
-          <div className="grid gap-8 lg:grid-cols-[0.75fr_1.25fr] lg:items-start">
-            <div>
-              <h2 className="text-balance text-3xl font-black tracking-normal sm:text-4xl">
-                AI should save time, not create another project.
-              </h2>
-              <p className="mt-4 text-base leading-7 text-slate-600">
-                AI is useful when it helps real work move faster, better, or
-                with less manual effort. Before recommending tools, Dan helps
-                identify where the business is losing time and which workflows
-                are worth redesigning or automating.
-              </p>
-            </div>
-            <div className="grid gap-4 md:grid-cols-2">
-              <InsightArticleCard
-                article={featuredArticle}
-                className="md:col-span-2"
-                headingLevel={3}
-                variant="homepage"
-              />
-              {featuredInsights.map((card) => (
-                <article
-                  className="rounded-lg border border-slate-200 bg-white p-5"
-                  key={card.title}
-                >
-                  <p className="text-xs font-black uppercase tracking-[0.12em] text-slate-500">
-                    {card.status}
-                  </p>
-                  <h3 className="mt-3 text-lg font-black leading-6 text-charcoal">
-                    {card.title}
-                  </h3>
-                  <p className="mt-3 text-sm leading-6 text-slate-600">
-                    {card.excerpt}
-                  </p>
-                </article>
-              ))}
-            </div>
+          <div className="max-w-3xl">
+            <h2 className="text-balance text-3xl font-black tracking-normal sm:text-4xl">
+              AI should save time, not create another project.
+            </h2>
+            <p className="mt-4 text-base leading-7 text-slate-600">
+              AI is useful when it helps real work move faster, better, or with
+              less manual effort. Before recommending tools, Dan helps identify
+              where the business is losing time and which workflows are worth
+              redesigning or automating.
+            </p>
+          </div>
+        </Container>
+      </section>
+
+      <section className="bg-white py-16 text-charcoal sm:py-20">
+        <Container>
+          <div className="max-w-3xl">
+            <p className="text-xs font-black uppercase tracking-[0.12em] text-slate-500">
+              Insights
+            </p>
+            <h2 className="mt-3 text-balance text-3xl font-black tracking-normal sm:text-4xl">
+              Insights and Point of View
+            </h2>
+            <p className="mt-4 text-base leading-7 text-slate-600">
+              Practical writing on the hidden systems behind stuck work,
+              financial pressure, weak decisions and failed automation.
+            </p>
+          </div>
+          <div className="mt-8 grid gap-4 md:grid-cols-2">
+            <InsightArticleCard
+              article={featuredArticle}
+              className="md:col-span-2"
+              headingLevel={3}
+              variant="homepage"
+            />
+            {featuredInsights.map((card) => (
+              <article
+                className="rounded-lg border border-slate-200 bg-paper p-5"
+                key={card.title}
+              >
+                <p className="text-xs font-black uppercase tracking-[0.12em] text-slate-500">
+                  {card.status}
+                </p>
+                <h3 className="mt-3 text-lg font-black leading-6 text-charcoal">
+                  {card.title}
+                </h3>
+                <p className="mt-3 text-sm leading-6 text-slate-600">
+                  {card.excerpt}
+                </p>
+              </article>
+            ))}
           </div>
         </Container>
       </section>
