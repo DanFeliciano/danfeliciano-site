@@ -1,10 +1,16 @@
 import Link from "next/link";
 import { Section } from "@/components/layout/section";
+import { CommonMisdiagnoses } from "@/components/services/common-misdiagnoses";
 import { CtaButton } from "@/components/ui/cta-button";
 import { FinalCTA } from "@/components/ui/final-cta";
+import { JsonLd } from "@/components/ui/json-ld";
 import { PageHeader } from "@/components/ui/page-header";
+import {
+  allServiceMisdiagnoses,
+  serviceMisdiagnoses,
+} from "@/content/service-misdiagnoses";
 import { capabilityPillars } from "@/content/site";
-import { createMetadata } from "@/lib/seo";
+import { createMetadata, faqPageJsonLd } from "@/lib/seo";
 
 export const metadata = createMetadata({
   title: "Services | Dan Feliciano",
@@ -46,9 +52,21 @@ export default function ServicesPage() {
           </div>
           <div className="grid gap-4 sm:grid-cols-3">
             {[
-              ["1", "Recognize the pain", "Name what is stuck, slow, missed, costly, or unclear."],
-              ["2", "Expose the cause", "Connect the work, numbers, decisions, and hidden dependencies."],
-              ["3", "Choose the fix", "Leave with a bounded action, owner, output, and next decision."],
+              [
+                "1",
+                "Recognize the pain",
+                "Name what is stuck, slow, missed, costly, or unclear.",
+              ],
+              [
+                "2",
+                "Expose the cause",
+                "Connect the work, numbers, decisions, and hidden dependencies.",
+              ],
+              [
+                "3",
+                "Choose the fix",
+                "Leave with a bounded action, owner, output, and next decision.",
+              ],
             ].map(([number, title, body]) => (
               <div
                 className="rounded-lg border border-slate-200 bg-white p-5"
@@ -86,56 +104,71 @@ export default function ServicesPage() {
               id={pillar.id}
               key={pillar.id}
             >
-              <div className="grid gap-8 lg:grid-cols-[1.15fr_0.85fr]">
-                <div>
-                  <p className="text-xs font-black uppercase tracking-[0.12em] text-slate-500">
-                    Service {String(index + 1).padStart(2, "0")}
-                  </p>
-                  <h2 className="mt-3 text-balance text-3xl font-black tracking-normal">
-                    {pillar.title}
-                  </h2>
-                  <p className="mt-4 max-w-3xl text-base leading-7 text-slate-600">
-                    {pillar.promise}
-                  </p>
+              <div className="max-w-4xl">
+                <p className="text-xs font-black uppercase tracking-[0.12em] text-slate-500">
+                  Service {String(index + 1).padStart(2, "0")}
+                </p>
+                <h2 className="mt-3 text-balance text-3xl font-black tracking-normal">
+                  {pillar.title}
+                </h2>
+                <p className="mt-4 max-w-3xl text-base leading-7 text-slate-600">
+                  {pillar.promise}
+                </p>
+              </div>
 
-                  <div className="mt-7 grid gap-5 md:grid-cols-3">
-                    <div>
-                      <h3 className="text-sm font-black uppercase tracking-[0.08em] text-charcoal">
-                        Bring Dan in when
-                      </h3>
-                      <ul className="mt-3 grid gap-2 text-sm leading-6 text-slate-600">
-                        {pillar.buyerTriggers.map((trigger) => (
-                          <li className="border-l-2 border-signal pl-3" key={trigger}>
-                            {trigger}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                    <div>
-                      <h3 className="text-sm font-black uppercase tracking-[0.08em] text-charcoal">
-                        What Dan examines
-                      </h3>
-                      <ul className="mt-3 grid gap-2 text-sm leading-6 text-slate-600">
-                        {pillar.examines.map((item) => (
-                          <li className="border-l-2 border-slate-300 pl-3" key={item}>
-                            {item}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                    <div>
-                      <h3 className="text-sm font-black uppercase tracking-[0.08em] text-charcoal">
-                        You leave with
-                      </h3>
-                      <ul className="mt-3 grid gap-2 text-sm leading-6 text-slate-600">
-                        {pillar.deliverables.map((item) => (
-                          <li className="border-l-2 border-slate-300 pl-3" key={item}>
-                            {item}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
+              <div className="mt-7 grid gap-8 md:grid-cols-2">
+                <div>
+                  <h3 className="text-sm font-black uppercase tracking-[0.08em] text-charcoal">
+                    Bring Dan in when
+                  </h3>
+                  <ul className="mt-3 grid gap-2 text-sm leading-6 text-slate-600">
+                    {pillar.buyerTriggers.map((trigger) => (
+                      <li
+                        className="border-l-2 border-signal pl-3"
+                        key={trigger}
+                      >
+                        {trigger}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div>
+                  <h3 className="text-sm font-black uppercase tracking-[0.08em] text-charcoal">
+                    What Dan examines
+                  </h3>
+                  <ul className="mt-3 grid gap-2 text-sm leading-6 text-slate-600">
+                    {pillar.examines.map((item) => (
+                      <li
+                        className="border-l-2 border-slate-300 pl-3"
+                        key={item}
+                      >
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+
+              <CommonMisdiagnoses
+                items={serviceMisdiagnoses[pillar.id]}
+                serviceId={pillar.id}
+              />
+
+              <div className="mt-8 grid gap-8 lg:grid-cols-[1.15fr_0.85fr] lg:items-start">
+                <div>
+                  <h3 className="text-sm font-black uppercase tracking-[0.08em] text-charcoal">
+                    You leave with
+                  </h3>
+                  <ul className="mt-3 grid gap-2 text-sm leading-6 text-slate-600">
+                    {pillar.deliverables.map((item) => (
+                      <li
+                        className="border-l-2 border-slate-300 pl-3"
+                        key={item}
+                      >
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
 
                 <aside className="rounded-lg border border-slate-200 bg-paper p-6 shadow-command">
@@ -191,10 +224,10 @@ export default function ServicesPage() {
           </div>
           <div>
             <p className="text-base leading-7 text-slate-300">
-              That is normal. Bring the stuck work, the confusing number, or
-              the decision keeping you up at night. The first conversation is
-              used to identify the actual constraint and the smallest useful
-              way to begin—not to force your problem into the wrong offer.
+              That is normal. Bring the stuck work, the confusing number, or the
+              decision keeping you up at night. The first conversation is used
+              to identify the actual constraint and the smallest useful way to
+              begin—not to force your problem into the wrong offer.
             </p>
             <CtaButton className="mt-6" href="/contact">
               Find My Bottleneck
@@ -209,6 +242,8 @@ export default function ServicesPage() {
         href="/contact"
         title="Ready to stop guessing what to fix first?"
       />
+
+      <JsonLd data={faqPageJsonLd(allServiceMisdiagnoses)} />
     </main>
   );
 }

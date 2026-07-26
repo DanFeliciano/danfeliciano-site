@@ -21,7 +21,12 @@ describe("services page", () => {
       expect(
         screen.getByRole("heading", { level: 2, name: pillar.title }),
       ).toBeInTheDocument();
-      expect(screen.getByText(pillar.startingPoint.title)).toBeInTheDocument();
+      expect(
+        screen.getByRole("heading", {
+          level: 3,
+          name: pillar.startingPoint.title,
+        }),
+      ).toBeInTheDocument();
     }
   });
 
