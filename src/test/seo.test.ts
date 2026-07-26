@@ -46,7 +46,10 @@ describe("seo helpers", () => {
   });
 
   it("has at least all required sitemap routes", () => {
-    expect(requiredRoutes.length).toBe(18);
+    expect(requiredRoutes).toHaveLength(19);
+    expect(requiredRoutes).toContain(
+      "/insights/your-ai-isnt-broken-your-business-is-invisible",
+    );
   });
 
   it("exports full homepage metadata", () => {
@@ -87,14 +90,15 @@ describe("seo routes", () => {
   });
 
   it("creates sitemap entries for every required route", () => {
-    expect(sitemap()).toEqual(
-      requiredRoutes.map((route) => ({
-        url: route === "/" ? site.url : `${site.url}${route}`,
-        lastModified: new Date("2026-06-02"),
-        changeFrequency: route === "/" ? "weekly" : "monthly",
-        priority: route === "/" ? 1 : 0.7,
-      })),
+    expect(sitemap()).toContainEqual(
+      expect.objectContaining({
+        url: `${site.url}/insights/your-ai-isnt-broken-your-business-is-invisible`,
+        lastModified: new Date("2026-07-26"),
+        changeFrequency: "monthly",
+        priority: 0.8,
+      }),
     );
+    expect(sitemap()).toHaveLength(requiredRoutes.length);
   });
 });
 

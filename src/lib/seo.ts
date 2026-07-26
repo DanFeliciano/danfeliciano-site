@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import type { InsightArticle } from "@/content/insights";
 import type { Course } from "@/content/site";
 import { site } from "@/content/site";
 import { allSiteRoutes, type SiteRoute } from "@/lib/routes";
@@ -57,6 +58,45 @@ export function createMetadata({
       title,
       description,
       images: [socialImage.url],
+      creator: "@DanFeliciano",
+      site: "@DanFeliciano",
+    },
+    robots: {
+      index: true,
+      follow: true,
+    },
+  };
+}
+
+export function createArticleMetadata(article: InsightArticle): Metadata {
+  const canonical = absoluteUrl(article.href);
+  const image = {
+    url: article.socialImage,
+    width: 1200,
+    height: 630,
+    alt: `${article.title} — ${article.subtitle}`,
+  };
+
+  return {
+    title: article.seoTitle,
+    description: article.seoDescription,
+    alternates: { canonical },
+    openGraph: {
+      title: article.seoTitle,
+      description: article.seoDescription,
+      type: "article",
+      url: canonical,
+      siteName: site.name,
+      publishedTime: article.publishedAt,
+      authors: [article.author],
+      section: article.category,
+      images: [image],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: article.seoTitle,
+      description: article.seoDescription,
+      images: [article.socialImage],
       creator: "@DanFeliciano",
       site: "@DanFeliciano",
     },
@@ -147,5 +187,32 @@ export function breadcrumbListJsonLd(items: readonly BreadcrumbJsonLdItem[]) {
       name: item.label,
       item: absoluteUrl(item.href),
     })),
+  };
+}
+
+export function articleJsonLd(article: InsightArticle) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: article.title,
+    description: article.seoDescription,
+    datePublished: article.publishedAt,
+    articleSection: article.category,
+    mainEntityOfPage: absoluteUrl(article.href),
+    image: new URL(article.socialImage, site.url).toString(),
+    author: {
+      "@type": "Person",
+      name: article.author,
+      url: site.url,
+    },
+    publisher: {
+      "@type": "Person",
+      name: site.name,
+      url: site.url,
+    },
+    isPartOf: {
+      "@type": "CreativeWorkSeries",
+      name: article.contentType,
+    },
   };
 }

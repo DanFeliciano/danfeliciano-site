@@ -1,10 +1,12 @@
 import Link from "next/link";
+import { InsightArticleCard } from "@/components/insights/insight-article-card";
 import { OperatingCommandVisual } from "@/components/visuals/operating-command-visual";
 import { Container } from "@/components/layout/container";
 import { CtaButton } from "@/components/ui/cta-button";
 import { FinalCTA } from "@/components/ui/final-cta";
 import { ProofStrip } from "@/components/ui/proof-strip";
 import { capabilityPillars, homepage, insightCards } from "@/content/site";
+import { publishedInsights } from "@/content/insights";
 import type { SiteRoute } from "@/lib/routes";
 import { createMetadata } from "@/lib/seo";
 
@@ -87,7 +89,8 @@ const credentials = [
 ] as const;
 
 export default function HomePage() {
-  const featuredInsights = insightCards.slice(0, 3);
+  const featuredArticle = publishedInsights[0];
+  const featuredInsights = insightCards.slice(0, 2);
 
   return (
     <main id="main-content">
@@ -409,7 +412,13 @@ export default function HomePage() {
                 are worth redesigning or automating.
               </p>
             </div>
-            <div className="grid gap-4 md:grid-cols-3">
+            <div className="grid gap-4 md:grid-cols-2">
+              <InsightArticleCard
+                article={featuredArticle}
+                className="md:col-span-2"
+                headingLevel={3}
+                variant="homepage"
+              />
               {featuredInsights.map((card) => (
                 <article
                   className="rounded-lg border border-slate-200 bg-white p-5"
