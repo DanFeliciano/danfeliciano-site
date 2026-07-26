@@ -1,5 +1,9 @@
 import type { Metadata } from "next";
 import type { InsightArticle } from "@/content/insights";
+import {
+  serviceMisdiagnosisAnswerText,
+  type ServiceMisdiagnosis,
+} from "@/content/service-misdiagnoses";
 import type { Course } from "@/content/site";
 import { site } from "@/content/site";
 import { allSiteRoutes, type SiteRoute } from "@/lib/routes";
@@ -214,5 +218,22 @@ export function articleJsonLd(article: InsightArticle) {
       "@type": "CreativeWorkSeries",
       name: article.contentType,
     },
+  };
+}
+
+export function faqPageJsonLd(
+  items: readonly ServiceMisdiagnosis[],
+): Record<string, unknown> {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: items.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: serviceMisdiagnosisAnswerText(item),
+      },
+    })),
   };
 }
