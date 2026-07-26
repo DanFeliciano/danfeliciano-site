@@ -1,9 +1,9 @@
 import Link from "next/link";
 import { Container } from "@/components/layout/container";
 import { Section } from "@/components/layout/section";
-import { CtaButton } from "@/components/ui/cta-button";
 import { FinalCTA } from "@/components/ui/final-cta";
 import { PageHeader } from "@/components/ui/page-header";
+import { pageHeroes } from "@/content/page-heroes";
 import { createMetadata } from "@/lib/seo";
 
 export const metadata = createMetadata({
@@ -82,19 +82,7 @@ function ScanList({
 export default function PolicyImpactAnalysisPage() {
   return (
     <main id="main-content">
-      <PageHeader
-        subhead="A bill is not just a bill. It is a cost structure, workflow, compliance burden, and accountability system."
-        title="Policy Impact Analysis"
-      >
-        <div className="flex flex-col gap-3 sm:flex-row">
-          <CtaButton className="w-full sm:w-auto" href="/contact">
-            Request a Policy Impact Briefing
-          </CtaButton>
-          <CtaButton className="w-full sm:w-auto" href="/contact" variant="secondary">
-            Book a Strategic Forensics Briefing
-          </CtaButton>
-        </div>
-      </PageHeader>
+      <PageHeader {...pageHeroes["/policy-impact-analysis"]} />
 
       <Section className="bg-paper text-charcoal">
         <div className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">

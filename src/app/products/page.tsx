@@ -1,8 +1,8 @@
 import { Section } from "@/components/layout/section";
-import { CtaButton } from "@/components/ui/cta-button";
 import { FinalCTA } from "@/components/ui/final-cta";
 import { OfferCard } from "@/components/ui/offer-card";
 import { PageHeader } from "@/components/ui/page-header";
+import { pageHeroes } from "@/content/page-heroes";
 import { products } from "@/content/site";
 import { createMetadata } from "@/lib/seo";
 
@@ -16,25 +16,13 @@ export const metadata = createMetadata({
 const productPrinciples = [
   "Fixed-scope entry points for leaders who need the hidden risk before the larger move.",
   "Executive-ready outputs built around consequences, tradeoffs, and next actions.",
-  "Practical diagnostics that expose assumptions, weak data, costs, bottlenecks, and execution risk.",
+  "Practical diagnostics that expose assumptions, weak data, costs, constraints, and execution risk.",
 ];
 
 export default function ProductsPage() {
   return (
     <main id="main-content">
-      <PageHeader
-        subhead="Focused diagnostics, impact analysis, and briefings for leaders who need plain-English consequences before a bigger decision."
-        title="Briefings and diagnostics"
-      >
-        <div className="flex flex-col gap-3 sm:flex-row">
-          <CtaButton className="w-full sm:w-auto" href="/contact">
-            Book a Strategic Forensics Briefing
-          </CtaButton>
-          <CtaButton className="w-full sm:w-auto" href="/strategic-forensics" variant="secondary">
-            Explore Strategic Forensics
-          </CtaButton>
-        </div>
-      </PageHeader>
+      <PageHeader {...pageHeroes["/products"]} />
 
       <Section className="bg-paper text-charcoal">
         <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr]">
@@ -61,7 +49,11 @@ export default function ProductsPage() {
         </div>
       </Section>
 
-      <Section className="bg-white text-charcoal">
+      <Section
+        className="scroll-mt-24 bg-white text-charcoal"
+        id="focused-diagnostics"
+        tabIndex={-1}
+      >
         <div className="max-w-3xl">
           <h2 className="text-balance text-3xl font-black tracking-normal sm:text-4xl">
             Fixed-scope ways to find the risk

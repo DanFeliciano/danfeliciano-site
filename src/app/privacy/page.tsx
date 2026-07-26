@@ -1,9 +1,9 @@
 import Link from "next/link";
 import { Container } from "@/components/layout/container";
 import { Section } from "@/components/layout/section";
-import { CtaButton } from "@/components/ui/cta-button";
 import { FinalCTA } from "@/components/ui/final-cta";
 import { PageHeader } from "@/components/ui/page-header";
+import { pageHeroes } from "@/content/page-heroes";
 import { site } from "@/content/site";
 import type { SiteRoute } from "@/lib/routes";
 import { createMetadata } from "@/lib/seo";
@@ -48,16 +48,13 @@ const relatedLinks = [
 export default function PrivacyPage() {
   return (
     <main id="main-content">
-      <PageHeader
-        subhead="A plain-language summary of how inquiry information is collected and used on this website."
-        title="Privacy Policy"
-      >
-        <CtaButton href="/contact" variant="secondary">
-          Send a Privacy Question
-        </CtaButton>
-      </PageHeader>
+      <PageHeader {...pageHeroes["/privacy"]} />
 
-      <Section className="bg-paper text-charcoal">
+      <Section
+        className="scroll-mt-24 bg-paper text-charcoal"
+        id="privacy-details"
+        tabIndex={-1}
+      >
         <div className="grid gap-4">
           {privacyItems.map((item) => (
             <section

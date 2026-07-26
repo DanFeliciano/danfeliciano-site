@@ -87,7 +87,7 @@ export function MobileNav() {
             href="/contact"
             onClick={closeNavigation}
           >
-            Find My Bottleneck
+            Make the System Visible
           </CtaButton>
         </div>
       ) : null}

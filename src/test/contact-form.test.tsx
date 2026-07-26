@@ -44,7 +44,7 @@ describe("ContactForm", () => {
     ).toHaveAttribute("aria-describedby", "consent-error");
   });
 
-  it("renders the bottleneck diagnostic contact fields", () => {
+  it("renders the operational visibility diagnostic contact fields", () => {
     render(<ContactForm />);
 
     for (const label of [

@@ -38,9 +38,15 @@ describe("supporting page content", () => {
 
   it("renders supporting page H1s", () => {
     const pages = [
-      { component: AcademyPage, h1: "Train your team to fix work." },
-      { component: ResultsPage, h1: "Results" },
-      { component: SpeakingPage, h1: "Speaking & Workshops" },
+      { component: AcademyPage, h1: "Teach your team to see and fix the system." },
+      {
+        component: ResultsPage,
+        h1: "Results that show up in cash, capacity, speed and control.",
+      },
+      {
+        component: SpeakingPage,
+        h1: "Give leaders a different way to see—and solve—the problem.",
+      },
     ] as const;
 
     for (const page of pages) {
@@ -55,9 +61,18 @@ describe("supporting page content", () => {
 
   it("renders course page H1s", () => {
     const pages = [
-      { component: YellowBeltCoursePage, h1: "Lean Six Sigma + AI Yellow Belt" },
-      { component: GreenBeltCoursePage, h1: "Lean Six Sigma + AI Green Belt" },
-      { component: BlackBeltCoursePage, h1: "Lean Six Sigma + AI Black Belt" },
+      {
+        component: YellowBeltCoursePage,
+        h1: "Give the team a practical way to see and improve work.",
+      },
+      {
+        component: GreenBeltCoursePage,
+        h1: "Lead improvement projects that change the work.",
+      },
+      {
+        component: BlackBeltCoursePage,
+        h1: "Lead complex improvement without losing the operation.",
+      },
     ] as const;
 
     for (const page of pages) {

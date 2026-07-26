@@ -202,9 +202,8 @@ export function ContactForm() {
             What is getting stuck, delayed, missed, or repeated?
           </label>
           <p className="mt-2 text-sm leading-6 text-slate-600" id="problem-help">
-            A few sentences are enough. Describe the work, follow-up,
-            decision, customer issue, backlog, or manual task that keeps
-            causing friction.
+            What is happening, what have you already tried, and what
+            consequence is becoming difficult to ignore?
           </p>
           <textarea
             aria-describedby={

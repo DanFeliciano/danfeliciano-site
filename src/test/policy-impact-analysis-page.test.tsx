@@ -11,12 +11,12 @@ describe("Policy Impact Analysis page", () => {
     expect(
       screen.getByRole("heading", {
         level: 1,
-        name: "Policy Impact Analysis",
+        name: "See what the policy changes in the real operation.",
       }),
     ).toBeInTheDocument();
     expect(
       screen.getByText(
-        "A bill is not just a bill. It is a cost structure, workflow, compliance burden, and accountability system.",
+        /Translate the bill, rule or proposal into costs, workflows/,
       ),
     ).toBeInTheDocument();
     expect(
@@ -72,9 +72,9 @@ describe("Policy Impact Analysis page", () => {
     ).toEqual(["/contact", "/contact"]);
     expect(
       screen.getByRole("link", {
-        name: "Book a Strategic Forensics Briefing",
+        name: "Explore Policy Forensics",
       }),
-    ).toHaveAttribute("href", "/contact");
+    ).toHaveAttribute("href", "/policy-forensics");
     expect(metadata.alternates).toEqual({
       canonical: "https://danfeliciano.com/policy-impact-analysis",
     });

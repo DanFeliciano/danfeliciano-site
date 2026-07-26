@@ -9,11 +9,13 @@ describe("Service Reimagined / Backlog Kill page", () => {
     expect(
       screen.getByRole("heading", {
         level: 1,
-        name: "Service Reimagined / Backlog Kill",
+        name: "Diagnose why the backlog keeps growing before adding people.",
       }),
     ).toBeInTheDocument();
     expect(
-      screen.getByText("Backlogs are rarely just staffing problems."),
+      screen.getByText(
+        /Expose aging work, demand and capacity, broken handoffs/,
+      ),
     ).toBeInTheDocument();
     expect(
       screen.getByText(/Backlogs grow when organizations cannot see the work/),
@@ -68,12 +70,12 @@ describe("Service Reimagined / Backlog Kill page", () => {
       screen
         .getAllByRole("link", { name: "Diagnose the Backlog" })
         .map((link) => link.getAttribute("href")),
-    ).toEqual(["/contact", "/contact"]);
+    ).toEqual(["/backlog-kill-kit", "/contact"]);
     expect(
       screen.getByRole("link", {
-        name: "Book a Strategic Forensics Briefing",
+        name: "Start an Operations Reset",
       }),
-    ).toHaveAttribute("href", "/contact");
+    ).toHaveAttribute("href", "/operations-reset");
     expect(metadata.alternates).toEqual({
       canonical: "https://danfeliciano.com/backlog-kill",
     });

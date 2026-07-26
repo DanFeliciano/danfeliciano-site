@@ -1,9 +1,9 @@
 import Link from "next/link";
 import { Container } from "@/components/layout/container";
 import { Section } from "@/components/layout/section";
-import { CtaButton } from "@/components/ui/cta-button";
 import { FinalCTA } from "@/components/ui/final-cta";
 import { PageHeader } from "@/components/ui/page-header";
+import { pageHeroes } from "@/content/page-heroes";
 import { createMetadata } from "@/lib/seo";
 
 export const metadata = createMetadata({
@@ -82,19 +82,7 @@ function BulletGrid({ items }: { items: readonly string[] }) {
 export default function StrategicForensicsPage() {
   return (
     <main id="main-content">
-      <PageHeader
-        subhead="Find what others miss before it becomes expensive."
-        title="Strategic Forensics"
-      >
-        <div className="flex flex-col gap-3 sm:flex-row">
-          <CtaButton className="w-full sm:w-auto" href="/contact">
-            Book a Strategic Forensics Briefing
-          </CtaButton>
-          <CtaButton className="w-full sm:w-auto" href="/contact" variant="secondary">
-            Start a Conversation
-          </CtaButton>
-        </div>
-      </PageHeader>
+      <PageHeader {...pageHeroes["/strategic-forensics"]} />
 
       <Section className="bg-paper text-charcoal">
         <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
@@ -144,7 +132,11 @@ export default function StrategicForensicsPage() {
         </div>
       </Section>
 
-      <Section className="bg-white text-charcoal">
+      <Section
+        className="scroll-mt-24 bg-white text-charcoal"
+        id="forensic-targets"
+        tabIndex={-1}
+      >
         <div className="grid gap-8 lg:grid-cols-[0.75fr_1.25fr]">
           <div>
             <h2 className="text-balance text-3xl font-black tracking-normal sm:text-4xl">

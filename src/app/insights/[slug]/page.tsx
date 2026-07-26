@@ -10,6 +10,7 @@ import { Breadcrumbs } from "@/components/ui/breadcrumbs";
 import { CtaButton } from "@/components/ui/cta-button";
 import { JsonLd } from "@/components/ui/json-ld";
 import { getPublishedInsight, publishedInsights } from "@/content/insights";
+import { pageHeroes } from "@/content/page-heroes";
 import {
   articleJsonLd,
   breadcrumbListJsonLd,
@@ -52,12 +53,14 @@ export default async function InsightArticlePage({ params }: ArticlePageProps) {
     article.title,
     article.subtitle,
   );
+  const hero =
+    pageHeroes["/insights/your-ai-isnt-broken-your-business-is-invisible"];
 
   return (
     <main id="main-content">
       <Breadcrumbs items={breadcrumbs} />
 
-      <header className="bg-ink py-14 text-white sm:py-18 lg:py-20">
+      <header className="bg-ink py-10 text-white sm:py-12 lg:py-14">
         <Container>
           <div className="mx-auto max-w-4xl">
             <p className="text-xs font-black uppercase tracking-[0.12em] text-signal">
@@ -81,11 +84,32 @@ export default async function InsightArticlePage({ params }: ArticlePageProps) {
               <span aria-hidden="true"> · </span>
               {article.readTime}
             </p>
+            <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+              <CtaButton
+                className="w-full sm:w-auto"
+                href={hero.primaryAction.href}
+              >
+                {hero.primaryAction.label}
+              </CtaButton>
+              {hero.secondaryAction ? (
+                <CtaButton
+                  className="w-full sm:w-auto"
+                  href={hero.secondaryAction.href}
+                  variant="secondary"
+                >
+                  {hero.secondaryAction.label}
+                </CtaButton>
+              ) : null}
+            </div>
           </div>
         </Container>
       </header>
 
-      <section className="bg-paper py-14 text-charcoal sm:py-20">
+      <section
+        className="scroll-mt-24 bg-paper py-14 text-charcoal sm:py-20"
+        id="article-body"
+        tabIndex={-1}
+      >
         <Container>
           <article className="mx-auto max-w-[46rem]">
             <ArticleBody blocks={bodyBlocks} />

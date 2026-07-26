@@ -1,6 +1,7 @@
 import { Section } from "@/components/layout/section";
 import { FinalCTA } from "@/components/ui/final-cta";
 import { PageHeader } from "@/components/ui/page-header";
+import { pageHeroes } from "@/content/page-heroes";
 import { speakingTopics } from "@/content/site";
 import { createMetadata } from "@/lib/seo";
 
@@ -24,10 +25,7 @@ const formats = [
 export default function SpeakingPage() {
   return (
     <main id="main-content">
-      <PageHeader
-        subhead="Practical, high-energy sessions on operational excellence, AI, strategy, analytics, and execution."
-        title="Speaking & Workshops"
-      />
+      <PageHeader {...pageHeroes["/speaking"]} />
 
       <Section className="bg-paper text-charcoal">
         <div className="max-w-3xl">
@@ -100,7 +98,7 @@ export default function SpeakingPage() {
 
       <FinalCTA
         body="Bring Dan in for a keynote, workshop, executive briefing, or team session that makes strategy, AI, and operational excellence useful."
-        cta="Book Dan for an Event"
+        cta="Invite Dan to Speak"
         href="/contact"
         title="Need a practical session for your audience?"
       />

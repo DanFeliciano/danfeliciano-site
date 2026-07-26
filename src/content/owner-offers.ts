@@ -1,6 +1,7 @@
 import type { SiteRoute } from "@/lib/routes";
 
 export type OfferSection = {
+  id?: string;
   eyebrow?: string;
   title: string;
   body?: string;
@@ -57,38 +58,52 @@ export const ownerOffers = [
     primaryCta: "Start an Operational Visibility Diagnostic",
     sections: [
       {
-        title: "Common problems",
+        id: "common-problems",
+        title: "Which of these sounds familiar?",
+        body: "Start with the symptom you can see. Dan will trace it to the work, decision, information, constraint, ownership gap or financial consequence underneath it.",
         cards: [
           {
             title: "Work is piling up",
-            body: "Backlog, aging tasks, missed handoffs, and work that keeps getting stuck.",
+            body: "Backlogs, aging tasks, missed handoffs and work that keeps getting stuck.",
+            href: "/backlog-kill-kit",
+            cta: "Diagnose the Backlog",
           },
           {
             title: "Follow-up is inconsistent",
-            body: "Leads, customers, internal requests, or open issues are slipping through the cracks.",
+            body: "Leads, customers, internal requests and unresolved issues are slipping through the cracks.",
+            href: "/contact",
+            cta: "Fix Follow-Up",
           },
           {
-            title: "The owner is the bottleneck",
-            body: "Too many approvals, reminders, decisions, and escalations depend on one person.",
+            title: "Everything depends on the owner",
+            body: "Too many approvals, reminders, decisions and escalations depend on one person.",
+            href: "/owner-operating-system",
+            cta: "Build an Owner Operating System",
           },
           {
-            title: "Staff are overloaded",
-            body: "Teams are busy, but too much time is spent on rework, manual steps, and status chasing.",
+            title: "The team is overloaded",
+            body: "People are busy, but too much capacity disappears into rework, manual steps, status chasing and changing priorities.",
+            href: "/operations-reset",
+            cta: "Start an Operations Reset",
           },
           {
             title: "Reporting takes too much time",
-            body: "Leaders spend too much effort preparing updates and not enough time making decisions.",
+            body: "Leaders spend more time preparing updates than understanding what the numbers require them to do.",
+            href: "/ai-time-saver-sprint",
+            cta: "Find Time-Saving Automation",
           },
           {
             title: "AI sounds useful, but the right use case is unclear",
-            body: "You know AI could help, but you need to know where it will actually save time or improve work.",
+            body: "You know AI could help, but not where it will save meaningful time or improve the work.",
+            href: "/ai-time-saver-sprint",
+            cta: "Find the Right AI Use Case",
           },
         ],
       },
       {
         eyebrow: "The problem is visible. The system usually isn’t.",
-        title: "See why the same problems keep coming back.",
-        body: "Hiring another person, installing another tool or asking the team to work harder may temporarily relieve the pressure without changing the system producing it. Operational Visibility connects the symptoms across work, decisions, information, constraints, risk and cash so leadership can act on the cause rather than repeatedly treating the consequence.",
+        title: "See why the same problem keeps coming back.",
+        body: "Hiring another person, adding another meeting, installing another tool or asking everyone to work harder may relieve the pressure without changing the system producing it. Operational Visibility connects the symptoms across work, decisions, information, constraints, risk and cash so leadership can act on the cause rather than repeatedly treating the consequence.",
       },
       {
         title: "How Dan helps",
@@ -99,15 +114,19 @@ export const ownerOffers = [
           },
           {
             title: "Expose the cause",
-            body: "Connect decisions, information, ownership, constraints, risk and cash consequences to the visible problem.",
+            body: "Connect decisions, information, ownership, constraints, risk and financial consequences to the visible problem.",
           },
           {
             title: "Fix the system",
-            body: "Remove unnecessary work, clarify ownership, improve flow, strengthen decisions and create the controls needed to keep the problem from returning.",
+            body: "Remove unnecessary work, clarify ownership, improve flow and strengthen the decisions and controls that keep the problem from returning.",
           },
           {
             title: "Automate the right work",
             body: "Apply AI, automation, analytics, Lean Six Sigma, training or strategy only after the underlying work is understood.",
+          },
+          {
+            title: "Build the operating rhythm",
+            body: "Install the measures, ownership, escalation and follow-up routines required to sustain the result.",
           },
         ],
       },
@@ -403,7 +422,7 @@ export const ownerOffers = [
         "Build clearer priorities, better follow-up, simple metrics, decision rules, and a weekly rhythm so the business does not depend on constant owner intervention.",
     },
     subhead:
-      "For owners who are tired of being the bottleneck, reminder system, traffic cop, and final decision point for everything.",
+      "For owners who are tired of being the operating system, reminder system, traffic cop, and final decision point for everything.",
     intro: [
       "A business gets easier to run when people know what matters, what to measure, who owns what, when decisions get made, and how follow-up happens.",
       "The Owner Operating System creates a simple rhythm for priorities, metrics, meetings, decisions, and accountability so the business does not depend on constant chasing.",

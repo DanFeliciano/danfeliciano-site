@@ -17,7 +17,7 @@ type FooterExternalLink = {
 type FooterLink = FooterInternalLink | FooterExternalLink;
 
 const expertise = [
-  "Find bottlenecks",
+  "Make hidden work visible",
   "Recover lost time",
   "Improve follow-up",
   "Automate the right work",

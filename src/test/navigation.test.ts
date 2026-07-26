@@ -23,7 +23,7 @@ describe("navigation", () => {
     render(createElement(SiteHeader));
 
     const diagnosticLinks = screen.getAllByRole("link", {
-      name: "Find My Bottleneck",
+      name: "Make the System Visible",
     });
 
     expect(diagnosticLinks.length).toBeGreaterThan(0);
@@ -67,7 +67,7 @@ describe("navigation", () => {
     }
 
     const diagnosticLink = screen.getByRole("link", {
-      name: "Find My Bottleneck",
+      name: "Make the System Visible",
     });
 
     expect(

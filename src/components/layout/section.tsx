@@ -1,9 +1,7 @@
-import type { ReactNode } from "react";
+import type { ComponentPropsWithoutRef } from "react";
 import { Container } from "./container";
 
-type SectionProps = {
-  children: ReactNode;
-  className?: string;
+type SectionProps = ComponentPropsWithoutRef<"section"> & {
   containerClassName?: string;
 };
 
@@ -11,9 +9,10 @@ export function Section({
   children,
   className = "",
   containerClassName = "",
+  ...props
 }: SectionProps) {
   return (
-    <section className={`py-16 sm:py-20 ${className}`}>
+    <section className={`py-16 sm:py-20 ${className}`} {...props}>
       <Container className={containerClassName}>{children}</Container>
     </section>
   );

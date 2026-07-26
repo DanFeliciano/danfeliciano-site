@@ -79,6 +79,21 @@ describe("Point of View publishing", () => {
   it("features the published article before the unlinked field notes", () => {
     render(<InsightsPage />);
 
+    expect(
+      screen.getByRole("heading", {
+        level: 1,
+        name: "The visible problem is rarely the whole problem.",
+      }),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole("link", {
+        name: "Read the Featured Point of View",
+      }),
+    ).toHaveAttribute("href", articlePath);
+    expect(
+      screen.getByRole("link", { name: "Explore All Insights" }),
+    ).toHaveAttribute("href", "#insights-index");
+
     const featuredLink = screen.getByRole("link", {
       name: `Read the Point of View: ${articleTitle}`,
     });
@@ -87,6 +102,7 @@ describe("Point of View publishing", () => {
     expect(featuredLink).toHaveTextContent("OPERATIONAL VISIBILITY");
     expect(featuredLink).toHaveTextContent(articleTitle);
     expect(featuredLink).toHaveTextContent("July 26, 2026");
+    expect(featuredLink).toHaveTextContent("Dan Feliciano");
     expect(featuredLink).toHaveTextContent("6-minute read");
     expect(featuredLink).toHaveTextContent("Read the Point of View");
 
@@ -94,6 +110,10 @@ describe("Point of View publishing", () => {
       level: 2,
       name: "Field notes on stuck work",
     });
+    expect(fieldNotesHeading.closest("section")).toHaveAttribute(
+      "id",
+      "insights-index",
+    );
     expect(
       featuredLink.compareDocumentPosition(fieldNotesHeading) &
         Node.DOCUMENT_POSITION_FOLLOWING,
@@ -168,6 +188,13 @@ describe("Point of View publishing", () => {
     expect(screen.getByText("The Visibility Thesis")).toBeInTheDocument();
     expect(screen.getByText("POINT OF VIEW #1")).toBeInTheDocument();
     expect(container.querySelector("article")).toBeInTheDocument();
+    expect(
+      screen.getByRole("link", { name: "Read the Point of View" }),
+    ).toHaveAttribute("href", "#article-body");
+    expect(
+      screen.getByRole("link", { name: "Explore All Insights" }),
+    ).toHaveAttribute("href", "/insights");
+    expect(container.querySelector("#article-body")).toBeInTheDocument();
 
     const breadcrumb = screen.getByRole("navigation", {
       name: "Breadcrumb",
