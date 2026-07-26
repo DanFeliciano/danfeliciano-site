@@ -12,7 +12,16 @@ function OfferSectionBlock({ section }: { section: OfferSection }) {
     <Section className="bg-paper text-charcoal">
       <div className="grid gap-8 lg:grid-cols-[0.72fr_1.28fr]">
         <div>
-          <h2 className="text-balance text-3xl font-black tracking-normal sm:text-4xl">
+          {section.eyebrow ? (
+            <p className="text-xs font-black uppercase tracking-[0.12em] text-slate-500">
+              {section.eyebrow}
+            </p>
+          ) : null}
+          <h2
+            className={`text-balance text-3xl font-black tracking-normal sm:text-4xl ${
+              section.eyebrow ? "mt-3" : ""
+            }`}
+          >
             {section.title}
           </h2>
           {section.body ? (

@@ -9,11 +9,20 @@ import type { SiteRoute } from "@/lib/routes";
 import { createMetadata } from "@/lib/seo";
 
 export const metadata = createMetadata({
-  title: "Dan Feliciano | Fix What Is Slowing Your Business Down",
+  title: "Dan Feliciano | Operational Visibility for Owners and Operators",
   description:
-    "Dan Feliciano helps owners and operators make better decisions, understand financial exposure, fix broken work, turn data into action, and automate the right work.",
+    "See how work, decisions, information, constraints, risk and cash move through your business—then fix the system and automate the right work.",
   path: "/",
 });
+
+const operationalVisibilityElements = [
+  "Work",
+  "Decisions",
+  "Information",
+  "Constraints",
+  "Risk",
+  "Cash",
+] as const;
 
 const painPoints = [
   {
@@ -86,30 +95,72 @@ export default function HomePage() {
         <Container>
           <div className="grid min-w-0 gap-5 py-6 sm:gap-8 sm:py-10 lg:grid-cols-[1.08fr_0.92fr] lg:items-center lg:py-12">
             <div className="min-w-0">
+              <p className="mb-3 text-xs font-black uppercase tracking-[0.12em] text-signal">
+                Operational Visibility for owners and operators
+              </p>
               <h1 className="max-w-4xl text-balance text-[1.95rem] font-black leading-[2.3rem] tracking-normal sm:text-5xl sm:leading-tight">
                 {homepage.title}
               </h1>
               <p className="mt-4 max-w-3xl text-base font-semibold leading-7 text-slate-200 sm:mt-5 sm:text-lg sm:leading-8">
                 {homepage.subhead}
               </p>
-              <p className="mt-4 hidden max-w-2xl text-base leading-7 text-slate-300 sm:block">
+              <p className="mt-4 max-w-2xl text-base leading-7 text-slate-300">
                 {homepage.body}
               </p>
               <div className="mt-5 flex flex-col gap-3 sm:mt-7 sm:flex-row">
-                <CtaButton className="w-full sm:w-auto" href="/services">
-                  Explore How I Help
+                <CtaButton className="w-full sm:w-auto" href="/contact">
+                  Start with an Operational Visibility Diagnostic
                 </CtaButton>
                 <CtaButton
                   className="w-full sm:w-auto"
-                  href="/contact"
+                  href="/what-i-fix"
                   variant="secondary"
                 >
-                  Start with a Diagnostic
+                  Explore What I Fix
                 </CtaButton>
               </div>
             </div>
 
             <OperatingCommandVisual />
+          </div>
+        </Container>
+      </section>
+
+      <section
+        aria-labelledby="operational-visibility-heading"
+        className="bg-paper py-12 text-charcoal sm:py-14"
+      >
+        <Container>
+          <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
+            <div className="max-w-3xl">
+              <p className="text-xs font-black uppercase tracking-[0.12em] text-slate-500">
+                See the system behind the symptoms
+              </p>
+              <h2
+                className="mt-3 text-balance text-3xl font-black tracking-normal sm:text-4xl"
+                id="operational-visibility-heading"
+              >
+                Make the business visible before trying to fix it.
+              </h2>
+              <p className="mt-4 text-base leading-7 text-slate-600">
+                Operational Visibility shows how work, decisions, information,
+                constraints, risk and cash actually move through the business.
+                It helps leaders separate visible symptoms from the operating
+                system producing them—before adding people, software, automation
+                or another improvement initiative—so they can fix the system and
+                automate intelligently.
+              </p>
+            </div>
+            <ul className="grid grid-cols-2 gap-3 sm:grid-cols-3">
+              {operationalVisibilityElements.map((element) => (
+                <li
+                  className="rounded-lg border border-slate-200 bg-white px-4 py-3 text-sm font-black text-charcoal"
+                  key={element}
+                >
+                  {element}
+                </li>
+              ))}
+            </ul>
           </div>
         </Container>
       </section>
@@ -127,8 +178,8 @@ export default function HomePage() {
               <p className="mt-4 text-base leading-7 text-slate-600">
                 Start with the decision, financial concern, broken workflow,
                 weak signal, or repeated task creating the most risk or drag.
-                Then choose the smallest practical intervention that changes
-                the result.
+                Then choose the smallest practical intervention that changes the
+                result.
               </p>
             </div>
             <CtaButton className="w-full lg:w-auto" href="/services">
@@ -173,9 +224,9 @@ export default function HomePage() {
               Choose the problem you want to solve first.
             </h2>
             <p className="mt-4 text-base leading-7 text-slate-600">
-              You do not need to diagnose the method. Start with the pain you
-              can see or feel, and we will trace it to the right decision,
-              analysis, operating fix, measure, or automation path.
+              Start with the problem you can see. Operational Visibility traces
+              it to the work, decision, information, constraint or financial
+              consequence underneath it.
             </p>
           </div>
           <div className="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
@@ -236,7 +287,10 @@ export default function HomePage() {
                     : pillar.startingPoint.summary}
                 </p>
                 <div className="mt-auto pt-5">
-                  <CtaButton className="w-full" href={pillar.startingPoint.href}>
+                  <CtaButton
+                    className="w-full"
+                    href={pillar.startingPoint.href}
+                  >
                     {pillar.startingPoint.cta}
                   </CtaButton>
                   {pillar.id === "operational-recovery" ? (
@@ -265,10 +319,9 @@ export default function HomePage() {
                 Practical experience. Measurable work.
               </h2>
               <p className="mt-4 text-base leading-7 text-slate-600">
-                The proof should show up in better decisions and in how the
-                work moves: fewer delays, clearer follow-up, simpler
-                reporting, better service, and more capacity to solve the
-                right problems.
+                The proof should show up in better decisions and in how the work
+                moves: fewer delays, clearer follow-up, simpler reporting,
+                better service, and more capacity to solve the right problems.
               </p>
               <CtaButton className="mt-6" href="/results">
                 See Results
@@ -307,7 +360,8 @@ export default function HomePage() {
           <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr]">
             <div>
               <h2 className="text-balance text-3xl font-black tracking-normal sm:text-4xl">
-                Strategy is not a slide deck. It is knowing what to say yes and no to.
+                Strategy is not a slide deck. It is knowing what to say yes and
+                no to.
               </h2>
               <p className="mt-4 text-base leading-7 text-slate-600">
                 Most businesses do not struggle because they lack goals. They
@@ -378,8 +432,8 @@ export default function HomePage() {
       </section>
 
       <FinalCTA
-        body="Start with the decision, financial concern, broken workflow, weak signal, or repeated task creating the most risk or drag."
-        cta="Start with a Diagnostic"
+        body="Start with the problem you can feel. The Operational Visibility Diagnostic shows what deserves action first."
+        cta="Start an Operational Visibility Diagnostic"
         href="/contact"
         title="Ready to make the next problem easier to see and fix?"
       />

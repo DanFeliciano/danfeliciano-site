@@ -11,7 +11,8 @@ import {
 import { site } from "@/content/site";
 import "./globals.css";
 
-const defaultTitle = "Dan Feliciano | Fix What Is Slowing Your Business Down";
+const defaultTitle =
+  "Dan Feliciano | Operational Visibility for Owners and Operators";
 const defaultDescription = site.description;
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -44,7 +45,7 @@ export async function generateMetadata(): Promise<Metadata> {
           url: socialImage,
           width: 1200,
           height: 630,
-          alt: "Dan Feliciano Fix What Is Slowing Your Business Down social preview",
+          alt: "Dan Feliciano Operational Visibility for owners and operators social preview",
         },
       ],
     },
@@ -57,7 +58,11 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="en">
       <body>

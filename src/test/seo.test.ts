@@ -8,7 +8,7 @@ import { legacyRedirects, requiredRoutes } from "@/lib/routes";
 import { absoluteUrl, createMetadata, socialImage } from "@/lib/seo";
 
 const homepageSocialDescription =
-  "Dan Feliciano helps owners and operators make better decisions, understand financial exposure, fix broken work, turn data into action, and automate the right work.";
+  "See how work, decisions, information, constraints, risk and cash move through your business—then fix the system and automate the right work.";
 
 describe("seo helpers", () => {
   it("creates canonical absolute URLs", () => {
@@ -56,7 +56,7 @@ describe("seo helpers", () => {
     expect(homepageMetadata.openGraph).toMatchObject({
       description: homepageSocialDescription,
       images: [socialImage],
-      title: "Dan Feliciano | Fix What Is Slowing Your Business Down",
+      title: "Dan Feliciano | Operational Visibility for Owners and Operators",
       url: "https://danfeliciano.com/",
       type: "website",
     });
@@ -66,7 +66,7 @@ describe("seo helpers", () => {
       description: homepageSocialDescription,
       images: [socialImage.url],
       site: "@DanFeliciano",
-      title: "Dan Feliciano | Fix What Is Slowing Your Business Down",
+      title: "Dan Feliciano | Operational Visibility for Owners and Operators",
     });
     expect(homepageMetadata.robots).toEqual({
       index: true,

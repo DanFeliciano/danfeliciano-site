@@ -13,7 +13,7 @@ export const socialImage = {
   url: "/og.png",
   width: 1200,
   height: 630,
-  alt: "Dan Feliciano Fix What Is Slowing Your Business Down social preview",
+  alt: "Dan Feliciano Operational Visibility for owners and operators social preview",
 };
 
 export type BreadcrumbJsonLdItem = {
@@ -76,6 +76,7 @@ export function personJsonLd() {
     email: site.email,
     sameAs: site.socialLinks.map((link) => link.href),
     knowsAbout: [
+      "Operational Visibility",
       "Bottleneck diagnosis",
       "Backlog reduction",
       "AI and automation",
@@ -136,9 +137,7 @@ export function academyCourseItemListJsonLd(
   };
 }
 
-export function breadcrumbListJsonLd(
-  items: readonly BreadcrumbJsonLdItem[],
-) {
+export function breadcrumbListJsonLd(items: readonly BreadcrumbJsonLdItem[]) {
   return {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",

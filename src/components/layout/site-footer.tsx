@@ -45,7 +45,7 @@ const footerColumns: { title: string; links: FooterLink[] }[] = [
       { label: "Backlog Kill Kit", href: "/backlog-kill-kit" },
       { label: "90-Day Operations Reset", href: "/operations-reset" },
       { label: "Owner Operating System", href: "/owner-operating-system" },
-      { label: "Bottleneck Diagnostic", href: "/contact" },
+      { label: "Operational Visibility Diagnostic", href: "/contact" },
       { label: "Policy Forensics", href: "/policy-forensics" },
     ],
   },
@@ -67,9 +67,15 @@ export function SiteFooter() {
       <Container>
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-[1.1fr_repeat(3,1fr)]">
           <div>
-            <Link className="text-lg font-black text-white hover:text-signal" href="/">
+            <Link
+              className="text-lg font-black text-white hover:text-signal"
+              href="/"
+            >
               {site.name}
             </Link>
+            <p className="mt-3 text-sm font-bold text-signal">
+              Operational Visibility for owners and operators
+            </p>
             <ul className="mt-5 grid gap-2 text-sm font-semibold text-white/70">
               {expertise.map((item) => (
                 <li key={item}>{item}</li>
@@ -89,13 +95,22 @@ export function SiteFooter() {
                       <a
                         className="transition hover:text-signal"
                         href={item.href}
-                        rel={item.href.startsWith("mailto:") ? undefined : "noopener noreferrer"}
-                        target={item.href.startsWith("mailto:") ? undefined : "_blank"}
+                        rel={
+                          item.href.startsWith("mailto:")
+                            ? undefined
+                            : "noopener noreferrer"
+                        }
+                        target={
+                          item.href.startsWith("mailto:") ? undefined : "_blank"
+                        }
                       >
                         {item.label}
                       </a>
                     ) : (
-                      <Link className="transition hover:text-signal" href={item.href}>
+                      <Link
+                        className="transition hover:text-signal"
+                        href={item.href}
+                      >
                         {item.label}
                       </Link>
                     )}

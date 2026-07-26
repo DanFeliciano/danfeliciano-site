@@ -1,6 +1,7 @@
 import type { SiteRoute } from "@/lib/routes";
 
 export type OfferSection = {
+  eyebrow?: string;
   title: string;
   body?: string;
   items?: readonly string[];
@@ -44,73 +45,69 @@ export const ownerOffers = [
     metadata: {
       title: "What I Fix | Dan Feliciano",
       description:
-        "Practical help for business owners and operators dealing with stuck work, backlog, wasted time, missed follow-up, manual work, owner bottlenecks, and AI confusion.",
+        "See the system behind stuck work, missed follow-up, overloaded employees, confusing numbers, cash pressure, and owner dependency—then decide what to fix first.",
     },
     subhead:
-      "Practical help for the work that keeps getting stuck, slowed down, repeated, missed, or routed through the owner.",
+      "Start with the problem you can see. Then expose the system producing it.",
     intro: [
-      "Most business problems do not show up as strategy problems. They show up as slow work, missed follow-up, staff overload, unclear priorities, customer delays, manual reporting, and too many decisions running through the owner.",
-      "Dan helps find where the work is getting stuck, fix the system underneath it, and apply AI, automation, Lean Six Sigma, analytics, training, or strategy only where they create practical value.",
+      "Most business problems do not first appear as strategy problems. They appear as stuck work, missed follow-up, overloaded employees, unclear priorities, customer delays, confusing numbers, cash pressure and too many decisions running through the owner.",
+      "These are visible symptoms. Operational Visibility reveals the system underneath them—how the work moves, where decisions and information break down, what is limiting performance, where risk is accumulating and what should be fixed first.",
+      "Dan then applies process redesign, financial analysis, AI, automation, analytics, Lean Six Sigma, training or strategy only where the evidence shows they will create practical value.",
     ],
-    primaryCta: "Find My Bottleneck",
+    primaryCta: "Start an Operational Visibility Diagnostic",
     sections: [
       {
         title: "Common problems",
         cards: [
           {
             title: "Work is piling up",
-            body:
-              "Backlog, aging tasks, missed handoffs, and work that keeps getting stuck.",
+            body: "Backlog, aging tasks, missed handoffs, and work that keeps getting stuck.",
           },
           {
             title: "Follow-up is inconsistent",
-            body:
-              "Leads, customers, internal requests, or open issues are slipping through the cracks.",
+            body: "Leads, customers, internal requests, or open issues are slipping through the cracks.",
           },
           {
             title: "The owner is the bottleneck",
-            body:
-              "Too many approvals, reminders, decisions, and escalations depend on one person.",
+            body: "Too many approvals, reminders, decisions, and escalations depend on one person.",
           },
           {
             title: "Staff are overloaded",
-            body:
-              "Teams are busy, but too much time is spent on rework, manual steps, and status chasing.",
+            body: "Teams are busy, but too much time is spent on rework, manual steps, and status chasing.",
           },
           {
             title: "Reporting takes too much time",
-            body:
-              "Leaders spend too much effort preparing updates and not enough time making decisions.",
+            body: "Leaders spend too much effort preparing updates and not enough time making decisions.",
           },
           {
             title: "AI sounds useful, but the right use case is unclear",
-            body:
-              "You know AI could help, but you need to know where it will actually save time or improve work.",
+            body: "You know AI could help, but you need to know where it will actually save time or improve work.",
           },
         ],
+      },
+      {
+        eyebrow: "The problem is visible. The system usually isn’t.",
+        title: "See why the same problems keep coming back.",
+        body: "Hiring another person, installing another tool or asking the team to work harder may temporarily relieve the pressure without changing the system producing it. Operational Visibility connects the symptoms across work, decisions, information, constraints, risk and cash so leadership can act on the cause rather than repeatedly treating the consequence.",
       },
       {
         title: "How Dan helps",
         cards: [
           {
-            title: "Find the friction",
-            body:
-              "Identify where time, money, customers, decisions, or work are getting stuck.",
+            title: "Make the work visible",
+            body: "Reconstruct how work actually moves, including the delays, handoffs, exceptions and workarounds that do not appear in the official process.",
+          },
+          {
+            title: "Expose the cause",
+            body: "Connect decisions, information, ownership, constraints, risk and cash consequences to the visible problem.",
           },
           {
             title: "Fix the system",
-            body:
-              "Redesign workflows, clarify ownership, remove waste, and reduce rework.",
+            body: "Remove unnecessary work, clarify ownership, improve flow, strengthen decisions and create the controls needed to keep the problem from returning.",
           },
           {
-            title: "Use the right tools",
-            body:
-              "Apply AI, automation, analytics, Lean Six Sigma, training, or strategy only where they fit the problem.",
-          },
-          {
-            title: "Build the rhythm",
-            body:
-              "Create simple metrics, follow-up routines, and decision habits that keep the business moving.",
+            title: "Automate the right work",
+            body: "Apply AI, automation, analytics, Lean Six Sigma, training or strategy only after the underlying work is understood.",
           },
         ],
       },
@@ -118,10 +115,10 @@ export const ownerOffers = [
         title: "Main offers",
         cards: [
           {
-            title: "Bottleneck Diagnostic",
-            body: "Start with a focused conversation about what is stuck.",
+            title: "Operational Visibility Diagnostic",
+            body: "See how critical work actually moves, where decisions and information break down, what is constraining performance, where risk or cash is accumulating, and what leadership should fix first.",
             href: "/contact",
-            cta: "Find My Bottleneck",
+            cta: "Make the System Visible",
           },
           {
             title: "Backlog Kill Kit",
@@ -157,10 +154,9 @@ export const ownerOffers = [
       },
     ],
     finalCta: {
-      title: "Ready to find what is slowing your business down?",
-      body:
-        "Start with a practical conversation about where work is stuck, what is costing time, and what to fix first.",
-      cta: "Find My Bottleneck",
+      title: "Ready to see what is really slowing the business down?",
+      body: "Start with the problem you can feel. The Operational Visibility Diagnostic traces it to the work, decisions, information, constraints, risk and financial consequences underneath it—and shows what deserves action first.",
+      cta: "Start an Operational Visibility Diagnostic",
       href: "/contact",
     },
   },
@@ -222,8 +218,7 @@ export const ownerOffers = [
       },
       {
         title: "Best fit",
-        body:
-          "Best for service operations, healthcare administration, customer support, case management, claims, billing, intake, review, approval, fulfillment, and other teams where work can pile up out of sight.",
+        body: "Best for service operations, healthcare administration, customer support, case management, claims, billing, intake, review, approval, fulfillment, and other teams where work can pile up out of sight.",
       },
     ],
     finalCta: {
@@ -304,8 +299,7 @@ export const ownerOffers = [
     ],
     method: {
       title: "Powered by 3AX",
-      body:
-        "Dan's 3AX method connects AI, automation, and analytics to real operational problems. The point is not to use AI everywhere. The point is to use it where it helps work move faster, better, or with less manual effort.",
+      body: "Dan's 3AX method connects AI, automation, and analytics to real operational problems. The point is not to use AI everywhere. The point is to use it where it helps work move faster, better, or with less manual effort.",
     },
     finalCta: {
       title: "Want to know where AI can actually save time?",
@@ -391,8 +385,7 @@ export const ownerOffers = [
     ],
     method: {
       title: "Powered by the Phoenix Protocol",
-      body:
-        "The Phoenix Protocol is Dan's method for stabilizing, improving, and sustaining operations that are stuck in firefighting mode. The name is the method; the outcome is a business that runs with less chaos.",
+      body: "The Phoenix Protocol is Dan's method for stabilizing, improving, and sustaining operations that are stuck in firefighting mode. The name is the method; the outcome is a business that runs with less chaos.",
     },
     finalCta: {
       title: "Ready to move from firefighting to control?",
@@ -459,8 +452,7 @@ export const ownerOffers = [
     ],
     method: {
       title: "Powered by AESOP",
-      body:
-        "Dan's AESOP method helps turn choices into execution: Assess, Establish, Synchronize, Operationalize, and Persist. In plain English, that means deciding what matters, building the rhythm to manage it, and making sure follow-through actually happens.",
+      body: "Dan's AESOP method helps turn choices into execution: Assess, Establish, Synchronize, Operationalize, and Persist. In plain English, that means deciding what matters, building the rhythm to manage it, and making sure follow-through actually happens.",
     },
     finalCta: {
       title: "Want the business to run with less chasing?",

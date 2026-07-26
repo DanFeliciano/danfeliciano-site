@@ -39,8 +39,11 @@ describe("offer routes", () => {
   });
 
   it("serves the Services page as a canonical route", () => {
+    const redirectSources: readonly string[] = legacyRedirects.map(
+      (redirect) => redirect.source,
+    );
+
     expect(requiredRoutes).toContain("/services");
-    expect(legacyRedirects.some((redirect) => redirect.source === "/services"))
-      .toBe(false);
+    expect(redirectSources).not.toContain("/services");
   });
 });

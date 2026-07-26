@@ -55,7 +55,7 @@ export const site = {
   name: "Dan Feliciano",
   url: "https://danfeliciano.com",
   description:
-    "Dan Feliciano helps owners and operators make better decisions, understand financial exposure, fix broken work, turn data into action, and automate the right work.",
+    "See how work, decisions, information, constraints, risk and cash move through your business—then fix the system and automate the right work.",
   email: "dan@danfeliciano.com",
   linkedIn: socialLinks[0].href,
   socialLinks,
@@ -73,9 +73,8 @@ export const navItems: LinkItem[] = [
 export const homepage = {
   title: "Fix what is slowing your business down.",
   subhead:
-    "I help owners and operators understand what the numbers are hiding, make better decisions, fix broken work, and use analytics, AI or automation where they create measurable value.",
-  body:
-    "Start with the decision, number, workflow, or repeated task creating risk or drag. Then determine what to fix, what to stop, what to measure, and where AI or automation actually helps.",
+    "Most leaders can see the symptoms—backlogs, delays, rework, weak follow-up, confusing numbers and cash pressure—but not the system producing them.",
+  body: "I make visible how work actually gets done, where decisions and information break down, what is constraining performance, and where risk and cash are accumulating. Then I help determine what to fix, what to stop, what to measure and what to automate.",
   proof: [
     "Clarify the decision",
     "Expose financial risk",
@@ -107,7 +106,7 @@ export type CapabilityPillar = {
   related?: readonly { label: string; href: SiteRoute }[];
 };
 
-export const capabilityPillars = [
+export const capabilityPillars: readonly CapabilityPillar[] = [
   {
     id: "strategic-exposure",
     title: "Strategic Exposure & Decision Planning",
@@ -263,7 +262,7 @@ export const capabilityPillars = [
       cta: "Find time-saving automation",
     },
   },
-] as const satisfies readonly CapabilityPillar[];
+] as const;
 
 export const services = [
   {
@@ -626,8 +625,7 @@ export const caseStudies = [
       "Leaders were spending too much time preparing updates and not enough time making decisions.",
     intervention:
       "KPI reporting, dashboards, and executive review routines were simplified and standardized.",
-    outcomes:
-      "Reduced reporting friction and improved decision support.",
+    outcomes: "Reduced reporting friction and improved decision support.",
   },
 ] as const;
 

@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const alt =
-  "Dan Feliciano Fix What Is Slowing Your Business Down social preview";
+  "Dan Feliciano Operational Visibility for owners and operators social preview";
 export const size = {
   width: 1200,
   height: 630,
@@ -35,7 +35,7 @@ export default function Image() {
             textTransform: "uppercase",
           }}
         >
-          Dan Feliciano
+          Operational Visibility · Dan Feliciano
         </div>
         <div style={{ display: "flex", flexDirection: "column", gap: 26 }}>
           <div
@@ -60,8 +60,8 @@ export default function Image() {
               maxWidth: 980,
             }}
           >
-            Find bottlenecks, recover lost time, improve follow-up, and use AI
-            or automation where it actually makes work easier.
+            See how work, decisions, information, constraints, risk and cash
+            move—then fix the system and automate the right work.
           </div>
         </div>
         <div
@@ -75,10 +75,10 @@ export default function Image() {
             paddingTop: 28,
           }}
         >
-          <span>Bottlenecks</span>
-          <span>Follow-up</span>
-          <span>Backlogs</span>
-          <span>Automation</span>
+          <span>Work</span>
+          <span>Decisions</span>
+          <span>Risk</span>
+          <span>Cash</span>
         </div>
       </div>
     ),

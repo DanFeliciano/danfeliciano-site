@@ -5,12 +5,15 @@ import HomePage from "@/app/page";
 import { capabilityPillars, homepage } from "@/content/site";
 
 describe("homepage content", () => {
-  it("uses the approved broad homepage positioning", () => {
+  it("uses the approved Operational Visibility positioning", () => {
     expect(homepage.title).toBe("Fix what is slowing your business down.");
     expect(homepage.subhead).toBe(
-      "I help owners and operators understand what the numbers are hiding, make better decisions, fix broken work, and use analytics, AI or automation where they create measurable value.",
+      "Most leaders can see the symptoms—backlogs, delays, rework, weak follow-up, confusing numbers and cash pressure—but not the system producing them.",
     );
-    expect(homepage.body).toContain("decision, number, workflow, or repeated task");
+    expect(homepage.body).toContain("how work actually gets done");
+    expect(homepage.body).toContain("decisions and information break down");
+    expect(homepage.body).toContain("risk and cash are accumulating");
+    expect(homepage.body).toContain("what to automate");
     expect(homepage.proof).toEqual([
       "Clarify the decision",
       "Expose financial risk",
@@ -31,24 +34,29 @@ describe("homepage content", () => {
 
     const heroScope = within(hero as HTMLElement);
     const primaryCta = heroScope.getByRole("link", {
-      name: "Explore How I Help",
+      name: "Start with an Operational Visibility Diagnostic",
     });
     const secondaryCta = heroScope.getByRole("link", {
-      name: "Start with a Diagnostic",
+      name: "Explore What I Fix",
     });
 
     expect(
       new URL(primaryCta.getAttribute("href") ?? "", "https://danfeliciano.com")
         .pathname,
-    ).toBe("/services");
+    ).toBe("/contact");
     expect(
       new URL(
         secondaryCta.getAttribute("href") ?? "",
         "https://danfeliciano.com",
       ).pathname,
-    ).toBe("/contact");
+    ).toBe("/what-i-fix");
 
-    expect(heroScope.getByText("Business operating view")).toBeInTheDocument();
+    expect(
+      heroScope.getByText("Operational Visibility for owners and operators"),
+    ).toBeInTheDocument();
+    expect(
+      heroScope.getByText("Operational Visibility in practice"),
+    ).toBeInTheDocument();
     for (const operatingLens of [
       "Make the decision",
       "Understand the numbers",
@@ -63,10 +71,50 @@ describe("homepage content", () => {
     expect(screen.queryByText("Backlog pressure")).not.toBeInTheDocument();
   });
 
+  it("defines the category without inventing the unfinished article", () => {
+    render(createElement(HomePage));
+
+    const heading = screen.getByRole("heading", {
+      level: 2,
+      name: "Make the business visible before trying to fix it.",
+    });
+    const categorySection = heading.closest("section");
+
+    expect(categorySection).toBeInTheDocument();
+    expect(
+      within(categorySection as HTMLElement).getByText(
+        "See the system behind the symptoms",
+      ),
+    ).toBeInTheDocument();
+    expect(categorySection).toHaveTextContent(
+      "fix the system and automate intelligently",
+    );
+
+    for (const element of [
+      "Work",
+      "Decisions",
+      "Information",
+      "Constraints",
+      "Risk",
+      "Cash",
+    ]) {
+      expect(
+        within(categorySection as HTMLElement).getByText(element),
+      ).toBeInTheDocument();
+    }
+
+    expect(
+      screen.queryByRole("link", {
+        name: "Read the Point of View: Your AI Isn’t Broken. Your Business Is Invisible.",
+      }),
+    ).not.toBeInTheDocument();
+  });
+
   it("puts capabilities before buyer problems and starting offers", () => {
     render(createElement(HomePage));
 
     const sectionHeadings = [
+      "Make the business visible before trying to fix it.",
       "Five ways to make the business easier to run.",
       "Choose the problem you want to solve first.",
       "Start with the problem, not a long engagement.",
@@ -75,8 +123,9 @@ describe("homepage content", () => {
 
     for (let index = 0; index < sectionHeadings.length - 1; index += 1) {
       expect(
-        sectionHeadings[index].compareDocumentPosition(sectionHeadings[index + 1]) &
-          Node.DOCUMENT_POSITION_FOLLOWING,
+        sectionHeadings[index].compareDocumentPosition(
+          sectionHeadings[index + 1],
+        ) & Node.DOCUMENT_POSITION_FOLLOWING,
       ).toBeTruthy();
     }
   });

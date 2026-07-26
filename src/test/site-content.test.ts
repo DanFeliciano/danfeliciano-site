@@ -145,13 +145,12 @@ describe("site content", () => {
   });
 
   it("uses owner-facing positioning as the primary positioning", () => {
-    expect(site.description).toContain("owners and operators");
-    expect(site.description).toContain("make better decisions");
-    expect(site.description).toContain("understand financial exposure");
-    expect(site.description).toContain("automate the right work");
-    expect(homepage.title).toBe(
-      "Fix what is slowing your business down.",
+    expect(site.description).toContain(
+      "work, decisions, information, constraints, risk and cash",
     );
+    expect(site.description).toContain("fix the system");
+    expect(site.description).toContain("automate the right work");
+    expect(homepage.title).toBe("Fix what is slowing your business down.");
     expect(navItems.map((item) => item.label)).toEqual([
       "What I Fix",
       "Services",
@@ -160,9 +159,9 @@ describe("site content", () => {
       "Insights",
       "Contact",
     ]);
-    expect(
-      navItems.find((item) => item.label === "What I Fix")?.href,
-    ).toBe("/what-i-fix");
+    expect(navItems.find((item) => item.label === "What I Fix")?.href).toBe(
+      "/what-i-fix",
+    );
     expect(navItems.find((item) => item.label === "Services")?.href).toBe(
       "/services",
     );

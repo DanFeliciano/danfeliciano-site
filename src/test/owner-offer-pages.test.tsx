@@ -21,6 +21,63 @@ describe("owner-facing offer pages", () => {
   it.each(pages)("renders the $h1 route H1", ({ component, h1 }) => {
     render(createElement(component));
 
-    expect(screen.getByRole("heading", { level: 1, name: h1 })).toBeInTheDocument();
+    expect(
+      screen.getByRole("heading", { level: 1, name: h1 }),
+    ).toBeInTheDocument();
+  });
+
+  it("makes Operational Visibility the broad entry point on What I Fix", () => {
+    render(createElement(WhatIFixPage));
+
+    expect(
+      screen.getByRole("heading", {
+        level: 2,
+        name: "See why the same problems keep coming back.",
+      }),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByText("The problem is visible. The system usually isn’t."),
+    ).toBeInTheDocument();
+
+    for (const step of [
+      "Make the work visible",
+      "Expose the cause",
+      "Fix the system",
+      "Automate the right work",
+    ]) {
+      expect(
+        screen.getByRole("heading", { level: 3, name: step }),
+      ).toBeInTheDocument();
+    }
+
+    expect(
+      screen.getByRole("heading", {
+        level: 3,
+        name: "Operational Visibility Diagnostic",
+      }),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole("link", { name: "Make the System Visible" }),
+    ).toHaveAttribute("href", "/contact");
+    expect(
+      screen.getAllByRole("link", {
+        name: "Start an Operational Visibility Diagnostic",
+      }),
+    ).toHaveLength(2);
+
+    for (const specializedOffer of [
+      "Backlog Kill Kit",
+      "AI Time Saver Sprint",
+      "90-Day Operations Reset",
+      "Owner Operating System",
+      "Dan Feliciano Academy",
+    ]) {
+      expect(
+        screen.getByRole("heading", {
+          level: 3,
+          name: specializedOffer,
+        }),
+      ).toBeInTheDocument();
+    }
   });
 });
