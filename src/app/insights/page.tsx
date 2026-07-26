@@ -1,10 +1,12 @@
 import Link from "next/link";
+import { InsightArticleCard } from "@/components/insights/insight-article-card";
 import { Container } from "@/components/layout/container";
 import { Section } from "@/components/layout/section";
 import { CtaButton } from "@/components/ui/cta-button";
 import { FinalCTA } from "@/components/ui/final-cta";
 import { PageHeader } from "@/components/ui/page-header";
 import { insightCards } from "@/content/site";
+import { publishedInsights } from "@/content/insights";
 import type { SiteRoute } from "@/lib/routes";
 import { createMetadata } from "@/lib/seo";
 
@@ -26,6 +28,8 @@ const relatedLinks = [
 ] as const satisfies readonly RelatedLink[];
 
 export default function InsightsPage() {
+  const featuredArticle = publishedInsights[0];
+
   return (
     <main id="main-content">
       <PageHeader
@@ -35,6 +39,14 @@ export default function InsightsPage() {
         <CtaButton href="/contact">Find My Bottleneck</CtaButton>
       </PageHeader>
 
+      <Section className="bg-white text-charcoal">
+        <InsightArticleCard
+          article={featuredArticle}
+          headingLevel={2}
+          variant="featured"
+        />
+      </Section>
+
       <Section className="bg-paper text-charcoal">
         <div className="max-w-3xl">
           <h2 className="text-balance text-3xl font-black tracking-normal sm:text-4xl">
@@ -43,6 +55,9 @@ export default function InsightsPage() {
           <p className="mt-4 text-base leading-7 text-slate-600">
             Short reads for people who need to see where time, money, customers,
             or control are leaking before a problem gets expensive.
+          </p>
+          <p className="mt-4 text-sm font-black uppercase tracking-[0.12em] text-slate-500">
+            More field notes and Points of View
           </p>
         </div>
         <div className="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
@@ -71,7 +86,11 @@ export default function InsightsPage() {
             <h2 className="text-2xl font-black">Related paths</h2>
             <div className="mt-4 flex flex-wrap gap-3">
               {relatedLinks.map((link) => (
-                <Link className="rounded-md border border-slate-200 bg-white px-4 py-3 text-sm font-bold text-charcoal transition hover:border-signal hover:text-ink" href={link.href} key={link.href}>
+                <Link
+                  className="rounded-md border border-slate-200 bg-white px-4 py-3 text-sm font-bold text-charcoal transition hover:border-signal hover:text-ink"
+                  href={link.href}
+                  key={link.href}
+                >
                   {link.label}
                 </Link>
               ))}

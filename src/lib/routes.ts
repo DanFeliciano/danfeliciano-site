@@ -14,6 +14,7 @@ export const requiredRoutes = [
   "/results",
   "/speaking",
   "/insights",
+  "/insights/your-ai-isnt-broken-your-business-is-invisible",
   "/contact",
   "/privacy",
   "/terms",

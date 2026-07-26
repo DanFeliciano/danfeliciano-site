@@ -71,7 +71,7 @@ describe("homepage content", () => {
     expect(screen.queryByText("Backlog pressure")).not.toBeInTheDocument();
   });
 
-  it("defines the category without inventing the unfinished article", () => {
+  it("defines the category and links the published Point of View", () => {
     render(createElement(HomePage));
 
     const heading = screen.getByRole("heading", {
@@ -104,10 +104,19 @@ describe("homepage content", () => {
     }
 
     expect(
-      screen.queryByRole("link", {
+      screen.getByRole("link", {
         name: "Read the Point of View: Your AI Isn’t Broken. Your Business Is Invisible.",
       }),
-    ).not.toBeInTheDocument();
+    ).toHaveAttribute(
+      "href",
+      "/insights/your-ai-isnt-broken-your-business-is-invisible",
+    );
+    expect(screen.getByText("Operational Visibility")).toBeInTheDocument();
+    expect(
+      screen.getByText(
+        "AI did not create the problem. It exposed how much of the organization still depends on tribal knowledge, workarounds, and systems no one can clearly explain.",
+      ),
+    ).toBeInTheDocument();
   });
 
   it("puts capabilities before buyer problems and starting offers", () => {
