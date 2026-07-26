@@ -42,6 +42,7 @@ export const allSiteRoutes = [
 ] as const;
 
 export type SiteRoute = (typeof allSiteRoutes)[number];
+export type SiteHref = SiteRoute | `#${string}`;
 
 export type LegacyRedirect = {
   source: string;
