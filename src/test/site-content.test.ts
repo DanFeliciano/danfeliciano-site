@@ -74,6 +74,7 @@ describe("site content", () => {
     expect(requiredRoutes).toEqual([
       "/",
       "/what-i-fix",
+      "/operational-visibility-diagnostic",
       "/services",
       "/backlog-kill-kit",
       "/ai-time-saver-sprint",

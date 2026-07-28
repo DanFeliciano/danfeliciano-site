@@ -132,7 +132,10 @@ export default async function InsightArticlePage({ params }: ArticlePageProps) {
             <InlineMarkdown text={ctaBody} />
           </p>
           <div className="mt-7 flex flex-col gap-4 sm:flex-row sm:items-center">
-            <CtaButton className="w-full sm:w-auto" href="/contact">
+            <CtaButton
+              className="w-full sm:w-auto"
+              href="/operational-visibility-diagnostic"
+            >
               {ctaLabel}
             </CtaButton>
             <Link

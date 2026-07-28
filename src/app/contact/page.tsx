@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { ContactForm } from "@/components/contact/contact-form";
 import { Section } from "@/components/layout/section";
 import { PageHeader } from "@/components/ui/page-header";
@@ -68,6 +69,17 @@ export default function ContactPage() {
             <p className="mt-4 rounded-lg border border-slate-200 bg-white p-4 text-sm font-bold leading-6 text-charcoal shadow-command">
               This form prepares an email draft. Your message is not sent until
               you send it from your email app.
+            </p>
+            <p className="mt-4 rounded-lg border border-signal/40 bg-white p-4 text-sm leading-6 text-charcoal shadow-command">
+              Looking for the paid diagnostic?{" "}
+              <Link
+                className="font-black underline decoration-signal decoration-2 underline-offset-4"
+                href="/operational-visibility-diagnostic"
+              >
+                Review the scope, timing, deliverables, boundaries, and booking
+                step
+              </Link>
+              .
             </p>
             <p className="mt-4 text-sm leading-6 text-slate-600">
               Prefer to email directly? Send a message to{" "}

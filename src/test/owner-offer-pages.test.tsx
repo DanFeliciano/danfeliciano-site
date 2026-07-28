@@ -89,12 +89,21 @@ describe("owner-facing offer pages", () => {
     ).toBeInTheDocument();
     expect(
       screen.getByRole("link", { name: "Make the System Visible" }),
-    ).toHaveAttribute("href", "/contact");
+    ).toHaveAttribute("href", "/operational-visibility-diagnostic");
     expect(
       screen.getAllByRole("link", {
         name: "Start an Operational Visibility Diagnostic",
       }),
     ).toHaveLength(2);
+
+    for (const link of screen.getAllByRole("link", {
+      name: "Start an Operational Visibility Diagnostic",
+    })) {
+      expect(link).toHaveAttribute(
+        "href",
+        "/operational-visibility-diagnostic",
+      );
+    }
 
     for (const specializedOffer of [
       "Backlog Kill Kit",

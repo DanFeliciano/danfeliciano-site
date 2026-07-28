@@ -12,6 +12,12 @@ type SeoInput = {
   title: string;
   description: string;
   path: SiteRoute;
+  image?: {
+    url: string;
+    width: number;
+    height: number;
+    alt: string;
+  };
 };
 
 export const socialImage = {
@@ -42,6 +48,7 @@ export function createMetadata({
   title,
   description,
   path,
+  image = socialImage,
 }: SeoInput): Metadata {
   const canonical = absoluteUrl(path);
 
@@ -55,13 +62,13 @@ export function createMetadata({
       url: canonical,
       siteName: site.name,
       type: "website",
-      images: [socialImage],
+      images: [image],
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
-      images: [socialImage.url],
+      images: [image.url],
       creator: "@DanFeliciano",
       site: "@DanFeliciano",
     },

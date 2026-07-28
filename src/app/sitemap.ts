@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 import { site } from "@/content/site";
 import { indexableRoutes } from "@/lib/routes";
 
-const lastModified = new Date("2026-07-26");
+const lastModified = new Date("2026-07-28");
 const articleRoute = "/insights/your-ai-isnt-broken-your-business-is-invisible";
 
 export default function sitemap(): MetadataRoute.Sitemap {

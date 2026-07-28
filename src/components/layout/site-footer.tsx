@@ -45,7 +45,10 @@ const footerColumns: { title: string; links: FooterLink[] }[] = [
       { label: "Backlog Kill Kit", href: "/backlog-kill-kit" },
       { label: "90-Day Operations Reset", href: "/operations-reset" },
       { label: "Owner Operating System", href: "/owner-operating-system" },
-      { label: "Operational Visibility Diagnostic", href: "/contact" },
+      {
+        label: "Operational Visibility Diagnostic",
+        href: "/operational-visibility-diagnostic",
+      },
       { label: "Policy Forensics", href: "/policy-forensics" },
     ],
   },

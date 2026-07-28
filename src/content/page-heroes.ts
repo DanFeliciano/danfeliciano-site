@@ -1,8 +1,9 @@
-import type { SiteHref } from "@/lib/routes";
+import { bookingUrl } from "@/content/site";
+import type { ActionHref } from "@/lib/routes";
 
 export type HeroAction = {
   label: string;
-  href: SiteHref;
+  href: ActionHref;
 };
 
 export type PageHero = {
@@ -25,7 +26,7 @@ export const pageHeroes = {
     ],
     primaryAction: {
       label: "Start an Operational Visibility Diagnostic",
-      href: "/contact",
+      href: "/operational-visibility-diagnostic",
     },
     secondaryAction: {
       label: "Explore What I Fix",
@@ -45,7 +46,7 @@ export const pageHeroes = {
     },
     secondaryAction: {
       label: "Start an Operational Visibility Diagnostic",
-      href: "/contact",
+      href: "/operational-visibility-diagnostic",
     },
   },
   "/services": {
@@ -61,8 +62,31 @@ export const pageHeroes = {
     },
     secondaryAction: {
       label: "Start an Operational Visibility Diagnostic",
-      href: "/contact",
+      href: "/operational-visibility-diagnostic",
     },
+  },
+  "/operational-visibility-diagnostic": {
+    eyebrow: "Operational Visibility Diagnostic",
+    title: "See how one critical flow actually works—and what to fix first.",
+    subhead: [
+      "When backlogs, delays, rework, owner dependence, weak follow-up, confusing numbers, or cash pressure keep returning, the visible symptom is rarely the whole problem.",
+      "In about ten business days, the Diagnostic reconstructs one material flow from trigger to value, shows where work and decisions break down, and gives leadership an evidence-backed 30/60/90-day action plan.",
+    ],
+    primaryAction: {
+      label: "Book a Fit Conversation",
+      href: bookingUrl,
+    },
+    secondaryAction: {
+      label: "Review the Scope",
+      href: "#scope",
+    },
+    trustLine:
+      "$5,000 first-three-pilot fee · One critical flow · Remote delivery",
+    cues: [
+      "Owners and operators",
+      "Evidence before automation",
+      "Diagnosis before implementation",
+    ],
   },
   "/insights": {
     eyebrow: "Insights and Points of View",
@@ -96,10 +120,11 @@ export const pageHeroes = {
     title: "Find why work is aging—and what will move it.",
     subhead: [
       "Backlog is rarely just a staffing problem. Expose the queues, decision delays, ownership gaps, broken handoffs and rework keeping the pile from shrinking.",
+      "The Backlog Kill Kit is Operational Visibility applied to backlog and aging-work symptoms—not a competing diagnostic or a promise of remediation before the cause is known.",
     ],
     primaryAction: {
-      label: "Diagnose the Backlog",
-      href: "/contact",
+      label: "See the Diagnostic",
+      href: "/operational-visibility-diagnostic",
     },
     cues: ["Aging work", "Broken handoffs", "Hidden constraints"],
   },
@@ -313,7 +338,7 @@ export const pageHeroes = {
     },
     secondaryAction: {
       label: "Start an Operational Visibility Diagnostic",
-      href: "/contact",
+      href: "/operational-visibility-diagnostic",
     },
   },
   "/briefings": {

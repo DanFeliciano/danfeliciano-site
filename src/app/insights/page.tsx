@@ -24,7 +24,10 @@ const relatedLinks = [
   { label: "AI Time Saver Sprint", href: "/ai-time-saver-sprint" },
   { label: "Policy Forensics", href: "/policy-forensics" },
   { label: "Backlog Kill Kit", href: "/backlog-kill-kit" },
-  { label: "Make the System Visible", href: "/contact" },
+  {
+    label: "Make the System Visible",
+    href: "/operational-visibility-diagnostic",
+  },
 ] as const satisfies readonly RelatedLink[];
 
 export default function InsightsPage() {
@@ -101,7 +104,7 @@ export default function InsightsPage() {
       <FinalCTA
         body="Bring the work, follow-up, backlog, AI, policy, or owner-dependency problem that keeps coming back."
         cta="Start an Operational Visibility Diagnostic"
-        href="/contact"
+        href="/operational-visibility-diagnostic"
         title="Need a practical answer before the next fix?"
       />
     </main>

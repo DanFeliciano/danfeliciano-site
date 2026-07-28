@@ -210,7 +210,7 @@ describe("Point of View publishing", () => {
       screen.getByRole("link", {
         name: "Start an Operational Visibility Diagnostic",
       }),
-    ).toHaveAttribute("href", "/contact");
+    ).toHaveAttribute("href", "/operational-visibility-diagnostic");
     expect(
       screen.getByRole("link", { name: "Back to Insights" }),
     ).toHaveAttribute("href", "/insights");

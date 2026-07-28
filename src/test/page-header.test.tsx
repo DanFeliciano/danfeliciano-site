@@ -13,7 +13,7 @@ describe("PageHeader", () => {
           label: "Choose the Problem",
         }}
         secondaryAction={{
-          href: "/contact",
+          href: "/operational-visibility-diagnostic",
           label: "Start an Operational Visibility Diagnostic",
         }}
         subhead={[
@@ -46,7 +46,7 @@ describe("PageHeader", () => {
       screen.getByRole("link", {
         name: "Start an Operational Visibility Diagnostic",
       }),
-    ).toHaveAttribute("href", "/contact");
+    ).toHaveAttribute("href", "/operational-visibility-diagnostic");
     expect(container.querySelectorAll("[data-hero-cue]")).toHaveLength(3);
     expect(container.querySelector("a a")).toBeNull();
   });

@@ -19,7 +19,7 @@ describe("navigation", () => {
     ]);
   });
 
-  it("routes the primary nav CTA to contact", () => {
+  it("routes the primary nav CTA to the diagnostic offer page", () => {
     render(createElement(SiteHeader));
 
     const diagnosticLinks = screen.getAllByRole("link", {
@@ -35,7 +35,9 @@ describe("navigation", () => {
             "https://danfeliciano.com",
           ).pathname,
       ),
-    ).toEqual(diagnosticLinks.map(() => "/contact"));
+    ).toEqual(
+      diagnosticLinks.map(() => "/operational-visibility-diagnostic"),
+    );
   });
 
   it("opens and closes the mobile navigation disclosure", async () => {
@@ -75,7 +77,7 @@ describe("navigation", () => {
         diagnosticLink.getAttribute("href") ?? "",
         "https://danfeliciano.com",
       ).pathname,
-    ).toBe("/contact");
+    ).toBe("/operational-visibility-diagnostic");
 
     diagnosticLink.addEventListener("click", (event) => event.preventDefault());
     await user.click(diagnosticLink);
@@ -122,6 +124,10 @@ describe("navigation", () => {
       ["Backlog Kill Kit", "/backlog-kill-kit"],
       ["90-Day Operations Reset", "/operations-reset"],
       ["Owner Operating System", "/owner-operating-system"],
+      [
+        "Operational Visibility Diagnostic",
+        "/operational-visibility-diagnostic",
+      ],
       ["Policy Forensics", "/policy-forensics"],
       ["Results", "/results"],
     ] as const) {

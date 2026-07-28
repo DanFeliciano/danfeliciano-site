@@ -84,7 +84,7 @@ export function MobileNav() {
           </nav>
           <CtaButton
             className="mt-3 w-full"
-            href="/contact"
+            href="/operational-visibility-diagnostic"
             onClick={closeNavigation}
           >
             Make the System Visible

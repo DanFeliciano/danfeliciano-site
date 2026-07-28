@@ -136,7 +136,7 @@ export const ownerOffers = [
           {
             title: "Operational Visibility Diagnostic",
             body: "See how critical work actually moves, where decisions and information break down, what is constraining performance, where risk or cash is accumulating, and what leadership should fix first.",
-            href: "/contact",
+            href: "/operational-visibility-diagnostic",
             cta: "Make the System Visible",
           },
           {
@@ -176,7 +176,7 @@ export const ownerOffers = [
       title: "Ready to see what is really slowing the business down?",
       body: "Start with the problem you can feel. The Operational Visibility Diagnostic traces it to the work, decisions, information, constraints, risk and financial consequences underneath it—and shows what deserves action first.",
       cta: "Start an Operational Visibility Diagnostic",
-      href: "/contact",
+      href: "/operational-visibility-diagnostic",
     },
   },
   {
@@ -191,13 +191,16 @@ export const ownerOffers = [
     subhead:
       "For teams whose work is piling up, taking too long, or falling through the cracks.",
     intro: [
+      "The Backlog Kill Kit is a focused application of the Operational Visibility Diagnostic for one critical flow where work is piling up or aging. It uses the same evidence standard, boundary discipline, and decision-focused outcome.",
       "Backlog is rarely just a staffing problem. It is usually a system problem: unclear intake, bad prioritization, rework, handoff delays, missing decision rules, poor visibility, and unmanaged variation.",
       "The Backlog Kill Kit helps you understand why work is stuck, what is aging, where handoffs are failing, and what recovery path makes sense.",
     ],
     primaryCta: "Request a Backlog Kill Kit",
     sections: [
       {
-        title: "Signs you may need it",
+        eyebrow: "Operational Visibility applied to backlog",
+        title: "When the visible symptom is aging work",
+        body: "This is not a separate methodology and it does not begin with a promise to clear the queue. It applies the Diagnostic to the flow producing the backlog so leadership can see what is actually driving it.",
         items: [
           "Aging work is growing",
           "Customers are waiting too long",
@@ -242,8 +245,9 @@ export const ownerOffers = [
     ],
     finalCta: {
       title: "Need to know why work is piling up?",
-      cta: "Request a Backlog Kill Kit",
-      href: "/contact",
+      body: "Review the Operational Visibility Diagnostic, then book a fit conversation if one material backlog or aging-work flow is important enough to examine now.",
+      cta: "See the Operational Visibility Diagnostic",
+      href: "/operational-visibility-diagnostic",
     },
   },
   {

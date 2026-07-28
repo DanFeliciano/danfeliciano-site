@@ -113,7 +113,7 @@ export default function ResultsPage() {
       <FinalCTA
         body="Start with a practical conversation about where work is stuck, what is costing time, and what to fix first."
         cta="Start an Operational Visibility Diagnostic"
-        href="/contact"
+        href="/operational-visibility-diagnostic"
         title="Want to know what could improve first in your business?"
       />
     </main>

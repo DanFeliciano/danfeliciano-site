@@ -1,6 +1,7 @@
 export const requiredRoutes = [
   "/",
   "/what-i-fix",
+  "/operational-visibility-diagnostic",
   "/services",
   "/backlog-kill-kit",
   "/ai-time-saver-sprint",
@@ -56,7 +57,9 @@ export const allSiteRoutes = [
 ] as const;
 
 export type SiteRoute = (typeof allSiteRoutes)[number];
-export type SiteHref = SiteRoute | `#${string}`;
+export type SiteHref = SiteRoute | `${SiteRoute}#${string}` | `#${string}`;
+export type ExternalHref = `https://${string}`;
+export type ActionHref = SiteHref | ExternalHref;
 
 export type LegacyRedirect = {
   source: string;

@@ -447,7 +447,7 @@ export default function HomePage() {
       <FinalCTA
         body="Start with the problem you can feel. The Operational Visibility Diagnostic shows what deserves action first."
         cta="Start an Operational Visibility Diagnostic"
-        href="/contact"
+        href="/operational-visibility-diagnostic"
         title="Ready to make the next problem easier to see and fix?"
       />
     </main>

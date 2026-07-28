@@ -35,7 +35,9 @@ export function SiteHeader() {
           </nav>
 
           <div className="hidden xl:block">
-            <CtaButton href="/contact">Make the System Visible</CtaButton>
+            <CtaButton href="/operational-visibility-diagnostic">
+              Make the System Visible
+            </CtaButton>
           </div>
 
           <MobileNav />

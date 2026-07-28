@@ -1,4 +1,4 @@
-import type { SiteRoute } from "@/lib/routes";
+import type { ExternalHref, SiteRoute } from "@/lib/routes";
 
 export type LinkItem = {
   label: string;
@@ -60,6 +60,9 @@ export const site = {
   linkedIn: socialLinks[0].href,
   socialLinks,
 };
+
+export const bookingUrl =
+  "https://tidycal.com/opex90/quick-30-minute-meeting" satisfies ExternalHref;
 
 export const navItems: LinkItem[] = [
   { label: "What I Fix", href: "/what-i-fix" },

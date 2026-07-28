@@ -218,7 +218,10 @@ export default function ServicesPage() {
               to identify the actual constraint and the smallest useful way to
               begin—not to force your problem into the wrong offer.
             </p>
-            <CtaButton className="mt-6" href="/contact">
+            <CtaButton
+              className="mt-6"
+              href="/operational-visibility-diagnostic"
+            >
               Make the System Visible
             </CtaButton>
           </div>
@@ -228,7 +231,7 @@ export default function ServicesPage() {
       <FinalCTA
         body="Start with the problem you can feel. Dan will help expose the cause, choose the right fix, and define the next action."
         cta="Start an Operational Visibility Diagnostic"
-        href="/contact"
+        href="/operational-visibility-diagnostic"
         title="Ready to stop guessing what to fix first?"
       />
 

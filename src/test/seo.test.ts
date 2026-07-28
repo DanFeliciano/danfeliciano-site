@@ -50,8 +50,9 @@ describe("seo helpers", () => {
   });
 
   it("has at least all required sitemap routes", () => {
-    expect(requiredRoutes).toHaveLength(19);
-    expect(indexableRoutes).toHaveLength(25);
+    expect(requiredRoutes).toHaveLength(20);
+    expect(indexableRoutes).toHaveLength(26);
+    expect(requiredRoutes).toContain("/operational-visibility-diagnostic");
     expect(requiredRoutes).toContain(
       "/insights/your-ai-isnt-broken-your-business-is-invisible",
     );
@@ -105,6 +106,14 @@ describe("seo routes", () => {
   });
 
   it("creates sitemap entries for every required route", () => {
+    expect(sitemap()).toContainEqual(
+      expect.objectContaining({
+        url: `${site.url}/operational-visibility-diagnostic`,
+        lastModified: new Date("2026-07-28"),
+        changeFrequency: "monthly",
+        priority: 0.7,
+      }),
+    );
     expect(sitemap()).toContainEqual(
       expect.objectContaining({
         url: `${site.url}/insights/your-ai-isnt-broken-your-business-is-invisible`,

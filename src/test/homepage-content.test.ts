@@ -43,7 +43,7 @@ describe("homepage content", () => {
     expect(
       new URL(primaryCta.getAttribute("href") ?? "", "https://danfeliciano.com")
         .pathname,
-    ).toBe("/contact");
+    ).toBe("/operational-visibility-diagnostic");
     expect(
       new URL(
         secondaryCta.getAttribute("href") ?? "",

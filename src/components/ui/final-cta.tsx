@@ -1,11 +1,11 @@
-import type { SiteRoute } from "@/lib/routes";
+import type { ActionHref } from "@/lib/routes";
 import { CtaButton } from "./cta-button";
 
 type FinalCTAProps = {
   title: string;
   body: string;
   cta: string;
-  href: SiteRoute;
+  href: ActionHref;
 };
 
 export function FinalCTA({ title, body, cta, href }: FinalCTAProps) {
