@@ -36,6 +36,16 @@ export async function generateMetadata(): Promise<Metadata> {
       template: "%s",
     },
     description: defaultDescription,
+    icons: {
+      icon: {
+        url: "/dan-feliciano-logo.png",
+        type: "image/png",
+      },
+      apple: {
+        url: "/dan-feliciano-logo.png",
+        type: "image/png",
+      },
+    },
     openGraph: {
       type: "website",
       title: defaultTitle,
