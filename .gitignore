@@ -1,4 +1,9 @@
 .superpowers/
+.worktrees/
 node_modules/
 dist/
+.next/
+.wrangler/
+*.tsbuildinfo
+tmp/
 .DS_Store
