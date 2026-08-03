@@ -14,9 +14,13 @@ export function SiteHeader() {
             href="/"
             aria-label={`${site.name} home`}
           >
-            <span className="flex size-10 items-center justify-center rounded-md border border-signal/50 bg-signal text-sm font-black text-ink">
-              DF
-            </span>
+            <img
+              alt=""
+              className="h-12 w-auto shrink-0"
+              height="272"
+              src="/dan-feliciano-logo.png"
+              width="331"
+            />
             <span className="text-base tracking-normal text-white transition group-hover:text-signal">
               {site.name}
             </span>

@@ -71,10 +71,18 @@ export function SiteFooter() {
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-[1.1fr_repeat(3,1fr)]">
           <div>
             <Link
-              className="text-lg font-black text-white hover:text-signal"
+              aria-label={`${site.name} home`}
+              className="group inline-flex items-center gap-3 text-lg font-black text-white hover:text-signal"
               href="/"
             >
-              {site.name}
+              <img
+                alt=""
+                className="h-14 w-auto shrink-0"
+                height="272"
+                src="/dan-feliciano-logo.png"
+                width="331"
+              />
+              <span>{site.name}</span>
             </Link>
             <p className="mt-3 text-sm font-bold text-signal">
               Operational Visibility for owners and operators

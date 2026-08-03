@@ -40,6 +40,18 @@ describe("navigation", () => {
     );
   });
 
+  it("uses the supplied Dan Feliciano logo in the shared site chrome", () => {
+    const { container: header } = render(createElement(SiteHeader));
+    const { container: footer } = render(createElement(SiteFooter));
+
+    expect(
+      header.querySelector('img[src="/dan-feliciano-logo.png"]'),
+    ).toBeInTheDocument();
+    expect(
+      footer.querySelector('img[src="/dan-feliciano-logo.png"]'),
+    ).toBeInTheDocument();
+  });
+
   it("opens and closes the mobile navigation disclosure", async () => {
     const user = userEvent.setup();
 
